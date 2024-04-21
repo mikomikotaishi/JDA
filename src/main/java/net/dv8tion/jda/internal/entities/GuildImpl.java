@@ -2093,7 +2093,7 @@ public class GuildImpl implements Guild
 
         try
         {
-            stage.requestToSpeak().queue((v) -> future.complete(null), future::completeExceptionally);
+            stage.requestToSpeak().queueAfter(500, TimeUnit.MILLISECONDS, (v) -> future.complete(null), future::completeExceptionally);
         }
         catch (Throwable ex)
         {
