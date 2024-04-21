@@ -32,6 +32,7 @@ import net.dv8tion.jda.api.entities.channel.attribute.IThreadContainer;
 import net.dv8tion.jda.api.entities.channel.concrete.*;
 import net.dv8tion.jda.api.entities.channel.middleman.AudioChannel;
 import net.dv8tion.jda.api.entities.channel.middleman.GuildChannel;
+import net.dv8tion.jda.api.entities.channel.unions.AudioChannelUnion;
 import net.dv8tion.jda.api.entities.channel.unions.DefaultGuildChannelUnion;
 import net.dv8tion.jda.api.entities.emoji.RichCustomEmoji;
 import net.dv8tion.jda.api.entities.sticker.GuildSticker;
@@ -2084,16 +2085,24 @@ public class GuildImpl implements Guild
     {
         if (!isRequestToSpeakPending())
             return;
-        AudioChannel connectedChannel = getSelfMember().getVoiceState().getChannel();
-        if (!(connectedChannel instanceof StageChannel))
+
+        AudioManager audioManager = getAudioManager();
+        AudioChannelUnion connectedChannel = audioManager.getConnectedChannel();
+        ConnectionStatus status = audioManager.getConnectionStatus();
+
+        boolean isConnected = status == ConnectionStatus.CONNECTED;
+        boolean isStage = connectedChannel instanceof StageChannel;
+
+        if (!isConnected || !isStage)
             return;
+
         StageChannel stage = (StageChannel) connectedChannel;
         CompletableFuture<Void> future = pendingRequestToSpeak;
         pendingRequestToSpeak = null;
 
         try
         {
-            stage.requestToSpeak().queueAfter(500, TimeUnit.MILLISECONDS, (v) -> future.complete(null), future::completeExceptionally);
+            stage.requestToSpeak().queue((v) -> future.complete(null), future::completeExceptionally);
         }
         catch (Throwable ex)
         {
