@@ -59,7 +59,7 @@ import javax.annotation.Nonnull;
  *
  * @see    MessageChannel#getIterableHistory()
  */
-public interface MessagePaginationAction extends PaginationAction<Message, MessagePaginationAction>
+public interface MessagePaginationAction extends SnowflakePaginationAction<Message, MessagePaginationAction>
 {
     /**
      * The {@link ChannelType ChannelType} of

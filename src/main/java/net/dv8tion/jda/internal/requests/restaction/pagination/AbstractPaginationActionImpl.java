@@ -33,9 +33,9 @@ import java.util.function.BiFunction;
 import java.util.function.BooleanSupplier;
 import java.util.function.Consumer;
 
-public abstract class PaginationActionImpl<T, M extends PaginationAction<T, M>>
-        extends RestActionImpl<List<T>>
-        implements PaginationAction<T, M>
+public abstract class AbstractPaginationActionImpl<T, M extends PaginationAction<T, M>>
+    extends RestActionImpl<List<T>>
+    implements PaginationAction<T, M>
 {
     protected final List<T> cached = new CopyOnWriteArrayList<>();
     protected final int maxLimit;
@@ -63,52 +63,12 @@ public abstract class PaginationActionImpl<T, M extends PaginationAction<T, M>>
      * @param initialLimit
      *        The initial limit to use on the pagination endpoint
      */
-    public PaginationActionImpl(JDA api, Route.CompiledRoute route, int minLimit, int maxLimit, int initialLimit)
+    public AbstractPaginationActionImpl(JDA api, Route.CompiledRoute route, int minLimit, int maxLimit, int initialLimit)
     {
         super(api, route);
         this.maxLimit = maxLimit;
         this.minLimit = minLimit;
         this.limit = new AtomicInteger(initialLimit);
-    }
-
-    /**
-     * Creates a new PaginationAction instance
-     * <br>This is used for PaginationActions that should not deal with
-     * {@link #limit(int)}
-     *
-     * @param api
-     *        The current JDA instance
-     */
-    public PaginationActionImpl(JDA api)
-    {
-        super(api, null);
-        this.maxLimit = 0;
-        this.minLimit = 0;
-        this.limit = new AtomicInteger(0);
-    }
-
-    @Nonnull
-    @Override
-    @SuppressWarnings("unchecked")
-    public M skipTo(long id)
-    {
-        if (!cached.isEmpty())
-        {
-            int cmp = Long.compareUnsigned(this.lastKey, id);
-            if (cmp < 0) // old - new < 0 => old < new
-                throw new IllegalArgumentException("Cannot jump to that id, it is newer than the current oldest element.");
-        }
-        if (this.lastKey != id)
-            this.last = null;
-        this.iteratorIndex = id;
-        this.lastKey = id;
-        return (M) this;
-    }
-
-    @Override
-    public long getLastKey()
-    {
-        return lastKey;
     }
 
     @Nonnull

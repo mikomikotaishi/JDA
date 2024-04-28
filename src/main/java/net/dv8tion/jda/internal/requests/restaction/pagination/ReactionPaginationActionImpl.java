@@ -34,7 +34,7 @@ import java.util.LinkedList;
 import java.util.List;
 
 public class ReactionPaginationActionImpl
-    extends PaginationActionImpl<User, ReactionPaginationAction>
+    extends SnowflakePaginationActionImpl<User, ReactionPaginationAction>
     implements ReactionPaginationAction
 {
     protected final MessageReaction reaction;

@@ -34,7 +34,7 @@ import java.util.Collection;
  * }
  * }</pre>
  */
-public interface EntitlementPaginationAction extends PaginationAction<Entitlement, EntitlementPaginationAction>
+public interface EntitlementPaginationAction extends SnowflakePaginationAction<Entitlement, EntitlementPaginationAction>
 {
     /**
      * Filter {@link Entitlement Entitlement}s to retrieve by the given user ID

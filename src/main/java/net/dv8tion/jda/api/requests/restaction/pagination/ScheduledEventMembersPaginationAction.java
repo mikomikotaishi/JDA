@@ -42,7 +42,7 @@ import javax.annotation.Nonnull;
  * }
  * }</pre>
  */
-public interface ScheduledEventMembersPaginationAction extends PaginationAction<Member, ScheduledEventMembersPaginationAction>
+public interface ScheduledEventMembersPaginationAction extends SnowflakePaginationAction<Member, ScheduledEventMembersPaginationAction>
 {
     /**
      * The current target {@link Guild Guild} for

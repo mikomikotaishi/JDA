@@ -34,7 +34,7 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 
-public class ScheduledEventMembersPaginationActionImpl extends PaginationActionImpl<Member, ScheduledEventMembersPaginationAction> implements ScheduledEventMembersPaginationAction
+public class ScheduledEventMembersPaginationActionImpl extends SnowflakePaginationActionImpl<Member, ScheduledEventMembersPaginationAction> implements ScheduledEventMembersPaginationAction
 {
     protected final Guild guild;
 

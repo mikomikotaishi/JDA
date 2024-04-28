@@ -40,15 +40,16 @@ import javax.annotation.Nonnull;
  * // Clean up all private threads older than 2 weeks
  * public static void cleanupPrivateThreads(TextChannel channel) {
  *     // get 2-week offset
- *     long 2WeekAgoTimestamp = System.currentTimeMillis() - (14 * 24 * 60 * 60 * 1000);
+ *     long twoWeekAgoTimestamp = System.currentTimeMillis() - (14 * 24 * 60 * 60 * 1000);
  *     // get paginator
  *     ThreadChannelPaginationAction threads = channel.retrieveArchivedPrivateThreadChannels();
  *     // remove each thread older than 2 weeks
  *     threads.forEachAsync((thread) ->
  *         long threadArchiveTimestamp = thread.getTimeArchiveInfoLastModified().toInstant().toEpochMilli();
- *         if (threadArchiveTimestamp < 2WeeksAgoTimestamp) {
+ *         if (threadArchiveTimestamp < twoWeekAgoTimestamp) {
  *            thread.delete().reason("Cleaning up old private threads").queue();
  *         }
+ *         return true;
  *     );
  * }
  * }</pre>
@@ -57,6 +58,7 @@ import javax.annotation.Nonnull;
  * @see    IThreadContainer#retrieveArchivedPrivateThreadChannels()
  * @see    IThreadContainer#retrieveArchivedPrivateJoinedThreadChannels()
  */
+// TODO: Split this into snowflake vs timestamp based iterations. Having this as one type makes no sense
 public interface ThreadChannelPaginationAction extends PaginationAction<ThreadChannel, ThreadChannelPaginationAction>
 {
     /**

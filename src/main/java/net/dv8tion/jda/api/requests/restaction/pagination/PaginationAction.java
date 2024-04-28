@@ -40,100 +40,44 @@ import java.util.stream.StreamSupport;
  * with a lock. Calling methods on this class from multiple threads is not recommended.
  *
  * <p><b>Examples</b>
- * <pre><code>
- * /**
- *   * Retrieves messages until the specified limit is reached. The messages will be limited after being filtered by the user.
- *   * If the user hasn't sent enough messages this will go through all messages so it is recommended to add an additional end condition.
- *   *&#47;
- * public static {@literal List<Message>} getMessagesByUser(MessageChannel channel, User user, int limit)
+ * <pre>{@code
+ * // Retrieves messages until the specified limit is reached. The messages will be limited after being filtered by the user.
+ * // If the user hasn't sent enough messages this will go through all messages so it is recommended to add an additional end condition.
+ * public static List<Message> getMessagesByUser(MessageChannel channel, User user, int limit)
  * {
- *     <u>MessagePaginationAction</u> action = channel.<u>getIterableHistory</u>();
- *     Stream{@literal <Message>} messageStream = action.stream()
+ *     MessagePaginationAction action = channel.getIterableHistory();
+ *     Stream<Message> messageStream = action.stream()
  *             .limit(limit * 2) // used to limit amount of messages to check, if user hasn't sent enough messages it would go on forever
- *             .filter( message{@literal ->} message.getAuthor().equals(user) )
+ *             .filter(message -> message.getAuthor().equals(user))
  *             .limit(limit); // limit on filtered stream will be checked independently from previous limit
  *     return messageStream.collect(Collectors.toList());
  * }
- * </code></pre>
+ * }</pre>
  *
- * <pre><code>
- * /**
- *  * Iterates messages in an async stream and stops once the limit has been reached.
- *  *&#47;
- * public static void onEachMessageAsync(MessageChannel channel, {@literal Consumer<Message>} consumer, int limit)
+ * <pre>{@code
+ * // Iterates messages in an async stream and stops once the limit has been reached.
+ * public static void onEachMessageAsync(MessageChannel channel, Consumer<Message> consumer, int limit)
  * {
- *     if (limit{@literal <} 1)
+ *     if (limit < 1)
  *         return;
- *     <u>MessagePaginationAction</u> action = channel.<u>getIterableHistory</u>();
+ *     MessagePaginationAction action = channel.getIterableHistory();
  *     AtomicInteger counter = new AtomicInteger(limit);
- *     action.forEachAsync( (message){@literal ->}
+ *     action.forEachAsync((message) ->
  *     {
  *         consumer.accept(message);
  *         // if false the iteration is terminated; else it continues
  *         return counter.decrementAndGet() == 0;
  *     });
  * }
- * </code></pre>
+ * }</pre>
  *
  * @param  <M>
  *         The current implementation used as chaining return value
  * @param  <T>
  *         The type of entity to paginate
- *
- * @since  3.1
  */
 public interface PaginationAction<T, M extends PaginationAction<T, M>> extends RestAction<List<T>>, Iterable<T>
 {
-    /**
-     * Skips past the specified ID for successive requests.
-     * This will reset the {@link #getLast()} entity and cause a {@link NoSuchElementException} to be thrown
-     * when attempting to get the last entity until a new retrieve action has been done.
-     * <br>If cache is disabled this can be set to an arbitrary value irrelevant of the current last.
-     * Set this to {@code 0} to start from the most recent message.
-     *
-     * <p>Fails if cache is enabled and the target id is newer than the current last id {@literal (id > last)}.
-     *
-     * <p><b>Example</b><br>
-     * <pre>{@code
-     * public MessagePaginationAction getOlderThan(MessageChannel channel, long time) {
-     *     final long timestamp = TimeUtil.getDiscordTimestamp(time);
-     *     final MessagePaginationAction paginator = channel.getIterableHistory();
-     *     return paginator.skipTo(timestamp);
-     * }
-     *
-     * getOlderThan(channel, System.currentTimeMillis() - TimeUnit.DAYS.toMillis(14))
-     *     .forEachAsync((message) -> {
-     *         boolean empty = message.getContentRaw().isEmpty();
-     *         if (!empty)
-     *             System.out.printf("%#s%n", message); // means: print display content
-     *         return !empty; // means: continue if not empty
-     *     });
-     * }</pre>
-     *
-     * @param  id
-     *         The snowflake ID to skip before, this is exclusive rather than inclusive
-     *
-     * @throws IllegalArgumentException
-     *         If cache is enabled, and you are attempting to skip forward in time {@literal (id > last)}
-     *
-     * @return The current PaginationAction for chaining convenience
-     *
-     * @see    java.util.concurrent.TimeUnit
-     * @see    net.dv8tion.jda.api.utils.TimeUtil
-     */
-    @Nonnull
-    M skipTo(long id);
-
-    /**
-     * The current iteration anchor used for pagination.
-     * <br>This is updated by each retrieve action.
-     *
-     * @return The current iteration anchor
-     *
-     * @see    #skipTo(long) Use skipTo(anchor) to change this
-     */
-    long getLastKey();
-
     @Nonnull
     @Override
     M setCheck(@Nullable BooleanSupplier checks);

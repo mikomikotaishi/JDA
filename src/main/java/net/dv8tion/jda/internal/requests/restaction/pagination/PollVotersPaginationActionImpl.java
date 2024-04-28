@@ -32,7 +32,7 @@ import java.util.ArrayList;
 import java.util.EnumSet;
 import java.util.List;
 
-public class PollVotersPaginationActionImpl extends PaginationActionImpl<User, PollVotersPaginationAction> implements PollVotersPaginationAction
+public class PollVotersPaginationActionImpl extends SnowflakePaginationActionImpl<User, PollVotersPaginationAction> implements PollVotersPaginationAction
 {
     public PollVotersPaginationActionImpl(JDA jda, String channelId, String messageId, long answerId)
     {

@@ -34,7 +34,7 @@ import javax.annotation.Nullable;
 import java.util.*;
 
 public class EntitlementPaginationActionImpl
-    extends PaginationActionImpl<Entitlement, EntitlementPaginationAction>
+    extends SnowflakePaginationActionImpl<Entitlement, EntitlementPaginationAction>
     implements EntitlementPaginationAction
 {
     protected List<String> skuIds;

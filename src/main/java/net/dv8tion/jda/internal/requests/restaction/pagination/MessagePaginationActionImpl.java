@@ -38,7 +38,7 @@ import java.util.Collections;
 import java.util.List;
 
 public class MessagePaginationActionImpl
-    extends PaginationActionImpl<Message, MessagePaginationAction>
+    extends SnowflakePaginationActionImpl<Message, MessagePaginationAction>
     implements MessagePaginationAction
 {
     private final MessageChannel channel;

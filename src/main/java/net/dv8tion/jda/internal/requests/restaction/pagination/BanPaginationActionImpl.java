@@ -31,7 +31,7 @@ import java.util.Collections;
 import java.util.List;
 
 public class BanPaginationActionImpl
-    extends PaginationActionImpl<Guild.Ban, BanPaginationAction>
+    extends SnowflakePaginationActionImpl<Guild.Ban, BanPaginationAction>
     implements BanPaginationAction
 {
     protected final Guild guild;

@@ -40,7 +40,7 @@ import java.util.EnumSet;
 import java.util.List;
 
 public class AuditLogPaginationActionImpl
-    extends PaginationActionImpl<AuditLogEntry, AuditLogPaginationAction>
+    extends SnowflakePaginationActionImpl<AuditLogEntry, AuditLogPaginationAction>
     implements AuditLogPaginationAction
 {
     protected final Guild guild;

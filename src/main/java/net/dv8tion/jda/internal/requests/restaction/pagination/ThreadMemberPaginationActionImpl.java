@@ -34,7 +34,7 @@ import java.util.EnumSet;
 import java.util.List;
 
 public class ThreadMemberPaginationActionImpl
-    extends PaginationActionImpl<ThreadMember, ThreadMemberPaginationAction>
+    extends SnowflakePaginationActionImpl<ThreadMember, ThreadMemberPaginationAction>
     implements ThreadMemberPaginationAction
 {
     private final ThreadChannelImpl channel;
