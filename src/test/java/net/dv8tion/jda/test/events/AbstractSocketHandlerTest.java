@@ -36,9 +36,11 @@ public class AbstractSocketHandlerTest extends IntegrationTest
     @Mock
     protected Guild guild;
 
+    @Override
     @BeforeEach
-    final void setupHandlerContext()
+    protected void setup()
     {
+        super.setup();
         when(jda.getGuildSetupController()).thenReturn(setupController);
         when(setupController.isLocked(anyLong())).thenReturn(false);
         when(jda.getGuildById(eq(Constants.GUILD_ID))).thenReturn(guild);

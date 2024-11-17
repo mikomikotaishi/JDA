@@ -16,12 +16,24 @@
 
 package net.dv8tion.jda.test;
 
-public interface Constants
+import org.junit.jupiter.api.AfterEach;
+import org.junit.jupiter.api.BeforeEach;
+
+import static org.mockito.MockitoAnnotations.openMocks;
+
+public class BaseTest
 {
-    long GUILD_ID = 125227483518861312L;
-    long CHANNEL_ID = 125227483518861312L;
-    long MINN_USER_ID = 86699011792191488L;
-    long BUTLER_USER_ID = 150203841827045376L;
-    long INTERACTION_ID = 1307534203889647676L;
-    long COMMAND_ID = 1275149903512731670L;
+    private AutoCloseable closeable;
+
+    @BeforeEach
+    protected void setup()
+    {
+        closeable = openMocks(this);
+    }
+
+    @AfterEach
+    protected void teardown() throws Exception
+    {
+        closeable.close();
+    }
 }

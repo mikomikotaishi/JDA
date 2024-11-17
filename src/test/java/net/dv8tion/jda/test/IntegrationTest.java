@@ -38,9 +38,8 @@ import java.util.concurrent.ScheduledExecutorService;
 import java.util.function.Consumer;
 
 import static org.mockito.Mockito.*;
-import static org.mockito.MockitoAnnotations.openMocks;
 
-public class IntegrationTest
+public class IntegrationTest extends BaseTest
 {
     protected Random random = new Random();
     @Mock
@@ -50,27 +49,26 @@ public class IntegrationTest
     @Mock
     protected ScheduledExecutorService scheduledExecutorService;
 
-    private AutoCloseable closeable;
     private int expectedRequestCount;
 
     @BeforeEach
-    protected final void setup()
+    protected void setup()
     {
         random.setSeed(4242);
         expectedRequestCount = 0;
-        closeable = openMocks(this);
+        super.setup();
         when(jda.getRequester()).thenReturn(requester);
         when(jda.getEntityBuilder()).thenReturn(new EntityBuilder(jda));
     }
 
     @AfterEach
-    protected final void teardown(TestInfo testInfo) throws Exception
+    protected void teardown(TestInfo testInfo) throws Exception
     {
         verify(
             requester,
             times(expectedRequestCount).description("Requests sent by " + testInfo.getDisplayName())
         ).request(any());
-        closeable.close();
+        super.teardown();
     }
 
     @Nonnull
