@@ -77,78 +77,69 @@ public class MigrateComponentsV2Test implements RewriteTest {
                                 + "public class Test6 { Button x() {} }"),
                 // language=java
                 java(
-                        "import"
-                                + " net.dv8tion.jda.api.interactions.components.buttons.ButtonStyle;\n\n"
+                        "import net.dv8tion.jda.api.interactions.components.buttons.ButtonStyle;\n\n"
                                 + "public class Test7 { ButtonStyle x() {} }",
                         "import net.dv8tion.jda.api.components.buttons.ButtonStyle;\n\n"
                                 + "public class Test7 { ButtonStyle x() {} }"),
                 // language=java
                 java(
-                        "import"
-                                + " net.dv8tion.jda.api.interactions.components.selections.EntitySelectMenu;\n\n"
+                        "import net.dv8tion.jda.api.interactions.components.selections.EntitySelectMenu;\n\n"
                                 + "public class Test8 { EntitySelectMenu x() {} }",
                         "import net.dv8tion.jda.api.components.selections.EntitySelectMenu;\n\n"
                                 + "public class Test8 { EntitySelectMenu x() {} }"),
                 // language=java
                 java(
-                        "import"
-                                + " net.dv8tion.jda.api.interactions.components.selections.EntitySelectMenu.Builder;\n\n"
+                        "import net.dv8tion.jda.api.interactions.components.selections.EntitySelectMenu.Builder;\n\n"
                                 + "public class Test9 { Builder x() {} }",
-                        "import"
-                                + " net.dv8tion.jda.api.components.selections.EntitySelectMenu.Builder;\n\n"
-                                + "public class Test9 { Builder x() {} }"),
+                        "import net.dv8tion.jda.api.components.selections.EntitySelectMenu;\n"
+                                + "import net.dv8tion.jda.api.components.selections.EntitySelectMenu.Builder;\n\n"
+                                + "public class Test9 { EntitySelectMenu.Builder x() {} }"),
                 // language=java
                 java(
-                        "import"
-                                + " net.dv8tion.jda.api.interactions.components.selections.EntitySelectMenu.DefaultValue;\n\n"
+                        "import net.dv8tion.jda.api.interactions.components.selections.EntitySelectMenu.DefaultValue;\n\n"
                                 + "public class Test10 { DefaultValue x() {} }",
-                        "import"
-                                + " net.dv8tion.jda.api.components.selections.EntitySelectMenu.DefaultValue;\n\n"
-                                + "public class Test10 { DefaultValue x() {} }"),
+                        "import net.dv8tion.jda.api.components.selections.EntitySelectMenu;\n"
+                                + "import net.dv8tion.jda.api.components.selections.EntitySelectMenu.DefaultValue;\n\n"
+                                + "public class Test10 { EntitySelectMenu.DefaultValue x() {} }"),
                 // language=java
                 java(
-                        "import"
-                                + " net.dv8tion.jda.api.interactions.components.selections.EntitySelectMenu.SelectTarget;\n\n"
+                        "import net.dv8tion.jda.api.interactions.components.selections.EntitySelectMenu.SelectTarget;\n\n"
                                 + "public class Test11 { SelectTarget x() {} }",
-                        "import"
-                                + " net.dv8tion.jda.api.components.selections.EntitySelectMenu.SelectTarget;\n\n"
-                                + "public class Test11 { SelectTarget x() {} }"),
+                        "import net.dv8tion.jda.api.components.selections.EntitySelectMenu;\n"
+                                + "import net.dv8tion.jda.api.components.selections.EntitySelectMenu.SelectTarget;\n\n"
+                                + "public class Test11 { EntitySelectMenu.SelectTarget x() {} }"),
                 // language=java
                 java(
-                        "import"
-                                + " net.dv8tion.jda.api.interactions.components.selections.SelectMenu;\n\n"
+                        "import net.dv8tion.jda.api.interactions.components.selections.SelectMenu;\n\n"
                                 + "public class Test12 { SelectMenu x() {} }",
                         "import net.dv8tion.jda.api.components.selections.SelectMenu;\n\n"
                                 + "public class Test12 { SelectMenu x() {} }"),
                 // language=java
                 java(
-                        "import"
-                                + " net.dv8tion.jda.api.interactions.components.selections.SelectMenu.Builder;\n\n"
+                        "import net.dv8tion.jda.api.interactions.components.selections.SelectMenu.Builder;\n\n"
                                 + "public class Test13 { Builder x() {} }",
-                        "import net.dv8tion.jda.api.components.selections.SelectMenu.Builder;\n\n"
-                                + "public class Test13 { Builder x() {} }"),
+                        "import net.dv8tion.jda.api.components.selections.SelectMenu;\n"
+                                + "import net.dv8tion.jda.api.components.selections.SelectMenu.Builder;\n\n"
+                                + "public class Test13 { SelectMenu.Builder x() {} }"),
                 // language=java
                 java(
-                        "import"
-                                + " net.dv8tion.jda.api.interactions.components.selections.SelectOption;\n\n"
+                        "import net.dv8tion.jda.api.interactions.components.selections.SelectOption;\n\n"
                                 + "public class Test14 { SelectOption x() {} }",
                         "import net.dv8tion.jda.api.components.selections.SelectOption;\n\n"
                                 + "public class Test14 { SelectOption x() {} }"),
                 // language=java
                 java(
-                        "import"
-                                + " net.dv8tion.jda.api.interactions.components.selections.StringSelectMenu;\n\n"
+                        "import net.dv8tion.jda.api.interactions.components.selections.StringSelectMenu;\n\n"
                                 + "public class Test15 { StringSelectMenu x() {} }",
                         "import net.dv8tion.jda.api.components.selections.StringSelectMenu;\n\n"
                                 + "public class Test15 { StringSelectMenu x() {} }"),
                 // language=java
                 java(
-                        "import"
-                                + " net.dv8tion.jda.api.interactions.components.selections.StringSelectMenu.Builder;\n\n"
+                        "import net.dv8tion.jda.api.interactions.components.selections.StringSelectMenu.Builder;\n\n"
                                 + "public class Test16 { Builder x() {} }",
-                        "import"
-                                + " net.dv8tion.jda.api.components.selections.StringSelectMenu.Builder;\n\n"
-                                + "public class Test16 { Builder x() {} }"),
+                        "import net.dv8tion.jda.api.components.selections.StringSelectMenu;\n"
+                                + "import net.dv8tion.jda.api.components.selections.StringSelectMenu.Builder;\n\n"
+                                + "public class Test16 { StringSelectMenu.Builder x() {} }"),
                 // language=java
                 java(
                         "import net.dv8tion.jda.api.interactions.components.text.TextInput;\n\n"
@@ -157,20 +148,17 @@ public class MigrateComponentsV2Test implements RewriteTest {
                                 + "public class Test17 { TextInput x() {} }"),
                 // language=java
                 java(
-                        "import"
-                                + " net.dv8tion.jda.api.interactions.components.text.TextInput.Builder;\n\n"
+                        "import net.dv8tion.jda.api.interactions.components.text.TextInput.Builder;\n\n"
                                 + "public class Test18 { Builder x() {} }",
-                        "import net.dv8tion.jda.api.components.textinput.TextInput.Builder;\n\n"
-                                + "public class Test18 { Builder x() {} }"),
+                        "import net.dv8tion.jda.api.components.textinput.TextInput;\n"
+                                + "import net.dv8tion.jda.api.components.textinput.TextInput.Builder;\n\n"
+                                + "public class Test18 { TextInput.Builder x() {} }"),
                 // language=java
                 java(
-                        "import"
-                                + " net.dv8tion.jda.api.interactions.components.text.TextInputStyle;\n\n"
+                        "import net.dv8tion.jda.api.interactions.components.text.TextInputStyle;\n\n"
                                 + "public class Test19 { TextInputStyle x() {} }",
                         "import net.dv8tion.jda.api.components.textinput.TextInputStyle;\n\n"
-                                + "public class Test19 { TextInputStyle x() {} }"));
-        rewriteRun(
-                spec -> spec.recipeFromResources("net.dv8tion.MigrateComponentsV2Packages"),
+                                + "public class Test19 { TextInputStyle x() {} }"),
                 // language=java
                 java(
                         "import net.dv8tion.jda.api.interactions.modals.Modal;\n\n"
@@ -199,37 +187,21 @@ public class MigrateComponentsV2Test implements RewriteTest {
                         "import net.dv8tion.jda.api.interactions.modals.ModalMapping;\n\n"
                                 + "public class Test2 { void x(ModalMapping component) {"
                                 + " component.getCustomId(); } }"),
-                // Nested classes are bugged.
-                //
-                // Upgrading versions (3.3.0 -> 3.6.1) had *some* improvement,
-                // but it will still *add* an import for the nested class,
-                // even though it is already qualified starting from the already-imported top-level
-                // class.
-                //
-                // Though this will happen only if the import wasn't already present,
-                // it will still produce valid code and the user can mass optimize imports when it's
-                // finished.
-                //
-                // These tests will take this bug into account
                 // language=java
                 java(
-                        "import"
-                                + " net.dv8tion.jda.api.interactions.components.selections.SelectMenu;\n\n"
+                        "import net.dv8tion.jda.api.interactions.components.selections.SelectMenu;\n\n"
                                 + "public class Test3 { void x(SelectMenu.Builder<?, ?> component) {"
                                 + " component.getId(); } }",
                         "import net.dv8tion.jda.api.components.selections.SelectMenu;\n"
-                                + "import"
-                                + " net.dv8tion.jda.api.components.selections.SelectMenu.Builder;\n\n"
-                                + "public class Test3 { void x(SelectMenu.Builder<?, ?> component) {"
+                                + "import net.dv8tion.jda.api.components.selections.SelectMenu.Builder;\n\n"
+                                + "public class Test3 { void x(Builder<?, ?> component) {"
                                 + " component.getCustomId(); } }"),
                 // language=java
                 java(
                         "import net.dv8tion.jda.api.interactions.components.text.TextInput;\n\n"
                                 + "public class Test4 { void x(TextInput.Builder component) {"
                                 + " component.getId(); } }",
-                        "import net.dv8tion.jda.api.components.textinput.TextInput;\n"
-                                + "import"
-                                + " net.dv8tion.jda.api.components.textinput.TextInput.Builder;\n\n"
+                        "import net.dv8tion.jda.api.components.textinput.TextInput;\n\n"
                                 + "public class Test4 { void x(TextInput.Builder component) {"
                                 + " component.getCustomId(); } }"));
     }
