@@ -64,6 +64,13 @@ class JavadocFormatVisitor : JavaIsoVisitor<ExecutionContext>() {
     }
 
     fun formatJavadoc(javadocs: Javadoc.DocComment): Javadoc.DocComment {
+        val parsedJavadocs = parseJavadocs(javadocs)
+        val orderedDocs = compileJavadocs(parsedJavadocs)
+
+        return javadocs.withBody(orderedDocs)
+    }
+
+    fun parseJavadocs(javadocs: Javadoc.DocComment): ParsedJavadocs {
         val iterator = javadocs.body.iterator()
 
         var isDescription = true
@@ -89,12 +96,11 @@ class JavadocFormatVisitor : JavaIsoVisitor<ExecutionContext>() {
             }
         }
 
-        val orderedDocs = compileJavadocs(description, groupedTags, indentation)
-
-        return javadocs.withBody(orderedDocs)
+        return ParsedJavadocs(description, groupedTags, indentation)
     }
 
-    private fun compileJavadocs(description: MutableList<Javadoc>, groupedTags: MutableMap<JavadocTagVariant, MutableList<Javadoc>>, indentation: String): MutableList<Javadoc> {
+    fun compileJavadocs(parsed: ParsedJavadocs): MutableList<Javadoc> {
+        val (description, tags, indentation) = parsed
         val docs = mutableListOf<Javadoc>()
 
         trimWhitespace(description)
@@ -107,7 +113,7 @@ class JavadocFormatVisitor : JavaIsoVisitor<ExecutionContext>() {
                 continue
             }
 
-            groupedTags[entry]?.let { group ->
+            tags[entry]?.let { group ->
                 docs.add(lineBreak(indentation))
                 group.forEach { element ->
                     docs.add(lineBreak(indentation))
@@ -169,6 +175,12 @@ class JavadocFormatVisitor : JavaIsoVisitor<ExecutionContext>() {
         }
     }
 }
+
+data class ParsedJavadocs(
+    val description: MutableList<Javadoc>,
+    val tags: Map<JavadocTagVariant, List<Javadoc>>,
+    val indentation: String
+)
 
 // Ordered by preferred order in javadocs
 enum class JavadocTagVariant(val instanceType: Class<out Javadoc>) {
