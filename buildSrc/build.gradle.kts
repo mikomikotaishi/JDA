@@ -26,10 +26,4 @@ repositories {
 
 dependencies {
     implementation(gradleApi())
-    implementation(platform("org.openrewrite.recipe:rewrite-recipe-bom:3.16.0"))
-    implementation("org.openrewrite:rewrite-java")
-
-    runtimeOnly("org.openrewrite:rewrite-java-8")
-    runtimeOnly("org.openrewrite:rewrite-java-11")
-    runtimeOnly("org.openrewrite:rewrite-java-17")
 }
