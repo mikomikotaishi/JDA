@@ -171,7 +171,7 @@ dependencies {
 
     // Needed for rewrite gradle tasks
     rewrite("org.openrewrite.recipe:rewrite-static-analysis")
-    rewrite(project(":formatter-recipes"))
+    rewrite("net.dv8tion.jda:formatter-recipes")
 }
 
 fun isNonStable(version: String): Boolean {

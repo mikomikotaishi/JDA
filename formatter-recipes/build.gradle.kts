@@ -15,7 +15,7 @@
  */
 
 plugins {
-    kotlin("jvm") version "2.0.0"
+    kotlin("jvm") version "2.2.20"
 }
 
 repositories {
@@ -23,7 +23,7 @@ repositories {
 }
 
 dependencies {
-    implementation(platform(libs.openrewrite.bom))
+    implementation(platform("org.openrewrite.recipe:rewrite-recipe-bom:3.16.0"))
     implementation("org.openrewrite:rewrite-java")
 
     runtimeOnly("org.openrewrite:rewrite-java-8")
