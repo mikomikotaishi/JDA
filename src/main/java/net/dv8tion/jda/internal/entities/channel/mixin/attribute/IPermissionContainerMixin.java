@@ -17,7 +17,6 @@
 package net.dv8tion.jda.internal.entities.channel.mixin.attribute;
 
 import gnu.trove.map.TLongObjectMap;
-
 import net.dv8tion.jda.api.Permission;
 import net.dv8tion.jda.api.entities.IPermissionHolder;
 import net.dv8tion.jda.api.entities.PermissionOverride;

@@ -16,19 +16,18 @@
 
 package net.dv8tion.jda.test.restaction;
 
-import static org.assertj.core.api.Assertions.assertThat;
-import static org.assertj.core.api.Assertions.assertThatThrownBy;
-import static org.mockito.ArgumentMatchers.any;
-import static org.mockito.Mockito.*;
-
 import net.dv8tion.jda.internal.requests.CompletedRestAction;
 import net.dv8tion.jda.test.IntegrationTest;
-
 import org.junit.jupiter.api.Test;
 
 import java.time.Duration;
 import java.util.concurrent.CancellationException;
 import java.util.concurrent.TimeUnit;
+
+import static org.assertj.core.api.Assertions.assertThat;
+import static org.assertj.core.api.Assertions.assertThatThrownBy;
+import static org.mockito.ArgumentMatchers.any;
+import static org.mockito.Mockito.*;
 
 public class RestActionTest extends IntegrationTest {
     @Test

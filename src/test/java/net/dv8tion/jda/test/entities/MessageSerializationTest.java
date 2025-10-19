@@ -16,16 +16,15 @@
 
 package net.dv8tion.jda.test.entities;
 
-import static org.assertj.core.api.Assertions.assertThat;
-
 import net.dv8tion.jda.api.EmbedBuilder;
 import net.dv8tion.jda.api.entities.MessageEmbed;
 import net.dv8tion.jda.api.utils.data.DataArray;
 import net.dv8tion.jda.api.utils.data.DataObject;
 import net.dv8tion.jda.test.PrettyRepresentation;
-
 import org.jetbrains.annotations.NotNull;
 import org.junit.jupiter.api.Test;
+
+import static org.assertj.core.api.Assertions.assertThat;
 
 public class MessageSerializationTest {
     private static final String DESCRIPTION_TEXT = "Description Text";

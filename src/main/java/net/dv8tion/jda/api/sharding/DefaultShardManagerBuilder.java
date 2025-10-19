@@ -17,7 +17,6 @@
 package net.dv8tion.jda.api.sharding;
 
 import com.neovisionaries.ws.client.WebSocketFactory;
-
 import net.dv8tion.jda.api.GatewayEncoding;
 import net.dv8tion.jda.api.OnlineStatus;
 import net.dv8tion.jda.api.audio.factory.IAudioSendFactory;
@@ -40,7 +39,6 @@ import net.dv8tion.jda.internal.utils.concurrent.CountingThreadFactory;
 import net.dv8tion.jda.internal.utils.config.flags.ConfigFlag;
 import net.dv8tion.jda.internal.utils.config.flags.ShardingConfigFlag;
 import net.dv8tion.jda.internal.utils.config.sharding.*;
-
 import okhttp3.OkHttpClient;
 
 import java.util.*;

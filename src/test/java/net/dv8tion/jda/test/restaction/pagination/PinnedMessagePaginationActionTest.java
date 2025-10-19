@@ -16,9 +16,6 @@
 
 package net.dv8tion.jda.test.restaction.pagination;
 
-import static org.assertj.core.api.Assertions.assertThat;
-import static org.mockito.Mockito.when;
-
 import net.dv8tion.jda.api.entities.User;
 import net.dv8tion.jda.api.entities.channel.middleman.GuildMessageChannel;
 import net.dv8tion.jda.api.requests.Method;
@@ -31,12 +28,14 @@ import net.dv8tion.jda.internal.requests.restaction.pagination.PinnedMessagePagi
 import net.dv8tion.jda.internal.utils.cache.SnowflakeCacheViewImpl;
 import net.dv8tion.jda.test.Constants;
 import net.dv8tion.jda.test.IntegrationTest;
-
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.mockito.Mock;
 
 import java.time.OffsetDateTime;
+
+import static org.assertj.core.api.Assertions.assertThat;
+import static org.mockito.Mockito.when;
 
 public class PinnedMessagePaginationActionTest extends IntegrationTest {
     @Mock

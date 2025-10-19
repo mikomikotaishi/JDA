@@ -17,7 +17,6 @@
 package net.dv8tion.jda.api.events.session;
 
 import com.neovisionaries.ws.client.WebSocketFrame;
-
 import net.dv8tion.jda.api.JDA;
 import net.dv8tion.jda.api.requests.CloseCode;
 

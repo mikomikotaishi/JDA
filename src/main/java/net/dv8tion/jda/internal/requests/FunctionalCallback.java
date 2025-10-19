@@ -17,7 +17,6 @@
 package net.dv8tion.jda.internal.requests;
 
 import net.dv8tion.jda.api.utils.IOBiConsumer;
-
 import okhttp3.Call;
 import okhttp3.Callback;
 import okhttp3.Response;

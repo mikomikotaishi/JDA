@@ -28,7 +28,6 @@ import net.dv8tion.jda.api.utils.cache.CacheView;
 import net.dv8tion.jda.api.utils.cache.ChannelCacheView;
 import net.dv8tion.jda.api.utils.cache.SnowflakeCacheView;
 import net.dv8tion.jda.internal.utils.Checks;
-
 import org.jetbrains.annotations.Unmodifiable;
 
 import java.util.List;

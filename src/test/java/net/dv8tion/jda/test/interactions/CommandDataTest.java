@@ -16,11 +16,6 @@
 
 package net.dv8tion.jda.test.interactions;
 
-import static net.dv8tion.jda.test.ChecksHelper.assertStringChecks;
-
-import static org.assertj.core.api.Assertions.assertThat;
-import static org.assertj.core.api.Assertions.assertThatIllegalArgumentException;
-
 import net.dv8tion.jda.api.Permission;
 import net.dv8tion.jda.api.interactions.IntegrationType;
 import net.dv8tion.jda.api.interactions.InteractionContextType;
@@ -36,11 +31,14 @@ import net.dv8tion.jda.api.utils.data.DataObject;
 import net.dv8tion.jda.internal.interactions.CommandDataImpl;
 import net.dv8tion.jda.internal.utils.Checks;
 import net.dv8tion.jda.test.PrettyRepresentation;
-
 import org.junit.jupiter.api.Test;
 
 import java.util.ArrayList;
 import java.util.List;
+
+import static net.dv8tion.jda.test.ChecksHelper.assertStringChecks;
+import static org.assertj.core.api.Assertions.assertThat;
+import static org.assertj.core.api.Assertions.assertThatIllegalArgumentException;
 
 public class CommandDataTest {
     private static DataObject defaultCommand() {

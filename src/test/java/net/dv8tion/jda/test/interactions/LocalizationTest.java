@@ -16,8 +16,6 @@
 
 package net.dv8tion.jda.test.interactions;
 
-import static org.assertj.core.api.Assertions.assertThat;
-
 import net.dv8tion.jda.api.interactions.DiscordLocale;
 import net.dv8tion.jda.api.interactions.commands.Command;
 import net.dv8tion.jda.api.interactions.commands.OptionType;
@@ -27,13 +25,14 @@ import net.dv8tion.jda.api.interactions.commands.localization.ResourceBundleLoca
 import net.dv8tion.jda.api.utils.data.DataArray;
 import net.dv8tion.jda.api.utils.data.DataObject;
 import net.dv8tion.jda.test.PrettyRepresentation;
-
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;
 
 import java.util.List;
 import java.util.stream.Collectors;
 import java.util.stream.Stream;
+
+import static org.assertj.core.api.Assertions.assertThat;
 
 public class LocalizationTest {
     private static SlashCommandData slashCommandData;

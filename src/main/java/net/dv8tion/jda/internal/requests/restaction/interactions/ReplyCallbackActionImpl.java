@@ -16,21 +16,20 @@
 
 package net.dv8tion.jda.internal.requests.restaction.interactions;
 
-import static net.dv8tion.jda.api.entities.Message.MessageFlag.EPHEMERAL;
-
 import net.dv8tion.jda.api.requests.restaction.interactions.ReplyCallbackAction;
 import net.dv8tion.jda.api.utils.data.DataObject;
 import net.dv8tion.jda.api.utils.messages.MessageCreateBuilder;
 import net.dv8tion.jda.api.utils.messages.MessageCreateData;
 import net.dv8tion.jda.internal.interactions.InteractionHookImpl;
 import net.dv8tion.jda.internal.utils.message.MessageCreateBuilderMixin;
-
 import okhttp3.RequestBody;
 
 import java.util.concurrent.TimeUnit;
 import java.util.function.BooleanSupplier;
 
 import javax.annotation.Nonnull;
+
+import static net.dv8tion.jda.api.entities.Message.MessageFlag.EPHEMERAL;
 
 public class ReplyCallbackActionImpl extends DeferrableCallbackActionImpl
         implements ReplyCallbackAction, MessageCreateBuilderMixin<ReplyCallbackAction> {

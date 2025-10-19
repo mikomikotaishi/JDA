@@ -16,19 +16,18 @@
 
 package net.dv8tion.jda.test.components;
 
-import static org.junit.jupiter.api.Assertions.fail;
-import static org.mockito.Mockito.*;
-
 import net.dv8tion.jda.api.components.Component;
 import net.dv8tion.jda.api.components.actionrow.ActionRow;
 import net.dv8tion.jda.api.components.container.Container;
 import net.dv8tion.jda.api.components.section.Section;
 import net.dv8tion.jda.api.components.utils.ComponentIterator;
-
 import org.junit.jupiter.api.Test;
 
 import java.util.Collections;
 import java.util.stream.Collectors;
+
+import static org.junit.jupiter.api.Assertions.fail;
+import static org.mockito.Mockito.*;
 
 public class ComponentIteratorTests {
     /**

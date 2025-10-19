@@ -16,8 +16,6 @@
 
 package net.dv8tion.jda.test.components.utils;
 
-import static org.assertj.core.api.Assertions.assertThat;
-
 import net.dv8tion.jda.api.components.actionrow.ActionRow;
 import net.dv8tion.jda.api.components.actionrow.ActionRowChildComponentUnion;
 import net.dv8tion.jda.api.components.buttons.Button;
@@ -31,7 +29,6 @@ import net.dv8tion.jda.api.utils.data.DataObject;
 import net.dv8tion.jda.api.utils.messages.MessageCreateBuilder;
 import net.dv8tion.jda.api.utils.messages.MessageEditBuilder;
 import net.dv8tion.jda.internal.components.UnknownComponentImpl;
-
 import org.assertj.core.api.Assertions;
 import org.assertj.core.api.ThrowableAssert;
 import org.junit.jupiter.api.Test;
@@ -40,6 +37,8 @@ import org.junit.jupiter.params.provider.Arguments;
 import org.junit.jupiter.params.provider.MethodSource;
 
 import java.util.stream.Stream;
+
+import static org.assertj.core.api.Assertions.assertThat;
 
 public class ComponentsUtilTest {
     private static final UnknownComponentImpl UNKNOWN_COMPONENT =

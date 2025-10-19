@@ -16,8 +16,6 @@
 
 package net.dv8tion.jda.test.entities.message;
 
-import static org.assertj.core.api.Assertions.*;
-
 import net.dv8tion.jda.api.EmbedBuilder;
 import net.dv8tion.jda.api.components.MessageTopLevelComponent;
 import net.dv8tion.jda.api.components.actionrow.ActionRow;
@@ -35,7 +33,6 @@ import net.dv8tion.jda.api.utils.messages.AbstractMessageBuilder;
 import net.dv8tion.jda.api.utils.messages.MessageCreateBuilder;
 import net.dv8tion.jda.api.utils.messages.MessageEditBuilder;
 import net.dv8tion.jda.api.utils.messages.MessagePollBuilder;
-
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.Arguments;
 import org.junit.jupiter.params.provider.MethodSource;
@@ -46,6 +43,8 @@ import java.util.Collections;
 import java.util.List;
 import java.util.function.Function;
 import java.util.stream.Stream;
+
+import static org.assertj.core.api.Assertions.*;
 
 public class MessageComponentTest {
     private static final FileUpload EXAMPLE_FILE_UPLOAD =

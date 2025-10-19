@@ -16,10 +16,6 @@
 
 package net.dv8tion.jda.test.assertions.restaction;
 
-import static org.assertj.core.api.Assertions.assertThat;
-import static org.mockito.ArgumentMatchers.assertArg;
-import static org.mockito.Mockito.doNothing;
-
 import net.dv8tion.jda.api.requests.Method;
 import net.dv8tion.jda.api.requests.Request;
 import net.dv8tion.jda.api.requests.RestAction;
@@ -28,10 +24,8 @@ import net.dv8tion.jda.internal.requests.Requester;
 import net.dv8tion.jda.internal.utils.EncodingUtil;
 import net.dv8tion.jda.test.PrettyRepresentation;
 import net.dv8tion.jda.test.util.SnapshotHandler;
-
 import okhttp3.MediaType;
 import okhttp3.RequestBody;
-
 import org.jetbrains.annotations.Contract;
 import org.mockito.ThrowingConsumer;
 
@@ -41,6 +35,10 @@ import java.util.function.Predicate;
 
 import javax.annotation.CheckReturnValue;
 import javax.annotation.Nonnull;
+
+import static org.assertj.core.api.Assertions.assertThat;
+import static org.mockito.ArgumentMatchers.assertArg;
+import static org.mockito.Mockito.doNothing;
 
 public class RestActionAssertions implements ThrowingConsumer<Request<?>> {
     private final SnapshotHandler snapshotHandler;

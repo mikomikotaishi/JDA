@@ -23,7 +23,6 @@ import net.dv8tion.jda.api.utils.messages.MessageRequest;
 import net.dv8tion.jda.internal.components.mediagallery.MediaGalleryImpl;
 import net.dv8tion.jda.internal.utils.Checks;
 import net.dv8tion.jda.internal.utils.Helpers;
-
 import org.jetbrains.annotations.Unmodifiable;
 
 import java.util.Collection;

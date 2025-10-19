@@ -16,8 +16,6 @@
 
 package net.dv8tion.jda.api.components;
 
-import static net.dv8tion.jda.internal.entities.EntityBuilder.DEFAULT_COMPONENT_DESERIALIZER;
-
 import net.dv8tion.jda.api.components.thumbnail.Thumbnail;
 import net.dv8tion.jda.api.components.tree.ComponentTree;
 import net.dv8tion.jda.api.components.utils.ComponentDeserializer;
@@ -30,6 +28,8 @@ import java.util.List;
 import java.util.stream.Collectors;
 
 import javax.annotation.Nonnull;
+
+import static net.dv8tion.jda.internal.entities.EntityBuilder.DEFAULT_COMPONENT_DESERIALIZER;
 
 /**
  * Utility class for components.

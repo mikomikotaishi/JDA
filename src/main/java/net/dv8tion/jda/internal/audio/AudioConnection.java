@@ -18,12 +18,10 @@ package net.dv8tion.jda.internal.audio;
 
 import com.neovisionaries.ws.client.WebSocket;
 import com.sun.jna.ptr.PointerByReference;
-
 import gnu.trove.map.TIntLongMap;
 import gnu.trove.map.TIntObjectMap;
 import gnu.trove.map.hash.TIntLongHashMap;
 import gnu.trove.map.hash.TIntObjectHashMap;
-
 import net.dv8tion.jda.api.audio.*;
 import net.dv8tion.jda.api.audio.factory.IAudioSendFactory;
 import net.dv8tion.jda.api.audio.factory.IAudioSendSystem;
@@ -38,9 +36,7 @@ import net.dv8tion.jda.api.utils.data.DataObject;
 import net.dv8tion.jda.internal.JDAImpl;
 import net.dv8tion.jda.internal.managers.AudioManagerImpl;
 import net.dv8tion.jda.internal.utils.JDALogger;
-
 import org.slf4j.Logger;
-
 import tomp2p.opuswrapper.Opus;
 
 import java.net.*;

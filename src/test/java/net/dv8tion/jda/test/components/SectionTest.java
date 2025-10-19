@@ -16,11 +16,6 @@
 
 package net.dv8tion.jda.test.components;
 
-import static net.dv8tion.jda.api.components.replacer.ComponentReplacer.byUniqueId;
-
-import static org.assertj.core.api.Assertions.assertThat;
-import static org.assertj.core.api.Assertions.assertThatIllegalArgumentException;
-
 import net.dv8tion.jda.api.components.Component;
 import net.dv8tion.jda.api.components.buttons.Button;
 import net.dv8tion.jda.api.components.section.Section;
@@ -28,10 +23,13 @@ import net.dv8tion.jda.api.components.section.SectionAccessoryComponentUnion;
 import net.dv8tion.jda.api.components.section.SectionContentComponentUnion;
 import net.dv8tion.jda.api.components.textdisplay.TextDisplay;
 import net.dv8tion.jda.test.ChecksHelper;
-
 import org.junit.jupiter.api.Test;
 
 import java.util.Collections;
+
+import static net.dv8tion.jda.api.components.replacer.ComponentReplacer.byUniqueId;
+import static org.assertj.core.api.Assertions.assertThat;
+import static org.assertj.core.api.Assertions.assertThatIllegalArgumentException;
 
 public class SectionTest {
     private static final SectionAccessoryComponentUnion EXAMPLE_BUTTON =

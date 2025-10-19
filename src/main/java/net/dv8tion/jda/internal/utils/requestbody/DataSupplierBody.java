@@ -17,7 +17,6 @@
 package net.dv8tion.jda.internal.utils.requestbody;
 
 import okhttp3.MediaType;
-
 import okio.BufferedSink;
 import okio.Source;
 

@@ -16,14 +16,10 @@
 
 package net.dv8tion.jda.test.compliance;
 
-import static org.assertj.core.api.Assertions.assertThat;
-import static org.assertj.core.api.Assertions.assertThatCode;
-
 import net.dv8tion.jda.api.entities.Guild;
 import net.dv8tion.jda.api.entities.channel.ChannelType;
 import net.dv8tion.jda.api.entities.channel.attribute.IGuildChannelContainer;
 import net.dv8tion.jda.api.entities.channel.concrete.Category;
-
 import org.junit.jupiter.api.Test;
 
 import java.lang.reflect.Method;
@@ -32,6 +28,9 @@ import java.util.EnumSet;
 import java.util.Locale;
 import java.util.Set;
 import java.util.stream.Collectors;
+
+import static org.assertj.core.api.Assertions.assertThat;
+import static org.assertj.core.api.Assertions.assertThatCode;
 
 public class ChannelConsistencyComplianceTest {
     private static Set<String> getMethodNames(Class<?> clazz) {

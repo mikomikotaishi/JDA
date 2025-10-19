@@ -16,15 +16,15 @@
 
 package net.dv8tion.jda.test.assertions.checks;
 
-import static net.dv8tion.jda.internal.utils.Helpers.durationToString;
-import static net.dv8tion.jda.test.ChecksHelper.isNegativeError;
-import static net.dv8tion.jda.test.ChecksHelper.notPositiveError;
-
 import org.junit.jupiter.api.function.ThrowingConsumer;
 
 import java.time.Duration;
 import java.util.Locale;
 import java.util.concurrent.TimeUnit;
+
+import static net.dv8tion.jda.internal.utils.Helpers.durationToString;
+import static net.dv8tion.jda.test.ChecksHelper.isNegativeError;
+import static net.dv8tion.jda.test.ChecksHelper.notPositiveError;
 
 public class DurationChecksAssertions
         extends AbstractChecksAssertions<Duration, DurationChecksAssertions> {

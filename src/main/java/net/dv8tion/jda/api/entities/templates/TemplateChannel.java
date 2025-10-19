@@ -19,7 +19,6 @@ package net.dv8tion.jda.api.entities.templates;
 import net.dv8tion.jda.api.Permission;
 import net.dv8tion.jda.api.entities.ISnowflake;
 import net.dv8tion.jda.api.entities.channel.ChannelType;
-
 import org.jetbrains.annotations.Unmodifiable;
 
 import java.time.OffsetDateTime;

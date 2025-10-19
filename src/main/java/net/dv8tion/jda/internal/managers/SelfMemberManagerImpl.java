@@ -25,7 +25,6 @@ import net.dv8tion.jda.api.requests.Response;
 import net.dv8tion.jda.api.requests.Route;
 import net.dv8tion.jda.api.utils.data.DataObject;
 import net.dv8tion.jda.internal.utils.Checks;
-
 import okhttp3.RequestBody;
 
 import javax.annotation.CheckReturnValue;

@@ -17,7 +17,6 @@
 package net.dv8tion.jda.api.sharding;
 
 import gnu.trove.set.TIntSet;
-
 import net.dv8tion.jda.api.JDA;
 import net.dv8tion.jda.api.OnlineStatus;
 import net.dv8tion.jda.api.entities.Activity;
@@ -44,10 +43,8 @@ import net.dv8tion.jda.internal.utils.config.MetaConfig;
 import net.dv8tion.jda.internal.utils.config.SessionConfig;
 import net.dv8tion.jda.internal.utils.config.ThreadingConfig;
 import net.dv8tion.jda.internal.utils.config.sharding.*;
-
 import okhttp3.Call;
 import okhttp3.OkHttpClient;
-
 import org.slf4j.Logger;
 
 import java.io.IOException;

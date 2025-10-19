@@ -22,7 +22,6 @@ import net.dv8tion.jda.api.entities.channel.concrete.PrivateChannel;
 import net.dv8tion.jda.api.entities.channel.middleman.GuildChannel;
 import net.dv8tion.jda.api.entities.emoji.CustomEmoji;
 import net.dv8tion.jda.api.interactions.commands.SlashCommandReference;
-
 import org.apache.commons.collections4.Bag;
 import org.jetbrains.annotations.Unmodifiable;
 

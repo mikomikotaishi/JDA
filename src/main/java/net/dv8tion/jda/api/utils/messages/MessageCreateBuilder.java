@@ -27,7 +27,6 @@ import net.dv8tion.jda.internal.components.utils.ComponentsUtil;
 import net.dv8tion.jda.internal.utils.Checks;
 import net.dv8tion.jda.internal.utils.Helpers;
 import net.dv8tion.jda.internal.utils.IOUtil;
-
 import org.jetbrains.annotations.NotNull;
 
 import java.util.ArrayList;

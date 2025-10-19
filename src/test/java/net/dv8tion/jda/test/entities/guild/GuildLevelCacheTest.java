@@ -16,9 +16,6 @@
 
 package net.dv8tion.jda.test.entities.guild;
 
-import static org.assertj.core.api.Assertions.assertThat;
-import static org.mockito.Mockito.when;
-
 import net.dv8tion.jda.api.utils.cache.CacheFlag;
 import net.dv8tion.jda.internal.entities.*;
 import net.dv8tion.jda.internal.entities.channel.concrete.VoiceChannelImpl;
@@ -26,13 +23,15 @@ import net.dv8tion.jda.internal.utils.UnlockHook;
 import net.dv8tion.jda.internal.utils.cache.MemberCacheViewImpl;
 import net.dv8tion.jda.test.Constants;
 import net.dv8tion.jda.test.IntegrationTest;
-
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Nested;
 import org.junit.jupiter.api.Test;
 import org.mockito.Mock;
 
 import java.util.EnumSet;
+
+import static org.assertj.core.api.Assertions.assertThat;
+import static org.mockito.Mockito.when;
 
 public class GuildLevelCacheTest extends IntegrationTest {
     @Mock

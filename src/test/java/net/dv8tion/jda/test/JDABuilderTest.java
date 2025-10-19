@@ -16,21 +16,19 @@
 
 package net.dv8tion.jda.test;
 
-import static net.dv8tion.jda.api.requests.GatewayIntent.ALL_INTENTS;
-
-import static org.assertj.core.api.Assertions.assertThatIllegalArgumentException;
-import static org.assertj.core.api.Assertions.assertThatNoException;
-
 import net.dv8tion.jda.api.JDABuilder;
 import net.dv8tion.jda.api.requests.GatewayIntent;
 import net.dv8tion.jda.api.utils.ChunkingFilter;
 import net.dv8tion.jda.api.utils.cache.CacheFlag;
-
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.EnumSource;
 
 import java.util.EnumSet;
+
+import static net.dv8tion.jda.api.requests.GatewayIntent.ALL_INTENTS;
+import static org.assertj.core.api.Assertions.assertThatIllegalArgumentException;
+import static org.assertj.core.api.Assertions.assertThatNoException;
 
 public class JDABuilderTest extends AbstractSnapshotTest {
     private static final String TOKEN = "invalid.token.here";

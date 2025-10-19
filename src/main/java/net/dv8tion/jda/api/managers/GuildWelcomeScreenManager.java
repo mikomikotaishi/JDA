@@ -19,7 +19,6 @@ package net.dv8tion.jda.api.managers;
 import net.dv8tion.jda.api.entities.Guild;
 import net.dv8tion.jda.api.entities.GuildWelcomeScreen;
 import net.dv8tion.jda.internal.utils.Checks;
-
 import org.jetbrains.annotations.Unmodifiable;
 
 import java.util.Arrays;

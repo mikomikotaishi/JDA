@@ -17,7 +17,6 @@
 package net.dv8tion.jda.internal.utils.config.sharding;
 
 import com.neovisionaries.ws.client.WebSocketFactory;
-
 import net.dv8tion.jda.api.audio.factory.IAudioSendFactory;
 import net.dv8tion.jda.api.hooks.VoiceDispatchInterceptor;
 import net.dv8tion.jda.api.utils.SessionController;
@@ -25,7 +24,6 @@ import net.dv8tion.jda.internal.utils.IOUtil;
 import net.dv8tion.jda.internal.utils.config.SessionConfig;
 import net.dv8tion.jda.internal.utils.config.flags.ConfigFlag;
 import net.dv8tion.jda.internal.utils.config.flags.ShardingConfigFlag;
-
 import okhttp3.OkHttpClient;
 
 import java.util.EnumSet;

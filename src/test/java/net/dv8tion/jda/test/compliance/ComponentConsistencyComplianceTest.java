@@ -16,23 +16,21 @@
 
 package net.dv8tion.jda.test.compliance;
 
-import static com.tngtech.archunit.lang.syntax.ArchRuleDefinition.classes;
-
 import com.tngtech.archunit.base.DescribedPredicate;
 import com.tngtech.archunit.core.domain.JavaClass;
 import com.tngtech.archunit.core.domain.JavaMethod;
 import com.tngtech.archunit.lang.ArchCondition;
 import com.tngtech.archunit.lang.ConditionEvents;
 import com.tngtech.archunit.lang.SimpleConditionEvent;
-
 import net.dv8tion.jda.api.components.Component;
-
 import org.junit.jupiter.api.Test;
 
 import java.util.List;
 import java.util.Optional;
 import java.util.stream.Collectors;
 import java.util.stream.Stream;
+
+import static com.tngtech.archunit.lang.syntax.ArchRuleDefinition.classes;
 
 public class ComponentConsistencyComplianceTest {
     @Test

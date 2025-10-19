@@ -28,7 +28,6 @@ import net.dv8tion.jda.api.utils.data.DataType;
 import net.dv8tion.jda.api.utils.data.SerializableData;
 import net.dv8tion.jda.internal.utils.Checks;
 import net.dv8tion.jda.internal.utils.localization.LocalizationUtils;
-
 import org.jetbrains.annotations.Unmodifiable;
 
 import java.util.*;

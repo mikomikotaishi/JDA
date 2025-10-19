@@ -69,7 +69,6 @@ import net.dv8tion.jda.internal.utils.Checks;
 import net.dv8tion.jda.internal.utils.EntityString;
 import net.dv8tion.jda.internal.utils.Helpers;
 import net.dv8tion.jda.internal.utils.concurrent.task.GatewayTask;
-
 import org.jetbrains.annotations.Unmodifiable;
 
 import java.time.Duration;

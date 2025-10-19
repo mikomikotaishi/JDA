@@ -16,9 +16,6 @@
 
 package net.dv8tion.jda.test.entities.guild;
 
-import static org.mockito.ArgumentMatchers.any;
-import static org.mockito.Mockito.when;
-
 import net.dv8tion.jda.api.Permission;
 import net.dv8tion.jda.api.utils.cache.CacheFlag;
 import net.dv8tion.jda.internal.entities.GuildImpl;
@@ -28,11 +25,13 @@ import net.dv8tion.jda.internal.utils.UnlockHook;
 import net.dv8tion.jda.internal.utils.cache.MemberCacheViewImpl;
 import net.dv8tion.jda.test.Constants;
 import net.dv8tion.jda.test.IntegrationTest;
-
 import org.junit.jupiter.api.BeforeEach;
 import org.mockito.Mock;
 
 import java.util.EnumSet;
+
+import static org.mockito.ArgumentMatchers.any;
+import static org.mockito.Mockito.when;
 
 public abstract class AbstractGuildTest extends IntegrationTest {
     @Mock

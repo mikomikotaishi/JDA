@@ -16,13 +16,13 @@
 
 package net.dv8tion.jda.test.rewrite;
 
-import static org.openrewrite.java.Assertions.java;
-
 import org.junit.jupiter.api.Test;
 import org.openrewrite.InMemoryExecutionContext;
 import org.openrewrite.java.JavaParser;
 import org.openrewrite.test.RecipeSpec;
 import org.openrewrite.test.RewriteTest;
+
+import static org.openrewrite.java.Assertions.java;
 
 public class MigrateComponentsV2Test implements RewriteTest {
 

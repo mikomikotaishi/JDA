@@ -16,8 +16,6 @@
 
 package net.dv8tion.jda.api.entities.messages;
 
-import static net.dv8tion.jda.api.entities.Message.INVITE_PATTERN;
-
 import net.dv8tion.jda.api.components.MessageTopLevelComponentUnion;
 import net.dv8tion.jda.api.components.tree.MessageComponentTree;
 import net.dv8tion.jda.api.entities.Mentions;
@@ -26,7 +24,6 @@ import net.dv8tion.jda.api.entities.Message.MessageFlag;
 import net.dv8tion.jda.api.entities.MessageEmbed;
 import net.dv8tion.jda.api.entities.MessageType;
 import net.dv8tion.jda.api.entities.sticker.StickerItem;
-
 import org.jetbrains.annotations.Unmodifiable;
 
 import java.time.OffsetDateTime;
@@ -38,6 +35,8 @@ import java.util.regex.Matcher;
 
 import javax.annotation.Nonnull;
 import javax.annotation.Nullable;
+
+import static net.dv8tion.jda.api.entities.Message.INVITE_PATTERN;
 
 /**
  * Snapshot of a forwarded message.

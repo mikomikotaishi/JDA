@@ -16,12 +16,12 @@
 
 package net.dv8tion.jda.test.assertions.checks;
 
-import static net.dv8tion.jda.test.ChecksHelper.*;
-
 import org.apache.commons.lang3.StringUtils;
 import org.junit.jupiter.api.function.ThrowingConsumer;
 
 import java.util.regex.Pattern;
+
+import static net.dv8tion.jda.test.ChecksHelper.*;
 
 public class StringChecksAssertions
         extends AbstractChecksAssertions<String, StringChecksAssertions> {

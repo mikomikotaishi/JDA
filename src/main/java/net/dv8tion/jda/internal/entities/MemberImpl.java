@@ -17,7 +17,6 @@
 package net.dv8tion.jda.internal.entities;
 
 import gnu.trove.map.TLongObjectMap;
-
 import net.dv8tion.jda.api.JDA;
 import net.dv8tion.jda.api.OnlineStatus;
 import net.dv8tion.jda.api.Permission;

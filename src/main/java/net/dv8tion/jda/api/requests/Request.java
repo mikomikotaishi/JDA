@@ -26,10 +26,8 @@ import net.dv8tion.jda.internal.JDAImpl;
 import net.dv8tion.jda.internal.requests.CallbackContext;
 import net.dv8tion.jda.internal.requests.RestActionImpl;
 import net.dv8tion.jda.internal.utils.IOUtil;
-
 import okhttp3.MultipartBody;
 import okhttp3.RequestBody;
-
 import org.apache.commons.collections4.map.CaseInsensitiveMap;
 
 import java.util.concurrent.CancellationException;

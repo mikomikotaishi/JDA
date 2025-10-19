@@ -19,7 +19,6 @@ package net.dv8tion.jda.api.utils.data;
 import net.dv8tion.jda.annotations.UnknownNullability;
 import net.dv8tion.jda.api.exceptions.ParsingException;
 import net.dv8tion.jda.internal.utils.Checks;
-
 import org.jetbrains.annotations.Contract;
 
 import java.nio.charset.StandardCharsets;

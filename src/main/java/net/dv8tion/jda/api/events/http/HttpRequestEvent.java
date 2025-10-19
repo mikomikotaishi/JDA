@@ -23,7 +23,6 @@ import net.dv8tion.jda.api.requests.RestAction;
 import net.dv8tion.jda.api.requests.Route.CompiledRoute;
 import net.dv8tion.jda.api.utils.data.DataArray;
 import net.dv8tion.jda.api.utils.data.DataObject;
-
 import okhttp3.Headers;
 import okhttp3.RequestBody;
 import okhttp3.ResponseBody;

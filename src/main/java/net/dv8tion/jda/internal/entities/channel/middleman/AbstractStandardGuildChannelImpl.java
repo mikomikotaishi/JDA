@@ -17,7 +17,6 @@
 package net.dv8tion.jda.internal.entities.channel.middleman;
 
 import gnu.trove.map.TLongObjectMap;
-
 import net.dv8tion.jda.api.entities.Guild;
 import net.dv8tion.jda.api.entities.PermissionOverride;
 import net.dv8tion.jda.api.utils.MiscUtil;

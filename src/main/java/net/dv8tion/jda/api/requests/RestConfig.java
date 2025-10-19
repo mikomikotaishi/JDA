@@ -19,7 +19,6 @@ package net.dv8tion.jda.api.requests;
 import net.dv8tion.jda.api.JDAInfo;
 import net.dv8tion.jda.internal.utils.Checks;
 import net.dv8tion.jda.internal.utils.Helpers;
-
 import okhttp3.Request;
 
 import java.util.function.Consumer;

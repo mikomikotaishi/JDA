@@ -24,7 +24,6 @@ import net.dv8tion.jda.api.entities.Guild.VerificationLevel;
 import net.dv8tion.jda.api.entities.ISnowflake;
 import net.dv8tion.jda.api.interactions.DiscordLocale;
 import net.dv8tion.jda.api.utils.ImageProxy;
-
 import org.jetbrains.annotations.Unmodifiable;
 
 import java.util.Collections;

@@ -16,14 +16,13 @@
 
 package net.dv8tion.jda.test.util;
 
-import static org.assertj.core.api.Assertions.assertThat;
-
 import net.dv8tion.jda.internal.utils.Helpers;
-
 import org.junit.jupiter.api.Test;
 
 import java.util.Arrays;
 import java.util.List;
+
+import static org.assertj.core.api.Assertions.assertThat;
 
 public class HelpersTest {
     @Test

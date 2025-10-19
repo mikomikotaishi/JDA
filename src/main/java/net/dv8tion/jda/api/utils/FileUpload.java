@@ -23,11 +23,9 @@ import net.dv8tion.jda.internal.utils.EntityString;
 import net.dv8tion.jda.internal.utils.IOUtil;
 import net.dv8tion.jda.internal.utils.requestbody.DataSupplierBody;
 import net.dv8tion.jda.internal.utils.requestbody.TypedBody;
-
 import okhttp3.MediaType;
 import okhttp3.MultipartBody;
 import okhttp3.RequestBody;
-
 import okio.Okio;
 import okio.Source;
 

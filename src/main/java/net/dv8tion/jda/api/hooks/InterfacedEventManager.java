@@ -19,7 +19,6 @@ package net.dv8tion.jda.api.hooks;
 import net.dv8tion.jda.api.events.GenericEvent;
 import net.dv8tion.jda.internal.JDAImpl;
 import net.dv8tion.jda.internal.utils.JDALogger;
-
 import org.jetbrains.annotations.Unmodifiable;
 
 import java.util.ArrayList;

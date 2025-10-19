@@ -17,7 +17,6 @@
 package net.dv8tion.jda.api.requests.restaction.order;
 
 import net.dv8tion.jda.api.requests.RestAction;
-
 import org.jetbrains.annotations.Unmodifiable;
 
 import java.util.Comparator;

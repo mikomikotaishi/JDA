@@ -16,15 +16,14 @@
 
 package net.dv8tion.jda.test.entitystring;
 
-import static org.assertj.core.api.Assertions.assertThat;
-
 import net.dv8tion.jda.api.entities.channel.ChannelType;
 import net.dv8tion.jda.internal.utils.EntityString;
-
 import org.junit.jupiter.api.MethodOrderer;
 import org.junit.jupiter.api.Order;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.TestMethodOrder;
+
+import static org.assertj.core.api.Assertions.assertThat;
 
 @TestMethodOrder(MethodOrderer.OrderAnnotation.class)
 public class EntityStringTest {

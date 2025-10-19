@@ -35,7 +35,6 @@ import net.dv8tion.jda.internal.entities.EntityBuilder;
 import net.dv8tion.jda.internal.entities.ReceivedMessage;
 import net.dv8tion.jda.internal.requests.RestActionImpl;
 import net.dv8tion.jda.internal.utils.message.MessageEditBuilderMixin;
-
 import okhttp3.RequestBody;
 
 import java.util.function.BooleanSupplier;

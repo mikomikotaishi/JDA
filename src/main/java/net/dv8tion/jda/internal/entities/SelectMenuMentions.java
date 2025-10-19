@@ -27,7 +27,6 @@ import net.dv8tion.jda.api.utils.data.DataObject;
 import net.dv8tion.jda.internal.JDAImpl;
 import net.dv8tion.jda.internal.utils.Checks;
 import net.dv8tion.jda.internal.utils.Helpers;
-
 import org.apache.commons.collections4.Bag;
 import org.apache.commons.collections4.BagUtils;
 import org.apache.commons.collections4.bag.HashBag;

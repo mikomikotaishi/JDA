@@ -23,7 +23,6 @@ import net.dv8tion.jda.internal.requests.FunctionalCallback;
 import net.dv8tion.jda.internal.utils.Checks;
 import net.dv8tion.jda.internal.utils.FutureUtil;
 import net.dv8tion.jda.internal.utils.IOUtil;
-
 import okhttp3.Call;
 import okhttp3.HttpUrl;
 import okhttp3.OkHttpClient;

@@ -17,7 +17,6 @@
 package net.dv8tion.jda.internal.handle;
 
 import gnu.trove.map.TLongObjectMap;
-
 import net.dv8tion.jda.api.entities.Role;
 import net.dv8tion.jda.api.entities.emoji.RichCustomEmoji;
 import net.dv8tion.jda.api.events.emoji.EmojiAddedEvent;
@@ -32,7 +31,6 @@ import net.dv8tion.jda.internal.entities.GuildImpl;
 import net.dv8tion.jda.internal.entities.emoji.RichCustomEmojiImpl;
 import net.dv8tion.jda.internal.utils.UnlockHook;
 import net.dv8tion.jda.internal.utils.cache.SnowflakeCacheViewImpl;
-
 import org.apache.commons.collections4.CollectionUtils;
 
 import java.util.*;

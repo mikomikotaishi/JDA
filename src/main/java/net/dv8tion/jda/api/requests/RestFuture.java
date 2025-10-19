@@ -18,9 +18,7 @@ package net.dv8tion.jda.api.requests;
 
 import net.dv8tion.jda.internal.JDAImpl;
 import net.dv8tion.jda.internal.requests.RestActionImpl;
-
 import okhttp3.RequestBody;
-
 import org.apache.commons.collections4.map.CaseInsensitiveMap;
 
 import java.util.concurrent.CompletableFuture;

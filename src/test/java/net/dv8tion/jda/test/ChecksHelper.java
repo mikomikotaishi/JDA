@@ -17,7 +17,6 @@
 package net.dv8tion.jda.test;
 
 import net.dv8tion.jda.test.assertions.checks.*;
-
 import org.junit.jupiter.api.function.ThrowingConsumer;
 
 import java.time.Duration;

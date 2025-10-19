@@ -17,7 +17,6 @@
 package net.dv8tion.jda.internal.requests;
 
 import gnu.trove.map.TLongObjectMap;
-
 import net.dv8tion.jda.api.JDA;
 import net.dv8tion.jda.api.entities.Guild;
 import net.dv8tion.jda.api.entities.GuildVoiceState;
@@ -26,7 +25,6 @@ import net.dv8tion.jda.api.utils.data.DataObject;
 import net.dv8tion.jda.internal.JDAImpl;
 import net.dv8tion.jda.internal.audio.ConnectionRequest;
 import net.dv8tion.jda.internal.audio.ConnectionStage;
-
 import org.slf4j.Logger;
 
 import java.util.Queue;

@@ -67,9 +67,7 @@ import net.dv8tion.jda.internal.entities.channel.mixin.middleman.MessageChannelM
 import net.dv8tion.jda.internal.requests.restaction.MessageCreateActionImpl;
 import net.dv8tion.jda.internal.requests.restaction.pagination.PollVotersPaginationActionImpl;
 import net.dv8tion.jda.internal.utils.Checks;
-
 import okhttp3.MultipartBody;
-
 import org.jetbrains.annotations.Unmodifiable;
 
 import java.io.File;

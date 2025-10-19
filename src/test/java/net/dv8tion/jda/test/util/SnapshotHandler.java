@@ -16,16 +16,12 @@
 
 package net.dv8tion.jda.test.util;
 
-import static org.assertj.core.api.Assertions.assertThat;
-
 import net.dv8tion.jda.api.utils.data.DataArray;
 import net.dv8tion.jda.api.utils.data.DataObject;
-
 import okio.BufferedSink;
 import okio.BufferedSource;
 import okio.Okio;
 import okio.Path;
-
 import org.junit.jupiter.api.TestInfo;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -37,6 +33,8 @@ import java.io.UncheckedIOException;
 import java.lang.reflect.Method;
 import java.nio.charset.StandardCharsets;
 import java.util.Collection;
+
+import static org.assertj.core.api.Assertions.assertThat;
 
 public class SnapshotHandler {
     private final TestInfo testInfo;

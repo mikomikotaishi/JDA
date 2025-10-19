@@ -21,7 +21,6 @@ import gnu.trove.map.TLongObjectMap;
 import gnu.trove.map.hash.TLongObjectHashMap;
 import gnu.trove.set.TLongSet;
 import gnu.trove.set.hash.TLongHashSet;
-
 import net.dv8tion.jda.api.events.guild.GuildTimeoutEvent;
 import net.dv8tion.jda.api.events.guild.UnavailableGuildLeaveEvent;
 import net.dv8tion.jda.api.utils.MiscUtil;
@@ -31,7 +30,6 @@ import net.dv8tion.jda.internal.JDAImpl;
 import net.dv8tion.jda.internal.requests.MemberChunkManager;
 import net.dv8tion.jda.internal.requests.WebSocketClient;
 import net.dv8tion.jda.internal.utils.JDALogger;
-
 import org.slf4j.Logger;
 
 import java.util.HashSet;

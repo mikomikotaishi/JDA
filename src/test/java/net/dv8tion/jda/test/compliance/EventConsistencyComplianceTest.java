@@ -16,14 +16,10 @@
 
 package net.dv8tion.jda.test.compliance;
 
-import static org.assertj.core.api.Assertions.assertThat;
-import static org.assertj.core.api.Assertions.assertThatCode;
-
 import net.dv8tion.jda.api.events.Event;
 import net.dv8tion.jda.api.events.GenericEvent;
 import net.dv8tion.jda.api.events.UpdateEvent;
 import net.dv8tion.jda.api.hooks.ListenerAdapter;
-
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;
 import org.reflections.Reflections;
@@ -32,6 +28,9 @@ import java.lang.reflect.Method;
 import java.util.Arrays;
 import java.util.HashSet;
 import java.util.Set;
+
+import static org.assertj.core.api.Assertions.assertThat;
+import static org.assertj.core.api.Assertions.assertThatCode;
 
 public class EventConsistencyComplianceTest {
     static Set<Class<? extends GenericEvent>> eventTypes;

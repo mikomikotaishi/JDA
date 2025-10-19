@@ -16,8 +16,6 @@
 
 package net.dv8tion.jda.api.utils.data.etf;
 
-import static net.dv8tion.jda.api.utils.data.etf.ExTermTag.*;
-
 import java.io.ByteArrayOutputStream;
 import java.io.IOException;
 import java.io.UncheckedIOException;
@@ -28,6 +26,8 @@ import java.util.*;
 import java.util.zip.InflaterOutputStream;
 
 import javax.annotation.Nonnull;
+
+import static net.dv8tion.jda.api.utils.data.etf.ExTermTag.*;
 
 /**
  * Decodes an ETF encoded payload to a java object representation.

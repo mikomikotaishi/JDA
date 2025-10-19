@@ -23,13 +23,11 @@ import net.dv8tion.jda.internal.JDAImpl;
 import net.dv8tion.jda.internal.utils.IOUtil;
 import net.dv8tion.jda.internal.utils.JDALogger;
 import net.dv8tion.jda.internal.utils.config.AuthorizationConfig;
-
 import okhttp3.Call;
 import okhttp3.MediaType;
 import okhttp3.OkHttpClient;
 import okhttp3.RequestBody;
 import okhttp3.internal.http.HttpMethod;
-
 import org.slf4j.Logger;
 import org.slf4j.MDC;
 

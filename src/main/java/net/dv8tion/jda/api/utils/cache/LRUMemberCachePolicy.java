@@ -18,7 +18,6 @@ package net.dv8tion.jda.api.utils.cache;
 
 import gnu.trove.map.TObjectIntMap;
 import gnu.trove.map.hash.TObjectIntHashMap;
-
 import net.dv8tion.jda.api.entities.Guild;
 import net.dv8tion.jda.api.entities.Member;
 import net.dv8tion.jda.api.utils.MemberCachePolicy;

@@ -22,7 +22,6 @@ import net.dv8tion.jda.api.entities.channel.middleman.GuildChannel;
 import net.dv8tion.jda.api.managers.channel.attribute.IPermissionContainerManager;
 import net.dv8tion.jda.api.requests.restaction.PermissionOverrideAction;
 import net.dv8tion.jda.internal.utils.Helpers;
-
 import org.jetbrains.annotations.Unmodifiable;
 
 import java.util.List;

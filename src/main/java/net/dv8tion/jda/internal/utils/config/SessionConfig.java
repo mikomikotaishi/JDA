@@ -17,12 +17,10 @@
 package net.dv8tion.jda.internal.utils.config;
 
 import com.neovisionaries.ws.client.WebSocketFactory;
-
 import net.dv8tion.jda.api.hooks.VoiceDispatchInterceptor;
 import net.dv8tion.jda.api.utils.ConcurrentSessionController;
 import net.dv8tion.jda.api.utils.SessionController;
 import net.dv8tion.jda.internal.utils.config.flags.ConfigFlag;
-
 import okhttp3.OkHttpClient;
 
 import java.util.EnumSet;

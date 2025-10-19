@@ -16,14 +16,13 @@
 
 package net.dv8tion.jda.test.data;
 
-import static org.assertj.core.api.Assertions.*;
-
 import net.dv8tion.jda.api.exceptions.ParsingException;
 import net.dv8tion.jda.api.utils.data.DataArray;
 import net.dv8tion.jda.api.utils.data.DataObject;
 import net.dv8tion.jda.api.utils.data.DataPath;
-
 import org.junit.jupiter.api.Test;
+
+import static org.assertj.core.api.Assertions.*;
 
 public class DataPathTest {
     @Test

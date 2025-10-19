@@ -21,7 +21,6 @@ import net.dv8tion.jda.api.entities.Guild;
 import net.dv8tion.jda.api.entities.SelfUser;
 import net.dv8tion.jda.api.interactions.commands.privileges.IntegrationPrivilege;
 import net.dv8tion.jda.internal.utils.Checks;
-
 import org.jetbrains.annotations.Unmodifiable;
 
 import java.util.Collections;

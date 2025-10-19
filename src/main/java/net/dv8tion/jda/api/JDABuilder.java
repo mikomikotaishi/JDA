@@ -17,7 +17,6 @@
 package net.dv8tion.jda.api;
 
 import com.neovisionaries.ws.client.WebSocketFactory;
-
 import net.dv8tion.jda.api.audio.factory.IAudioSendFactory;
 import net.dv8tion.jda.api.entities.Activity;
 import net.dv8tion.jda.api.events.Event;
@@ -39,7 +38,6 @@ import net.dv8tion.jda.internal.utils.config.MetaConfig;
 import net.dv8tion.jda.internal.utils.config.SessionConfig;
 import net.dv8tion.jda.internal.utils.config.ThreadingConfig;
 import net.dv8tion.jda.internal.utils.config.flags.ConfigFlag;
-
 import okhttp3.OkHttpClient;
 
 import java.util.*;

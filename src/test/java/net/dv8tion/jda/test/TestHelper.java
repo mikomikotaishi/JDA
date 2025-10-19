@@ -16,16 +16,15 @@
 
 package net.dv8tion.jda.test;
 
-import static org.assertj.core.api.Assertions.assertThat;
-
 import ch.qos.logback.classic.spi.ILoggingEvent;
 import ch.qos.logback.core.read.ListAppender;
-
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 import java.util.List;
 import java.util.stream.Collectors;
+
+import static org.assertj.core.api.Assertions.assertThat;
 
 public class TestHelper {
     public static List<String> captureLogging(Runnable task) {

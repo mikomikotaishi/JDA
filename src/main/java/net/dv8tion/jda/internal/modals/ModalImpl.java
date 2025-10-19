@@ -16,8 +16,6 @@
 
 package net.dv8tion.jda.internal.modals;
 
-import static net.dv8tion.jda.internal.entities.EntityBuilder.DEFAULT_COMPONENT_DESERIALIZER;
-
 import net.dv8tion.jda.api.components.ModalTopLevelComponentUnion;
 import net.dv8tion.jda.api.modals.Modal;
 import net.dv8tion.jda.api.utils.data.DataArray;
@@ -31,6 +29,8 @@ import java.util.List;
 import java.util.stream.Collectors;
 
 import javax.annotation.Nonnull;
+
+import static net.dv8tion.jda.internal.entities.EntityBuilder.DEFAULT_COMPONENT_DESERIALIZER;
 
 public class ModalImpl implements Modal {
     private final String id;

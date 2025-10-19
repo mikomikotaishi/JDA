@@ -21,7 +21,6 @@ import net.dv8tion.jda.api.Permission;
 import net.dv8tion.jda.api.interactions.IntegrationType;
 import net.dv8tion.jda.api.utils.ImageProxy;
 import net.dv8tion.jda.internal.utils.Checks;
-
 import org.jetbrains.annotations.Unmodifiable;
 
 import java.util.*;

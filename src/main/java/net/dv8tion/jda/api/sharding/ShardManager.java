@@ -42,7 +42,6 @@ import net.dv8tion.jda.internal.requests.RestActionImpl;
 import net.dv8tion.jda.internal.utils.Checks;
 import net.dv8tion.jda.internal.utils.Helpers;
 import net.dv8tion.jda.internal.utils.cache.UnifiedChannelCacheView;
-
 import org.jetbrains.annotations.Unmodifiable;
 
 import java.util.*;

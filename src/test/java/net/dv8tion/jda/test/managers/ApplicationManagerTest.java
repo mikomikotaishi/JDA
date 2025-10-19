@@ -16,11 +16,6 @@
 
 package net.dv8tion.jda.test.managers;
 
-import static net.dv8tion.jda.test.ChecksHelper.assertChecks;
-import static net.dv8tion.jda.test.ChecksHelper.assertStringChecks;
-
-import static org.assertj.core.api.Assertions.assertThatIllegalArgumentException;
-
 import net.dv8tion.jda.api.Permission;
 import net.dv8tion.jda.api.entities.ApplicationInfo;
 import net.dv8tion.jda.api.entities.Icon;
@@ -32,7 +27,6 @@ import net.dv8tion.jda.api.utils.data.DataObject;
 import net.dv8tion.jda.internal.managers.ApplicationManagerImpl;
 import net.dv8tion.jda.test.IntegrationTest;
 import net.dv8tion.jda.test.Resources;
-
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.function.ThrowingConsumer;
 
@@ -40,6 +34,10 @@ import java.io.IOException;
 import java.util.*;
 
 import javax.annotation.Nonnull;
+
+import static net.dv8tion.jda.test.ChecksHelper.assertChecks;
+import static net.dv8tion.jda.test.ChecksHelper.assertStringChecks;
+import static org.assertj.core.api.Assertions.assertThatIllegalArgumentException;
 
 public class ApplicationManagerTest extends IntegrationTest {
     @Test

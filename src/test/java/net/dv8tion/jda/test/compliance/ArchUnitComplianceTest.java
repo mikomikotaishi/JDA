@@ -16,23 +16,16 @@
 
 package net.dv8tion.jda.test.compliance;
 
-import static com.tngtech.archunit.base.DescribedPredicate.describe;
-import static com.tngtech.archunit.core.domain.JavaClass.Predicates.assignableTo;
-import static com.tngtech.archunit.lang.syntax.ArchRuleDefinition.classes;
-import static com.tngtech.archunit.lang.syntax.ArchRuleDefinition.methods;
-
 import com.tngtech.archunit.core.domain.JavaClass;
 import com.tngtech.archunit.core.domain.JavaMethod;
 import com.tngtech.archunit.lang.ArchCondition;
 import com.tngtech.archunit.lang.ConditionEvents;
 import com.tngtech.archunit.lang.SimpleConditionEvent;
-
 import net.dv8tion.jda.annotations.UnknownNullability;
 import net.dv8tion.jda.api.managers.Manager;
 import net.dv8tion.jda.api.requests.RestAction;
 import net.dv8tion.jda.api.utils.IOBiConsumer;
 import net.dv8tion.jda.api.utils.IOFunction;
-
 import org.jetbrains.annotations.Contract;
 import org.junit.jupiter.api.Test;
 
@@ -42,6 +35,11 @@ import javax.annotation.CheckForNull;
 import javax.annotation.CheckReturnValue;
 import javax.annotation.Nonnull;
 import javax.annotation.Nullable;
+
+import static com.tngtech.archunit.base.DescribedPredicate.describe;
+import static com.tngtech.archunit.core.domain.JavaClass.Predicates.assignableTo;
+import static com.tngtech.archunit.lang.syntax.ArchRuleDefinition.classes;
+import static com.tngtech.archunit.lang.syntax.ArchRuleDefinition.methods;
 
 public class ArchUnitComplianceTest {
     @Test

@@ -16,9 +16,6 @@
 
 package net.dv8tion.jda.api.entities;
 
-import static net.dv8tion.jda.api.entities.Guild.BANNER_URL;
-import static net.dv8tion.jda.api.entities.Guild.NSFWLevel;
-
 import net.dv8tion.jda.api.JDA;
 import net.dv8tion.jda.api.entities.Guild.VerificationLevel;
 import net.dv8tion.jda.api.entities.channel.ChannelType;
@@ -34,6 +31,9 @@ import java.util.Set;
 import javax.annotation.CheckReturnValue;
 import javax.annotation.Nonnull;
 import javax.annotation.Nullable;
+
+import static net.dv8tion.jda.api.entities.Guild.BANNER_URL;
+import static net.dv8tion.jda.api.entities.Guild.NSFWLevel;
 
 /**
  * Representation of a Discord Invite.

@@ -27,7 +27,6 @@ import net.dv8tion.jda.api.utils.data.SerializableData;
 import net.dv8tion.jda.internal.utils.IOUtil;
 import net.dv8tion.jda.internal.utils.JDALogger;
 import net.dv8tion.jda.internal.utils.message.MessageUtil;
-
 import org.slf4j.Logger;
 
 import java.util.*;

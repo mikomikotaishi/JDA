@@ -16,14 +16,13 @@
 
 package net.dv8tion.jda.test.assertions.logging;
 
-import static org.assertj.core.api.Assertions.assertThat;
-
 import net.dv8tion.jda.test.util.SnapshotHandler;
-
 import org.jetbrains.annotations.Contract;
 
 import java.util.List;
 import java.util.function.Predicate;
+
+import static org.assertj.core.api.Assertions.assertThat;
 
 public class LoggingAssertions {
     private final SnapshotHandler snapshotHandler;

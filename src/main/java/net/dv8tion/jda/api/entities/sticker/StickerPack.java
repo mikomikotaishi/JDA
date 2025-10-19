@@ -18,7 +18,6 @@ package net.dv8tion.jda.api.entities.sticker;
 
 import net.dv8tion.jda.api.entities.ISnowflake;
 import net.dv8tion.jda.api.utils.ImageProxy;
-
 import org.jetbrains.annotations.Unmodifiable;
 
 import java.util.List;

@@ -36,7 +36,6 @@ import net.dv8tion.jda.internal.interactions.command.CommandImpl;
 import net.dv8tion.jda.internal.utils.Checks;
 import net.dv8tion.jda.internal.utils.EntityString;
 import net.dv8tion.jda.internal.utils.localization.LocalizationUtils;
-
 import org.jetbrains.annotations.Unmodifiable;
 
 import java.time.OffsetDateTime;

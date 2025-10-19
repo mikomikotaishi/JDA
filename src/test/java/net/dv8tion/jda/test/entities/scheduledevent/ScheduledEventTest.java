@@ -16,17 +16,16 @@
 
 package net.dv8tion.jda.test.entities.scheduledevent;
 
-import static org.assertj.core.api.Assertions.assertThat;
-import static org.mockito.Mockito.when;
-
 import net.dv8tion.jda.api.entities.Guild;
 import net.dv8tion.jda.api.entities.ScheduledEvent;
 import net.dv8tion.jda.internal.entities.ScheduledEventImpl;
 import net.dv8tion.jda.test.Constants;
 import net.dv8tion.jda.test.IntegrationTest;
-
 import org.junit.jupiter.api.Test;
 import org.mockito.Mock;
+
+import static org.assertj.core.api.Assertions.assertThat;
+import static org.mockito.Mockito.when;
 
 public class ScheduledEventTest extends IntegrationTest {
     @Mock

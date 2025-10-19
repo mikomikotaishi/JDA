@@ -25,7 +25,6 @@ import net.dv8tion.jda.api.components.utils.ComponentIterator;
 import net.dv8tion.jda.internal.components.tree.ComponentTreeImpl;
 import net.dv8tion.jda.internal.components.utils.ComponentsUtil;
 import net.dv8tion.jda.internal.utils.Checks;
-
 import org.jetbrains.annotations.Unmodifiable;
 
 import java.util.Collection;

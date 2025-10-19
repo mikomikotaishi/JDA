@@ -19,7 +19,6 @@ package net.dv8tion.jda.internal.entities;
 import gnu.trove.map.TLongObjectMap;
 import gnu.trove.map.hash.TLongObjectHashMap;
 import gnu.trove.set.TLongSet;
-
 import net.dv8tion.jda.api.Permission;
 import net.dv8tion.jda.api.Region;
 import net.dv8tion.jda.api.audio.hooks.ConnectionStatus;
@@ -85,7 +84,6 @@ import net.dv8tion.jda.internal.utils.Helpers;
 import net.dv8tion.jda.internal.utils.UnlockHook;
 import net.dv8tion.jda.internal.utils.cache.*;
 import net.dv8tion.jda.internal.utils.concurrent.task.GatewayTask;
-
 import okhttp3.MediaType;
 import okhttp3.MultipartBody;
 

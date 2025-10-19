@@ -29,7 +29,6 @@ import net.dv8tion.jda.api.requests.restaction.order.CategoryOrderAction;
 import net.dv8tion.jda.api.requests.restaction.order.ChannelOrderAction;
 import net.dv8tion.jda.api.requests.restaction.order.OrderAction;
 import net.dv8tion.jda.internal.utils.Helpers;
-
 import org.jetbrains.annotations.Unmodifiable;
 
 import java.util.List;

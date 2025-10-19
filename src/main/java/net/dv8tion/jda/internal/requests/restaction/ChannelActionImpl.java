@@ -18,7 +18,6 @@ package net.dv8tion.jda.internal.requests.restaction;
 
 import gnu.trove.map.TLongObjectMap;
 import gnu.trove.map.hash.TLongObjectHashMap;
-
 import net.dv8tion.jda.api.Permission;
 import net.dv8tion.jda.api.Region;
 import net.dv8tion.jda.api.entities.Guild;
@@ -49,7 +48,6 @@ import net.dv8tion.jda.internal.entities.GuildImpl;
 import net.dv8tion.jda.internal.utils.ChannelUtil;
 import net.dv8tion.jda.internal.utils.Checks;
 import net.dv8tion.jda.internal.utils.PermissionUtil;
-
 import okhttp3.RequestBody;
 
 import java.util.ArrayList;

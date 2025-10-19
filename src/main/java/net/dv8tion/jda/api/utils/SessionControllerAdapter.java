@@ -17,7 +17,6 @@
 package net.dv8tion.jda.api.utils;
 
 import com.neovisionaries.ws.client.OpeningHandshakeException;
-
 import net.dv8tion.jda.api.JDA;
 import net.dv8tion.jda.api.exceptions.InvalidTokenException;
 import net.dv8tion.jda.api.requests.Request;
@@ -27,7 +26,6 @@ import net.dv8tion.jda.api.requests.Route;
 import net.dv8tion.jda.api.utils.data.DataObject;
 import net.dv8tion.jda.internal.requests.RestActionImpl;
 import net.dv8tion.jda.internal.utils.JDALogger;
-
 import org.slf4j.Logger;
 
 import java.util.Queue;

@@ -17,10 +17,8 @@
 package net.dv8tion.jda.internal.requests;
 
 import com.neovisionaries.ws.client.*;
-
 import gnu.trove.iterator.TLongObjectIterator;
 import gnu.trove.map.TLongObjectMap;
-
 import net.dv8tion.jda.api.GatewayEncoding;
 import net.dv8tion.jda.api.JDA;
 import net.dv8tion.jda.api.JDAInfo;
@@ -55,7 +53,6 @@ import net.dv8tion.jda.internal.utils.UnlockHook;
 import net.dv8tion.jda.internal.utils.cache.AbstractCacheView;
 import net.dv8tion.jda.internal.utils.compress.Decompressor;
 import net.dv8tion.jda.internal.utils.compress.ZlibDecompressor;
-
 import org.slf4j.Logger;
 import org.slf4j.MDC;
 

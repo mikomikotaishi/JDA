@@ -16,18 +16,16 @@
 
 package net.dv8tion.jda.test.components;
 
-import static net.dv8tion.jda.api.components.replacer.ComponentReplacer.byUniqueId;
-
-import static org.assertj.core.api.Assertions.assertThat;
-import static org.assertj.core.api.Assertions.assertThatIllegalArgumentException;
-
 import net.dv8tion.jda.api.components.Component;
 import net.dv8tion.jda.api.components.container.Container;
 import net.dv8tion.jda.api.components.container.ContainerChildComponentUnion;
 import net.dv8tion.jda.api.components.textdisplay.TextDisplay;
 import net.dv8tion.jda.test.ChecksHelper;
-
 import org.junit.jupiter.api.Test;
+
+import static net.dv8tion.jda.api.components.replacer.ComponentReplacer.byUniqueId;
+import static org.assertj.core.api.Assertions.assertThat;
+import static org.assertj.core.api.Assertions.assertThatIllegalArgumentException;
 
 public class ContainerTest {
     private static final TextDisplay EXAMPLE_TEXT =

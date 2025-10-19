@@ -18,7 +18,6 @@ package net.dv8tion.jda.internal.entities.automod;
 
 import gnu.trove.list.TLongList;
 import gnu.trove.list.array.TLongArrayList;
-
 import net.dv8tion.jda.api.entities.Guild;
 import net.dv8tion.jda.api.entities.Role;
 import net.dv8tion.jda.api.entities.automod.AutoModEventType;

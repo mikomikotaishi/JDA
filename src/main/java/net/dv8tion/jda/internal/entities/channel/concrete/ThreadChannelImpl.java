@@ -18,7 +18,6 @@ package net.dv8tion.jda.internal.entities.channel.concrete;
 
 import gnu.trove.set.TLongSet;
 import gnu.trove.set.hash.TLongHashSet;
-
 import net.dv8tion.jda.api.Permission;
 import net.dv8tion.jda.api.entities.Member;
 import net.dv8tion.jda.api.entities.Message;

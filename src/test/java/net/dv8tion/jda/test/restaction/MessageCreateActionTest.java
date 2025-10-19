@@ -16,12 +16,6 @@
 
 package net.dv8tion.jda.test.restaction;
 
-import static net.dv8tion.jda.api.requests.Method.POST;
-
-import static org.assertj.core.api.Assertions.assertThat;
-import static org.assertj.core.api.Assertions.assertThatIllegalStateException;
-import static org.mockito.Mockito.when;
-
 import net.dv8tion.jda.api.EmbedBuilder;
 import net.dv8tion.jda.api.components.actionrow.ActionRow;
 import net.dv8tion.jda.api.components.buttons.Button;
@@ -40,9 +34,7 @@ import net.dv8tion.jda.api.utils.messages.MessagePollData;
 import net.dv8tion.jda.internal.requests.restaction.MessageCreateActionImpl;
 import net.dv8tion.jda.test.Constants;
 import net.dv8tion.jda.test.IntegrationTest;
-
 import okhttp3.MediaType;
-
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.mockito.Mock;
@@ -52,6 +44,11 @@ import java.util.EnumSet;
 import java.util.concurrent.TimeUnit;
 
 import javax.annotation.Nonnull;
+
+import static net.dv8tion.jda.api.requests.Method.POST;
+import static org.assertj.core.api.Assertions.assertThat;
+import static org.assertj.core.api.Assertions.assertThatIllegalStateException;
+import static org.mockito.Mockito.when;
 
 public class MessageCreateActionTest extends IntegrationTest {
     private static final byte[] voiceMessageAudio = {1, 2, 3};

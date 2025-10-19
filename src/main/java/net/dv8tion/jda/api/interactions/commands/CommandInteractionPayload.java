@@ -25,7 +25,6 @@ import net.dv8tion.jda.api.entities.User;
 import net.dv8tion.jda.api.interactions.Interaction;
 import net.dv8tion.jda.api.interactions.commands.build.CommandData;
 import net.dv8tion.jda.internal.utils.Checks;
-
 import org.jetbrains.annotations.Contract;
 
 import java.util.List;

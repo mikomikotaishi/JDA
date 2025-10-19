@@ -19,7 +19,6 @@ package net.dv8tion.jda.internal.utils.cache;
 import net.dv8tion.jda.api.entities.ISnowflake;
 import net.dv8tion.jda.api.utils.cache.SortedSnowflakeCacheView;
 import net.dv8tion.jda.internal.utils.UnlockHook;
-
 import org.apache.commons.collections4.iterators.ObjectArrayIterator;
 
 import java.util.*;

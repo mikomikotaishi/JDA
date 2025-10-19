@@ -219,7 +219,7 @@ spotless {
     }
 
     java {
-        palantirJavaFormat("2.75.0")
+        palantirJavaFormat("2.80.0")
                 .style("AOSP")
                 .formatJavadoc(false)
 
@@ -228,8 +228,8 @@ spotless {
         target("src/main/**/*.java", "src/test/**/*.java")
 
         removeUnusedImports()
+        importOrder("",  "java", "javax", "\\#")
         trimTrailingWhitespace()
-        leadingTabsToSpaces()
     }
 }
 

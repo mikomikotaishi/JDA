@@ -16,9 +16,9 @@
 
 package net.dv8tion.jda.test;
 
-import static org.assertj.core.api.Assertions.assertThat;
-
 import java.io.InputStream;
+
+import static org.assertj.core.api.Assertions.assertThat;
 
 public interface LoadSampleTraits {
     default InputStream loadSample(String name) {

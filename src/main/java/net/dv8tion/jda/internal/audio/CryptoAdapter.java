@@ -18,7 +18,6 @@ package net.dv8tion.jda.internal.audio;
 
 import com.google.crypto.tink.aead.internal.InsecureNonceAesGcmJce;
 import com.google.crypto.tink.aead.internal.InsecureNonceXChaCha20Poly1305;
-
 import net.dv8tion.jda.internal.utils.IOUtil;
 
 import java.nio.ByteBuffer;

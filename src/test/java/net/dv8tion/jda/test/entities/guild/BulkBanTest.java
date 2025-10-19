@@ -16,11 +16,6 @@
 
 package net.dv8tion.jda.test.entities.guild;
 
-import static net.dv8tion.jda.test.ChecksHelper.assertDurationChecks;
-
-import static org.assertj.core.api.Assertions.assertThatIllegalArgumentException;
-import static org.assertj.core.api.Assertions.assertThatThrownBy;
-
 import net.dv8tion.jda.api.Permission;
 import net.dv8tion.jda.api.entities.User;
 import net.dv8tion.jda.api.entities.UserSnowflake;
@@ -29,7 +24,6 @@ import net.dv8tion.jda.api.exceptions.InsufficientPermissionException;
 import net.dv8tion.jda.api.requests.Method;
 import net.dv8tion.jda.internal.utils.Helpers;
 import net.dv8tion.jda.test.Constants;
-
 import org.junit.jupiter.api.Test;
 
 import java.time.Duration;
@@ -39,6 +33,10 @@ import java.util.List;
 import java.util.Set;
 import java.util.stream.Collectors;
 import java.util.stream.LongStream;
+
+import static net.dv8tion.jda.test.ChecksHelper.assertDurationChecks;
+import static org.assertj.core.api.Assertions.assertThatIllegalArgumentException;
+import static org.assertj.core.api.Assertions.assertThatThrownBy;
 
 public class BulkBanTest extends AbstractGuildTest {
     @Test

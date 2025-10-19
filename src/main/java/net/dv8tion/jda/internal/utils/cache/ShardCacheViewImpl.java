@@ -20,7 +20,6 @@ import gnu.trove.map.TIntObjectMap;
 import gnu.trove.map.hash.TIntObjectHashMap;
 import gnu.trove.set.TIntSet;
 import gnu.trove.set.hash.TIntHashSet;
-
 import net.dv8tion.jda.api.JDA;
 import net.dv8tion.jda.api.utils.ClosableIterator;
 import net.dv8tion.jda.api.utils.LockIterator;
@@ -31,7 +30,6 @@ import net.dv8tion.jda.internal.utils.ChainedClosableIterator;
 import net.dv8tion.jda.internal.utils.Checks;
 import net.dv8tion.jda.internal.utils.Helpers;
 import net.dv8tion.jda.internal.utils.UnlockHook;
-
 import org.apache.commons.collections4.iterators.ObjectArrayIterator;
 
 import java.util.*;

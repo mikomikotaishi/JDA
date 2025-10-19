@@ -24,7 +24,6 @@ import net.dv8tion.jda.internal.utils.cache.AbstractCacheView;
 import net.dv8tion.jda.internal.utils.cache.ShardCacheViewImpl;
 import net.dv8tion.jda.internal.utils.cache.SortedSnowflakeCacheViewImpl;
 import net.dv8tion.jda.internal.utils.cache.UnifiedCacheViewImpl;
-
 import org.jetbrains.annotations.Unmodifiable;
 
 import java.util.*;

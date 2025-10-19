@@ -20,7 +20,6 @@ import net.dv8tion.jda.api.entities.Icon;
 import net.dv8tion.jda.internal.utils.Checks;
 import net.dv8tion.jda.internal.utils.FutureUtil;
 import net.dv8tion.jda.internal.utils.IOUtil;
-
 import okhttp3.OkHttpClient;
 
 import java.io.File;

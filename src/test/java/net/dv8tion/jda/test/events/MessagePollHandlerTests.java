@@ -16,9 +16,6 @@
 
 package net.dv8tion.jda.test.events;
 
-import static org.mockito.ArgumentMatchers.eq;
-import static org.mockito.Mockito.when;
-
 import net.dv8tion.jda.api.entities.channel.middleman.GuildMessageChannel;
 import net.dv8tion.jda.api.entities.channel.middleman.MessageChannel;
 import net.dv8tion.jda.api.events.message.poll.MessagePollVoteAddEvent;
@@ -26,10 +23,12 @@ import net.dv8tion.jda.api.events.message.poll.MessagePollVoteRemoveEvent;
 import net.dv8tion.jda.api.utils.data.DataObject;
 import net.dv8tion.jda.internal.handle.MessagePollVoteHandler;
 import net.dv8tion.jda.test.Constants;
-
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.mockito.Mock;
+
+import static org.mockito.ArgumentMatchers.eq;
+import static org.mockito.Mockito.when;
 
 public class MessagePollHandlerTests extends AbstractSocketHandlerTest {
     @Mock

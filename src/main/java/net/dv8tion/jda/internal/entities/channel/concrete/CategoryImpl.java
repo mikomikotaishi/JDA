@@ -17,7 +17,6 @@
 package net.dv8tion.jda.internal.entities.channel.concrete;
 
 import gnu.trove.map.TLongObjectMap;
-
 import net.dv8tion.jda.api.entities.Member;
 import net.dv8tion.jda.api.entities.PermissionOverride;
 import net.dv8tion.jda.api.entities.channel.ChannelType;

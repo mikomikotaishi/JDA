@@ -16,11 +16,10 @@
 
 package net.dv8tion.jda.test.assertions.checks;
 
-import static net.dv8tion.jda.test.ChecksHelper.isNullError;
-
-import static org.assertj.core.api.Assertions.assertThatIllegalArgumentException;
-
 import org.junit.jupiter.api.function.ThrowingConsumer;
+
+import static net.dv8tion.jda.test.ChecksHelper.isNullError;
+import static org.assertj.core.api.Assertions.assertThatIllegalArgumentException;
 
 public class AbstractChecksAssertions<T, S extends AbstractChecksAssertions<T, S>> {
     protected final String name;

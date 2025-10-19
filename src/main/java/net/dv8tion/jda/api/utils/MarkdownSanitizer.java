@@ -18,7 +18,6 @@ package net.dv8tion.jda.api.utils;
 
 import gnu.trove.map.TIntObjectMap;
 import gnu.trove.map.hash.TIntObjectHashMap;
-
 import net.dv8tion.jda.internal.utils.Checks;
 
 import java.util.regex.Pattern;

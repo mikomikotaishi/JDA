@@ -16,11 +16,6 @@
 
 package net.dv8tion.jda.test;
 
-import static org.assertj.core.api.Assertions.assertThat;
-import static org.assertj.core.api.Assertions.assertThatNoException;
-import static org.mockito.Mockito.*;
-import static org.mockito.MockitoAnnotations.openMocks;
-
 import net.dv8tion.jda.api.requests.Request;
 import net.dv8tion.jda.api.requests.Response;
 import net.dv8tion.jda.api.requests.RestAction;
@@ -32,7 +27,6 @@ import net.dv8tion.jda.internal.entities.EntityBuilder;
 import net.dv8tion.jda.internal.requests.Requester;
 import net.dv8tion.jda.internal.requests.RestActionImpl;
 import net.dv8tion.jda.test.assertions.restaction.RestActionAssertions;
-
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.TestInfo;
@@ -48,6 +42,11 @@ import java.util.function.Consumer;
 
 import javax.annotation.CheckReturnValue;
 import javax.annotation.Nonnull;
+
+import static org.assertj.core.api.Assertions.assertThat;
+import static org.assertj.core.api.Assertions.assertThatNoException;
+import static org.mockito.Mockito.*;
+import static org.mockito.MockitoAnnotations.openMocks;
 
 public class IntegrationTest extends AbstractSnapshotTest {
     protected Random random = new Random();

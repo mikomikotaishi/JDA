@@ -17,9 +17,7 @@
 package net.dv8tion.jda.internal;
 
 import com.neovisionaries.ws.client.WebSocketFactory;
-
 import gnu.trove.set.TLongSet;
-
 import net.dv8tion.jda.api.GatewayEncoding;
 import net.dv8tion.jda.api.JDA;
 import net.dv8tion.jda.api.Permission;
@@ -89,10 +87,8 @@ import net.dv8tion.jda.internal.utils.config.AuthorizationConfig;
 import net.dv8tion.jda.internal.utils.config.MetaConfig;
 import net.dv8tion.jda.internal.utils.config.SessionConfig;
 import net.dv8tion.jda.internal.utils.config.ThreadingConfig;
-
 import okhttp3.OkHttpClient;
 import okhttp3.RequestBody;
-
 import org.slf4j.Logger;
 import org.slf4j.MDC;
 

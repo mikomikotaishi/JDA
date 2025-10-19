@@ -16,8 +16,6 @@
 
 package net.dv8tion.jda.internal.entities;
 
-import static net.dv8tion.jda.api.entities.Guild.NSFWLevel;
-
 import net.dv8tion.jda.api.JDA;
 import net.dv8tion.jda.api.Permission;
 import net.dv8tion.jda.api.entities.*;
@@ -43,6 +41,8 @@ import java.util.Set;
 
 import javax.annotation.Nonnull;
 import javax.annotation.Nullable;
+
+import static net.dv8tion.jda.api.entities.Guild.NSFWLevel;
 
 public class InviteImpl implements Invite {
     private final JDAImpl api;

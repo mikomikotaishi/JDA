@@ -27,7 +27,6 @@ import net.dv8tion.jda.api.components.replacer.IReplaceable;
 import net.dv8tion.jda.internal.components.actionrow.ActionRowImpl;
 import net.dv8tion.jda.internal.utils.Checks;
 import net.dv8tion.jda.internal.utils.Helpers;
-
 import org.jetbrains.annotations.Unmodifiable;
 
 import java.util.Collection;

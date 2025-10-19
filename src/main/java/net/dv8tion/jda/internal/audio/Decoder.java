@@ -17,9 +17,7 @@
 package net.dv8tion.jda.internal.audio;
 
 import com.sun.jna.ptr.PointerByReference;
-
 import net.dv8tion.jda.api.audio.OpusPacket;
-
 import tomp2p.opuswrapper.Opus;
 
 import java.nio.ByteBuffer;

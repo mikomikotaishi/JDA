@@ -19,7 +19,6 @@ package net.dv8tion.jda.api.entities;
 import net.dv8tion.jda.api.utils.ImageProxy;
 import net.dv8tion.jda.api.utils.MiscUtil;
 import net.dv8tion.jda.internal.utils.Checks;
-
 import org.jetbrains.annotations.Unmodifiable;
 
 import java.util.List;

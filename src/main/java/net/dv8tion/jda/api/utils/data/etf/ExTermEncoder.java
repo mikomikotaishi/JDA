@@ -16,8 +16,6 @@
 
 package net.dv8tion.jda.api.utils.data.etf;
 
-import static net.dv8tion.jda.api.utils.data.etf.ExTermTag.*;
-
 import net.dv8tion.jda.api.utils.data.DataArray;
 import net.dv8tion.jda.api.utils.data.SerializableData;
 
@@ -30,6 +28,8 @@ import java.util.Map;
 
 import javax.annotation.Nonnull;
 import javax.annotation.Nullable;
+
+import static net.dv8tion.jda.api.utils.data.etf.ExTermTag.*;
 
 /**
  * Encodes an object into a binary ETF representation.

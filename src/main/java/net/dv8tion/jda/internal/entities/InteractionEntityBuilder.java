@@ -37,7 +37,6 @@ import net.dv8tion.jda.internal.entities.detached.DetachedRoleImpl;
 import net.dv8tion.jda.internal.interactions.ChannelInteractionPermissions;
 import net.dv8tion.jda.internal.interactions.MemberInteractionPermissions;
 import net.dv8tion.jda.internal.utils.JDALogger;
-
 import org.slf4j.Logger;
 
 import java.util.Collections;

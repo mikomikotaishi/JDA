@@ -17,7 +17,6 @@
 package net.dv8tion.jda.api.utils.concurrent;
 
 import net.dv8tion.jda.internal.utils.Checks;
-
 import org.jetbrains.annotations.Blocking;
 
 import java.time.Duration;

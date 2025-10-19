@@ -22,7 +22,6 @@ import net.dv8tion.jda.internal.entities.EntityBuilder;
 import net.dv8tion.jda.internal.utils.Checks;
 import net.dv8tion.jda.internal.utils.EntityString;
 import net.dv8tion.jda.internal.utils.Helpers;
-
 import org.jetbrains.annotations.Contract;
 
 import java.time.Instant;

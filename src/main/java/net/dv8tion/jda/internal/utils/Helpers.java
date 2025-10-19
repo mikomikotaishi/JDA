@@ -18,14 +18,11 @@ package net.dv8tion.jda.internal.utils;
 
 import gnu.trove.map.TLongObjectMap;
 import gnu.trove.map.hash.TLongObjectHashMap;
-
 import net.dv8tion.jda.api.utils.Result;
 import net.dv8tion.jda.api.utils.data.DataArray;
 import net.dv8tion.jda.api.utils.data.DataObject;
 import net.dv8tion.jda.internal.JDAImpl;
-
 import okhttp3.HttpUrl;
-
 import org.jetbrains.annotations.Unmodifiable;
 
 import java.time.*;

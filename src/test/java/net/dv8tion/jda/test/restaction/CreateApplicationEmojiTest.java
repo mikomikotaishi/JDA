@@ -16,16 +16,10 @@
 
 package net.dv8tion.jda.test.restaction;
 
-import static org.assertj.core.api.Assertions.assertThatIllegalArgumentException;
-import static org.junit.jupiter.params.provider.Arguments.arguments;
-import static org.mockito.ArgumentMatchers.any;
-import static org.mockito.Mockito.when;
-
 import net.dv8tion.jda.api.entities.Icon;
 import net.dv8tion.jda.api.requests.Method;
 import net.dv8tion.jda.internal.entities.SelfUserImpl;
 import net.dv8tion.jda.test.Constants;
-
 import org.apache.commons.lang3.StringUtils;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
@@ -34,6 +28,11 @@ import org.junit.jupiter.params.provider.Arguments;
 import org.junit.jupiter.params.provider.MethodSource;
 
 import java.util.stream.Stream;
+
+import static org.assertj.core.api.Assertions.assertThatIllegalArgumentException;
+import static org.junit.jupiter.params.provider.Arguments.arguments;
+import static org.mockito.ArgumentMatchers.any;
+import static org.mockito.Mockito.when;
 
 @SuppressWarnings("ResultOfMethodCallIgnored")
 public class CreateApplicationEmojiTest extends RestActionTest {

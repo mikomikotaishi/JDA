@@ -33,7 +33,6 @@ import net.dv8tion.jda.api.requests.restaction.CacheRestAction;
 import net.dv8tion.jda.api.requests.restaction.pagination.ThreadMemberPaginationAction;
 import net.dv8tion.jda.api.utils.MiscUtil;
 import net.dv8tion.jda.internal.utils.Checks;
-
 import org.jetbrains.annotations.Unmodifiable;
 
 import java.time.OffsetDateTime;

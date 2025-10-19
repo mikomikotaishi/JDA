@@ -16,19 +16,17 @@
 
 package net.dv8tion.jda.test.entities.message;
 
-import static net.dv8tion.jda.test.ChecksHelper.*;
-
-import static org.assertj.core.api.Assertions.assertThatIllegalArgumentException;
-import static org.assertj.core.api.Assertions.assertThatIllegalStateException;
-
 import net.dv8tion.jda.api.entities.messages.MessagePoll;
 import net.dv8tion.jda.api.utils.messages.MessagePollBuilder;
 import net.dv8tion.jda.test.ChecksHelper;
-
 import org.junit.jupiter.api.Test;
 
 import java.time.Duration;
 import java.util.concurrent.TimeUnit;
+
+import static net.dv8tion.jda.test.ChecksHelper.*;
+import static org.assertj.core.api.Assertions.assertThatIllegalArgumentException;
+import static org.assertj.core.api.Assertions.assertThatIllegalStateException;
 
 public class MessagePollDataTest {
     @Test

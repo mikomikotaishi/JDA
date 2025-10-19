@@ -17,7 +17,6 @@
 package net.dv8tion.jda.internal.requests.restaction.pagination;
 
 import gnu.trove.map.TLongObjectMap;
-
 import net.dv8tion.jda.api.JDA;
 import net.dv8tion.jda.api.entities.channel.attribute.IThreadContainer;
 import net.dv8tion.jda.api.entities.channel.concrete.ThreadChannel;

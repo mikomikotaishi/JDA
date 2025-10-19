@@ -18,7 +18,6 @@ package net.dv8tion.jda.internal.requests.restaction;
 
 import gnu.trove.set.TLongSet;
 import gnu.trove.set.hash.TLongHashSet;
-
 import net.dv8tion.jda.api.Permission;
 import net.dv8tion.jda.api.entities.Guild;
 import net.dv8tion.jda.api.entities.Message;
@@ -43,7 +42,6 @@ import net.dv8tion.jda.internal.requests.RestActionImpl;
 import net.dv8tion.jda.internal.utils.ChannelUtil;
 import net.dv8tion.jda.internal.utils.Checks;
 import net.dv8tion.jda.internal.utils.message.MessageCreateBuilderMixin;
-
 import okhttp3.RequestBody;
 
 import java.util.Collection;

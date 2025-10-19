@@ -24,7 +24,6 @@ import net.dv8tion.jda.api.utils.concurrent.Task;
 import net.dv8tion.jda.internal.utils.Checks;
 import net.dv8tion.jda.internal.utils.JDALogger;
 import net.dv8tion.jda.internal.utils.concurrent.task.GatewayTask;
-
 import org.slf4j.Logger;
 
 import java.time.Duration;

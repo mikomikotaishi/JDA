@@ -24,7 +24,6 @@ import net.dv8tion.jda.api.utils.data.DataArray;
 import net.dv8tion.jda.api.utils.data.DataObject;
 import net.dv8tion.jda.api.utils.data.SerializableData;
 import net.dv8tion.jda.internal.utils.Helpers;
-
 import org.jetbrains.annotations.Unmodifiable;
 
 import java.awt.*;

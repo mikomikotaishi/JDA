@@ -16,11 +16,6 @@
 
 package net.dv8tion.jda.test.components;
 
-import static net.dv8tion.jda.api.components.replacer.ComponentReplacer.byUniqueId;
-
-import static org.assertj.core.api.Assertions.assertThat;
-import static org.assertj.core.api.Assertions.assertThatIllegalArgumentException;
-
 import net.dv8tion.jda.api.components.Component;
 import net.dv8tion.jda.api.components.actionrow.ActionRow;
 import net.dv8tion.jda.api.components.actionrow.ActionRowChildComponentUnion;
@@ -29,12 +24,15 @@ import net.dv8tion.jda.api.components.selections.EntitySelectMenu;
 import net.dv8tion.jda.api.utils.data.DataObject;
 import net.dv8tion.jda.test.AbstractSnapshotTest;
 import net.dv8tion.jda.test.ChecksHelper;
-
 import org.junit.jupiter.api.Test;
 
 import java.util.Arrays;
 import java.util.Collections;
 import java.util.List;
+
+import static net.dv8tion.jda.api.components.replacer.ComponentReplacer.byUniqueId;
+import static org.assertj.core.api.Assertions.assertThat;
+import static org.assertj.core.api.Assertions.assertThatIllegalArgumentException;
 
 public class ActionRowTest extends AbstractSnapshotTest {
 

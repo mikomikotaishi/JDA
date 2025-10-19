@@ -17,7 +17,6 @@
 package net.dv8tion.jda.internal.audio;
 
 import com.neovisionaries.ws.client.*;
-
 import net.dv8tion.jda.api.JDAInfo;
 import net.dv8tion.jda.api.audio.SpeakingMode;
 import net.dv8tion.jda.api.audio.hooks.ConnectionListener;
@@ -34,7 +33,6 @@ import net.dv8tion.jda.internal.JDAImpl;
 import net.dv8tion.jda.internal.managers.AudioManagerImpl;
 import net.dv8tion.jda.internal.utils.IOUtil;
 import net.dv8tion.jda.internal.utils.JDALogger;
-
 import org.slf4j.Logger;
 
 import java.io.IOException;

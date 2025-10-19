@@ -16,12 +16,11 @@
 
 package net.dv8tion.jda.test.util;
 
-import static org.assertj.core.api.Assertions.assertThat;
-
 import net.dv8tion.jda.api.utils.MarkdownSanitizer;
-
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
+
+import static org.assertj.core.api.Assertions.assertThat;
 
 class MarkdownTest {
     private MarkdownSanitizer markdown;

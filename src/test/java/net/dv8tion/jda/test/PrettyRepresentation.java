@@ -18,7 +18,6 @@ package net.dv8tion.jda.test;
 
 import net.dv8tion.jda.api.utils.data.DataArray;
 import net.dv8tion.jda.api.utils.data.DataObject;
-
 import org.assertj.core.presentation.StandardRepresentation;
 
 public class PrettyRepresentation extends StandardRepresentation {

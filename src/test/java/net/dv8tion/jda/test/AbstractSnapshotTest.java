@@ -16,13 +16,10 @@
 
 package net.dv8tion.jda.test;
 
-import static net.dv8tion.jda.test.TestHelper.captureLogging;
-
 import net.dv8tion.jda.api.utils.data.SerializableArray;
 import net.dv8tion.jda.api.utils.data.SerializableData;
 import net.dv8tion.jda.test.assertions.logging.LoggingAssertions;
 import net.dv8tion.jda.test.util.SnapshotHandler;
-
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.TestInfo;
 
@@ -30,6 +27,8 @@ import java.util.List;
 
 import javax.annotation.CheckReturnValue;
 import javax.annotation.Nonnull;
+
+import static net.dv8tion.jda.test.TestHelper.captureLogging;
 
 public class AbstractSnapshotTest {
     protected SnapshotHandler snapshotHandler;

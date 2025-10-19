@@ -16,9 +16,9 @@
 
 package net.dv8tion.jda.test.assertions.checks;
 
-import static net.dv8tion.jda.test.ChecksHelper.notPositiveError;
-
 import org.junit.jupiter.api.function.ThrowingConsumer;
+
+import static net.dv8tion.jda.test.ChecksHelper.notPositiveError;
 
 public class LongChecksAssertions extends AbstractChecksAssertions<Long, LongChecksAssertions> {
     public LongChecksAssertions(String name, ThrowingConsumer<Long> callable) {

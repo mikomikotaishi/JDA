@@ -16,8 +16,6 @@
 
 package net.dv8tion.jda.test.components;
 
-import static net.dv8tion.jda.test.ChecksHelper.assertStringChecks;
-
 import net.dv8tion.jda.api.components.label.Label;
 import net.dv8tion.jda.api.components.label.LabelChildComponent;
 import net.dv8tion.jda.api.components.selections.StringSelectMenu;
@@ -30,9 +28,10 @@ import net.dv8tion.jda.api.utils.data.DataObject;
 import net.dv8tion.jda.api.utils.data.SerializableData;
 import net.dv8tion.jda.test.AbstractSnapshotTest;
 import net.dv8tion.jda.test.ChecksHelper;
-
 import org.junit.jupiter.api.Nested;
 import org.junit.jupiter.api.Test;
+
+import static net.dv8tion.jda.test.ChecksHelper.assertStringChecks;
 
 class LabelTest extends AbstractSnapshotTest {
     private static final TextInput EXAMPLE_TEXT_INPUT = TextInput.of("input", TextInputStyle.SHORT);

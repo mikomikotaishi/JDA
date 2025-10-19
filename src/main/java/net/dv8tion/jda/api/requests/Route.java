@@ -16,8 +16,6 @@
 
 package net.dv8tion.jda.api.requests;
 
-import static net.dv8tion.jda.api.requests.Method.*;
-
 import net.dv8tion.jda.internal.utils.Checks;
 import net.dv8tion.jda.internal.utils.EncodingUtil;
 import net.dv8tion.jda.internal.utils.EntityString;
@@ -27,6 +25,8 @@ import java.util.*;
 
 import javax.annotation.CheckReturnValue;
 import javax.annotation.Nonnull;
+
+import static net.dv8tion.jda.api.requests.Method.*;
 
 /**
  * Routes for API endpoints.

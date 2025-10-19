@@ -24,7 +24,6 @@ import net.dv8tion.jda.api.requests.ErrorResponse;
 import net.dv8tion.jda.api.requests.RestAction;
 import net.dv8tion.jda.api.requests.restaction.AuditableRestAction;
 import net.dv8tion.jda.api.requests.restaction.CacheRestAction;
-
 import org.jetbrains.annotations.Contract;
 
 import javax.annotation.CheckReturnValue;

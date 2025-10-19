@@ -19,7 +19,6 @@ package net.dv8tion.jda.api.utils.cache;
 import net.dv8tion.jda.api.entities.Member;
 import net.dv8tion.jda.api.entities.Role;
 import net.dv8tion.jda.api.utils.MiscUtil;
-
 import org.jetbrains.annotations.Unmodifiable;
 
 import java.util.Collection;

@@ -19,7 +19,6 @@ package net.dv8tion.jda.api.audio.hooks;
 import net.dv8tion.jda.api.audio.SpeakingMode;
 import net.dv8tion.jda.api.entities.User;
 import net.dv8tion.jda.api.entities.UserSnowflake;
-
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 

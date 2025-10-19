@@ -16,8 +16,6 @@
 
 package net.dv8tion.jda.test.components;
 
-import static org.assertj.core.api.Assertions.fail;
-
 import net.dv8tion.jda.api.components.Component;
 import net.dv8tion.jda.api.components.actionrow.ActionRow;
 import net.dv8tion.jda.api.components.attachmentupload.AttachmentUpload;
@@ -40,6 +38,8 @@ import net.dv8tion.jda.api.utils.FileUpload;
 import net.dv8tion.jda.api.utils.data.DataObject;
 import net.dv8tion.jda.internal.components.UnknownComponentImpl;
 import net.dv8tion.jda.test.Resources;
+
+import static org.assertj.core.api.Assertions.fail;
 
 public class ComponentTestData {
     public static <T extends Component> T getMinimalComponent(

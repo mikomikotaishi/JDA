@@ -16,15 +16,11 @@
 
 package net.dv8tion.jda.test.entities.channel;
 
-import static org.assertj.core.api.Assertions.assertThatException;
-import static org.mockito.Mockito.*;
-
 import net.dv8tion.jda.api.Permission;
 import net.dv8tion.jda.api.entities.Guild;
 import net.dv8tion.jda.api.exceptions.InsufficientPermissionException;
 import net.dv8tion.jda.internal.entities.channel.mixin.middleman.GuildMessageChannelMixin;
 import net.dv8tion.jda.internal.utils.ClockProvider;
-
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.Arguments;
 import org.junit.jupiter.params.provider.MethodSource;
@@ -34,6 +30,9 @@ import java.time.Instant;
 import java.util.EnumSet;
 import java.util.Set;
 import java.util.stream.Stream;
+
+import static org.assertj.core.api.Assertions.assertThatException;
+import static org.mockito.Mockito.*;
 
 public class MessagePinDeadlineTest {
     private static final Instant BEFORE_DEADLINE = Instant.parse("2025-08-21T00:00:00Z");

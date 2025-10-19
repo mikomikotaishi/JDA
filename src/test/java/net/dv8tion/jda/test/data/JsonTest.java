@@ -16,15 +16,11 @@
 
 package net.dv8tion.jda.test.data;
 
-import static org.assertj.core.api.Assertions.assertThat;
-import static org.assertj.core.api.Assertions.assertThatThrownBy;
-
 import net.dv8tion.jda.api.exceptions.ParsingException;
 import net.dv8tion.jda.api.utils.data.DataArray;
 import net.dv8tion.jda.api.utils.data.DataObject;
 import net.dv8tion.jda.internal.utils.Helpers;
 import net.dv8tion.jda.test.PrettyRepresentation;
-
 import org.junit.jupiter.api.Nested;
 import org.junit.jupiter.api.Test;
 
@@ -37,6 +33,9 @@ import java.util.stream.Collectors;
 import java.util.stream.DoubleStream;
 import java.util.stream.IntStream;
 import java.util.stream.Stream;
+
+import static org.assertj.core.api.Assertions.assertThat;
+import static org.assertj.core.api.Assertions.assertThatThrownBy;
 
 public class JsonTest {
     private static final String TEST_TIME_STRING = "2024-01-01T12:34:56.789Z";

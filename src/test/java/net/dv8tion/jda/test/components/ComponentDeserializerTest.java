@@ -16,10 +16,6 @@
 
 package net.dv8tion.jda.test.components;
 
-import static org.assertj.core.api.Assertions.assertThat;
-import static org.assertj.core.api.Assertions.assertThatNoException;
-import static org.junit.jupiter.api.Assertions.fail;
-
 import net.dv8tion.jda.api.components.MessageTopLevelComponentUnion;
 import net.dv8tion.jda.api.components.tree.ComponentTree;
 import net.dv8tion.jda.api.components.tree.MessageComponentTree;
@@ -27,7 +23,6 @@ import net.dv8tion.jda.api.components.tree.ModalComponentTree;
 import net.dv8tion.jda.api.components.utils.ComponentDeserializer;
 import net.dv8tion.jda.api.components.utils.ComponentSerializer;
 import net.dv8tion.jda.api.utils.data.DataArray;
-
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.EnumSource;
@@ -37,6 +32,10 @@ import org.mockito.Mockito;
 import java.io.InputStream;
 import java.util.Collections;
 import java.util.List;
+
+import static org.assertj.core.api.Assertions.assertThat;
+import static org.assertj.core.api.Assertions.assertThatNoException;
+import static org.junit.jupiter.api.Assertions.fail;
 
 class ComponentDeserializerTest extends AbstractComponentTest {
     @Test

@@ -35,7 +35,6 @@ import net.dv8tion.jda.internal.entities.EntityBuilder;
 import net.dv8tion.jda.internal.requests.RestActionImpl;
 import net.dv8tion.jda.internal.utils.Checks;
 import net.dv8tion.jda.internal.utils.JDALogger;
-
 import org.apache.commons.collections4.map.ListOrderedMap;
 import org.jetbrains.annotations.Unmodifiable;
 import org.slf4j.Logger;

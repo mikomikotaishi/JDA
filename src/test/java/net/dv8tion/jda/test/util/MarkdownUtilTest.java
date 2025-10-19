@@ -16,11 +16,10 @@
 
 package net.dv8tion.jda.test.util;
 
-import static net.dv8tion.jda.api.utils.MarkdownUtil.*;
-
-import static org.assertj.core.api.Assertions.assertThat;
-
 import org.junit.jupiter.api.Test;
+
+import static net.dv8tion.jda.api.utils.MarkdownUtil.*;
+import static org.assertj.core.api.Assertions.assertThat;
 
 public class MarkdownUtilTest {
     @Test

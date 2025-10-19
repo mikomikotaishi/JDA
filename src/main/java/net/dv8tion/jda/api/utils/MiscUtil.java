@@ -19,7 +19,6 @@ package net.dv8tion.jda.api.utils;
 import gnu.trove.impl.sync.TSynchronizedLongObjectMap;
 import gnu.trove.map.TLongObjectMap;
 import gnu.trove.map.hash.TLongObjectHashMap;
-
 import net.dv8tion.jda.annotations.UnknownNullability;
 import net.dv8tion.jda.api.entities.Guild;
 import net.dv8tion.jda.internal.utils.Checks;

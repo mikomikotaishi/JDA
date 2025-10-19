@@ -22,7 +22,6 @@ import net.dv8tion.jda.api.utils.messages.MessageEditBuilder;
 import net.dv8tion.jda.api.utils.messages.MessageEditData;
 import net.dv8tion.jda.internal.interactions.InteractionHookImpl;
 import net.dv8tion.jda.internal.utils.message.MessageEditBuilderMixin;
-
 import okhttp3.RequestBody;
 
 import java.util.concurrent.TimeUnit;

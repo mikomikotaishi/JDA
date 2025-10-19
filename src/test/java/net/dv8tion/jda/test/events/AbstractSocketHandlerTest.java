@@ -16,19 +16,18 @@
 
 package net.dv8tion.jda.test.events;
 
-import static org.mockito.ArgumentMatchers.anyLong;
-import static org.mockito.ArgumentMatchers.eq;
-import static org.mockito.Mockito.when;
-
 import net.dv8tion.jda.api.entities.Guild;
 import net.dv8tion.jda.api.utils.data.DataObject;
 import net.dv8tion.jda.internal.handle.GuildSetupController;
 import net.dv8tion.jda.test.Constants;
 import net.dv8tion.jda.test.IntegrationTest;
 import net.dv8tion.jda.test.assertions.events.EventFiredAssertions;
-
 import org.junit.jupiter.api.BeforeEach;
 import org.mockito.Mock;
+
+import static org.mockito.ArgumentMatchers.anyLong;
+import static org.mockito.ArgumentMatchers.eq;
+import static org.mockito.Mockito.when;
 
 public class AbstractSocketHandlerTest extends IntegrationTest {
     @Mock

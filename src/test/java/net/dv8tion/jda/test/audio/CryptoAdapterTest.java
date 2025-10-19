@@ -16,18 +16,17 @@
 
 package net.dv8tion.jda.test.audio;
 
-import static org.assertj.core.api.Assertions.assertThat;
-
 import net.dv8tion.jda.internal.audio.AudioEncryption;
 import net.dv8tion.jda.internal.audio.AudioPacket;
 import net.dv8tion.jda.internal.audio.CryptoAdapter;
-
 import org.junit.jupiter.api.Test;
 
 import java.net.DatagramPacket;
 import java.nio.ByteBuffer;
 import java.nio.charset.StandardCharsets;
 import java.security.SecureRandom;
+
+import static org.assertj.core.api.Assertions.assertThat;
 
 public class CryptoAdapterTest {
     private static final String TEST_PAYLOAD = "text";

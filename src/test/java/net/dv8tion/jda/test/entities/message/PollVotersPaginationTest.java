@@ -16,13 +16,12 @@
 
 package net.dv8tion.jda.test.entities.message;
 
-import static org.assertj.core.api.Assertions.assertThatIllegalArgumentException;
-
 import net.dv8tion.jda.api.requests.Method;
 import net.dv8tion.jda.internal.requests.restaction.pagination.PollVotersPaginationActionImpl;
 import net.dv8tion.jda.test.IntegrationTest;
-
 import org.junit.jupiter.api.Test;
+
+import static org.assertj.core.api.Assertions.assertThatIllegalArgumentException;
 
 public class PollVotersPaginationTest extends IntegrationTest {
     private PollVotersPaginationActionImpl newAction() {

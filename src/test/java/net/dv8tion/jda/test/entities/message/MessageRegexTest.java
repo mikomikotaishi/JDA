@@ -16,12 +16,11 @@
 
 package net.dv8tion.jda.test.entities.message;
 
-import static org.assertj.core.api.Assertions.assertThat;
-
 import net.dv8tion.jda.api.entities.Message;
-
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.ValueSource;
+
+import static org.assertj.core.api.Assertions.assertThat;
 
 public class MessageRegexTest {
     @ParameterizedTest

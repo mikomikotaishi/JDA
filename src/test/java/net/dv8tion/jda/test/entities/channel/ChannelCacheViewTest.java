@@ -16,9 +16,6 @@
 
 package net.dv8tion.jda.test.entities.channel;
 
-import static org.assertj.core.api.Assertions.assertThat;
-import static org.mockito.Mockito.*;
-
 import net.dv8tion.jda.api.entities.channel.Channel;
 import net.dv8tion.jda.api.entities.channel.ChannelType;
 import net.dv8tion.jda.api.entities.channel.attribute.ICategorizableChannel;
@@ -33,7 +30,6 @@ import net.dv8tion.jda.api.entities.channel.unions.IThreadContainerUnion;
 import net.dv8tion.jda.api.utils.cache.SortedChannelCacheView;
 import net.dv8tion.jda.internal.utils.ChannelUtil;
 import net.dv8tion.jda.internal.utils.cache.SortedChannelCacheViewImpl;
-
 import org.junit.jupiter.api.Test;
 
 import java.util.List;
@@ -43,6 +39,9 @@ import java.util.Set;
 import java.util.function.Supplier;
 import java.util.stream.Collectors;
 import java.util.stream.Stream;
+
+import static org.assertj.core.api.Assertions.assertThat;
+import static org.mockito.Mockito.*;
 
 class ChannelCacheViewTest {
     private static long counter = 0;

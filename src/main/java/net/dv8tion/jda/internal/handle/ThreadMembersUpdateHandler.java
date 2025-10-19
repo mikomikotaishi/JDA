@@ -18,7 +18,6 @@ package net.dv8tion.jda.internal.handle;
 
 import gnu.trove.map.TLongObjectMap;
 import gnu.trove.map.hash.TLongObjectHashMap;
-
 import net.dv8tion.jda.api.entities.ThreadMember;
 import net.dv8tion.jda.api.events.thread.member.ThreadMemberJoinEvent;
 import net.dv8tion.jda.api.events.thread.member.ThreadMemberLeaveEvent;

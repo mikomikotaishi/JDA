@@ -26,7 +26,6 @@ import net.dv8tion.jda.api.requests.restaction.order.RoleOrderAction;
 import net.dv8tion.jda.api.utils.data.DataArray;
 import net.dv8tion.jda.api.utils.data.DataObject;
 import net.dv8tion.jda.internal.utils.Checks;
-
 import okhttp3.RequestBody;
 
 import java.util.ArrayList;

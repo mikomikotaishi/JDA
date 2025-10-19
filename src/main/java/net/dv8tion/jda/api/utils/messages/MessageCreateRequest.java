@@ -25,7 +25,6 @@ import net.dv8tion.jda.api.entities.MessageEmbed;
 import net.dv8tion.jda.api.requests.RestAction;
 import net.dv8tion.jda.api.utils.FileUpload;
 import net.dv8tion.jda.internal.utils.Checks;
-
 import okhttp3.MediaType;
 
 import java.io.File;

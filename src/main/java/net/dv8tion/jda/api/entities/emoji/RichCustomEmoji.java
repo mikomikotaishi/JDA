@@ -27,7 +27,6 @@ import net.dv8tion.jda.api.requests.RestAction;
 import net.dv8tion.jda.api.requests.restaction.AuditableRestAction;
 import net.dv8tion.jda.api.requests.restaction.CacheRestAction;
 import net.dv8tion.jda.internal.utils.PermissionUtil;
-
 import org.jetbrains.annotations.Unmodifiable;
 
 import java.util.List;

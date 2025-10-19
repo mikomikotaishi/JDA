@@ -16,17 +16,16 @@
 
 package net.dv8tion.jda.test.assertions.events;
 
-import static org.assertj.core.api.Assertions.assertThat;
-import static org.mockito.ArgumentMatchers.assertArg;
-import static org.mockito.Mockito.*;
-
 import net.dv8tion.jda.internal.JDAImpl;
-
 import org.junit.jupiter.api.function.ThrowingConsumer;
 
 import java.util.ArrayList;
 import java.util.List;
 import java.util.function.Function;
+
+import static org.assertj.core.api.Assertions.assertThat;
+import static org.mockito.ArgumentMatchers.assertArg;
+import static org.mockito.Mockito.*;
 
 public class EventFiredAssertions<T> {
     private final Class<T> eventType;

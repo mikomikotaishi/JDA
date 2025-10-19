@@ -16,17 +16,16 @@
 
 package net.dv8tion.jda.test.components;
 
-import static org.assertj.core.api.Assertions.assertThat;
-import static org.assertj.core.api.Assertions.assertThatIllegalArgumentException;
-
 import net.dv8tion.jda.api.components.selections.EntitySelectMenu;
 import net.dv8tion.jda.api.components.selections.EntitySelectMenu.Builder;
 import net.dv8tion.jda.api.components.selections.EntitySelectMenu.DefaultValue;
 import net.dv8tion.jda.api.components.selections.EntitySelectMenu.SelectTarget;
 import net.dv8tion.jda.api.utils.data.DataObject;
 import net.dv8tion.jda.internal.components.selections.EntitySelectMenuImpl;
-
 import org.junit.jupiter.api.Test;
+
+import static org.assertj.core.api.Assertions.assertThat;
+import static org.assertj.core.api.Assertions.assertThatIllegalArgumentException;
 
 public class SelectMenuTests {
     @Test

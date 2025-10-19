@@ -19,7 +19,6 @@ package net.dv8tion.jda.internal.requests.restaction.operator;
 import net.dv8tion.jda.api.exceptions.RateLimitedException;
 import net.dv8tion.jda.api.requests.RestAction;
 import net.dv8tion.jda.internal.utils.Helpers;
-
 import org.jetbrains.annotations.Contract;
 
 import java.util.concurrent.CompletableFuture;

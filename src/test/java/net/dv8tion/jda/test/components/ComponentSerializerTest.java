@@ -16,14 +16,11 @@
 
 package net.dv8tion.jda.test.components;
 
-import static org.assertj.core.api.Assertions.assertThat;
-
 import net.dv8tion.jda.api.components.Component;
 import net.dv8tion.jda.api.components.utils.ComponentDeserializer;
 import net.dv8tion.jda.api.components.utils.ComponentSerializer;
 import net.dv8tion.jda.api.utils.FileUpload;
 import net.dv8tion.jda.api.utils.data.DataObject;
-
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.Arguments;
 import org.junit.jupiter.params.provider.MethodSource;
@@ -32,6 +29,8 @@ import java.util.Arrays;
 import java.util.Collections;
 import java.util.List;
 import java.util.stream.Stream;
+
+import static org.assertj.core.api.Assertions.assertThat;
 
 public class ComponentSerializerTest extends AbstractComponentTest {
     @MethodSource("getSerializerTestCases")

@@ -26,7 +26,6 @@ import net.dv8tion.jda.api.entities.channel.middleman.GuildChannel;
 import net.dv8tion.jda.api.entities.detached.IDetachableEntity;
 import net.dv8tion.jda.api.exceptions.DetachedEntityException;
 import net.dv8tion.jda.api.exceptions.MissingAccessException;
-
 import org.intellij.lang.annotations.PrintFormat;
 import org.jetbrains.annotations.Contract;
 

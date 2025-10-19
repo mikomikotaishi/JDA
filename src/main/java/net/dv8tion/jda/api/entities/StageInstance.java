@@ -20,7 +20,6 @@ import net.dv8tion.jda.api.entities.channel.concrete.StageChannel;
 import net.dv8tion.jda.api.managers.StageInstanceManager;
 import net.dv8tion.jda.api.requests.RestAction;
 import net.dv8tion.jda.internal.utils.Helpers;
-
 import org.jetbrains.annotations.Unmodifiable;
 
 import java.util.List;

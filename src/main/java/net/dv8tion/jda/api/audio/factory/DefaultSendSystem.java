@@ -16,11 +16,8 @@
 
 package net.dv8tion.jda.api.audio.factory;
 
-import static net.dv8tion.jda.api.audio.OpusPacket.OPUS_FRAME_TIME_AMOUNT;
-
 import net.dv8tion.jda.internal.audio.AudioConnection;
 import net.dv8tion.jda.internal.utils.JDALogger;
-
 import org.slf4j.MDC;
 
 import java.net.DatagramPacket;
@@ -31,6 +28,8 @@ import java.util.concurrent.ConcurrentMap;
 
 import javax.annotation.CheckForNull;
 import javax.annotation.Nonnull;
+
+import static net.dv8tion.jda.api.audio.OpusPacket.OPUS_FRAME_TIME_AMOUNT;
 
 /**
  * The default implementation of the {@link net.dv8tion.jda.api.audio.factory.IAudioSendSystem IAudioSendSystem}.

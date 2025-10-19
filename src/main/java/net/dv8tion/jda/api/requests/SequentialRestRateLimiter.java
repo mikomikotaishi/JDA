@@ -18,10 +18,8 @@ package net.dv8tion.jda.api.requests;
 
 import net.dv8tion.jda.api.utils.MiscUtil;
 import net.dv8tion.jda.internal.utils.JDALogger;
-
 import okhttp3.Headers;
 import okhttp3.Response;
-
 import org.slf4j.Logger;
 
 import java.util.*;

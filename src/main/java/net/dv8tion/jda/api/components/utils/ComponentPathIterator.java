@@ -21,7 +21,6 @@ import net.dv8tion.jda.api.components.actionrow.ActionRow;
 import net.dv8tion.jda.api.components.container.Container;
 import net.dv8tion.jda.api.components.label.Label;
 import net.dv8tion.jda.api.components.section.Section;
-
 import org.apache.commons.collections4.iterators.SingletonIterator;
 
 import java.util.*;

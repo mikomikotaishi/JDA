@@ -16,9 +16,6 @@
 
 package net.dv8tion.jda.test.restaction;
 
-import static org.mockito.ArgumentMatchers.any;
-import static org.mockito.Mockito.*;
-
 import net.dv8tion.jda.api.Permission;
 import net.dv8tion.jda.api.entities.Guild;
 import net.dv8tion.jda.api.entities.SelfMember;
@@ -33,10 +30,12 @@ import net.dv8tion.jda.internal.requests.restaction.ForumPostActionImpl;
 import net.dv8tion.jda.internal.requests.restaction.ThreadChannelActionImpl;
 import net.dv8tion.jda.test.Constants;
 import net.dv8tion.jda.test.IntegrationTest;
-
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.mockito.Mock;
+
+import static org.mockito.ArgumentMatchers.any;
+import static org.mockito.Mockito.*;
 
 public class ThreadCreateActionTest extends IntegrationTest {
     @Mock

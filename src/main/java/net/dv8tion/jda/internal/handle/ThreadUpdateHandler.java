@@ -17,7 +17,6 @@
 package net.dv8tion.jda.internal.handle;
 
 import gnu.trove.set.TLongSet;
-
 import net.dv8tion.jda.api.entities.channel.Channel;
 import net.dv8tion.jda.api.entities.channel.ChannelFlag;
 import net.dv8tion.jda.api.entities.channel.concrete.ThreadChannel;

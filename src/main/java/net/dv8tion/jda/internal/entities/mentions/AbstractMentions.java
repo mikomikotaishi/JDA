@@ -18,7 +18,6 @@ package net.dv8tion.jda.internal.entities.mentions;
 
 import gnu.trove.map.TLongObjectMap;
 import gnu.trove.map.hash.TLongObjectHashMap;
-
 import net.dv8tion.jda.api.JDA;
 import net.dv8tion.jda.api.entities.*;
 import net.dv8tion.jda.api.entities.channel.middleman.GuildChannel;
@@ -30,7 +29,6 @@ import net.dv8tion.jda.api.utils.MiscUtil;
 import net.dv8tion.jda.internal.JDAImpl;
 import net.dv8tion.jda.internal.utils.Checks;
 import net.dv8tion.jda.internal.utils.Helpers;
-
 import org.apache.commons.collections4.Bag;
 import org.apache.commons.collections4.CollectionUtils;
 import org.apache.commons.collections4.bag.HashBag;

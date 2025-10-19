@@ -16,8 +16,6 @@
 
 package net.dv8tion.jda.api.utils.messages;
 
-import static net.dv8tion.jda.api.utils.messages.MessageEditBuilder.*;
-
 import net.dv8tion.jda.api.components.MessageTopLevelComponentUnion;
 import net.dv8tion.jda.api.entities.Message;
 import net.dv8tion.jda.api.entities.MessageEmbed;
@@ -35,6 +33,8 @@ import java.util.*;
 
 import javax.annotation.Nonnull;
 import javax.annotation.Nullable;
+
+import static net.dv8tion.jda.api.utils.messages.MessageEditBuilder.*;
 
 /**
  * Output of a {@link MessageEditRequest} and used for editing messages in channels/webhooks/interactions.
