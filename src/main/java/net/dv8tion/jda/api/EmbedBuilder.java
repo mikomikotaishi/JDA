@@ -42,7 +42,6 @@ import javax.annotation.Nullable;
  * <br>A visual breakdown of an Embed and how it relates to this class is available at
  * <a href="https://raw.githubusercontent.com/discord-jda/JDA/assets/assets/docs/embeds/01-Overview.png" target="_blank">Embed Overview</a>.
  *
- * @since  3.0
  * @author John A. Grosh
  */
 public class EmbedBuilder {

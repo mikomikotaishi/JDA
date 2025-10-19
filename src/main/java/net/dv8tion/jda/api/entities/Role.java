@@ -36,7 +36,6 @@ import javax.annotation.Nullable;
  * @see Guild#getRoleById(long)
  * @see Guild#getRolesByName(String, boolean)
  * @see Guild#getRoles()
- *
  * @see JDA#getRoleCache()
  * @see JDA#getRoleById(long)
  * @see JDA#getRolesByName(String, boolean)
@@ -313,8 +312,6 @@ public interface Role extends IMentionable, IPermissionHolder, IDetachableEntity
 
     /**
      * Tags associated with this role.
-     *
-     * @since  4.2.1
      */
     interface RoleTags {
         /**

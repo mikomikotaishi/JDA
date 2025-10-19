@@ -36,9 +36,6 @@ import javax.annotation.Nullable;
  * Represents a Discord {@link Activity Activity}.
  * <br>This should contain all information provided from Discord about a Activity.
  *
- * @since  2.1
- * @author John A. Grosh
- *
  * @see    #of(ActivityType, String)
  * @see    #of(ActivityType, String, String)
  * @see    #playing(String)
@@ -46,6 +43,8 @@ import javax.annotation.Nullable;
  * @see    #listening(String)
  * @see    #streaming(String, String)
  * @see    #competing(String)
+ *
+ * @author John A. Grosh
  */
 public interface Activity {
     /** The Pattern used for {@link #isValidStreamingUrl(String)} */

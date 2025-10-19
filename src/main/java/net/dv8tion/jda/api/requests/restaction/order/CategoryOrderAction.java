@@ -28,10 +28,10 @@ import javax.annotation.Nonnull;
  * <p>Before you can use any of the {@code move} methods
  * you must use either {@link #selectPosition(Object) selectPosition(GuildChannel)} or {@link #selectPosition(int)}!
  *
- * @author Kaidan Gustave
- *
  * @see    Category#modifyTextChannelPositions()
  * @see    Category#modifyVoiceChannelPositions()
+ *
+ * @author Kaidan Gustave
  */
 public interface CategoryOrderAction extends ChannelOrderAction {
     /**

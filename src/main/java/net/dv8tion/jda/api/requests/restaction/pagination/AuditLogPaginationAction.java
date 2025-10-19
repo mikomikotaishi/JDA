@@ -63,8 +63,6 @@ import javax.annotation.Nullable;
  * }
  * </code></pre>
  *
- * @since  3.2
- *
  * @see    Guild#retrieveAuditLogs()
  */
 public interface AuditLogPaginationAction

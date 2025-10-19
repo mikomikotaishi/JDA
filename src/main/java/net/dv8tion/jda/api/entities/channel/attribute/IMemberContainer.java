@@ -38,7 +38,6 @@ import javax.annotation.Nonnull;
  *   <li>{@link VoiceChannel VoiceChannels} implement this as what {@link net.dv8tion.jda.api.entities.Member members} are currently connected to the channel.</li>
  * </ul>
  *
- *
  * @see IMemberContainer#getMembers()
  */
 public interface IMemberContainer extends GuildChannel {

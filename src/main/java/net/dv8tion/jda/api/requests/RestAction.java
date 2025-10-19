@@ -153,8 +153,6 @@ import javax.annotation.Nullable;
  * @param <T>
  *        The generic response type for this RestAction
  *
- * @since 3.0
- *
  * @see   net.dv8tion.jda.api.exceptions.ErrorHandler
  * @see   net.dv8tion.jda.api.exceptions.ErrorResponseException
  */

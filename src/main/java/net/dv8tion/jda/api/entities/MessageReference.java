@@ -36,6 +36,7 @@ import javax.annotation.Nullable;
 
 /**
  * An object representing a reference in a Discord message.
+ *
  * @see Message#getMessageReference()
  */
 public class MessageReference {

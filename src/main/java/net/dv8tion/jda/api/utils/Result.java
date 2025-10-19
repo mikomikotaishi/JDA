@@ -37,8 +37,6 @@ import javax.annotation.Nullable;
  *
  * @param <T>
  *        The success type
- *
- * @since  4.2.1
  */
 public class Result<T> {
     private final T value;

@@ -35,8 +35,6 @@ import static net.dv8tion.jda.api.utils.data.etf.ExTermTag.*;
  * @see #unpack(ByteBuffer)
  * @see #unpackMap(ByteBuffer)
  * @see #unpackList(ByteBuffer)
- *
- * @since  4.2.1
  */
 public class ExTermDecoder {
     /**

@@ -37,8 +37,6 @@ import javax.annotation.Nullable;
  * designed to create a {@link net.dv8tion.jda.api.entities.Role Role}.
  * This extension allows setting properties before executing the action.
  *
- * @since  3.0
- *
  * @see    net.dv8tion.jda.api.entities.Guild
  * @see    net.dv8tion.jda.api.entities.Guild#createRole()
  * @see    Role#createCopy()

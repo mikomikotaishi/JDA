@@ -6107,8 +6107,6 @@ public interface Guild extends IGuildChannelContainer<GuildChannel>, ISnowflake,
     /**
      * The boost tier for this guild.
      * <br>Each tier unlocks new perks for a guild that can be seen in the {@link #getFeatures() features}.
-     *
-     * @since  4.0.0
      */
     enum BoostTier {
         /**
@@ -6258,8 +6256,6 @@ public interface Guild extends IGuildChannelContainer<GuildChannel>, ISnowflake,
 
     /**
      * Meta-Data for a Guild
-     *
-     * @since 4.2.0
      */
     class MetaData {
         private final int memberLimit;

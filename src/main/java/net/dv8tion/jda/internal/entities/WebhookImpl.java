@@ -39,8 +39,6 @@ import javax.annotation.Nonnull;
 
 /**
  * The implementation for {@link net.dv8tion.jda.api.entities.Webhook Webhook}
- *
- * @since  3.0
  */
 public class WebhookImpl extends AbstractWebhookClient<Message> implements Webhook {
     private final IWebhookContainer channel;

@@ -33,7 +33,6 @@ import javax.annotation.Nonnull;
  *
  * @see Guild#getGuildChannelById(long)
  * @see Guild#getGuildChannelById(ChannelType, long)
- *
  * @see JDA#getGuildChannelById(long)
  * @see JDA#getGuildChannelById(ChannelType, long)
  */

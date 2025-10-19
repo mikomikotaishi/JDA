@@ -34,7 +34,6 @@ import javax.annotation.Nullable;
  * permission overrides that can be set for channels.
  *
  * @see net.dv8tion.jda.api.entities.channel.attribute.IPermissionContainer#upsertPermissionOverride(IPermissionHolder)
- *
  * @see net.dv8tion.jda.api.entities.channel.attribute.IPermissionContainer#getPermissionOverrides()
  * @see net.dv8tion.jda.api.entities.channel.attribute.IPermissionContainer#getPermissionOverride(IPermissionHolder)
  * @see net.dv8tion.jda.api.entities.channel.attribute.IPermissionContainer#getMemberPermissionOverrides()

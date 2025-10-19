@@ -39,14 +39,12 @@ import static net.dv8tion.jda.api.entities.Guild.NSFWLevel;
  * Representation of a Discord Invite.
  * This class is immutable.
  *
- * @since  3.0
- * @author Aljoscha Grebe
- *
  * @see    #resolve(JDA, String)
  * @see    #resolve(JDA, String, boolean)
- *
  * @see    net.dv8tion.jda.api.entities.Guild#retrieveInvites() Guild.retrieveInvites()
  * @see    net.dv8tion.jda.api.entities.channel.attribute.IInviteContainer#retrieveInvites()
+ *
+ * @author Aljoscha Grebe
  */
 public interface Invite {
     /**

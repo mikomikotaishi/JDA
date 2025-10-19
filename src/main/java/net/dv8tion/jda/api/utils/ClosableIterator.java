@@ -37,8 +37,6 @@ import java.util.Iterator;
  *
  * @param <T>
  *        The element type
- *
- * @since 4.0.0
  */
 public interface ClosableIterator<T> extends Iterator<T>, AutoCloseable {
     @Override

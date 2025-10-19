@@ -24,8 +24,6 @@ import javax.annotation.Nonnull;
 
 /**
  * Marks a snowflake entity. Snowflake entities are ones that have an id that uniquely identifies them.
- *
- * @since 3.0
  */
 public interface ISnowflake {
     /**

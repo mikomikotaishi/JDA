@@ -31,10 +31,9 @@ import javax.annotation.Nullable;
 /**
  * Represents a Discord Application from its bot's point of view.
  *
- * @since  3.0
- * @author Aljoscha Grebe
- *
  * @see    net.dv8tion.jda.api.JDA#retrieveApplicationInfo()
+ *
+ * @author Aljoscha Grebe
  */
 public interface ApplicationInfo extends ISnowflake {
     /** The maximum length for an application description ({@value}) */

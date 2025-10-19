@@ -39,8 +39,6 @@ import javax.annotation.Nullable;
  * Representation of a Discord Guild Template
  * <br>This class is immutable.
  *
- * @since  4.3.0
- *
  * @see    #resolve(JDA, String)
  * @see    net.dv8tion.jda.api.entities.Guild#retrieveTemplates() Guild.retrieveTemplates()
  */

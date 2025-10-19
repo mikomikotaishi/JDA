@@ -52,8 +52,6 @@ import javax.annotation.Nullable;
  *
  * <p>Contains all guild-specific information about a User. (Roles, Nickname, VoiceStatus etc.)
  *
- * @since 3.0
- *
  * @see   Guild#getMember(UserSnowflake)
  * @see   Guild#getMemberCache()
  * @see   Guild#getMemberById(long)

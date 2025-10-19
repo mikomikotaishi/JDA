@@ -35,8 +35,6 @@ import javax.annotation.Nullable;
 /**
  * An object representing Webhooks in Discord
  *
- * @since  3.0
- *
  * @see    TextChannel#retrieveWebhooks()
  * @see    Guild#retrieveWebhooks()
  * @see    JDA#retrieveWebhookById(String)

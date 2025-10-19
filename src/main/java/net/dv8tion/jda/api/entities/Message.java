@@ -136,7 +136,6 @@ import javax.annotation.Nullable;
  * @see MessageChannel#getHistoryAround(String, int)
  * @see MessageChannel#getHistoryFromBeginning(int)
  * @see MessageChannel#retrieveMessageById(String)
- *
  * @see MessageChannel#deleteMessageById(String)
  * @see MessageChannel#editMessageById(String, CharSequence)
  */

@@ -36,12 +36,10 @@ import javax.annotation.Nonnull;
  * @see net.dv8tion.jda.api.entities.channel.middleman.GuildChannel
  * @see net.dv8tion.jda.api.entities.channel.middleman.MessageChannel
  * @see net.dv8tion.jda.api.entities.channel.middleman.StandardGuildMessageChannel
- *
  * @see   Guild#getTextChannelCache()
  * @see   Guild#getTextChannels()
  * @see   Guild#getTextChannelsByName(String, boolean)
  * @see   Guild#getTextChannelById(long)
- *
  * @see   JDA#getTextChannelCache()
  * @see   JDA#getTextChannels()
  * @see   JDA#getTextChannelsByName(String, boolean)

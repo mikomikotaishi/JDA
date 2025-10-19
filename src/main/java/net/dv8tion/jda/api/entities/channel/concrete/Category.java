@@ -44,7 +44,6 @@ import javax.annotation.Nonnull;
  * @see   Guild#getCategories()
  * @see   Guild#getCategoriesByName(String, boolean)
  * @see   Guild#getCategoryById(long)
- *
  * @see   JDA#getCategoryCache()
  * @see   JDA#getCategories()
  * @see   JDA#getCategoriesByName(String, boolean)

@@ -33,8 +33,6 @@ import javax.annotation.Nonnull;
 /**
  * The Presence associated with the provided JDA instance
  * <br><b>Note that this does not automatically handle the 5/60 second rate limit!</b>
- *
- * @since  3.0
  */
 public class PresenceImpl implements Presence {
     private final JDAImpl api;

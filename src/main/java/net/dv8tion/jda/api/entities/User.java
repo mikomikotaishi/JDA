@@ -68,14 +68,12 @@ import javax.annotation.Nullable;
  * <p>More information on formatting syntax can be found in the {@link java.util.Formatter format syntax documentation}!
  *
  * @see User#openPrivateChannel()
- *
  * @see JDA#getUserCache()
  * @see JDA#getUserById(long)
  * @see JDA#getUserByTag(String)
  * @see JDA#getUserByTag(String, String)
  * @see JDA#getUsersByName(String, boolean)
  * @see JDA#getUsers()
- *
  * @see JDA#retrieveUserById(String)
  */
 public interface User extends UserSnowflake {
@@ -365,8 +363,6 @@ public interface User extends UserSnowflake {
 
     /**
      * Represents the information contained in a {@link User User}'s profile.
-     *
-     * @since 4.3.0
      */
     class Profile {
         private final long userId;

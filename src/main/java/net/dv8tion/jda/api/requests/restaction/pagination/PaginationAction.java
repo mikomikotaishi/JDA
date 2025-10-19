@@ -83,8 +83,6 @@ import javax.annotation.Nullable;
  *         The current implementation used as chaining return value
  * @param  <T>
  *         The type of entity to paginate
- *
- * @since  3.1
  */
 public interface PaginationAction<T, M extends PaginationAction<T, M>>
         extends RestAction<@Unmodifiable List<T>>, Iterable<T> {

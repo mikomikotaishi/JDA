@@ -969,7 +969,6 @@ public class MessageEmbed implements SerializableData {
      * the field can display on the same line as previous fields if there is
      * enough space horizontally.
      *
-     * @since  3.0
      * @author John A. Grosh
      */
     public static class Field {

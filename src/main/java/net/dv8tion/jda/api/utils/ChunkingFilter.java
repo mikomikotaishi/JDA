@@ -28,11 +28,8 @@ import javax.annotation.Nonnull;
  * <p><b>To use chunking, the {@link net.dv8tion.jda.api.requests.GatewayIntent#GUILD_MEMBERS GUILD_MEMBERS} intent must be enabled!
  * Otherwise you <u>must</u> use {@link #NONE}!</b>
  *
- * @since 4.1.0
- *
  * @see   #ALL
  * @see   #NONE
- *
  * @see   net.dv8tion.jda.api.JDABuilder#setChunkingFilter(ChunkingFilter) JDABuilder.setChunkingFilter(ChunkingFilter)
  * @see   net.dv8tion.jda.api.sharding.DefaultShardManagerBuilder#setChunkingFilter(ChunkingFilter) DefaultShardManagerBuilder.setChunkingFilter(ChunkingFilter)
  */

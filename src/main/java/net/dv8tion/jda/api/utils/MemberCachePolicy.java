@@ -53,13 +53,10 @@ import javax.annotation.Nonnull;
  * @see #OWNER
  * @see #VOICE
  * @see #ONLINE
- *
  * @see #or(MemberCachePolicy)
  * @see #and(MemberCachePolicy)
  * @see #any(MemberCachePolicy, MemberCachePolicy...)
  * @see #all(MemberCachePolicy, MemberCachePolicy...)
- *
- * @since 4.2.0
  */
 @FunctionalInterface
 public interface MemberCachePolicy {

@@ -57,8 +57,6 @@ import javax.annotation.Nullable;
  * creates a new {@link net.dv8tion.jda.api.sharding.ShardManager ShardManager} instance using the same information.
  *
  * @author Aljoscha Grebe
- *
- * @since  3.4.0
  */
 public class DefaultShardManagerBuilder {
     protected final List<Object> listeners = new ArrayList<>();

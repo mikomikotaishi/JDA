@@ -47,8 +47,6 @@ import javax.annotation.Nonnull;
  *
  * @param <T>
  *        The element type for this iterator
- *
- * @since  4.0.0
  */
 public class LockIterator<T> implements ClosableIterator<T> {
     private static final Logger log = JDALogger.getLog(ClosableIterator.class);

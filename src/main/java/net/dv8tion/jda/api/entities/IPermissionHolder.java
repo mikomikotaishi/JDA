@@ -29,8 +29,6 @@ import javax.annotation.Nonnull;
 /**
  * Marker for entities that hold Permissions within JDA
  *
- * @since 3.0
- *
  * @see Role
  * @see Member
  */

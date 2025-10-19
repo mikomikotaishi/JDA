@@ -33,12 +33,9 @@ import javax.annotation.Nonnull;
  * <br>Used to represent various base64 images in the Discord api.
  * <br>Example: {@link AccountManager#setAvatar(Icon)}.
  *
- * @since 3.0
- *
  * @see #from(File)
  * @see #from(byte[])
  * @see #from(InputStream)
- *
  * @see #from(File, IconType)
  * @see #from(byte[], IconType)
  * @see #from(InputStream, IconType)

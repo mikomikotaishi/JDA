@@ -33,17 +33,14 @@ import javax.annotation.Nullable;
  *
  * @see VoiceChannel
  * @see StageChannel
- *
  * @see Guild#getVoiceChannelCache()
  * @see Guild#getVoiceChannels()
  * @see Guild#getVoiceChannelsByName(String, boolean)
  * @see Guild#getVoiceChannelById(long)
- *
  * @see Guild#getStageChannelCache()
  * @see Guild#getStageChannels()
  * @see Guild#getStageChannelsByName(String, boolean)
  * @see Guild#getStageChannelById(long)
- *
  * @see JDA#getVoiceChannelById(long)
  * @see JDA#getStageChannelById(long)
  */

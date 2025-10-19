@@ -28,8 +28,6 @@ import javax.annotation.Nonnull;
  * <p>Can be used to detect when a Locale changes and retrieve the old one
  *
  * <p>Identifier: {@code locale}
- *
- * @since  4.2.1
  */
 @SuppressWarnings("ConstantConditions")
 public class GuildUpdateLocaleEvent extends GenericGuildUpdateEvent<DiscordLocale> {

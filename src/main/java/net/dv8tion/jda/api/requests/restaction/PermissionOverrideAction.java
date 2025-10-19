@@ -37,8 +37,6 @@ import javax.annotation.Nullable;
  * for a {@link GuildChannel GuildChannel}.
  * This extension allows setting properties before executing the action.
  *
- * @since  3.0
- *
  * @see    net.dv8tion.jda.api.entities.PermissionOverride#getManager()
  * @see    net.dv8tion.jda.api.entities.channel.attribute.IPermissionContainer#upsertPermissionOverride(IPermissionHolder)
  */

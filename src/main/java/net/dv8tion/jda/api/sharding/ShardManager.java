@@ -60,7 +60,6 @@ import javax.annotation.Nullable;
  * <br>Custom implementations may not support all methods and throw
  * {@link java.lang.UnsupportedOperationException UnsupportedOperationExceptions} instead.
  *
- * @since  3.4
  * @author Aljoscha Grebe
  */
 public interface ShardManager extends IGuildChannelContainer<Channel> {

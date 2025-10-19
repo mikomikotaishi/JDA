@@ -29,8 +29,6 @@ import javax.annotation.Nullable;
  * Implements an algorithm that can strip or replace markdown in any supplied string.
  *
  * @see #sanitize(String, net.dv8tion.jda.api.utils.MarkdownSanitizer.SanitizationStrategy)
- *
- * @since  4.0.0
  */
 public class MarkdownSanitizer {
     /** Normal characters that are not special for markdown, ignoring this has no effect */

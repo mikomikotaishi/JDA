@@ -35,8 +35,6 @@ import javax.annotation.Nullable;
  * <p>Before you can use any of the {@code move} methods
  * you must use either {@link #selectPosition(Object) selectPosition(GuildChannel)} or {@link #selectPosition(int)}!
  *
- * @since 3.0
- *
  * @see   net.dv8tion.jda.api.entities.Guild
  * @see   net.dv8tion.jda.api.entities.Guild#modifyTextChannelPositions()
  * @see   net.dv8tion.jda.api.entities.Guild#modifyVoiceChannelPositions()

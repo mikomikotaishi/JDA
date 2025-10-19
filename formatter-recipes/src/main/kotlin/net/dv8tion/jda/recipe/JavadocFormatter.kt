@@ -22,6 +22,7 @@ import org.openrewrite.Recipe
 import org.openrewrite.java.JavaIsoVisitor
 import org.openrewrite.java.tree.J
 import org.openrewrite.java.tree.Javadoc
+import org.openrewrite.java.tree.Space
 import org.openrewrite.marker.Markers
 import java.time.Duration
 import java.util.UUID
@@ -45,29 +46,38 @@ class JavadocFormatter : Recipe() {
 }
 
 class JavadocFormatVisitor : JavaIsoVisitor<ExecutionContext>() {
+    override fun visitClassDeclaration(classDecl: J.ClassDeclaration, ctx: ExecutionContext): J.ClassDeclaration {
+        val modified = classDecl.withPrefix(updateJavadocs(classDecl.prefix))
+        return super.visitClassDeclaration(modified, ctx)
+    }
+
     override fun visitMethodDeclaration(method: J.MethodDeclaration, ctx: ExecutionContext): J.MethodDeclaration {
-        var modified = method
-        val javadocs = getJavadocs(method)
-
-        if (javadocs !== null) {
-            val mutableComments = ArrayList(method.prefix.comments)
-            val index = mutableComments.indexOf(javadocs)
-            mutableComments.set(index, formatJavadoc(javadocs))
-            modified = modified.withPrefix(method.prefix.withComments(mutableComments))
-        }
-
+        val modified = method.withPrefix(updateJavadocs(method.prefix))
         return super.visitMethodDeclaration(modified, ctx)
     }
 
-    fun getJavadocs(method: J.MethodDeclaration): Javadoc.DocComment? {
-        return method.prefix.comments.find { comment -> comment is Javadoc.DocComment } as Javadoc.DocComment?
+    fun updateJavadocs(prefix: Space): Space {
+        val javadocs = getJavadocs(prefix)
+
+        if (javadocs !== null) {
+            val mutableComments = ArrayList(prefix.comments)
+            val index = mutableComments.indexOf(javadocs)
+            mutableComments[index] = formatJavadoc(javadocs)
+            return prefix.withComments(mutableComments)
+        }
+
+        return prefix
+    }
+
+    fun getJavadocs(space: Space): Javadoc.DocComment? {
+        return space.comments.find { comment -> comment is Javadoc.DocComment } as Javadoc.DocComment?
     }
 
     fun formatJavadoc(javadocs: Javadoc.DocComment): Javadoc.DocComment {
         val parsedJavadocs = parseJavadocs(javadocs)
-        val orderedDocs = compileJavadocs(parsedJavadocs)
+        val recompiledJavadocs = compileJavadocs(parsedJavadocs)
 
-        return javadocs.withBody(orderedDocs)
+        return javadocs.withBody(recompiledJavadocs)
     }
 
     fun parseJavadocs(javadocs: Javadoc.DocComment): ParsedJavadocs {
@@ -177,9 +187,9 @@ class JavadocFormatVisitor : JavaIsoVisitor<ExecutionContext>() {
 }
 
 data class ParsedJavadocs(
-    val description: MutableList<Javadoc>,
-    val tags: Map<JavadocTagVariant, List<Javadoc>>,
-    val indentation: String
+        val description: MutableList<Javadoc>,
+        val tags: Map<JavadocTagVariant, List<Javadoc>>,
+        val indentation: String
 )
 
 // Ordered by preferred order in javadocs
@@ -191,6 +201,7 @@ enum class JavadocTagVariant(val instanceType: Class<out Javadoc>) {
     SINCE(Javadoc.Since::class.java),
     SEE(Javadoc.See::class.java),
     AUTHOR(Javadoc.Author::class.java),
+
     // for example @incubating
     UNKNOWN(Javadoc.UnknownBlock::class.java),
 }

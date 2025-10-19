@@ -31,6 +31,7 @@ import javax.annotation.Nullable;
  *
  * @param <T>
  *        The value type of the field that has been updated.
+ *
  * @see ChannelField
  */
 public class GenericChannelUpdateEvent<T> extends GenericChannelEvent

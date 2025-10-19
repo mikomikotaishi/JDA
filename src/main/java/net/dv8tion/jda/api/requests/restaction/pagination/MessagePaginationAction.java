@@ -55,8 +55,6 @@ import javax.annotation.Nonnull;
  * }
  * </code></pre>
  *
- * @since  3.1
- *
  * @see    MessageChannel#getIterableHistory()
  */
 public interface MessagePaginationAction

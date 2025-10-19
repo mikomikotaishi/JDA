@@ -39,12 +39,10 @@ import javax.annotation.Nonnull;
  * @see GuildChannel
  * @see TextChannel
  * @see Category
- *
  * @see   Guild#getVoiceChannelCache()
  * @see   Guild#getVoiceChannels()
  * @see   Guild#getVoiceChannelsByName(String, boolean)
  * @see   Guild#getVoiceChannelById(long)
- *
  * @see   JDA#getVoiceChannelCache()
  * @see   JDA#getVoiceChannels()
  * @see   JDA#getVoiceChannelsByName(String, boolean)

@@ -45,7 +45,6 @@ import javax.annotation.Nullable;
  * @see    Guild#getEmojiById(long)
  * @see    Guild#getEmojisByName(String, boolean)
  * @see    Guild#getEmojis()
- *
  * @see    JDA#getEmojiCache()
  * @see    JDA#getEmojiById(long)
  * @see    JDA#getEmojisByName(String, boolean)

@@ -37,8 +37,6 @@ import javax.annotation.Nullable;
  *
  * @param  <T>
  *         The return type
- *
- * @since  3.3.0
  */
 public interface AuditableRestAction<T> extends RestAction<T> {
     /**

@@ -52,7 +52,8 @@ import javax.annotation.Nullable;
  * designed to create a {@link GuildChannel GuildChannel}.
  * This extension allows setting properties before executing the action.
  *
- * @since  3.0
+ * @param <T>
+ *        The type of channel to create
  *
  * @see    net.dv8tion.jda.api.entities.Guild
  * @see    net.dv8tion.jda.api.entities.Guild#createTextChannel(String)
@@ -62,9 +63,6 @@ import javax.annotation.Nullable;
  * @see    net.dv8tion.jda.api.entities.Guild#createCategory(String)
  * @see    net.dv8tion.jda.api.entities.channel.attribute.ICopyableChannel#createCopy()
  * @see    net.dv8tion.jda.api.entities.channel.attribute.ICopyableChannel#createCopy(Guild)
- *
- * @param <T>
- *        The type of channel to create
  */
 public interface ChannelAction<T extends GuildChannel>
         extends FluentAuditableRestAction<T, ChannelAction<T>> {

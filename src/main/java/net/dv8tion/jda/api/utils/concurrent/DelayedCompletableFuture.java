@@ -28,8 +28,6 @@ import javax.annotation.Nonnull;
  * @param <T>
  *        The result type
  *
- * @since  4.0.0
- *
  * @see    CompletableFuture
  * @see    Delayed
  */

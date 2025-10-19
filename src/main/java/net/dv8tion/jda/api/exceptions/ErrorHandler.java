@@ -49,8 +49,6 @@ import javax.annotation.Nullable;
  * @see ErrorResponse
  * @see ErrorResponseException
  * @see RestAction#queue(Consumer, Consumer)
- *
- * @since 4.2.0
  */
 public class ErrorHandler implements Consumer<Throwable> {
     private static final Consumer<? super Throwable> empty = (e) -> {};

@@ -56,7 +56,6 @@ import javax.annotation.Nullable;
  * guild.kick(user).queue();
  * </code></pre>
  *
- *
  * @see net.dv8tion.jda.api.requests.restaction.AuditableRestAction#reason(String) AuditableRestAction.reason(String)
  * @see ThreadLocal
  */

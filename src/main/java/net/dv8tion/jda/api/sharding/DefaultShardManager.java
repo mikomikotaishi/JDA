@@ -67,7 +67,6 @@ import javax.annotation.Nullable;
  * JDA's default {@link net.dv8tion.jda.api.sharding.ShardManager ShardManager} implementation.
  * To create new instances use the {@link net.dv8tion.jda.api.sharding.DefaultShardManagerBuilder DefaultShardManagerBuilder}.
  *
- * @since  3.4
  * @author Aljoscha Grebe
  */
 public class DefaultShardManager implements ShardManager {

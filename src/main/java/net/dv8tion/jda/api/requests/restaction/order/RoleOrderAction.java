@@ -32,8 +32,6 @@ import javax.annotation.Nonnull;
  *
  * <p><b>This uses descending order!</b>
  *
- * @since 3.0
- *
  * @see   net.dv8tion.jda.api.entities.Guild#modifyRolePositions()
  * @see   net.dv8tion.jda.api.entities.Guild#modifyRolePositions(boolean)
  */

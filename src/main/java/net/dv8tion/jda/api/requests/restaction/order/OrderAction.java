@@ -43,8 +43,6 @@ import javax.annotation.Nullable;
  *        implementation rather than a mask of this class. It allows us to implement
  *        chaining operations in this class instead of having to implement it in every
  *        inheriting class!
- *
- * @since 3.0
  */
 public interface OrderAction<T, M extends OrderAction<T, M>> extends RestAction<Void> {
     @Nonnull

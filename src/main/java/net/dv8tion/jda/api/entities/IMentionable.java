@@ -47,8 +47,6 @@ import javax.annotation.Nonnull;
  *
  * <p>More information on formatting syntax can be found in the {@link java.util.Formatter format syntax documentation}!
  * <br><b>Note</b>: Some implementations also support the <b>alternative</b> flag.
- *
- * @since 3.0
  */
 public interface IMentionable extends Formattable, ISnowflake {
     /**

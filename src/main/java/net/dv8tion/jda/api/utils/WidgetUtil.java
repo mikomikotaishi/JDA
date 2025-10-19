@@ -41,7 +41,6 @@ import javax.annotation.Nullable;
  * The WidgetUtil is a class for interacting with various facets of Discord's
  * guild widgets
  *
- * @since  3.0
  * @author John A. Grosh
  */
 public class WidgetUtil {

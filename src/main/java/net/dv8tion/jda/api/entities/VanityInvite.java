@@ -24,8 +24,6 @@ import javax.annotation.Nonnull;
 
 /**
  * Meta data for the vanity invite of a guild
- *
- * @since  4.2.1
  */
 public class VanityInvite {
     private final String code;
