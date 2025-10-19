@@ -54,8 +54,6 @@ public interface ICategorizableChannelManager<
      *         If the provided category is not from the same Guild
      *
      * @return ChannelManager for chaining convenience
-     *
-     * @since  3.4.0
      */
     @Nonnull
     @CheckReturnValue

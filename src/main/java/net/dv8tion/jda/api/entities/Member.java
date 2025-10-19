@@ -128,8 +128,6 @@ public interface Member extends IMentionable, IPermissionHolder, IDetachableEnti
      * <br>Null indicates this member is not currently boosting the guild.
      *
      * @return The boosting time, or null if the member is not boosting
-     *
-     * @since  4.0.0
      */
     @Nullable
     OffsetDateTime getTimeBoosted();
@@ -227,8 +225,6 @@ public interface Member extends IMentionable, IPermissionHolder, IDetachableEnti
      *         If this entity is {@link #isDetached() detached}
      *
      * @return The status for that specific client or OFFLINE
-     *
-     * @since  4.0.0
      */
     @Nonnull
     OnlineStatus getOnlineStatus(@Nonnull ClientType type);
@@ -249,8 +245,6 @@ public interface Member extends IMentionable, IPermissionHolder, IDetachableEnti
      *         If this entity is {@link #isDetached() detached}
      *
      * @return EnumSet of all active {@link net.dv8tion.jda.api.entities.ClientType ClientTypes}
-     *
-     * @since  4.0.0
      */
     @Nonnull
     EnumSet<ClientType> getActiveClients();
@@ -505,8 +499,6 @@ public interface Member extends IMentionable, IPermissionHolder, IDetachableEnti
      *
      * @return True, if this member hasn't passed the guild's Membership Screening requirements
      *
-     * @since  4.2.1
-     *
      * @incubating Discord is still trying to figure this out
      */
     @Incubating
@@ -606,8 +598,6 @@ public interface Member extends IMentionable, IPermissionHolder, IDetachableEnti
      *
      * @return {@link net.dv8tion.jda.api.requests.restaction.AuditableRestAction AuditableRestAction}
      *         Kicks the provided Member from the current Guild
-     *
-     * @since  4.0.0
      */
     @Nonnull
     @CheckReturnValue
@@ -788,8 +778,6 @@ public interface Member extends IMentionable, IPermissionHolder, IDetachableEnti
      *         If this entity is {@link #isDetached() detached}
      *
      * @return {@link net.dv8tion.jda.api.requests.restaction.AuditableRestAction AuditableRestAction}
-     *
-     * @since  4.0.0
      */
     @Nonnull
     @CheckReturnValue
@@ -827,8 +815,6 @@ public interface Member extends IMentionable, IPermissionHolder, IDetachableEnti
      *         If this entity is {@link #isDetached() detached}
      *
      * @return {@link net.dv8tion.jda.api.requests.restaction.AuditableRestAction AuditableRestAction}
-     *
-     * @since  4.0.0
      */
     @Nonnull
     @CheckReturnValue
@@ -872,8 +858,6 @@ public interface Member extends IMentionable, IPermissionHolder, IDetachableEnti
      *         If this entity is {@link #isDetached() detached}
      *
      * @return {@link net.dv8tion.jda.api.requests.restaction.AuditableRestAction AuditableRestAction}
-     *
-     * @since  4.0.0
      */
     @Nonnull
     @CheckReturnValue

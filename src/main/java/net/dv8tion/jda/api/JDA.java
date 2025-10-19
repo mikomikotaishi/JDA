@@ -272,8 +272,6 @@ public interface JDA extends IGuildChannelContainer<Channel> {
      *
      * @return {@link net.dv8tion.jda.api.requests.RestAction RestAction} - Type: long
      *
-     * @since 4.0.0
-     *
      * @see    #getGatewayPing()
      */
     @Nonnull
@@ -497,8 +495,6 @@ public interface JDA extends IGuildChannelContainer<Channel> {
      * executions. This is also used in other parts of JDA related to http requests.
      *
      * @return The {@link ScheduledExecutorService} used for http request handling
-     *
-     * @since 4.0.0
      */
     @Nonnull
     ScheduledExecutorService getRateLimitPool();
@@ -508,8 +504,6 @@ public interface JDA extends IGuildChannelContainer<Channel> {
      * <br>This involves initial setup of guilds as well as keeping the connection alive.
      *
      * @return The {@link ScheduledExecutorService} used for WebSocket transmissions
-     *
-     * @since 4.0.0
      */
     @Nonnull
     ScheduledExecutorService getGatewayPool();
@@ -521,8 +515,6 @@ public interface JDA extends IGuildChannelContainer<Channel> {
      * <br>By default this uses the {@link ForkJoinPool#commonPool() CommonPool} of the runtime.
      *
      * @return The {@link ExecutorService} used for callbacks
-     *
-     * @since 4.0.0
      */
     @Nonnull
     ExecutorService getCallbackPool();
@@ -531,8 +523,6 @@ public interface JDA extends IGuildChannelContainer<Channel> {
      * The {@link OkHttpClient} used for handling http requests from {@link RestAction RestActions}.
      *
      * @return The http client
-     *
-     * @since 4.0.0
      */
     @Nonnull
     OkHttpClient getHttpClient();
@@ -548,8 +538,6 @@ public interface JDA extends IGuildChannelContainer<Channel> {
      *         If {@link GatewayIntent#GUILD_VOICE_STATES} is disabled
      *
      * @return The {@link DirectAudioController} for this JDA instance
-     *
-     * @since 4.0.0
      */
     @Nonnull
     DirectAudioController getDirectAudioController();

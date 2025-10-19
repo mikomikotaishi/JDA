@@ -2240,8 +2240,6 @@ public interface MessageChannel extends Channel, Formattable {
      *         If this entity is {@link #isDetached() detached}
      *
      * @return The {@link ReactionPaginationAction ReactionPaginationAction} of the emoji's users.
-     *
-     * @since  4.2.0
      */
     @Nonnull
     @CheckReturnValue

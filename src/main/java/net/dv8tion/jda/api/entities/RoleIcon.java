@@ -48,8 +48,6 @@ public class RoleIcon {
      * <p>The Role icon can be modified using {@link RoleManager#setIcon(Icon)}.
      *
      * @return Possibly-null String containing the Role's icon hash-id.
-     *
-     * @since  4.3.1
      */
     @Nullable
     public String getIconId() {
@@ -62,8 +60,6 @@ public class RoleIcon {
      * <p>The Role icon can be modified using {@link RoleManager#setIcon(Icon)}.
      *
      * @return Possibly-null String containing the Role's icon URL.
-     *
-     * @since  4.3.1
      */
     @Nullable
     public String getIconUrl() {
@@ -90,8 +86,6 @@ public class RoleIcon {
      * <p>The Role emoji can be modified using {@link RoleManager#setIcon(String)}.
      *
      * @return Possibly-null String containing the Role's Unicode Emoji.
-     *
-     * @since  4.3.1
      */
     @Nullable
     public String getEmoji() {

@@ -70,8 +70,6 @@ public interface NewsChannel extends StandardGuildMessageChannel {
      *         If this entity is {@link #isDetached() detached}
      *
      * @return {@link RestAction}
-     *
-     * @since  4.2.1
      */
     @Nonnull
     @CheckReturnValue
@@ -100,8 +98,6 @@ public interface NewsChannel extends StandardGuildMessageChannel {
      *         If this entity is {@link #isDetached() detached}
      *
      * @return {@link RestAction}
-     *
-     * @since  4.2.1
      */
     @Nonnull
     @CheckReturnValue
@@ -138,8 +134,6 @@ public interface NewsChannel extends StandardGuildMessageChannel {
      *         If this entity is {@link #isDetached() detached}
      *
      * @return {@link RestAction}
-     *
-     * @since  4.2.1
      */
     @Nonnull
     @CheckReturnValue
@@ -193,8 +187,6 @@ public interface NewsChannel extends StandardGuildMessageChannel {
      *         If this entity is {@link #isDetached() detached}
      *
      * @return {@link net.dv8tion.jda.api.requests.RestAction} - Type: {@link Message}
-     *
-     * @since  4.2.1
      */
     @Nonnull
     @CheckReturnValue
@@ -244,8 +236,6 @@ public interface NewsChannel extends StandardGuildMessageChannel {
      *         If this entity is {@link #isDetached() detached}
      *
      * @return {@link net.dv8tion.jda.api.requests.RestAction} - Type: {@link Message}
-     *
-     * @since  4.2.1
      */
     @Nonnull
     @CheckReturnValue

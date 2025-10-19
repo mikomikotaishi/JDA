@@ -298,8 +298,6 @@ public interface Role extends IMentionable, IPermissionHolder, IDetachableEntity
      * See {@link net.dv8tion.jda.api.JDABuilder#enableCache(CacheFlag, CacheFlag...) JDABuilder.enableCache(...)}.
      *
      * @return {@link RoleTags}
-     *
-     * @since  4.2.1
      */
     @Nonnull
     RoleTags getTags();
@@ -309,8 +307,6 @@ public interface Role extends IMentionable, IPermissionHolder, IDetachableEntity
      * This icon will be displayed next to the role's name in the members tab and in chat.
      *
      * @return Possibly-null {@link RoleIcon Icon} of this role
-     *
-     * @since  4.3.1
      */
     @Nullable
     RoleIcon getIcon();

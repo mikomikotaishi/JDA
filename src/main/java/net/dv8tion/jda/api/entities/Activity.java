@@ -260,8 +260,6 @@ public interface Activity {
      *         If the specified name is null, empty, blank or longer than {@value #MAX_ACTIVITY_NAME_LENGTH} characters
      *
      * @return A valid Activity instance with the provided name with {@link net.dv8tion.jda.api.entities.Activity.ActivityType#COMPETING}
-     *
-     * @since  4.2.1
      */
     @Nonnull
     static Activity competing(@Nonnull String name) {

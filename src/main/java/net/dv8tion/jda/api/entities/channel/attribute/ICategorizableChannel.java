@@ -104,8 +104,6 @@ public interface ICategorizableChannel
      *         If this entity is {@link #isDetached() detached}
      *
      * @return True, if this channel is synced with its parent category
-     *
-     * @since  4.2.1
      */
     boolean isSynced();
 }

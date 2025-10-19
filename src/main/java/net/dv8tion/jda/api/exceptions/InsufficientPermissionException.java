@@ -83,8 +83,6 @@ public class InsufficientPermissionException extends PermissionException {
      *
      * @return The ID as a long
      *
-     * @since  4.0.0
-     *
      * @see    net.dv8tion.jda.api.JDA#getGuildById(long)
      */
     public long getGuildId() {
@@ -96,8 +94,6 @@ public class InsufficientPermissionException extends PermissionException {
      *
      * @return The ID as a long or 0
      *
-     * @since  4.0.0
-     *
      * @see    #getChannel(net.dv8tion.jda.api.JDA)
      */
     public long getChannelId() {
@@ -108,8 +104,6 @@ public class InsufficientPermissionException extends PermissionException {
      * The {@link ChannelType} for the {@link #getChannelId() channel id}.
      *
      * @return The channel type or {@link ChannelType#UNKNOWN}.
-     *
-     * @since  4.0.0
      */
     @Nonnull
     public ChannelType getChannelType() {
@@ -126,8 +120,6 @@ public class InsufficientPermissionException extends PermissionException {
      *         If the provided JDA instance is null
      *
      * @return The Guild instance or null
-     *
-     * @since  4.0.0
      */
     @Nullable
     public Guild getGuild(@Nonnull JDA api) {
@@ -145,8 +137,6 @@ public class InsufficientPermissionException extends PermissionException {
      *         If the provided JDA instance is null
      *
      * @return The GuildChannel instance or null
-     *
-     * @since  4.0.0
      */
     @Nullable
     public GuildChannel getChannel(@Nonnull JDA api) {

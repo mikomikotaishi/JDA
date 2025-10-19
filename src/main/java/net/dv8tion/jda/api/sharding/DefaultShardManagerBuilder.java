@@ -511,8 +511,6 @@ public class DefaultShardManagerBuilder {
      *         If null is provided
      *
      * @return The DefaultShardManagerBuilder instance. Useful for chaining.
-     *
-     * @since  4.2.1
      */
     @Nonnull
     public DefaultShardManagerBuilder setGatewayEncoding(@Nonnull GatewayEncoding encoding) {
@@ -529,8 +527,6 @@ public class DefaultShardManagerBuilder {
      *         True, if JDA should fire {@link net.dv8tion.jda.api.events.RawGatewayEvent}.
      *
      * @return The DefaultShardManagerBuilder instance. Useful for chaining.
-     *
-     * @since  4.0.0
      */
     @Nonnull
     public DefaultShardManagerBuilder setRawEventsEnabled(boolean enable) {
@@ -723,8 +719,6 @@ public class DefaultShardManagerBuilder {
      *
      * @return The DefaultShardManagerBuilder instance. Useful for chaining.
      *
-     * @since  4.2.0
-     *
      * @see    MemberCachePolicy
      * @see    #setEnabledIntents(Collection)
      */
@@ -763,8 +757,6 @@ public class DefaultShardManagerBuilder {
      *         The new voice dispatch handler, or null to use the default
      *
      * @return The DefaultShardManagerBuilder instance. Useful for chaining.
-     *
-     * @since  4.0.0
      *
      * @see    VoiceDispatchInterceptor
      */
@@ -1585,8 +1577,6 @@ public class DefaultShardManagerBuilder {
      *         The executor for the event proxy, or null to use calling thread
      *
      * @return The DefaultShardManagerBuilder instance. Useful for chaining.
-     *
-     * @since  4.2.0
      */
     @Nonnull
     public DefaultShardManagerBuilder setEventPool(@Nullable ExecutorService executor) {
@@ -1605,8 +1595,6 @@ public class DefaultShardManagerBuilder {
      *         True, if the executor should be shutdown when JDA shuts down
      *
      * @return The DefaultShardManagerBuilder instance. Useful for chaining.
-     *
-     * @since  4.2.0
      */
     @Nonnull
     public DefaultShardManagerBuilder setEventPool(
@@ -1632,8 +1620,6 @@ public class DefaultShardManagerBuilder {
      *         The thread-pool provider to use for callback handling
      *
      * @return The DefaultShardManagerBuilder instance. Useful for chaining.
-     *
-     * @since  4.2.0
      */
     @Nonnull
     public DefaultShardManagerBuilder setEventPoolProvider(
@@ -1653,8 +1639,6 @@ public class DefaultShardManagerBuilder {
      *         The thread-pool to use for the audio WebSocket
      *
      * @return The DefaultShardManagerBuilder instance. Useful for chaining.
-     *
-     * @since 4.2.1
      */
     @Nonnull
     public DefaultShardManagerBuilder setAudioPool(@Nullable ScheduledExecutorService pool) {
@@ -1674,8 +1658,6 @@ public class DefaultShardManagerBuilder {
      *         True, if the executor should be shutdown when JDA shuts down
      *
      * @return The DefaultShardManagerBuilder instance. Useful for chaining.
-     *
-     * @since 4.2.1
      */
     @Nonnull
     public DefaultShardManagerBuilder setAudioPool(
@@ -1695,8 +1677,6 @@ public class DefaultShardManagerBuilder {
      *         The thread-pool provider to use for the audio WebSocket
      *
      * @return The DefaultShardManagerBuilder instance. Useful for chaining.
-     *
-     * @since 4.2.1
      */
     @Nonnull
     public DefaultShardManagerBuilder setAudioPoolProvider(
@@ -1925,8 +1905,6 @@ public class DefaultShardManagerBuilder {
      *
      * @return The DefaultShardManagerBuilder instance. Useful for chaining.
      *
-     * @since  4.0.0
-     *
      * @see    ChunkingFilter#NONE
      * @see    ChunkingFilter#include(long...)
      * @see    ChunkingFilter#exclude(long...)
@@ -1958,8 +1936,6 @@ public class DefaultShardManagerBuilder {
      *
      * @return The DefaultShardManagerBuilder instance. Useful for chaining.
      *
-     * @since  4.2.0
-     *
      * @see    #setMemberCachePolicy(MemberCachePolicy)
      */
     @Nonnull
@@ -1986,8 +1962,6 @@ public class DefaultShardManagerBuilder {
      *         The intents to disable, or null to disable all intents (default: none)
      *
      * @return The DefaultShardManagerBuilder instance. Useful for chaining.
-     *
-     * @since  4.2.0
      *
      * @see    #setMemberCachePolicy(MemberCachePolicy)
      */
@@ -2078,8 +2052,6 @@ public class DefaultShardManagerBuilder {
      *
      * @return The DefaultShardManagerBuilder instance. Useful for chaining.
      *
-     * @since  4.2.0
-     *
      * @see    #setMemberCachePolicy(MemberCachePolicy)
      */
     @Nonnull
@@ -2106,8 +2078,6 @@ public class DefaultShardManagerBuilder {
      *         The intents to enable, or null to enable no intents (default: all)
      *
      * @return The DefaultShardManagerBuilder instance. Useful for chaining.
-     *
-     * @since  4.2.0
      *
      * @see    #setMemberCachePolicy(MemberCachePolicy)
      */
@@ -2180,8 +2150,6 @@ public class DefaultShardManagerBuilder {
      *         The threshold in {@code [50, 250]}
      *
      * @return The DefaultShardManagerBuilder instance. Useful for chaining.
-     *
-     * @since  4.0.0
      */
     @Nonnull
     public DefaultShardManagerBuilder setLargeThreshold(int threshold) {

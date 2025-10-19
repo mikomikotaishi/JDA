@@ -619,8 +619,6 @@ public interface Guild extends IGuildChannelContainer<GuildChannel>, ISnowflake,
      *
      * @return {@link MemberAction MemberAction}
      *
-     * @since  3.7.0
-     *
      * @see    <a href="https://discord.com/developers/docs/topics/oauth2" target="_blank">Discord OAuth2 Documentation</a>
      */
     @Nonnull
@@ -849,8 +847,6 @@ public interface Guild extends IGuildChannelContainer<GuildChannel>, ISnowflake,
      *
      * @return The vanity code or null
      *
-     * @since  4.0.0
-     *
      * @see    #getVanityUrl()
      */
     @Nullable
@@ -864,8 +860,6 @@ public interface Guild extends IGuildChannelContainer<GuildChannel>, ISnowflake,
      *         If this entity is {@link #isDetached() detached}
      *
      * @return The vanity url or null
-     *
-     * @since  4.0.0
      */
     @Nullable
     default String getVanityUrl() {
@@ -895,8 +889,6 @@ public interface Guild extends IGuildChannelContainer<GuildChannel>, ISnowflake,
      *         If this entity is {@link #isDetached() detached}
      *
      * @return {@link RestAction} - Type: {@link VanityInvite}
-     *
-     * @since  4.2.1
      */
     @Nonnull
     @CheckReturnValue
@@ -913,8 +905,6 @@ public interface Guild extends IGuildChannelContainer<GuildChannel>, ISnowflake,
      *         If this entity is {@link #isDetached() detached}
      *
      * @return The description
-     *
-     * @since  4.0.0
      */
     @Nullable
     String getDescription();
@@ -926,8 +916,6 @@ public interface Guild extends IGuildChannelContainer<GuildChannel>, ISnowflake,
      * <br>Default: {@link DiscordLocale#ENGLISH_US}
      *
      * @return The preferred {@link DiscordLocale} for this guild
-     *
-     * @since  4.2.1
      */
     @Nonnull
     DiscordLocale getLocale();
@@ -942,8 +930,6 @@ public interface Guild extends IGuildChannelContainer<GuildChannel>, ISnowflake,
      *         If this entity is {@link #isDetached() detached}
      *
      * @return The guild banner id or null
-     *
-     * @since  4.0.0
      *
      * @see    #getBannerUrl()
      */
@@ -960,8 +946,6 @@ public interface Guild extends IGuildChannelContainer<GuildChannel>, ISnowflake,
      *         If this entity is {@link #isDetached() detached}
      *
      * @return The guild banner url or null
-     *
-     * @since  4.0.0
      */
     @Nullable
     default String getBannerUrl() {
@@ -996,8 +980,6 @@ public interface Guild extends IGuildChannelContainer<GuildChannel>, ISnowflake,
      *         If this entity is {@link #isDetached() detached}
      *
      * @return The boost tier.
-     *
-     * @since  4.0.0
      */
     @Nonnull
     BoostTier getBoostTier();
@@ -1009,8 +991,6 @@ public interface Guild extends IGuildChannelContainer<GuildChannel>, ISnowflake,
      *         If this entity is {@link #isDetached() detached}
      *
      * @return The boost count
-     *
-     * @since  4.0.0
      */
     int getBoostCount();
 
@@ -1039,8 +1019,6 @@ public interface Guild extends IGuildChannelContainer<GuildChannel>, ISnowflake,
      *         If this entity is {@link #isDetached() detached}
      *
      * @return The maximum bitrate
-     *
-     * @since  4.0.0
      */
     default int getMaxBitrate() {
         int maxBitrate = getFeatures().contains("VIP_REGIONS") ? 384000 : 96000;
@@ -1055,8 +1033,6 @@ public interface Guild extends IGuildChannelContainer<GuildChannel>, ISnowflake,
      *         If this entity is {@link #isDetached() detached}
      *
      * @return The maximum size for files that can be uploaded to this Guild
-     *
-     * @since 4.2.0
      */
     default long getMaxFileSize() {
         return getBoostTier().getMaxFileSize();
@@ -1083,8 +1059,6 @@ public interface Guild extends IGuildChannelContainer<GuildChannel>, ISnowflake,
      *
      * @return The maximum amount of members
      *
-     * @since  4.0.0
-     *
      * @see    #retrieveMetaData()
      */
     int getMaxMembers();
@@ -1099,8 +1073,6 @@ public interface Guild extends IGuildChannelContainer<GuildChannel>, ISnowflake,
      *
      * @return The maximum amount of connected members this guild can have
      *
-     * @since  4.0.0
-     *
      * @see    #retrieveMetaData()
      */
     int getMaxPresences();
@@ -1112,8 +1084,6 @@ public interface Guild extends IGuildChannelContainer<GuildChannel>, ISnowflake,
      *         If this entity is {@link #isDetached() detached}
      *
      * @return {@link RestAction} - Type: {@link MetaData}
-     *
-     * @since  4.2.0
      */
     @Nonnull
     @CheckReturnValue
@@ -3107,8 +3077,6 @@ public interface Guild extends IGuildChannelContainer<GuildChannel>, ISnowflake,
      *         If this entity is {@link #isDetached() detached}
      *
      * @return {@link Task} - Type: {@link List} of {@link Member}
-     *
-     * @since  4.2.1
      */
     @Nonnull
     @CheckReturnValue
@@ -3154,8 +3122,6 @@ public interface Guild extends IGuildChannelContainer<GuildChannel>, ISnowflake,
      *         If this entity is {@link #isDetached() detached}
      *
      * @return {@link Task} - Type: {@link List} of {@link Member}
-     *
-     * @since  4.2.1
      */
     @Nonnull
     @CheckReturnValue
@@ -5258,8 +5224,6 @@ public interface Guild extends IGuildChannelContainer<GuildChannel>, ISnowflake,
      *
      * @return A specific {@link ChannelAction ChannelAction}
      *         <br>This action allows to set fields for the new GuildChannel before creating it!
-     *
-     * @since  3.1
      *
      * @see    #createTextChannel(String)
      * @see    #createVoiceChannel(String)

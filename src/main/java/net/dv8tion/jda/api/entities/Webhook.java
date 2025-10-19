@@ -283,8 +283,6 @@ public interface Webhook extends ISnowflake, WebhookClient<Message> {
      *
      * @return {@link net.dv8tion.jda.api.requests.restaction.AuditableRestAction AuditableRestAction}
      *         <br>The rest action to delete this Webhook.
-     *
-     * @since  4.0.0
      */
     @Nonnull
     @CheckReturnValue

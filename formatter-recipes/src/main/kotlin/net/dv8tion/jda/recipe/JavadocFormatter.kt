@@ -103,6 +103,10 @@ class JavadocFormatVisitor : JavaIsoVisitor<ExecutionContext>() {
         docs.add(space())
         docs.addAll(description.map { it })
         for (entry in JavadocTagVariant.entries) {
+            if (entry === JavadocTagVariant.SINCE) {
+                continue
+            }
+
             groupedTags[entry]?.let { group ->
                 docs.add(lineBreak(indentation))
                 group.forEach { element ->

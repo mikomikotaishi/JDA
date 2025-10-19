@@ -274,8 +274,6 @@ public interface RestAction<T> {
      *
      * @return RestAction - Type: {@link List} of the results
      *
-     * @since  4.2.1
-     *
      * @see    #and(RestAction, BiFunction)
      * @see    #zip(RestAction, RestAction[])
      */
@@ -307,8 +305,6 @@ public interface RestAction<T> {
      *
      * @return RestAction - Type: {@link List} of the results
      *
-     * @since  4.2.1
-     *
      * @see    #and(RestAction, BiFunction)
      * @see    #zip(RestAction, RestAction[])
      */
@@ -339,8 +335,6 @@ public interface RestAction<T> {
      *         If null is provided or the collection is empty
      *
      * @return RestAction - Type: {@link List} of the results
-     *
-     * @since  4.2.1
      *
      * @see    #and(RestAction, BiFunction)
      * @see    #zip(RestAction, RestAction[])
@@ -406,8 +400,6 @@ public interface RestAction<T> {
      *
      * @return The current checks, or null if none were set
      *
-     * @since  4.2.1
-     *
      * @see    #setCheck(BooleanSupplier)
      */
     @Nullable
@@ -425,8 +417,6 @@ public interface RestAction<T> {
      *         If the provided checks are null
      *
      * @return The current RestAction for chaining convenience
-     *
-     * @since  4.2.1
      *
      * @see    #setCheck(BooleanSupplier)
      */
@@ -716,8 +706,6 @@ public interface RestAction<T> {
      * You should use {@link Result#onFailure(Consumer)}, {@link Result#getFailure()}, or {@link Result#expect(Predicate)}!
      *
      * @return RestAction - Type: {@link Result}
-     *
-     * @since  4.2.1
      */
     @Nonnull
     @CheckReturnValue
@@ -745,8 +733,6 @@ public interface RestAction<T> {
      *         The target output type
      *
      * @return RestAction for the mapped type
-     *
-     * @since  4.1.1
      */
     @Nonnull
     @CheckReturnValue
@@ -816,8 +802,6 @@ public interface RestAction<T> {
      *         If the mapping function is null
      *
      * @return RestAction with fallback handling
-     *
-     * @since  4.2.0
      */
     @Nonnull
     @CheckReturnValue
@@ -850,8 +834,6 @@ public interface RestAction<T> {
      *         If the mapping function is null
      *
      * @return RestAction with fallback handling
-     *
-     * @since  4.2.0
      *
      * @see    ErrorResponse#test(Throwable)
      * @see    ErrorResponse#test(ErrorResponse...)
@@ -889,8 +871,6 @@ public interface RestAction<T> {
      *         If the mapping function is null
      *
      * @return RestAction with fallback handling
-     *
-     * @since  4.2.0
      */
     @Nonnull
     @CheckReturnValue
@@ -925,8 +905,6 @@ public interface RestAction<T> {
      *         If the mapping function is null
      *
      * @return RestAction with fallback handling
-     *
-     * @since  4.2.0
      *
      * @see    ErrorResponse#test(Throwable)
      * @see    ErrorResponse#test(ErrorResponse...)
@@ -965,8 +943,6 @@ public interface RestAction<T> {
      *         The target output type
      *
      * @return RestAction for the mapped type
-     *
-     * @since  4.1.1
      */
     @Nonnull
     @CheckReturnValue
@@ -1008,8 +984,6 @@ public interface RestAction<T> {
      *
      * @return RestAction for the mapped type
      *
-     * @since  4.1.1
-     *
      * @see    #flatMap(Function)
      * @see    #map(Function)
      */
@@ -1042,8 +1016,6 @@ public interface RestAction<T> {
      *         If null is provided or you tried to combine an action with itself
      *
      * @return Combined RestAction
-     *
-     * @since  4.2.1
      */
     @Nonnull
     @CheckReturnValue
@@ -1070,8 +1042,6 @@ public interface RestAction<T> {
      *         If null is provided or you tried to combine an action with itself
      *
      * @return Combined RestAction with empty result
-     *
-     * @since  4.2.1
      */
     @Nonnull
     @CheckReturnValue
@@ -1094,8 +1064,6 @@ public interface RestAction<T> {
      *         If null is provided or you tried to combine an action with itself
      *
      * @return Combined RestAction with empty result
-     *
-     * @since  4.2.1
      *
      * @see    #allOf(RestAction, RestAction[])
      * @see    #and(RestAction, BiFunction)
@@ -1135,8 +1103,6 @@ public interface RestAction<T> {
      *
      * @return RestAction with delay
      *
-     * @since  4.1.1
-     *
      * @see    #queueAfter(long, TimeUnit)
      */
     @Nonnull
@@ -1167,8 +1133,6 @@ public interface RestAction<T> {
      *         The scheduler to use, null to use {@link JDA#getRateLimitPool()}
      *
      * @return RestAction with delay
-     *
-     * @since  4.1.1
      *
      * @see    #queueAfter(long, TimeUnit, ScheduledExecutorService)
      */
@@ -1203,8 +1167,6 @@ public interface RestAction<T> {
      *
      * @return RestAction with delay
      *
-     * @since  4.1.1
-     *
      * @see    #queueAfter(long, TimeUnit)
      */
     @Nonnull
@@ -1237,8 +1199,6 @@ public interface RestAction<T> {
      *         The scheduler to use, null to use {@link JDA#getRateLimitPool()}
      *
      * @return RestAction with delay
-     *
-     * @since  4.1.1
      *
      * @see    #queueAfter(long, TimeUnit, ScheduledExecutorService)
      */

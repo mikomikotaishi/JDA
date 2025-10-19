@@ -57,8 +57,6 @@ public interface AudioReceiveHandler {
      * The decoder will be provided by JDA but need not be used.
      *
      * @return True, if {@link #handleEncodedAudio(OpusPacket)} should receive opus packets.
-     *
-     * @since  4.0.0
      */
     default boolean canReceiveEncoded() {
         return false;
@@ -74,8 +72,6 @@ public interface AudioReceiveHandler {
      *
      * @param packet
      *        The {@link net.dv8tion.jda.api.audio.OpusPacket}
-     *
-     * @since  4.0.0
      */
     default void handleEncodedAudio(@Nonnull OpusPacket packet) {}
 

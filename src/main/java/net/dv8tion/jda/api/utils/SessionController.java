@@ -97,8 +97,6 @@ public interface SessionController {
      *
      * @throws AssertionError
      *         If the provided level is not a valid array length size
-     *
-     * @since  4.2.0
      */
     default void setConcurrency(int level) {}
 

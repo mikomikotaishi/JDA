@@ -484,8 +484,6 @@ public class PermissionUtil {
      *         If the provided member is in a guild the bot is not a member of
      *
      * @return Primitive (unsigned) long value with the implicit permissions of the specified member
-     *
-     * @since  3.1
      */
     public static long getExplicitPermission(Member member) {
         Checks.notNull(member, "Member");
@@ -528,8 +526,6 @@ public class PermissionUtil {
      *         or the specified entities are not from the same {@link net.dv8tion.jda.api.entities.Guild Guild}
      *
      * @return Primitive (unsigned) long value with the implicit permissions of the specified member in the specified channel
-     *
-     * @since  3.1
      */
     public static long getExplicitPermission(GuildChannel channel, Member member) {
         return getExplicitPermission(channel, member, true);
@@ -561,8 +557,6 @@ public class PermissionUtil {
      *         If the provided member is in a guild the bot is not a member of
      *
      * @return Primitive (unsigned) long value with the implicit permissions of the specified member in the specified channel
-     *
-     * @since  3.1
      */
     public static long getExplicitPermission(
             GuildChannel channel, Member member, boolean includeRoles) {
@@ -608,8 +602,6 @@ public class PermissionUtil {
      *         or the specified entities are not from the same {@link net.dv8tion.jda.api.entities.Guild Guild}
      *
      * @return Primitive (unsigned) long value with the implicit permissions of the specified role in the specified channel
-     *
-     * @since  3.1
      */
     public static long getExplicitPermission(GuildChannel channel, Role role) {
         return getExplicitPermission(channel, role, true);
@@ -639,8 +631,6 @@ public class PermissionUtil {
      *         If the provided role is in a guild the bot is not a member of
      *
      * @return Primitive (unsigned) long value with the implicit permissions of the specified role in the specified channel
-     *
-     * @since  3.1
      */
     public static long getExplicitPermission(
             GuildChannel channel, Role role, boolean includeRoles) {

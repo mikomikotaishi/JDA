@@ -2372,8 +2372,6 @@ public interface Message extends ISnowflake, Formattable {
      *         or if this message is from another user and we don't have {@link Permission#MESSAGE_MANAGE Permission.MESSAGE_MANAGE}.
      *
      * @return {@link RestAction} - Type: {@link Message}
-     *
-     * @since  4.2.1
      */
     @Nonnull
     @CheckReturnValue
@@ -2960,8 +2958,6 @@ public interface Message extends ISnowflake, Formattable {
          * based on {@link #getFileName()}.
          *
          * @return True if this attachment is marked as spoiler
-         *
-         * @since  4.2.1
          */
         public boolean isSpoiler() {
             return getFileName().startsWith("SPOILER_");

@@ -497,8 +497,6 @@ public class JDABuilder {
      *         If null is provided
      *
      * @return The JDABuilder instance. Useful for chaining.
-     *
-     * @since  4.2.1
      */
     @Nonnull
     public JDABuilder setGatewayEncoding(@Nonnull GatewayEncoding encoding) {
@@ -515,8 +513,6 @@ public class JDABuilder {
      *         True, if JDA should fire {@link net.dv8tion.jda.api.events.RawGatewayEvent}.
      *
      * @return The JDABuilder instance. Useful for chaining.
-     *
-     * @since  4.0.0
      */
     @Nonnull
     public JDABuilder setRawEventsEnabled(boolean enable) {
@@ -685,8 +681,6 @@ public class JDABuilder {
      *         The {@link MemberCachePolicy} or null to use default {@link MemberCachePolicy#ALL}
      *
      * @return The JDABuilder instance. Useful for chaining.
-     *
-     * @since  4.2.0
      *
      * @see    MemberCachePolicy
      * @see    #setEnabledIntents(Collection)
@@ -1074,8 +1068,6 @@ public class JDABuilder {
      *         The executor for the event proxy, or null to use calling thread
      *
      * @return The JDABuilder instance. Useful for chaining.
-     *
-     * @since  4.2.0
      */
     @Nonnull
     public JDABuilder setEventPool(@Nullable ExecutorService executor) {
@@ -1092,8 +1084,6 @@ public class JDABuilder {
      *         True, if the executor should be shutdown when JDA shuts down
      *
      * @return The JDABuilder instance. Useful for chaining.
-     *
-     * @since  4.2.0
      */
     @Nonnull
     public JDABuilder setEventPool(@Nullable ExecutorService executor, boolean automaticShutdown) {
@@ -1113,8 +1103,6 @@ public class JDABuilder {
      *         The thread-pool to use for the audio WebSocket
      *
      * @return The JDABuilder instance. Useful for chaining.
-     *
-     * @since  4.2.1
      */
     @Nonnull
     public JDABuilder setAudioPool(@Nullable ScheduledExecutorService pool) {
@@ -1134,8 +1122,6 @@ public class JDABuilder {
      *         Whether {@link JDA#shutdown()} should shutdown this pool
      *
      * @return The JDABuilder instance. Useful for chaining.
-     *
-     * @since  4.2.1
      */
     @Nonnull
     public JDABuilder setAudioPool(
@@ -1432,8 +1418,6 @@ public class JDABuilder {
      *
      * @return The JDABuilder instance. Useful for chaining.
      *
-     * @since 4.0.0
-     *
      * @see    VoiceDispatchInterceptor
      */
     @Nonnull
@@ -1451,8 +1435,6 @@ public class JDABuilder {
      *         The filter to apply
      *
      * @return The JDABuilder instance. Useful for chaining.
-     *
-     * @since  4.1.0
      *
      * @see    ChunkingFilter#NONE
      * @see    ChunkingFilter#include(long...)
@@ -1485,8 +1467,6 @@ public class JDABuilder {
      *
      * @return The JDABuilder instance. Useful for chaining.
      *
-     * @since  4.2.0
-     *
      * @see    #setMemberCachePolicy(MemberCachePolicy)
      */
     @Nonnull
@@ -1512,8 +1492,6 @@ public class JDABuilder {
      *         The intents to disable (default: none)
      *
      * @return The JDABuilder instance. Useful for chaining.
-     *
-     * @since  4.2.0
      *
      * @see    #setMemberCachePolicy(MemberCachePolicy)
      */
@@ -1603,8 +1581,6 @@ public class JDABuilder {
      *
      * @return The JDABuilder instance. Useful for chaining.
      *
-     * @since  4.2.0
-     *
      * @see    #setMemberCachePolicy(MemberCachePolicy)
      */
     @Nonnull
@@ -1631,8 +1607,6 @@ public class JDABuilder {
      *         The intents to enable (default: all)
      *
      * @return The JDABuilder instance. Useful for chaining.
-     *
-     * @since  4.2.0
      *
      * @see    #setMemberCachePolicy(MemberCachePolicy)
      */
@@ -1704,8 +1678,6 @@ public class JDABuilder {
      *         The threshold in {@code [50, 250]}
      *
      * @return The JDABuilder instance. Useful for chaining.
-     *
-     * @since  4.1.0
      */
     @Nonnull
     public JDABuilder setLargeThreshold(int threshold) {
