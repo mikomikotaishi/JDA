@@ -63,7 +63,9 @@ public class EncodingUtil {
 
     /**
      * Encodes a unicode correctly based on being in codepoint notation or not.
+     *
      * @param  unicode Provided unicode in the form of <code>\​uXXXX</code> or <code>U+XXXX</code>
+     *
      * @return Never-null String containing the encoded unicode
      */
     public static String encodeReaction(String unicode) {

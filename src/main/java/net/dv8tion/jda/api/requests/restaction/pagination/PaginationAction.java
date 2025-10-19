@@ -281,7 +281,6 @@ public interface PaginationAction<T, M extends PaginationAction<T, M>>
      * <br>is not the same as
      * <br>{@code action.stream().limit(50).collect(collector)}
      *
-     *
      * @param  limit
      *         The limit to use
      *

@@ -291,7 +291,6 @@ public class ErrorHandler implements Consumer<Throwable> {
      *         The throwable type
      * @param  handler
      *         The alternative handler
-     *
      * @param  <T>
      *         The type
      *
@@ -324,7 +323,6 @@ public class ErrorHandler implements Consumer<Throwable> {
      *         Additional condition that must apply to use this handler
      * @param  handler
      *         The alternative handler
-     *
      * @param  <T>
      *         The type
      *

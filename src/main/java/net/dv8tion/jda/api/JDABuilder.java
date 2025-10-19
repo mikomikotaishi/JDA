@@ -686,10 +686,10 @@ public class JDABuilder {
      *
      * @return The JDABuilder instance. Useful for chaining.
      *
+     * @since  4.2.0
+     *
      * @see    MemberCachePolicy
      * @see    #setEnabledIntents(Collection)
-     *
-     * @since  4.2.0
      */
     @Nonnull
     public JDABuilder setMemberCachePolicy(@Nullable MemberCachePolicy policy) {
@@ -1485,9 +1485,9 @@ public class JDABuilder {
      *
      * @return The JDABuilder instance. Useful for chaining.
      *
-     * @see    #setMemberCachePolicy(MemberCachePolicy)
-     *
      * @since  4.2.0
+     *
+     * @see    #setMemberCachePolicy(MemberCachePolicy)
      */
     @Nonnull
     public JDABuilder setDisabledIntents(
@@ -1513,9 +1513,9 @@ public class JDABuilder {
      *
      * @return The JDABuilder instance. Useful for chaining.
      *
-     * @see    #setMemberCachePolicy(MemberCachePolicy)
-     *
      * @since  4.2.0
+     *
+     * @see    #setMemberCachePolicy(MemberCachePolicy)
      */
     @Nonnull
     public JDABuilder setDisabledIntents(@Nullable Collection<GatewayIntent> intents) {
@@ -1603,9 +1603,9 @@ public class JDABuilder {
      *
      * @return The JDABuilder instance. Useful for chaining.
      *
-     * @see    #setMemberCachePolicy(MemberCachePolicy)
-     *
      * @since  4.2.0
+     *
+     * @see    #setMemberCachePolicy(MemberCachePolicy)
      */
     @Nonnull
     public JDABuilder setEnabledIntents(
@@ -1632,9 +1632,9 @@ public class JDABuilder {
      *
      * @return The JDABuilder instance. Useful for chaining.
      *
-     * @see    #setMemberCachePolicy(MemberCachePolicy)
-     *
      * @since  4.2.0
+     *
+     * @see    #setMemberCachePolicy(MemberCachePolicy)
      */
     @Nonnull
     public JDABuilder setEnabledIntents(@Nullable Collection<GatewayIntent> intents) {

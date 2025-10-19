@@ -95,7 +95,6 @@ public interface CommandData extends SerializableData {
      *
      * @param  locale
      *         The locale to associate the translated name with
-     *
      * @param  name
      *         The translated name to put
      *

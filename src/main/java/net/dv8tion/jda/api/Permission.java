@@ -196,7 +196,6 @@ public enum Permission {
      *         The raw {@code long} representation of permissions.
      *
      * @return Possibly-empty EnumSet of {@link net.dv8tion.jda.api.Permission Permissions}.
-     *
      */
     @Nonnull
     public static EnumSet<Permission> getPermissions(long permissions) {

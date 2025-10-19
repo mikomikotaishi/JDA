@@ -71,7 +71,6 @@ public class DataPath {
      *
      * @param  <T>
      *         The result type
-     *
      * @param  root
      *         The root data object, which is the top level accessor.
      *         <br>The very first element in the path corresponds to a field of that name within this root object.
@@ -161,7 +160,6 @@ public class DataPath {
      *
      * @param  <T>
      *         The result type
-     *
      * @param  root
      *         The root data array, which is the top level accessor.
      *         <br>The very first element in the path corresponds to a field of that name within this root object.

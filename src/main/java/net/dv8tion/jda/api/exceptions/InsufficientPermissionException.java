@@ -125,9 +125,9 @@ public class InsufficientPermissionException extends PermissionException {
      * @throws java.lang.IllegalArgumentException
      *         If the provided JDA instance is null
      *
-     * @since  4.0.0
-     *
      * @return The Guild instance or null
+     *
+     * @since  4.0.0
      */
     @Nullable
     public Guild getGuild(@Nonnull JDA api) {
@@ -144,9 +144,9 @@ public class InsufficientPermissionException extends PermissionException {
      * @throws java.lang.IllegalArgumentException
      *         If the provided JDA instance is null
      *
-     * @since  4.0.0
-     *
      * @return The GuildChannel instance or null
+     *
+     * @since  4.0.0
      */
     @Nullable
     public GuildChannel getChannel(@Nonnull JDA api) {

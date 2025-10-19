@@ -164,6 +164,7 @@ public interface Emoji extends SerializableData, Formattable {
      *
      * @param  emoji
      *         The emoji json
+     *
      * @throws net.dv8tion.jda.api.exceptions.ParsingException
      *         If the JSON is not a valid emoji
      *

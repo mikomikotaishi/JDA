@@ -15,18 +15,15 @@
  */
 
 plugins {
-    `kotlin-dsl`
-    id("java-gradle-plugin")
+    kotlin("jvm") version "2.0.0"
 }
 
 repositories {
     mavenCentral()
-    gradlePluginPortal()
 }
 
 dependencies {
-    implementation(gradleApi())
-    implementation(platform("org.openrewrite.recipe:rewrite-recipe-bom:3.16.0"))
+    implementation(platform(libs.openrewrite.bom))
     implementation("org.openrewrite:rewrite-java")
 
     runtimeOnly("org.openrewrite:rewrite-java-8")

@@ -52,8 +52,10 @@ public abstract class SocketHandler {
 
     /**
      * Handles a given data-json of the Event handled by this Handler.
+     *
      * @param content
      *      the content of the event to handle
+     *
      * @return
      *      Guild-id if that guild has a lock, or null if successful
      */

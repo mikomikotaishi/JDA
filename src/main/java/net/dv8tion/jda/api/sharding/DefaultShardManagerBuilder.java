@@ -723,10 +723,10 @@ public class DefaultShardManagerBuilder {
      *
      * @return The DefaultShardManagerBuilder instance. Useful for chaining.
      *
+     * @since  4.2.0
+     *
      * @see    MemberCachePolicy
      * @see    #setEnabledIntents(Collection)
-     *
-     * @since  4.2.0
      */
     @Nonnull
     public DefaultShardManagerBuilder setMemberCachePolicy(@Nullable MemberCachePolicy policy) {
@@ -1778,7 +1778,6 @@ public class DefaultShardManagerBuilder {
      *
      * @param  minShardId
      *         The lowest shard id the DefaultShardManager should contain
-     *
      * @param  maxShardId
      *         The highest shard id the DefaultShardManager should contain
      *
@@ -1959,9 +1958,9 @@ public class DefaultShardManagerBuilder {
      *
      * @return The DefaultShardManagerBuilder instance. Useful for chaining.
      *
-     * @see    #setMemberCachePolicy(MemberCachePolicy)
-     *
      * @since  4.2.0
+     *
+     * @see    #setMemberCachePolicy(MemberCachePolicy)
      */
     @Nonnull
     public DefaultShardManagerBuilder setDisabledIntents(
@@ -1988,9 +1987,9 @@ public class DefaultShardManagerBuilder {
      *
      * @return The DefaultShardManagerBuilder instance. Useful for chaining.
      *
-     * @see    #setMemberCachePolicy(MemberCachePolicy)
-     *
      * @since  4.2.0
+     *
+     * @see    #setMemberCachePolicy(MemberCachePolicy)
      */
     @Nonnull
     public DefaultShardManagerBuilder setDisabledIntents(
@@ -2079,9 +2078,9 @@ public class DefaultShardManagerBuilder {
      *
      * @return The DefaultShardManagerBuilder instance. Useful for chaining.
      *
-     * @see    #setMemberCachePolicy(MemberCachePolicy)
-     *
      * @since  4.2.0
+     *
+     * @see    #setMemberCachePolicy(MemberCachePolicy)
      */
     @Nonnull
     public DefaultShardManagerBuilder setEnabledIntents(
@@ -2108,9 +2107,9 @@ public class DefaultShardManagerBuilder {
      *
      * @return The DefaultShardManagerBuilder instance. Useful for chaining.
      *
-     * @see    #setMemberCachePolicy(MemberCachePolicy)
-     *
      * @since  4.2.0
+     *
+     * @see    #setMemberCachePolicy(MemberCachePolicy)
      */
     @Nonnull
     public DefaultShardManagerBuilder setEnabledIntents(

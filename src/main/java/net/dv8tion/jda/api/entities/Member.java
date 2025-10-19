@@ -500,14 +500,14 @@ public interface Member extends IMentionable, IPermissionHolder, IDetachableEnti
      * Checks whether this member has passed the {@link net.dv8tion.jda.api.entities.Guild Guild's}
      * Membership Screening requirements.
      *
-     * @incubating Discord is still trying to figure this out
-     *
      * @throws net.dv8tion.jda.api.exceptions.DetachedEntityException
      *         If this entity is {@link #isDetached() detached}
      *
      * @return True, if this member hasn't passed the guild's Membership Screening requirements
      *
      * @since  4.2.1
+     *
+     * @incubating Discord is still trying to figure this out
      */
     @Incubating
     boolean isPending();

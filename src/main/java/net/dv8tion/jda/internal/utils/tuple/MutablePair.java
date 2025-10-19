@@ -43,6 +43,7 @@ public class MutablePair<L, R> extends Pair<L, R> {
      * @param <R> the right element type
      * @param left  the left element, may be null
      * @param right  the right element, may be null
+     *
      * @return a pair formed from the two parameters, not null
      */
     public static <L, R> MutablePair<L, R> of(L left, R right) {

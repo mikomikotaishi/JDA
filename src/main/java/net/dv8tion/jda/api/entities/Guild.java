@@ -145,7 +145,6 @@ public interface Guild extends IGuildChannelContainer<GuildChannel>, ISnowflake,
      *
      * @throws net.dv8tion.jda.api.exceptions.DetachedEntityException
      *         If this entity is {@link #isDetached() detached}
-     *
      * @throws IllegalArgumentException
      *         If the provided id is not a valid snowflake
      *
@@ -620,9 +619,9 @@ public interface Guild extends IGuildChannelContainer<GuildChannel>, ISnowflake,
      *
      * @return {@link MemberAction MemberAction}
      *
-     * @see    <a href="https://discord.com/developers/docs/topics/oauth2" target="_blank">Discord OAuth2 Documentation</a>
-     *
      * @since  3.7.0
+     *
+     * @see    <a href="https://discord.com/developers/docs/topics/oauth2" target="_blank">Discord OAuth2 Documentation</a>
      */
     @Nonnull
     @CheckReturnValue
@@ -3247,14 +3246,13 @@ public interface Guild extends IGuildChannelContainer<GuildChannel>, ISnowflake,
      *     <br>The specified user does not exist</li>
      * </ul>
      *
-     * @return {@link RestAction} - Type: {@link Member}
-     *
      * @throws net.dv8tion.jda.api.exceptions.DetachedEntityException
      *         If this entity is {@link #isDetached() detached}
      *
+     * @return {@link RestAction} - Type: {@link Member}
+     *
      * @see    #pruneMemberCache()
      * @see    #unloadMember(long)
-     *
      * @see    #getOwner()
      * @see    #getOwnerIdLong()
      * @see    #retrieveMemberById(long)
@@ -3887,7 +3885,6 @@ public interface Guild extends IGuildChannelContainer<GuildChannel>, ISnowflake,
      *             <li>If the specified {@link Member} is not from the same {@link Guild}</li>
      *             <li>If the new nickname is more than {@value Member#MAX_NICKNAME_LENGTH} characters in length</li>
      *         </ul>
-     *
      * @throws net.dv8tion.jda.api.exceptions.InsufficientPermissionException
      *         <ul>
      *             <li>If attempting to set nickname for self and the logged in account has neither {@link net.dv8tion.jda.api.Permission#NICKNAME_CHANGE}
@@ -4398,6 +4395,7 @@ public interface Guild extends IGuildChannelContainer<GuildChannel>, ISnowflake,
      * @param  user
      *         The {@link UserSnowflake} to timeout.
      *         This can be a member or user instance or {@link User#fromId(long)}.
+     *
      * @throws net.dv8tion.jda.api.exceptions.InsufficientPermissionException
      *         If the logged in account does not have the {@link net.dv8tion.jda.api.Permission#MODERATE_MEMBERS} permission.
      * @throws net.dv8tion.jda.api.exceptions.HierarchyException

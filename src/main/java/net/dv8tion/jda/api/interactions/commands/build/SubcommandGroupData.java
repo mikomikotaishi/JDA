@@ -102,7 +102,6 @@ public class SubcommandGroupData implements SerializableData {
      *
      * @param  locale
      *         The locale to associate the translated name with
-     *
      * @param  name
      *         The translated name to put
      *
@@ -169,7 +168,6 @@ public class SubcommandGroupData implements SerializableData {
      *
      * @param  locale
      *         The locale to associate the translated description with
-     *
      * @param  description
      *         The translated description to put
      *

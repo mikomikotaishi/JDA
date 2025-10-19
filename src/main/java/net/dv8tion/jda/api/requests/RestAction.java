@@ -274,10 +274,10 @@ public interface RestAction<T> {
      *
      * @return RestAction - Type: {@link List} of the results
      *
+     * @since  4.2.1
+     *
      * @see    #and(RestAction, BiFunction)
      * @see    #zip(RestAction, RestAction[])
-     *
-     * @since  4.2.1
      */
     @Nonnull
     @SafeVarargs
@@ -307,10 +307,10 @@ public interface RestAction<T> {
      *
      * @return RestAction - Type: {@link List} of the results
      *
+     * @since  4.2.1
+     *
      * @see    #and(RestAction, BiFunction)
      * @see    #zip(RestAction, RestAction[])
-     *
-     * @since  4.2.1
      */
     @Nonnull
     @CheckReturnValue
@@ -340,10 +340,10 @@ public interface RestAction<T> {
      *
      * @return RestAction - Type: {@link List} of the results
      *
+     * @since  4.2.1
+     *
      * @see    #and(RestAction, BiFunction)
      * @see    #zip(RestAction, RestAction[])
-     *
-     * @since  4.2.1
      */
     @Nonnull
     @CheckReturnValue
@@ -406,9 +406,9 @@ public interface RestAction<T> {
      *
      * @return The current checks, or null if none were set
      *
-     * @see    #setCheck(BooleanSupplier)
-     *
      * @since  4.2.1
+     *
+     * @see    #setCheck(BooleanSupplier)
      */
     @Nullable
     default BooleanSupplier getCheck() {
@@ -426,9 +426,9 @@ public interface RestAction<T> {
      *
      * @return The current RestAction for chaining convenience
      *
-     * @see    #setCheck(BooleanSupplier)
-     *
      * @since  4.2.1
+     *
+     * @see    #setCheck(BooleanSupplier)
      */
     @Nonnull
     @CheckReturnValue
@@ -550,12 +550,12 @@ public interface RestAction<T> {
      * }
      * }</pre>
      *
-     * @throws java.util.concurrent.RejectedExecutionException
-     *         If the requester has been shutdown by {@link JDA#shutdown()} or {@link JDA#shutdownNow()}
-     *
      * @param  success
      *         The success callback that will be called at a convenient time
      *         for the API. (can be null)
+     *
+     * @throws java.util.concurrent.RejectedExecutionException
+     *         If the requester has been shutdown by {@link JDA#shutdown()} or {@link JDA#shutdownNow()}
      *
      * @see    #queue(java.util.function.Consumer, java.util.function.Consumer) queue(Consumer, Consumer)
      */
@@ -587,15 +587,15 @@ public interface RestAction<T> {
      * }
      * }</pre>
      *
-     * @throws java.util.concurrent.RejectedExecutionException
-     *         If the requester has been shutdown by {@link JDA#shutdown()} or {@link JDA#shutdownNow()}
-     *
      * @param  success
      *         The success callback that will be called at a convenient time
      *         for the API. (can be null to use default)
      * @param  failure
      *         The failure callback that will be called if the Request
      *         encounters an exception at its execution point. (can be null to use default)
+     *
+     * @throws java.util.concurrent.RejectedExecutionException
+     *         If the requester has been shutdown by {@link JDA#shutdown()} or {@link JDA#shutdownNow()}
      *
      * @see    #submit()
      * @see    net.dv8tion.jda.api.exceptions.ErrorHandler
@@ -691,11 +691,11 @@ public interface RestAction<T> {
      * representing its completion task.
      * <br>Cancelling the returned Future will result in the cancellation of the Request!
      *
-     * @throws java.util.concurrent.RejectedExecutionException
-     *         If the requester has been shutdown by {@link JDA#shutdown()} or {@link JDA#shutdownNow()}
-     *
      * @param  shouldQueue
      *         Whether the Request should automatically handle rate limitations. (default true)
+     *
+     * @throws java.util.concurrent.RejectedExecutionException
+     *         If the requester has been shutdown by {@link JDA#shutdown()} or {@link JDA#shutdownNow()}
      *
      * @return Never-null {@link java.util.concurrent.CompletableFuture CompletableFuture} task representing the completion promise
      */
@@ -741,7 +741,6 @@ public interface RestAction<T> {
      *
      * @param  map
      *         The mapping function to apply to the action result
-     *
      * @param  <O>
      *         The target output type
      *
@@ -852,10 +851,10 @@ public interface RestAction<T> {
      *
      * @return RestAction with fallback handling
      *
+     * @since  4.2.0
+     *
      * @see    ErrorResponse#test(Throwable)
      * @see    ErrorResponse#test(ErrorResponse...)
-     *
-     * @since  4.2.0
      */
     @Nonnull
     @CheckReturnValue
@@ -927,10 +926,10 @@ public interface RestAction<T> {
      *
      * @return RestAction with fallback handling
      *
+     * @since  4.2.0
+     *
      * @see    ErrorResponse#test(Throwable)
      * @see    ErrorResponse#test(ErrorResponse...)
-     *
-     * @since  4.2.0
      */
     @Nonnull
     @CheckReturnValue
@@ -962,7 +961,6 @@ public interface RestAction<T> {
      *
      * @param  flatMap
      *         The mapping function to apply to the action result, must return a RestAction
-     *
      * @param  <O>
      *         The target output type
      *
@@ -1005,16 +1003,15 @@ public interface RestAction<T> {
      *         A condition predicate that decides whether to apply the flat map operator or not
      * @param  flatMap
      *         The mapping function to apply to the action result, must return a RestAction
-     *
      * @param  <O>
      *         The target output type
      *
      * @return RestAction for the mapped type
      *
+     * @since  4.1.1
+     *
      * @see    #flatMap(Function)
      * @see    #map(Function)
-     *
-     * @since  4.1.1
      */
     @Nonnull
     @CheckReturnValue
@@ -1098,10 +1095,10 @@ public interface RestAction<T> {
      *
      * @return Combined RestAction with empty result
      *
+     * @since  4.2.1
+     *
      * @see    #allOf(RestAction, RestAction[])
      * @see    #and(RestAction, BiFunction)
-     *
-     * @since  4.2.1
      */
     @Nonnull
     @CheckReturnValue
@@ -1138,9 +1135,9 @@ public interface RestAction<T> {
      *
      * @return RestAction with delay
      *
-     * @see    #queueAfter(long, TimeUnit)
-     *
      * @since  4.1.1
+     *
+     * @see    #queueAfter(long, TimeUnit)
      */
     @Nonnull
     @CheckReturnValue
@@ -1171,9 +1168,9 @@ public interface RestAction<T> {
      *
      * @return RestAction with delay
      *
-     * @see    #queueAfter(long, TimeUnit, ScheduledExecutorService)
-     *
      * @since  4.1.1
+     *
+     * @see    #queueAfter(long, TimeUnit, ScheduledExecutorService)
      */
     @Nonnull
     @CheckReturnValue
@@ -1206,9 +1203,9 @@ public interface RestAction<T> {
      *
      * @return RestAction with delay
      *
-     * @see    #queueAfter(long, TimeUnit)
-     *
      * @since  4.1.1
+     *
+     * @see    #queueAfter(long, TimeUnit)
      */
     @Nonnull
     @CheckReturnValue
@@ -1241,9 +1238,9 @@ public interface RestAction<T> {
      *
      * @return RestAction with delay
      *
-     * @see    #queueAfter(long, TimeUnit, ScheduledExecutorService)
-     *
      * @since  4.1.1
+     *
+     * @see    #queueAfter(long, TimeUnit, ScheduledExecutorService)
      */
     @Nonnull
     @CheckReturnValue

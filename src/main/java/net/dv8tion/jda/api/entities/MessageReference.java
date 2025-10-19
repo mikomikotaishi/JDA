@@ -102,7 +102,6 @@ public class MessageReference {
      *             <li>{@link net.dv8tion.jda.api.Permission#VOICE_CONNECT Permission.VOICE_CONNECT} (applicable if {@code getChannel().getType().isAudio()})</li>
      *             <li>{@link net.dv8tion.jda.api.Permission#MESSAGE_HISTORY Permission.MESSAGE_HISTORY}</li>
      *         </ul>
-     *
      * @throws java.lang.IllegalStateException
      *         If this message reference does not have a channel
      *
@@ -146,7 +145,6 @@ public class MessageReference {
      *             <li>{@link net.dv8tion.jda.api.Permission#VOICE_CONNECT Permission.VOICE_CONNECT} (applicable if {@code getChannel().getType().isAudio()})</li>
      *             <li>{@link net.dv8tion.jda.api.Permission#MESSAGE_HISTORY Permission.MESSAGE_HISTORY}</li>
      *         </ul>
-     *
      * @throws java.lang.IllegalStateException
      *         If this message reference does not have a channel
      *

@@ -60,6 +60,9 @@ public interface GuildMessageChannel extends GuildChannel, MessageChannel {
      * <br>Checks for both {@link net.dv8tion.jda.api.Permission#VIEW_CHANNEL Permission.VIEW_CHANNEL} and
      * {@link net.dv8tion.jda.api.Permission#MESSAGE_SEND Permission.MESSAGE_SEND}.
      *
+     * @param  member
+     *         The Member to check
+     *
      * @throws net.dv8tion.jda.api.exceptions.DetachedEntityException
      *         If this channel is a thread,
      *         and the bot {@link #isDetached() isn't in the guild}.
@@ -67,9 +70,6 @@ public interface GuildMessageChannel extends GuildChannel, MessageChannel {
      *         if the bot {@link #isDetached() isn't in the guild},
      *         and the combination of the provided Member and this GuildChannel doesn't have permission data,
      *         see {@link net.dv8tion.jda.api.exceptions.MissingEntityInteractionPermissionsException MissingEntityInteractionPermissionsException}.
-     *
-     * @param  member
-     *         The Member to check
      *
      * @return True, if the specified member is able to read and send messages in this channel
      */

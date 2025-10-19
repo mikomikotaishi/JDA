@@ -514,7 +514,6 @@ public class MessageHistory {
      * <br>{@code MessageHistory history = MessageHistory.getHistoryFromBeginning(channel).limit(60).complete()}
      * <br>Will return a MessageHistory instance with the first 60 messages of the given {@link net.dv8tion.jda.api.entities.channel.middleman.MessageChannel MessageChannel}.
      *
-     *
      * @param  channel
      *         The {@link net.dv8tion.jda.api.entities.channel.middleman.MessageChannel MessageChannel}
      *

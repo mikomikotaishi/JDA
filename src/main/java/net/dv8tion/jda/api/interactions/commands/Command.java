@@ -365,7 +365,6 @@ public interface Command extends ISnowflake, ICommandReference {
          *             <li>If the value is null or longer than {@value #MAX_STRING_VALUE_LENGTH} characters long,
          *                 as defined by {@link #MAX_STRING_VALUE_LENGTH}</li>
          *         </ul>
-         *
          */
         public Choice(@Nonnull String name, @Nonnull String value) {
             setName(name);
@@ -441,7 +440,6 @@ public interface Command extends ISnowflake, ICommandReference {
          *
          * @param  locale
          *         The locale to associate the translated name with
-         *
          * @param  name
          *         The translated name to put
          *

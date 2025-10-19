@@ -2039,7 +2039,6 @@ public interface Message extends ISnowflake, Formattable {
      *             <li>If this message is ephemeral</li>
      *         </ul>
      *
-     *
      * @return {@link RestAction}
      */
     @Nonnull
@@ -2182,7 +2181,6 @@ public interface Message extends ISnowflake, Formattable {
      *                 <b>and</b> the given user is <b>not</b> the {@link SelfUser}.</li>
      *             <li>If this message is ephemeral</li>
      *         </ul>
-     *
      *
      * @return {@link RestAction}
      */
@@ -2327,6 +2325,7 @@ public interface Message extends ISnowflake, Formattable {
      *         and the message was not sent by the currently logged in account.
      * @throws IllegalStateException
      *         If this Message is ephemeral
+     *
      * @return {@link net.dv8tion.jda.api.requests.restaction.AuditableRestAction AuditableRestAction} - Type: {@link java.lang.Void}
      *
      * @see    #isSuppressedEmbeds()
@@ -2680,8 +2679,10 @@ public interface Message extends ISnowflake, Formattable {
         /**
          * Given a bitfield, this function extracts all Enum values according to their bit values and returns
          * an EnumSet containing all matching MessageFlags
+         *
          * @param  bitfield
          *         Non-Negative integer representing a bitfield of MessageFlags
+         *
          * @return Never-Null EnumSet of MessageFlags being found in the bitfield
          */
         @Nonnull
@@ -2695,10 +2696,13 @@ public interface Message extends ISnowflake, Formattable {
         /**
          * Converts a Collection of MessageFlags back to the integer representing the bitfield.
          * This is the reverse operation of {@link #fromBitField(int)}.
+         *
          * @param  coll
          *         A Non-Null Collection of MessageFlags
+         *
          * @throws IllegalArgumentException
          *         If the provided Collection is {@code null}
+         *
          * @return Integer value of the bitfield representing the given MessageFlags
          */
         public static int toBitField(@Nonnull Collection<MessageFlag> coll) {

@@ -171,6 +171,7 @@ dependencies {
 
     // Needed for rewrite gradle tasks
     rewrite("org.openrewrite.recipe:rewrite-static-analysis")
+    rewrite(project(":formatter-recipes"))
 }
 
 fun isNonStable(version: String): Boolean {
@@ -203,8 +204,9 @@ rewrite {
     failOnDryRunResults = true
     activeRecipe("org.openrewrite.staticanalysis.NeedBraces")
     activeRecipe("org.openrewrite.staticanalysis.NoFinalizedLocalVariables")
+    activeRecipe("net.dv8tion.jda.recipe.JavadocFormatter")
 
-    exclusion("**/examples/**", "*.kts", "**/*.kts")
+    exclusion("**/examples/**", "*.kts", "**/*.kts", "**/*.kt")
 }
 
 spotless {

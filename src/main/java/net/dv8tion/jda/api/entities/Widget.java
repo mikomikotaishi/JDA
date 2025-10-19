@@ -330,7 +330,8 @@ public interface Widget extends ISnowflake {
         int getPosition();
 
         /**
-         * Gets the name of the channel	 *
+         * Gets the name of the channel
+         *
          * @return name of the channel
          */
         @Nonnull

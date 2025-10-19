@@ -381,7 +381,6 @@ public class OptionData implements SerializableData {
      *
      * @param  locale
      *         The locale to associate the translated name with
-     *
      * @param  name
      *         The translated name to put
      *
@@ -447,7 +446,6 @@ public class OptionData implements SerializableData {
      *
      * @param  locale
      *         The locale to associate the translated description with
-     *
      * @param  description
      *         The translated description to put
      *
@@ -604,6 +602,7 @@ public class OptionData implements SerializableData {
      *
      * @param  value
      *         The minimal value which can be provided for this option.
+     *
      * @throws IllegalArgumentException
      *         <ul>
      *             <li>If {@link OptionType type of this option} is not {@link OptionType#INTEGER INTEGER} or {@link OptionType#NUMBER NUMBER}</li>
@@ -631,6 +630,7 @@ public class OptionData implements SerializableData {
      *
      * @param  value
      *         The minimal value which can be provided for this option.
+     *
      * @throws IllegalArgumentException
      *         <ul>
      *             <li>If {@link OptionType type of this option} is not {@link OptionType#NUMBER NUMBER}</li>
@@ -658,6 +658,7 @@ public class OptionData implements SerializableData {
      *
      * @param  value
      *         The maximal value which can be provided for this option.
+     *
      * @throws IllegalArgumentException
      *         <ul>
      *             <li>If {@link OptionType type of this option} is not {@link OptionType#INTEGER INTEGER} or {@link OptionType#NUMBER NUMBER}</li>
@@ -685,6 +686,7 @@ public class OptionData implements SerializableData {
      *
      * @param  value
      *         The maximal value which can be provided for this option.
+     *
      * @throws IllegalArgumentException
      *         <ul>
      *             <li>If {@link OptionType type of this option} is not {@link OptionType#NUMBER NUMBER}</li>
@@ -714,6 +716,7 @@ public class OptionData implements SerializableData {
      *         The minimal value which can be provided for this option.
      * @param  maxValue
      *         The maximal value which can be provided for this option.
+     *
      * @throws IllegalArgumentException
      *         <ul>
      *             <li>If {@link OptionType type of this option} is not {@link OptionType#INTEGER INTEGER} or {@link OptionType#NUMBER NUMBER}</li>
@@ -749,6 +752,7 @@ public class OptionData implements SerializableData {
      *         The minimal value which can be provided for this option.
      * @param  maxValue
      *         The maximal value which can be provided for this option.
+     *
      * @throws IllegalArgumentException
      *         <ul>
      *             <li>If {@link OptionType type of this option} is not {@link OptionType#NUMBER NUMBER}</li>
@@ -782,6 +786,7 @@ public class OptionData implements SerializableData {
      *
      * @param  minLength
      *         The minimum length for strings which can be provided for this option.
+     *
      * @throws IllegalArgumentException
      *         <ul>
      *             <li>If {@link OptionType type of this option} is not {@link OptionType#STRING STRING}</li>
@@ -806,6 +811,7 @@ public class OptionData implements SerializableData {
      *
      * @param  maxLength
      *         The maximum length for strings which can be provided for this option.
+     *
      * @throws IllegalArgumentException
      *         <ul>
      *             <li>If {@link OptionType type of this option} is not {@link OptionType#STRING STRING}</li>
@@ -837,6 +843,7 @@ public class OptionData implements SerializableData {
      *         The minimum length for strings which can be provided for this option.
      * @param  maxLength
      *         The maximum length for strings which can be provided for this option.
+     *
      * @throws IllegalArgumentException
      *         <ul>
      *             <li>If {@link OptionType type of this option} is not {@link OptionType#STRING STRING}</li>

@@ -273,7 +273,6 @@ public interface CacheView<T> extends Iterable<T> {
      *
      * @param  collector
      *         The collector used to collect the elements
-     *
      * @param  <R>
      *         The output type
      * @param  <A>
@@ -296,7 +295,6 @@ public interface CacheView<T> extends Iterable<T> {
      *
      * @param  cacheViews
      *         Collection of {@link net.dv8tion.jda.api.utils.cache.CacheView CacheView} implementations
-     *
      * @param  <E>
      *         The target type of the projection
      *
@@ -315,7 +313,6 @@ public interface CacheView<T> extends Iterable<T> {
      *
      * @param  generator
      *         Stream generator of {@link net.dv8tion.jda.api.utils.cache.CacheView CacheView} implementations
-     *
      * @param  <E>
      *         The target type of the projection
      *
@@ -366,7 +363,6 @@ public interface CacheView<T> extends Iterable<T> {
      *
      * @param  cacheViews
      *         Collection of {@link net.dv8tion.jda.api.utils.cache.SnowflakeCacheView SnowflakeCacheView} implementations
-     *
      * @param  <E>
      *         The target type of the chain
      *
@@ -386,7 +382,6 @@ public interface CacheView<T> extends Iterable<T> {
      *
      * @param  generator
      *         Stream generator of {@link net.dv8tion.jda.api.utils.cache.SnowflakeCacheView SnowflakeCacheView} implementations
-     *
      * @param  <E>
      *         The target type of the chain
      *

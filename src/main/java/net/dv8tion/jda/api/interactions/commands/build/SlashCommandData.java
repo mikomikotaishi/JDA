@@ -107,7 +107,6 @@ public interface SlashCommandData extends CommandData {
      *
      * @param  locale
      *         The locale to associate the translated description with
-     *
      * @param  description
      *         The translated description to put
      *

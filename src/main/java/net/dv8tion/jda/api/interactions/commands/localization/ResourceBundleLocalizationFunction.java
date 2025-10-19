@@ -67,7 +67,6 @@ public class ResourceBundleLocalizationFunction implements LocalizationFunction 
      *
      * @param  resourceBundle
      *         The resource bundle to get the localized strings from
-     *
      * @param  locale
      *         The locale of the resources
      *
@@ -102,7 +101,6 @@ public class ResourceBundleLocalizationFunction implements LocalizationFunction 
      *
      * @param  baseName
      *         The base name of the resource bundle, for example, the base name of {@code "MyBundle_fr_FR.properties"} would be {@code "MyBundle"}
-     *
      * @param  locales
      *         The locales to get from the resource bundle
      *
@@ -149,7 +147,6 @@ public class ResourceBundleLocalizationFunction implements LocalizationFunction 
          *
          * @param  resourceBundle
          *         The {@link ResourceBundle} to get the localized strings from
-         *
          * @param  locale
          *         The {@link DiscordLocale} of the resources
          *
@@ -183,7 +180,6 @@ public class ResourceBundleLocalizationFunction implements LocalizationFunction 
          *
          * @param  baseName
          *         The base name of the resource bundle, for example, the base name of {@code "MyBundle_fr_FR.properties"} would be {@code "MyBundle"}
-         *
          * @param  locales
          *         The locales to get from the resource bundle
          *
@@ -195,6 +191,7 @@ public class ResourceBundleLocalizationFunction implements LocalizationFunction 
          *         </ul>
          *
          * @return This builder for chaining convenience
+         *
          * @see #fromBundles(String, DiscordLocale...)
          */
         @Nonnull

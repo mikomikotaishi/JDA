@@ -144,7 +144,6 @@ public interface ScheduledEvent extends ISnowflake, Comparable<ScheduledEvent> {
      * The {@link Status status} of the scheduled event.
      *
      * @return The status, or {@link Status#UNKNOWN} if the status is unknown to JDA.
-     *
      */
     @Nonnull
     Status getStatus();

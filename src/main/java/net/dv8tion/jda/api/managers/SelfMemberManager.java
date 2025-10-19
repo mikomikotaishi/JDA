@@ -112,7 +112,6 @@ public interface SelfMemberManager extends Manager<SelfMemberManager> {
      *             </li>
      *         </ul>
      *
-     *
      * @return SelfMemberManager for chaining convenience
      */
     @Nonnull

@@ -114,7 +114,6 @@ public interface ThreadChannelManager
      *
      * @throws IllegalStateException
      *         If the selected {@link ThreadChannel} is not a private ThreadChannel
-     *
      * @throws net.dv8tion.jda.api.exceptions.InsufficientPermissionException
      *         If the currently logged in account is not the thread owner or does not have the {@link net.dv8tion.jda.api.Permission#MANAGE_THREADS MANAGE_THREADS} permission.
      *

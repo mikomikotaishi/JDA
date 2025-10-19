@@ -48,6 +48,7 @@ public abstract class Pair<L, R>
      * @param <R> the right element type
      * @param left  the left element, may be null
      * @param right  the right element, may be null
+     *
      * @return a pair formed from the two parameters, not null
      */
     public static <L, R> Pair<L, R> of(L left, R right) {
@@ -77,6 +78,7 @@ public abstract class Pair<L, R>
      * <p>Compares this pair to another based on the two elements.</p>
      *
      * @param obj  the object to compare to, null returns false
+     *
      * @return true if the elements of the pair are equal
      */
     @Override

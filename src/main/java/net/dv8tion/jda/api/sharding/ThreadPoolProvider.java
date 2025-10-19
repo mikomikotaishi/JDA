@@ -62,7 +62,6 @@ public interface ThreadPoolProvider<T extends ExecutorService> {
      *
      * @param  init
      *         Function to initialize the shared pool, called with the shard total
-     *
      * @param  <T>
      *         The type of executor
      *

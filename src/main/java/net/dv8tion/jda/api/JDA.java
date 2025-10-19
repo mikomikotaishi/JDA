@@ -1482,6 +1482,7 @@ public interface JDA extends IGuildChannelContainer<Channel> {
      *
      * @param  id
      *         The id of the {@link PrivateChannel PrivateChannel}.
+     *
      * @throws java.lang.NumberFormatException
      *         If the provided {@code id} cannot be parsed by {@link Long#parseLong(String)}
      *
@@ -1955,10 +1956,8 @@ public interface JDA extends IGuildChannelContainer<Channel> {
      *
      * @param  skuId
      *         The id of the SKU the entitlement is for
-     *
      * @param ownerId
      *        The id of the owner of the entitlement
-     *
      * @param ownerType
      *        The type of the owner of the entitlement
      *
@@ -1984,10 +1983,8 @@ public interface JDA extends IGuildChannelContainer<Channel> {
      *
      * @param  skuId
      *         The id of the SKU the entitlement is for
-     *
      * @param ownerId
      *        The id of the owner of the entitlement
-     *
      * @param ownerType
      *        The type of the owner of the entitlement
      *

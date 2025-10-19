@@ -245,6 +245,7 @@ public interface ScheduledEventManager extends Manager<ScheduledEventManager> {
      *             <li>If the provided start time is before the end time</li>
      *             <li>If the provided start time is before the current time</li>
      *         </ul>
+     *
      * @return ScheduledEventManager for chaining convenience
      *
      * @see    #setEndTime(TemporalAccessor)

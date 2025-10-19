@@ -63,7 +63,6 @@ public class LocalizationMap implements SerializableData {
      *
      * @param  locale
      *         The locale on which to apply the localized string
-     *
      * @param  localizedString
      *         The localized string to use
      *

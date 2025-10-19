@@ -135,6 +135,7 @@ public interface AudioReceiveHandler {
      *  <li>Have this method return false for users who have been placed on a blacklist for abusing the bot's functionality.</li>
      *  <li>Have this method only return true if the user is in a special whitelist of power users.</li>
      * </ul>
+     *
      * @param  user
      *         The user whose audio was received
      *

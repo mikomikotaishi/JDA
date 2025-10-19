@@ -129,7 +129,6 @@ public class AttachmentProxy extends FileProxy {
      *         </ul>
      *
      * @return {@link CompletableFuture} which holds a {@link Path} which corresponds to the location the file has been downloaded.
-     *
      */
     @Nonnull
     @CheckReturnValue
