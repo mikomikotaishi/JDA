@@ -36,7 +36,7 @@ public class GuildMemberRemoveHandler extends SocketHandler {
 
     @Override
     protected Long handleInternally(DataObject content) {
-        final long id = content.getLong("guild_id");
+        long id = content.getLong("guild_id");
         boolean setup = getJDA().getGuildSetupController().onRemoveMember(id, content);
         if (setup) {
             return null;
@@ -49,7 +49,7 @@ public class GuildMemberRemoveHandler extends SocketHandler {
             return null;
         }
 
-        final long userId = content.getObject("user").getUnsignedLong("id");
+        long userId = content.getObject("user").getUnsignedLong("id");
         if (userId == getJDA().getSelfUser().getIdLong()) {
             // We probably just left the guild and this event is trying to remove us from the guild,
             // therefore ignore

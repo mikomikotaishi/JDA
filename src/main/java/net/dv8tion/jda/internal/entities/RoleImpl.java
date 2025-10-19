@@ -177,7 +177,7 @@ public class RoleImpl implements Role, RoleMixin<RoleImpl> {
     public boolean hasPermission(@Nonnull Permission... permissions) {
         long effectivePerms = rawPermissions | getGuild().getPublicRole().getPermissionsRaw();
         for (Permission perm : permissions) {
-            final long rawValue = perm.getRawValue();
+            long rawValue = perm.getRawValue();
             if ((effectivePerms & rawValue) != rawValue) {
                 return false;
             }
@@ -191,7 +191,7 @@ public class RoleImpl implements Role, RoleMixin<RoleImpl> {
         long effectivePerms =
                 PermissionUtil.getEffectivePermission(channel.getPermissionContainer(), this);
         for (Permission perm : permissions) {
-            final long rawValue = perm.getRawValue();
+            long rawValue = perm.getRawValue();
             if ((effectivePerms & rawValue) != rawValue) {
                 return false;
             }

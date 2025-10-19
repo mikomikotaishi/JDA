@@ -49,7 +49,7 @@ public class TypingStartHandler extends SocketHandler {
             }
         }
 
-        final long channelId = content.getLong("channel_id");
+        long channelId = content.getLong("channel_id");
 
         MessageChannel channel = getJDA().getChannelById(MessageChannel.class, channelId);
 
@@ -60,7 +60,7 @@ public class TypingStartHandler extends SocketHandler {
             return null;
         }
 
-        final long userId = content.getLong("user_id");
+        long userId = content.getLong("user_id");
         User user;
         MemberImpl member = null;
         if (channel instanceof PrivateChannel) {

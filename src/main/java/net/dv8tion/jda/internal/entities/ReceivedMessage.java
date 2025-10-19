@@ -865,8 +865,7 @@ public class ReceivedMessage implements Message {
                     webhook.getId(), webhook.getToken(), getId());
             route = withThreadContext(route);
 
-            final AuditableRestActionImpl<Void> action =
-                    new AuditableRestActionImpl<>(getJDA(), route);
+            AuditableRestActionImpl<Void> action = new AuditableRestActionImpl<>(getJDA(), route);
             action.setErrorMapper(getUnknownWebhookErrorMapper());
             return action;
         }
@@ -939,8 +938,7 @@ public class ReceivedMessage implements Message {
         }
         DataObject body = DataObject.empty().put("flags", newFlags);
 
-        final AuditableRestActionImpl<Void> action =
-                new AuditableRestActionImpl<>(api, route, body);
+        AuditableRestActionImpl<Void> action = new AuditableRestActionImpl<>(api, route, body);
         action.setErrorMapper(getUnknownWebhookErrorMapper());
         return action;
     }
@@ -1088,7 +1086,7 @@ public class ReceivedMessage implements Message {
 
     @Nonnull
     private MessageEditActionImpl editRequest() {
-        final MessageEditActionImpl messageEditAction = hasChannel()
+        MessageEditActionImpl messageEditAction = hasChannel()
                 ? new MessageEditActionImpl(getChannel(), getId())
                 : new MessageEditActionImpl(
                         getJDA(), hasGuild() ? getGuild() : null, getChannelId(), getId());

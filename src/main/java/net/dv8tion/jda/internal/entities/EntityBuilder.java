@@ -130,7 +130,7 @@ public class EntityBuilder extends AbstractEntityBuilder {
         SelfUserImpl selfUser =
                 (SelfUserImpl) (getJDA().hasSelfUser() ? getJDA().getSelfUser() : null);
         if (selfUser == null) {
-            final long id = self.getLong("id");
+            long id = self.getLong("id");
             selfUser = new SelfUserImpl(id, getJDA());
             getJDA().setSelfUser(selfUser);
         }
@@ -191,7 +191,7 @@ public class EntityBuilder extends AbstractEntityBuilder {
                             "Received GUILD_CREATE with an emoji with a null ID. JSON: {}", object);
                     continue;
                 }
-                final long emojiId = object.getLong("id");
+                long emojiId = object.getLong("id");
                 emojiMap.put(emojiId, createEmoji(guildObj, object));
             }
         }
@@ -281,51 +281,48 @@ public class EntityBuilder extends AbstractEntityBuilder {
             DataObject guildJson,
             TLongObjectMap<DataObject> members,
             int memberCount) {
-        final GuildImpl guildObj = new GuildImpl(getJDA(), guildId);
-        final String name = guildJson.getString("name", "");
-        final String iconId = guildJson.getString("icon", null);
-        final String splashId = guildJson.getString("splash", null);
-        final String description = guildJson.getString("description", null);
-        final String vanityCode = guildJson.getString("vanity_url_code", null);
-        final String bannerId = guildJson.getString("banner", null);
-        final String locale = guildJson.getString("preferred_locale", "en-US");
-        final SecurityIncidentActions securityIncidentActions = guildJson
+        GuildImpl guildObj = new GuildImpl(getJDA(), guildId);
+        String name = guildJson.getString("name", "");
+        String iconId = guildJson.getString("icon", null);
+        String splashId = guildJson.getString("splash", null);
+        String description = guildJson.getString("description", null);
+        String vanityCode = guildJson.getString("vanity_url_code", null);
+        String bannerId = guildJson.getString("banner", null);
+        String locale = guildJson.getString("preferred_locale", "en-US");
+        SecurityIncidentActions securityIncidentActions = guildJson
                 .optObject("incidents_data")
                 .map(this::createSecurityIncidentsActions)
                 .orElse(null);
-        final SecurityIncidentDetections securityIncidentDetections = guildJson
+        SecurityIncidentDetections securityIncidentDetections = guildJson
                 .optObject("incidents_data")
                 .map(this::createSecurityIncidentsDetections)
                 .orElse(null);
-        final DataArray roleArray = guildJson.getArray("roles");
-        final DataArray channelArray = guildJson.getArray("channels");
-        final DataArray threadArray = guildJson.getArray("threads");
-        final DataArray scheduledEventsArray = guildJson.getArray("guild_scheduled_events");
-        final DataArray emojisArray = guildJson.getArray("emojis");
-        final DataArray voiceStateArray = guildJson.getArray("voice_states");
-        final Optional<DataArray> stickersArray = guildJson.optArray("stickers");
-        final Optional<DataArray> featuresArray = guildJson.optArray("features");
-        final Optional<DataArray> presencesArray = guildJson.optArray("presences");
-        final long ownerId = guildJson.getUnsignedLong("owner_id", 0L);
-        final long afkChannelId = guildJson.getUnsignedLong("afk_channel_id", 0L);
-        final long systemChannelId = guildJson.getUnsignedLong("system_channel_id", 0L);
-        final long rulesChannelId = guildJson.getUnsignedLong("rules_channel_id", 0L);
-        final long communityUpdatesChannelId =
-                guildJson.getUnsignedLong("public_updates_channel_id", 0L);
-        final long safetyAlertsChannelId =
-                guildJson.getUnsignedLong("safety_alerts_channel_id", 0L);
-        final int boostCount = guildJson.getInt("premium_subscription_count", 0);
-        final int boostTier = guildJson.getInt("premium_tier", 0);
-        final int maxMembers = guildJson.getInt("max_members", 0);
-        final int maxPresences = guildJson.getInt("max_presences", 5000);
-        final int mfaLevel = guildJson.getInt("mfa_level", 0);
-        final int afkTimeout = guildJson.getInt("afk_timeout", 0);
-        final int verificationLevel = guildJson.getInt("verification_level", 0);
-        final int notificationLevel = guildJson.getInt("default_message_notifications", 0);
-        final int explicitContentLevel = guildJson.getInt("explicit_content_filter", 0);
-        final int nsfwLevel = guildJson.getInt("nsfw_level", -1);
-        final boolean boostProgressBarEnabled =
-                guildJson.getBoolean("premium_progress_bar_enabled");
+        DataArray roleArray = guildJson.getArray("roles");
+        DataArray channelArray = guildJson.getArray("channels");
+        DataArray threadArray = guildJson.getArray("threads");
+        DataArray scheduledEventsArray = guildJson.getArray("guild_scheduled_events");
+        DataArray emojisArray = guildJson.getArray("emojis");
+        DataArray voiceStateArray = guildJson.getArray("voice_states");
+        Optional<DataArray> stickersArray = guildJson.optArray("stickers");
+        Optional<DataArray> featuresArray = guildJson.optArray("features");
+        Optional<DataArray> presencesArray = guildJson.optArray("presences");
+        long ownerId = guildJson.getUnsignedLong("owner_id", 0L);
+        long afkChannelId = guildJson.getUnsignedLong("afk_channel_id", 0L);
+        long systemChannelId = guildJson.getUnsignedLong("system_channel_id", 0L);
+        long rulesChannelId = guildJson.getUnsignedLong("rules_channel_id", 0L);
+        long communityUpdatesChannelId = guildJson.getUnsignedLong("public_updates_channel_id", 0L);
+        long safetyAlertsChannelId = guildJson.getUnsignedLong("safety_alerts_channel_id", 0L);
+        int boostCount = guildJson.getInt("premium_subscription_count", 0);
+        int boostTier = guildJson.getInt("premium_tier", 0);
+        int maxMembers = guildJson.getInt("max_members", 0);
+        int maxPresences = guildJson.getInt("max_presences", 5000);
+        int mfaLevel = guildJson.getInt("mfa_level", 0);
+        int afkTimeout = guildJson.getInt("afk_timeout", 0);
+        int verificationLevel = guildJson.getInt("verification_level", 0);
+        int notificationLevel = guildJson.getInt("default_message_notifications", 0);
+        int explicitContentLevel = guildJson.getInt("explicit_content_filter", 0);
+        int nsfwLevel = guildJson.getInt("nsfw_level", -1);
+        boolean boostProgressBarEnabled = guildJson.getBoolean("premium_progress_bar_enabled");
 
         guildObj.setName(name)
                 .setIconId(iconId)
@@ -456,7 +453,7 @@ public class EntityBuilder extends AbstractEntityBuilder {
     }
 
     public GuildChannel createGuildChannel(GuildImpl guildObj, DataObject channelData) {
-        final ChannelType channelType = ChannelType.fromId(channelData.getInt("type"));
+        ChannelType channelType = ChannelType.fromId(channelData.getInt("type"));
         switch (channelType) {
             case TEXT:
                 return createTextChannel(guildObj, channelData, guildObj.getIdLong());
@@ -492,7 +489,7 @@ public class EntityBuilder extends AbstractEntityBuilder {
 
     public UserImpl createUser(DataObject user) {
         boolean newUser = false;
-        final long id = user.getLong("id");
+        long id = user.getLong("id");
         UserImpl userObj;
 
         SnowflakeCacheViewImpl<User> userView = getJDA().getUsersView();
@@ -709,7 +706,7 @@ public class EntityBuilder extends AbstractEntityBuilder {
             MemberImpl member) {
         GuildImpl guild = member.getGuild();
 
-        final long channelId = newVoiceStateJson.getLong("channel_id");
+        long channelId = newVoiceStateJson.getLong("channel_id");
         AudioChannel audioChannel = guild.getChannelById(AudioChannel.class, channelId);
         if (audioChannel == null) {
             LOG.warn(
@@ -1022,8 +1019,8 @@ public class EntityBuilder extends AbstractEntityBuilder {
 
     public RichCustomEmojiImpl createEmoji(GuildImpl guildObj, DataObject json) {
         DataArray emojiRoles = json.optArray("roles").orElseGet(DataArray::empty);
-        final long emojiId = json.getLong("id");
-        final User user = json.isNull("user") ? null : createUser(json.getObject("user"));
+        long emojiId = json.getLong("id");
+        User user = json.isNull("user") ? null : createUser(json.getObject("user"));
         RichCustomEmojiImpl emojiObj = (RichCustomEmojiImpl) guildObj.getEmojiById(emojiId);
         if (emojiObj == null) {
             emojiObj = new RichCustomEmojiImpl(emojiId, guildObj);
@@ -1047,7 +1044,7 @@ public class EntityBuilder extends AbstractEntityBuilder {
     }
 
     public ApplicationEmojiImpl createApplicationEmoji(JDAImpl api, DataObject json, User owner) {
-        final long emojiId = json.getUnsignedLong("id");
+        long emojiId = json.getUnsignedLong("id");
 
         return new ApplicationEmojiImpl(emojiId, api, owner)
                 .setAnimated(json.getBoolean("animated"))
@@ -1055,7 +1052,7 @@ public class EntityBuilder extends AbstractEntityBuilder {
     }
 
     public ScheduledEvent createScheduledEvent(GuildImpl guild, DataObject json) {
-        final long id = json.getLong("id");
+        long id = json.getLong("id");
         ScheduledEventImpl scheduledEvent =
                 (ScheduledEventImpl) guild.getScheduledEventsView().get(id);
         if (scheduledEvent == null) {
@@ -1078,7 +1075,7 @@ public class EntityBuilder extends AbstractEntityBuilder {
                 .setEndTime(json.getOffsetDateTime("scheduled_end_time", null))
                 .setImage(json.getString("image", null));
 
-        final long creatorId = json.getLong("creator_id", 0);
+        long creatorId = json.getLong("creator_id", 0);
         scheduledEvent.setCreatorId(creatorId);
         if (creatorId != 0) {
             if (json.hasKey("creator")) {
@@ -1087,7 +1084,7 @@ public class EntityBuilder extends AbstractEntityBuilder {
                 scheduledEvent.setCreator(getJDA().getUserById(creatorId));
             }
         }
-        final ScheduledEvent.Type type = ScheduledEvent.Type.fromKey(json.getInt("entity_type"));
+        ScheduledEvent.Type type = ScheduledEvent.Type.fromKey(json.getInt("entity_type"));
         scheduledEvent.setType(type);
         switch (type) {
             case STAGE_INSTANCE:
@@ -1114,7 +1111,7 @@ public class EntityBuilder extends AbstractEntityBuilder {
 
     public Category createCategory(GuildImpl guild, DataObject json, long guildId) {
         boolean playbackCache = false;
-        final long id = json.getLong("id");
+        long id = json.getLong("id");
 
         if (guild == null) {
             guild = (GuildImpl) getJDA().getGuildsView().get(guildId);
@@ -1153,7 +1150,7 @@ public class EntityBuilder extends AbstractEntityBuilder {
 
     public TextChannel createTextChannel(GuildImpl guildObj, DataObject json, long guildId) {
         boolean playbackCache = false;
-        final long id = json.getLong("id");
+        long id = json.getLong("id");
 
         if (guildObj == null) {
             guildObj = (GuildImpl) getJDA().getGuildsView().get(guildId);
@@ -1192,7 +1189,7 @@ public class EntityBuilder extends AbstractEntityBuilder {
 
     public NewsChannel createNewsChannel(GuildImpl guildObj, DataObject json, long guildId) {
         boolean playbackCache = false;
-        final long id = json.getLong("id");
+        long id = json.getLong("id");
 
         if (guildObj == null) {
             guildObj = (GuildImpl) getJDA().getGuildsView().get(guildId);
@@ -1231,7 +1228,7 @@ public class EntityBuilder extends AbstractEntityBuilder {
 
     public VoiceChannel createVoiceChannel(GuildImpl guild, DataObject json, long guildId) {
         boolean playbackCache = false;
-        final long id = json.getLong("id");
+        long id = json.getLong("id");
 
         if (guild == null) {
             guild = (GuildImpl) getJDA().getGuildsView().get(guildId);
@@ -1270,7 +1267,7 @@ public class EntityBuilder extends AbstractEntityBuilder {
 
     public StageChannel createStageChannel(GuildImpl guild, DataObject json, long guildId) {
         boolean playbackCache = false;
-        final long id = json.getLong("id");
+        long id = json.getLong("id");
 
         if (guild == null) {
             guild = (GuildImpl) getJDA().getGuildsView().get(guildId);
@@ -1314,8 +1311,8 @@ public class EntityBuilder extends AbstractEntityBuilder {
     public ThreadChannel createThreadChannel(
             GuildImpl guild, DataObject json, long guildId, boolean modifyCache) {
         boolean playbackCache = false;
-        final long id = json.getUnsignedLong("id");
-        final long parentId = json.getUnsignedLong("parent_id");
+        long id = json.getUnsignedLong("id");
+        long parentId = json.getUnsignedLong("parent_id");
 
         if (guild == null) {
             guild = (GuildImpl) getJDA().getGuildsView().get(guildId);
@@ -1336,7 +1333,7 @@ public class EntityBuilder extends AbstractEntityBuilder {
             ChannelCacheViewImpl<Channel> threadView = getJDA().getChannelsView();
             try (UnlockHook vlock = guildThreadView.writeLock();
                     UnlockHook jlock = threadView.writeLock()) {
-                final ChannelType type = ChannelType.fromId(json.getInt("type"));
+                ChannelType type = ChannelType.fromId(json.getInt("type"));
                 channel = new ThreadChannelImpl(id, guild, type);
                 if (modifyCache) {
                     guildThreadView.put(channel);
@@ -1394,7 +1391,7 @@ public class EntityBuilder extends AbstractEntityBuilder {
 
     public ForumChannel createForumChannel(GuildImpl guild, DataObject json, long guildId) {
         boolean playbackCache = false;
-        final long id = json.getLong("id");
+        long id = json.getLong("id");
 
         if (guild == null) {
             guild = (GuildImpl) getJDA().getGuildsView().get(guildId);
@@ -1432,7 +1429,7 @@ public class EntityBuilder extends AbstractEntityBuilder {
 
     public MediaChannel createMediaChannel(GuildImpl guild, DataObject json, long guildId) {
         boolean playbackCache = false;
-        final long id = json.getLong("id");
+        long id = json.getLong("id");
 
         if (guild == null) {
             guild = (GuildImpl) getJDA().getGuildsView().get(guildId);
@@ -1469,7 +1466,7 @@ public class EntityBuilder extends AbstractEntityBuilder {
     }
 
     public PrivateChannel createPrivateChannel(DataObject json, UserImpl user) {
-        final long channelId = json.getUnsignedLong("id");
+        long channelId = json.getUnsignedLong("id");
         PrivateChannelImpl channel = (PrivateChannelImpl) api.getPrivateChannelById(channelId);
         if (channel == null) {
             channel = new PrivateChannelImpl(getJDA(), channelId, user);
@@ -1482,7 +1479,7 @@ public class EntityBuilder extends AbstractEntityBuilder {
                 DataObject recipientJson = json.hasKey("recipients")
                         ? json.getArray("recipients").getObject(0)
                         : json.getObject("recipient");
-                final long userId = recipientJson.getUnsignedLong("id");
+                long userId = recipientJson.getUnsignedLong("id");
                 recipient = (UserImpl) getJDA().getUserById(userId);
                 if (recipient == null) {
                     recipient = createUser(recipientJson);
@@ -1549,7 +1546,7 @@ public class EntityBuilder extends AbstractEntityBuilder {
 
     public Role createRole(GuildImpl guild, DataObject roleJson, long guildId) {
         boolean playbackCache = false;
-        final long id = roleJson.getLong("id");
+        long id = roleJson.getLong("id");
         if (guild == null) {
             guild = (GuildImpl) getJDA().getGuildsView().get(guildId);
         }
@@ -1586,7 +1583,7 @@ public class EntityBuilder extends AbstractEntityBuilder {
             DataObject json, @Nonnull MessageChannel channel, boolean modifyCache) {
         // Use channel directly if message is from a known guild channel
         if (channel instanceof GuildMessageChannel) {
-            final GuildMessageChannel messageChannel = (GuildMessageChannel) channel;
+            GuildMessageChannel messageChannel = (GuildMessageChannel) channel;
             return createMessage0(
                     json,
                     channel,
@@ -1622,8 +1619,8 @@ public class EntityBuilder extends AbstractEntityBuilder {
 
     // This tries to build a private channel instance through an arbitrary message object
     private PrivateChannel createPrivateChannelByMessage(DataObject message) {
-        final long channelId = message.getLong("channel_id");
-        final DataObject author = message.getObject("author");
+        long channelId = message.getLong("channel_id");
+        DataObject author = message.getObject("author");
 
         PrivateChannelImpl channel = (PrivateChannelImpl) getJDA().getPrivateChannelById(channelId);
         boolean isRecipient = !author.getBoolean("bot"); // bots cannot dm other bots
@@ -1662,11 +1659,11 @@ public class EntityBuilder extends AbstractEntityBuilder {
             throw new IllegalArgumentException(UNKNOWN_MESSAGE_TYPE);
         }
 
-        final long id = jsonObject.getLong("id");
-        final DataObject author = jsonObject.getObject("author");
-        final long authorId = author.getLong("id");
-        final long channelId = jsonObject.getUnsignedLong("channel_id");
-        final long guildId = channel instanceof GuildChannel
+        long id = jsonObject.getLong("id");
+        DataObject author = jsonObject.getObject("author");
+        long authorId = author.getLong("id");
+        long channelId = jsonObject.getUnsignedLong("channel_id");
+        long guildId = channel instanceof GuildChannel
                 ? ((GuildChannel) channel).getGuild().getIdLong()
                 : jsonObject.getUnsignedLong("guild_id", 0L);
         MemberImpl member = null;
@@ -1682,32 +1679,31 @@ public class EntityBuilder extends AbstractEntityBuilder {
             }
         }
 
-        final String content = jsonObject.getString("content", "");
-        final boolean fromWebhook = jsonObject.hasKey("webhook_id");
-        final long applicationId = jsonObject.getUnsignedLong("application_id", 0);
-        final boolean pinned = jsonObject.getBoolean("pinned");
-        final boolean tts = jsonObject.getBoolean("tts");
-        final boolean mentionsEveryone = jsonObject.getBoolean("mention_everyone");
-        final OffsetDateTime editTime = jsonObject.isNull("edited_timestamp")
+        String content = jsonObject.getString("content", "");
+        boolean fromWebhook = jsonObject.hasKey("webhook_id");
+        long applicationId = jsonObject.getUnsignedLong("application_id", 0);
+        boolean pinned = jsonObject.getBoolean("pinned");
+        boolean tts = jsonObject.getBoolean("tts");
+        boolean mentionsEveryone = jsonObject.getBoolean("mention_everyone");
+        OffsetDateTime editTime = jsonObject.isNull("edited_timestamp")
                 ? null
                 : OffsetDateTime.parse(jsonObject.getString("edited_timestamp"));
-        final String nonce =
+        String nonce =
                 jsonObject.isNull("nonce") ? null : jsonObject.get("nonce").toString();
-        final int flags = jsonObject.getInt("flags", 0);
+        int flags = jsonObject.getInt("flags", 0);
 
         // Message accessories
         MessageChannel tmpChannel = channel; // because java
-        final List<Message.Attachment> attachments =
+        List<Message.Attachment> attachments =
                 map(jsonObject, "attachments", this::createMessageAttachment);
-        final List<MessageEmbed> embeds = map(jsonObject, "embeds", this::createMessageEmbed);
-        final List<MessageReaction> reactions = map(
+        List<MessageEmbed> embeds = map(jsonObject, "embeds", this::createMessageEmbed);
+        List<MessageReaction> reactions = map(
                 jsonObject,
                 "reactions",
                 (obj) -> createMessageReaction(tmpChannel, channelId, id, obj));
-        final List<StickerItem> stickers =
-                map(jsonObject, "sticker_items", this::createStickerItem);
+        List<StickerItem> stickers = map(jsonObject, "sticker_items", this::createStickerItem);
         // Keep the unknown components so the user can read them if they want
-        final List<MessageTopLevelComponentUnion> components = map(
+        List<MessageTopLevelComponentUnion> components = map(
                 jsonObject,
                 "components",
                 (obj) -> DEFAULT_COMPONENT_DESERIALIZER.deserializeAs(
@@ -1871,19 +1867,19 @@ public class EntityBuilder extends AbstractEntityBuilder {
 
     private static MessageActivity createMessageActivity(DataObject jsonObject) {
         DataObject activityData = jsonObject.getObject("activity");
-        final MessageActivity.ActivityType activityType =
+        MessageActivity.ActivityType activityType =
                 MessageActivity.ActivityType.fromId(activityData.getInt("type"));
-        final String partyId = activityData.getString("party_id", null);
+        String partyId = activityData.getString("party_id", null);
         MessageActivity.Application application = null;
 
         if (!jsonObject.isNull("application")) {
             DataObject applicationData = jsonObject.getObject("application");
 
-            final String name = applicationData.getString("name");
-            final String description = applicationData.getString("description", "");
-            final String iconId = applicationData.getString("icon", null);
-            final String coverId = applicationData.getString("cover_image", null);
-            final long applicationId = applicationData.getLong("id");
+            String name = applicationData.getString("name");
+            String description = applicationData.getString("description", "");
+            String iconId = applicationData.getString("icon", null);
+            String coverId = applicationData.getString("cover_image", null);
+            long applicationId = applicationData.getLong("id");
 
             application = new MessageActivity.Application(
                     name, description, iconId, coverId, applicationId);
@@ -1940,12 +1936,12 @@ public class EntityBuilder extends AbstractEntityBuilder {
     public MessageReaction createMessageReaction(
             MessageChannel chan, long channelId, long messageId, DataObject obj) {
         DataObject emoji = obj.getObject("emoji");
-        final int[] count = new int[] {
+        int[] count = new int[] {
             obj.getInt("count", 0), // total
             obj.optObject("count_details").map(o -> o.getInt("normal", 0)).orElse(0),
             obj.optObject("count_details").map(o -> o.getInt("burst", 0)).orElse(0),
         };
-        final boolean[] me = new boolean[] {
+        boolean[] me = new boolean[] {
             obj.getBoolean("me"), // normal
             obj.getBoolean("me_burst") // super
         };
@@ -1955,18 +1951,18 @@ public class EntityBuilder extends AbstractEntityBuilder {
     }
 
     public Message.Attachment createMessageAttachment(DataObject jsonObject) {
-        final boolean ephemeral = jsonObject.getBoolean("ephemeral", false);
-        final int width = jsonObject.getInt("width", -1);
-        final int height = jsonObject.getInt("height", -1);
-        final int size = jsonObject.getInt("size");
-        final String url = jsonObject.getString("url");
-        final String proxyUrl = jsonObject.getString("proxy_url");
-        final String filename = jsonObject.getString("filename");
-        final String contentType = jsonObject.getString("content_type", null);
-        final String description = jsonObject.getString("description", null);
-        final long id = jsonObject.getLong("id");
-        final String waveform = jsonObject.getString("waveform", null);
-        final double duration = jsonObject.getDouble("duration_secs", 0);
+        boolean ephemeral = jsonObject.getBoolean("ephemeral", false);
+        int width = jsonObject.getInt("width", -1);
+        int height = jsonObject.getInt("height", -1);
+        int size = jsonObject.getInt("size");
+        String url = jsonObject.getString("url");
+        String proxyUrl = jsonObject.getString("proxy_url");
+        String filename = jsonObject.getString("filename");
+        String contentType = jsonObject.getString("content_type", null);
+        String description = jsonObject.getString("description", null);
+        long id = jsonObject.getLong("id");
+        String waveform = jsonObject.getString("waveform", null);
+        double duration = jsonObject.getDouble("duration_secs", 0);
         return new Message.Attachment(
                 id,
                 url,
@@ -1989,16 +1985,15 @@ public class EntityBuilder extends AbstractEntityBuilder {
                     "Encountered embed object with missing/null type field for Json: " + content);
         }
         EmbedType type = EmbedType.fromKey(content.getString("type"));
-        final String url = content.getString("url", null);
-        final String title = content.getString("title", null);
-        final String description = content.getString("description", null);
-        final OffsetDateTime timestamp = content.isNull("timestamp")
+        String url = content.getString("url", null);
+        String title = content.getString("title", null);
+        String description = content.getString("description", null);
+        OffsetDateTime timestamp = content.isNull("timestamp")
                 ? null
                 : OffsetDateTime.parse(content.getString("timestamp"));
-        final int color =
-                content.isNull("color") ? Role.DEFAULT_COLOR_RAW : content.getInt("color");
+        int color = content.isNull("color") ? Role.DEFAULT_COLOR_RAW : content.getInt("color");
 
-        final Thumbnail thumbnail;
+        Thumbnail thumbnail;
         if (content.isNull("thumbnail")) {
             thumbnail = null;
         } else {
@@ -2010,7 +2005,7 @@ public class EntityBuilder extends AbstractEntityBuilder {
                     obj.getInt("height", -1));
         }
 
-        final Provider provider;
+        Provider provider;
         if (content.isNull("provider")) {
             provider = null;
         } else {
@@ -2018,7 +2013,7 @@ public class EntityBuilder extends AbstractEntityBuilder {
             provider = new Provider(obj.getString("name", null), obj.getString("url", null));
         }
 
-        final AuthorInfo author;
+        AuthorInfo author;
         if (content.isNull("author")) {
             author = null;
         } else {
@@ -2030,7 +2025,7 @@ public class EntityBuilder extends AbstractEntityBuilder {
                     obj.getString("proxy_icon_url", null));
         }
 
-        final VideoInfo video;
+        VideoInfo video;
         if (content.isNull("video")) {
             video = null;
         } else {
@@ -2042,7 +2037,7 @@ public class EntityBuilder extends AbstractEntityBuilder {
                     obj.getInt("height", -1));
         }
 
-        final Footer footer;
+        Footer footer;
         if (content.isNull("footer")) {
             footer = null;
         } else {
@@ -2053,7 +2048,7 @@ public class EntityBuilder extends AbstractEntityBuilder {
                     obj.getString("proxy_icon_url", null));
         }
 
-        final ImageInfo image;
+        ImageInfo image;
         if (content.isNull("image")) {
             image = null;
         } else {
@@ -2065,7 +2060,7 @@ public class EntityBuilder extends AbstractEntityBuilder {
                     obj.getInt("height", -1));
         }
 
-        final List<Field> fields = map(
+        List<Field> fields = map(
                 content,
                 "fields",
                 (obj) -> new Field(
@@ -2188,9 +2183,9 @@ public class EntityBuilder extends AbstractEntityBuilder {
 
     @SuppressWarnings("deprecation")
     public Message.Interaction createMessageInteraction(GuildImpl guildImpl, DataObject content) {
-        final long id = content.getLong("id");
-        final int type = content.getInt("type");
-        final String name = content.getString("name");
+        long id = content.getLong("id");
+        int type = content.getInt("type");
+        String name = content.getString("name");
         DataObject userJson = content.getObject("user");
         User user = null;
         MemberImpl member = null;
@@ -2207,24 +2202,23 @@ public class EntityBuilder extends AbstractEntityBuilder {
     }
 
     public Message.InteractionMetadata createMessageInteractionMetadata(DataObject content) {
-        final long id = content.getLong("id");
-        final int type = content.getInt("type");
-        final User user = createUser(content.getObject("user"));
-        final IntegrationOwners integrationOwners =
+        long id = content.getLong("id");
+        int type = content.getInt("type");
+        User user = createUser(content.getObject("user"));
+        IntegrationOwners integrationOwners =
                 new IntegrationOwnersImpl(content.getObject("authorizing_integration_owners"));
-        final long originalResponseMessageId = content.isNull("original_response_message_id")
+        long originalResponseMessageId = content.isNull("original_response_message_id")
                 ? 0
                 : content.getLong("original_response_message_id");
-        final long interactedMessageId = content.isNull("interacted_message_id")
+        long interactedMessageId = content.isNull("interacted_message_id")
                 ? 0
                 : content.getLong("interacted_message_id");
-        final Message.InteractionMetadata triggeringInteraction = content.optObject(
+        Message.InteractionMetadata triggeringInteraction = content.optObject(
                         "triggering_interaction_metadata")
                 .map(this::createMessageInteractionMetadata)
                 .orElse(null);
-        final User targetUser =
-                content.optObject("target_user").map(this::createUser).orElse(null);
-        final long targetMessageId =
+        User targetUser = content.optObject("target_user").map(this::createUser).orElse(null);
+        long targetMessageId =
                 content.isNull("target_message_id") ? 0 : content.getLong("target_message_id");
 
         return new Message.InteractionMetadata(
@@ -2288,7 +2282,7 @@ public class EntityBuilder extends AbstractEntityBuilder {
     public PermissionOverride createPermissionOverride(
             DataObject override, IPermissionContainerMixin<?> chan) {
         int type = override.getInt("type");
-        final long id = override.getLong("id");
+        long id = override.getLong("id");
         boolean role = type == 0;
         if (role && chan.getGuild().getRoleById(id) == null) {
             throw new NoSuchElementException(
@@ -2327,11 +2321,11 @@ public class EntityBuilder extends AbstractEntityBuilder {
     }
 
     public WebhookImpl createWebhook(DataObject object, boolean allowMissingChannel) {
-        final long id = object.getLong("id");
-        final long guildId = object.getUnsignedLong("guild_id");
-        final long channelId = object.getUnsignedLong("channel_id");
-        final String token = object.getString("token", null);
-        final WebhookType type = WebhookType.fromKey(object.getInt("type", -1));
+        long id = object.getLong("id");
+        long guildId = object.getUnsignedLong("guild_id");
+        long channelId = object.getUnsignedLong("channel_id");
+        String token = object.getString("token", null);
+        WebhookType type = WebhookType.fromKey(object.getInt("type", -1));
 
         IWebhookContainer channel = getJDA().getChannelById(IWebhookContainer.class, channelId);
         if (channel == null && !allowMissingChannel) {
@@ -2355,7 +2349,7 @@ public class EntityBuilder extends AbstractEntityBuilder {
 
         if (ownerJson.isPresent()) {
             DataObject json = ownerJson.get();
-            final long userId = json.getLong("id");
+            long userId = json.getLong("id");
 
             owner = getJDA().getUserById(userId);
             if (owner == null) {
@@ -2386,31 +2380,29 @@ public class EntityBuilder extends AbstractEntityBuilder {
     }
 
     public Invite createInvite(DataObject object) {
-        final String code = object.getString("code");
-        final User inviter =
-                object.hasKey("inviter") ? createUser(object.getObject("inviter")) : null;
+        String code = object.getString("code");
+        User inviter = object.hasKey("inviter") ? createUser(object.getObject("inviter")) : null;
 
-        final DataObject channelObject = object.getObject("channel");
-        final ChannelType channelType = ChannelType.fromId(channelObject.getInt("type"));
-        final Invite.TargetType targetType =
-                Invite.TargetType.fromId(object.getInt("target_type", 0));
+        DataObject channelObject = object.getObject("channel");
+        ChannelType channelType = ChannelType.fromId(channelObject.getInt("type"));
+        Invite.TargetType targetType = Invite.TargetType.fromId(object.getInt("target_type", 0));
 
-        final Invite.InviteType type;
-        final Invite.Guild guild;
-        final Invite.Channel channel;
-        final Invite.Group group;
-        final Invite.InviteTarget target;
+        Invite.InviteType type;
+        Invite.Guild guild;
+        Invite.Channel channel;
+        Invite.Group group;
+        Invite.InviteTarget target;
 
         if (channelType == ChannelType.GROUP) {
             type = Invite.InviteType.GROUP;
             guild = null;
             channel = null;
 
-            final String groupName = channelObject.getString("name", "");
-            final long groupId = channelObject.getLong("id");
-            final String groupIconId = channelObject.getString("icon", null);
+            String groupName = channelObject.getString("name", "");
+            long groupId = channelObject.getLong("id");
+            String groupIconId = channelObject.getString("icon", null);
 
-            final List<String> usernames;
+            List<String> usernames;
             if (channelObject.isNull("recipients")) {
                 usernames = null;
             } else {
@@ -2421,23 +2413,23 @@ public class EntityBuilder extends AbstractEntityBuilder {
         } else if (channelType.isGuild()) {
             type = Invite.InviteType.GUILD;
 
-            final DataObject guildObject = object.getObject("guild");
+            DataObject guildObject = object.getObject("guild");
 
-            final String guildVanityCode = guildObject.getString("vanity_url_code", null);
-            final String guildBannerId = guildObject.getString("banner", null);
-            final String guildIconId = guildObject.getString("icon", null);
-            final long guildId = guildObject.getLong("id");
-            final String guildName = guildObject.getString("name");
-            final String guildSplashId = guildObject.getString("splash", null);
-            final String description = guildObject.getString("description", null);
-            final VerificationLevel guildVerificationLevel =
+            String guildVanityCode = guildObject.getString("vanity_url_code", null);
+            String guildBannerId = guildObject.getString("banner", null);
+            String guildIconId = guildObject.getString("icon", null);
+            long guildId = guildObject.getLong("id");
+            String guildName = guildObject.getString("name");
+            String guildSplashId = guildObject.getString("splash", null);
+            String description = guildObject.getString("description", null);
+            VerificationLevel guildVerificationLevel =
                     VerificationLevel.fromKey(guildObject.getInt("verification_level", -1));
-            final Guild.NSFWLevel guildNsfwLevel =
+            Guild.NSFWLevel guildNsfwLevel =
                     Guild.NSFWLevel.fromKey(guildObject.getInt("nsfw_level", -1));
-            final int presenceCount = object.getInt("approximate_presence_count", -1);
-            final int memberCount = object.getInt("approximate_member_count", -1);
+            int presenceCount = object.getInt("approximate_presence_count", -1);
+            int memberCount = object.getInt("approximate_member_count", -1);
 
-            final Set<String> guildFeatures;
+            Set<String> guildFeatures;
             if (guildObject.isNull("features")) {
                 guildFeatures = Collections.emptySet();
             } else {
@@ -2447,7 +2439,7 @@ public class EntityBuilder extends AbstractEntityBuilder {
                                 .collect(Collectors.toSet()));
             }
 
-            final GuildWelcomeScreen welcomeScreen = guildObject.isNull("welcome_screen")
+            GuildWelcomeScreen welcomeScreen = guildObject.isNull("welcome_screen")
                     ? null
                     : createWelcomeScreen(null, guildObject.getObject("welcome_screen"));
 
@@ -2466,8 +2458,8 @@ public class EntityBuilder extends AbstractEntityBuilder {
                     guildFeatures,
                     welcomeScreen);
 
-            final String channelName = channelObject.getString("name");
-            final long channelId = channelObject.getLong("id");
+            String channelName = channelObject.getString("name");
+            long channelId = channelObject.getLong("id");
 
             channel = new InviteImpl.ChannelImpl(channelId, channelName, channelType);
             group = null;
@@ -2482,7 +2474,7 @@ public class EntityBuilder extends AbstractEntityBuilder {
 
         switch (targetType) {
             case EMBEDDED_APPLICATION:
-                final DataObject applicationObject = object.getObject("target_application");
+                DataObject applicationObject = object.getObject("target_application");
 
                 Invite.EmbeddedApplication application = new InviteImpl.EmbeddedApplicationImpl(
                         applicationObject.getString("icon", null),
@@ -2494,7 +2486,7 @@ public class EntityBuilder extends AbstractEntityBuilder {
                 target = new InviteImpl.InviteTargetImpl(targetType, application, null);
                 break;
             case STREAM:
-                final DataObject targetUserObject = object.getObject("target_user");
+                DataObject targetUserObject = object.getObject("target_user");
                 target = new InviteImpl.InviteTargetImpl(
                         targetType, null, createUser(targetUserObject));
                 break;
@@ -2505,12 +2497,12 @@ public class EntityBuilder extends AbstractEntityBuilder {
                 target = new InviteImpl.InviteTargetImpl(targetType, null, null);
         }
 
-        final int maxAge;
-        final int maxUses;
-        final boolean temporary;
-        final OffsetDateTime timeCreated;
-        final int uses;
-        final boolean expanded;
+        int maxAge;
+        int maxUses;
+        boolean temporary;
+        OffsetDateTime timeCreated;
+        int uses;
+        boolean expanded;
 
         if (object.hasKey("max_uses")) {
             expanded = true;
@@ -2546,11 +2538,11 @@ public class EntityBuilder extends AbstractEntityBuilder {
     }
 
     public GuildWelcomeScreen createWelcomeScreen(Guild guild, DataObject object) {
-        final DataArray welcomeChannelsArray = object.getArray("welcome_channels");
-        final List<GuildWelcomeScreen.Channel> welcomeChannels =
+        DataArray welcomeChannelsArray = object.getArray("welcome_channels");
+        List<GuildWelcomeScreen.Channel> welcomeChannels =
                 new ArrayList<>(welcomeChannelsArray.length());
         for (int i = 0; i < welcomeChannelsArray.length(); i++) {
-            final DataObject welcomeChannelObj = welcomeChannelsArray.getObject(i);
+            DataObject welcomeChannelObj = welcomeChannelsArray.getObject(i);
             EmojiUnion emoji = null;
             if (!welcomeChannelObj.isNull("emoji_id") || !welcomeChannelObj.isNull("emoji_name")) {
                 emoji = createEmoji(welcomeChannelObj, "emoji_name", "emoji_id");
@@ -2569,41 +2561,41 @@ public class EntityBuilder extends AbstractEntityBuilder {
     }
 
     public Template createTemplate(DataObject object) {
-        final String code = object.getString("code");
-        final String name = object.getString("name");
-        final String description = object.getString("description", null);
-        final int uses = object.getInt("usage_count");
-        final User creator = createUser(object.getObject("creator"));
-        final OffsetDateTime createdAt = OffsetDateTime.parse(object.getString("created_at"));
-        final OffsetDateTime updatedAt = OffsetDateTime.parse(object.getString("updated_at"));
-        final long guildId = object.getLong("source_guild_id");
-        final DataObject guildObject = object.getObject("serialized_source_guild");
-        final String guildName = guildObject.getString("name");
-        final String guildDescription = guildObject.getString("description", null);
-        final String guildIconId = guildObject.getString("icon_hash", null);
-        final VerificationLevel guildVerificationLevel =
+        String code = object.getString("code");
+        String name = object.getString("name");
+        String description = object.getString("description", null);
+        int uses = object.getInt("usage_count");
+        User creator = createUser(object.getObject("creator"));
+        OffsetDateTime createdAt = OffsetDateTime.parse(object.getString("created_at"));
+        OffsetDateTime updatedAt = OffsetDateTime.parse(object.getString("updated_at"));
+        long guildId = object.getLong("source_guild_id");
+        DataObject guildObject = object.getObject("serialized_source_guild");
+        String guildName = guildObject.getString("name");
+        String guildDescription = guildObject.getString("description", null);
+        String guildIconId = guildObject.getString("icon_hash", null);
+        VerificationLevel guildVerificationLevel =
                 VerificationLevel.fromKey(guildObject.getInt("verification_level", -1));
-        final NotificationLevel notificationLevel =
+        NotificationLevel notificationLevel =
                 NotificationLevel.fromKey(guildObject.getInt("default_message_notifications", 0));
-        final ExplicitContentLevel explicitContentLevel =
+        ExplicitContentLevel explicitContentLevel =
                 ExplicitContentLevel.fromKey(guildObject.getInt("explicit_content_filter", 0));
-        final DiscordLocale locale =
+        DiscordLocale locale =
                 DiscordLocale.from(guildObject.getString("preferred_locale", "en-US"));
-        final Timeout afkTimeout = Timeout.fromKey(guildObject.getInt("afk_timeout", 0));
-        final DataArray roleArray = guildObject.getArray("roles");
-        final DataArray channelsArray = guildObject.getArray("channels");
-        final long afkChannelId = guildObject.getLong("afk_channel_id", -1L);
-        final long systemChannelId = guildObject.getLong("system_channel_id", -1L);
+        Timeout afkTimeout = Timeout.fromKey(guildObject.getInt("afk_timeout", 0));
+        DataArray roleArray = guildObject.getArray("roles");
+        DataArray channelsArray = guildObject.getArray("channels");
+        long afkChannelId = guildObject.getLong("afk_channel_id", -1L);
+        long systemChannelId = guildObject.getLong("system_channel_id", -1L);
 
-        final List<TemplateRole> roles = new ArrayList<>();
+        List<TemplateRole> roles = new ArrayList<>();
         for (int i = 0; i < roleArray.length(); i++) {
             DataObject obj = roleArray.getObject(i);
-            final long roleId = obj.getLong("id");
-            final String roleName = obj.getString("name");
-            final int roleColor = obj.getInt("color");
-            final boolean hoisted = obj.getBoolean("hoist");
-            final boolean mentionable = obj.getBoolean("mentionable");
-            final long rawPermissions = obj.getLong("permissions");
+            long roleId = obj.getLong("id");
+            String roleName = obj.getString("name");
+            int roleColor = obj.getInt("color");
+            boolean hoisted = obj.getBoolean("hoist");
+            boolean mentionable = obj.getBoolean("mentionable");
+            long rawPermissions = obj.getLong("permissions");
             roles.add(new TemplateRole(
                     roleId,
                     roleName,
@@ -2613,31 +2605,31 @@ public class EntityBuilder extends AbstractEntityBuilder {
                     rawPermissions));
         }
 
-        final List<TemplateChannel> channels = new ArrayList<>();
+        List<TemplateChannel> channels = new ArrayList<>();
         for (int i = 0; i < channelsArray.length(); i++) {
             DataObject obj = channelsArray.getObject(i);
-            final long channelId = obj.getLong("id");
-            final int type = obj.getInt("type");
-            final ChannelType channelType = ChannelType.fromId(type);
-            final String channelName = obj.getString("name");
-            final String topic = obj.getString("topic", null);
-            final int rawPosition = obj.getInt("position");
-            final long parentId = obj.getLong("parent_id", -1);
+            long channelId = obj.getLong("id");
+            int type = obj.getInt("type");
+            ChannelType channelType = ChannelType.fromId(type);
+            String channelName = obj.getString("name");
+            String topic = obj.getString("topic", null);
+            int rawPosition = obj.getInt("position");
+            long parentId = obj.getLong("parent_id", -1);
 
-            final boolean nsfw = obj.getBoolean("nsfw");
-            final int slowmode = obj.getInt("rate_limit_per_user");
+            boolean nsfw = obj.getBoolean("nsfw");
+            int slowmode = obj.getInt("rate_limit_per_user");
 
-            final int bitrate = obj.getInt("bitrate");
-            final int userLimit = obj.getInt("user_limit");
+            int bitrate = obj.getInt("bitrate");
+            int userLimit = obj.getInt("user_limit");
 
-            final List<TemplateChannel.PermissionOverride> permissionOverrides = new ArrayList<>();
+            List<TemplateChannel.PermissionOverride> permissionOverrides = new ArrayList<>();
             DataArray overrides = obj.getArray("permission_overwrites");
 
             for (int j = 0; j < overrides.length(); j++) {
                 DataObject overrideObj = overrides.getObject(j);
-                final long overrideId = overrideObj.getLong("id");
-                final long allow = overrideObj.getLong("allow");
-                final long deny = overrideObj.getLong("deny");
+                long overrideId = overrideObj.getLong("id");
+                long allow = overrideObj.getLong("allow");
+                long deny = overrideObj.getLong("deny");
                 permissionOverrides.add(
                         new TemplateChannel.PermissionOverride(overrideId, allow, deny));
             }
@@ -2665,7 +2657,7 @@ public class EntityBuilder extends AbstractEntityBuilder {
                 .findFirst()
                 .orElse(null);
 
-        final TemplateGuild guild = new TemplateGuild(
+        TemplateGuild guild = new TemplateGuild(
                 guildId,
                 guildName,
                 guildDescription,
@@ -2680,7 +2672,7 @@ public class EntityBuilder extends AbstractEntityBuilder {
                 roles,
                 channels);
 
-        final boolean synced = !object.getBoolean("is_dirty", false);
+        boolean synced = !object.getBoolean("is_dirty", false);
 
         return new Template(
                 getJDA(),
@@ -2696,51 +2688,51 @@ public class EntityBuilder extends AbstractEntityBuilder {
     }
 
     public ApplicationInfo createApplicationInfo(DataObject object) {
-        final String description = object.getString("description");
-        final String termsOfServiceUrl = object.getString("terms_of_service_url", null);
-        final String privacyPolicyUrl = object.getString("privacy_policy_url", null);
-        final boolean doesBotRequireCodeGrant = object.getBoolean("bot_require_code_grant");
-        final String iconId = object.getString("icon", null);
-        final long id = object.getUnsignedLong("id");
-        final long flags = object.getUnsignedLong("flags", 0);
-        final String name = object.getString("name");
-        final boolean isBotPublic = object.getBoolean("bot_public");
-        final User owner = createUser(object.getObject("owner"));
-        final ApplicationTeam team =
+        String description = object.getString("description");
+        String termsOfServiceUrl = object.getString("terms_of_service_url", null);
+        String privacyPolicyUrl = object.getString("privacy_policy_url", null);
+        boolean doesBotRequireCodeGrant = object.getBoolean("bot_require_code_grant");
+        String iconId = object.getString("icon", null);
+        long id = object.getUnsignedLong("id");
+        long flags = object.getUnsignedLong("flags", 0);
+        String name = object.getString("name");
+        boolean isBotPublic = object.getBoolean("bot_public");
+        User owner = createUser(object.getObject("owner"));
+        ApplicationTeam team =
                 !object.isNull("team") ? createApplicationTeam(object.getObject("team")) : null;
-        final String customAuthUrl = object.getString("custom_install_url", null);
-        final List<String> tags = object.optArray("tags").orElseGet(DataArray::empty).stream(
+        String customAuthUrl = object.getString("custom_install_url", null);
+        List<String> tags = object.optArray("tags").orElseGet(DataArray::empty).stream(
                         DataArray::getString)
                 .collect(Collectors.toList());
-        final List<String> redirectUris =
+        List<String> redirectUris =
                 object.optArray("redirect_uris").orElseGet(DataArray::empty).stream(
                                 DataArray::getString)
                         .collect(Collectors.toList());
-        final String interactionsEndpointUrl = object.getString("interactions_endpoint_url", null);
-        final String roleConnectionsVerificationUrl =
+        String interactionsEndpointUrl = object.getString("interactions_endpoint_url", null);
+        String roleConnectionsVerificationUrl =
                 object.getString("role_connections_verification_url", null);
 
-        final Optional<DataObject> installParams = object.optObject("install_params");
+        Optional<DataObject> installParams = object.optObject("install_params");
 
-        final long defaultAuthUrlPerms =
+        long defaultAuthUrlPerms =
                 installParams.map(o -> o.getLong("permissions")).orElse(0L);
 
-        final List<String> defaultAuthUrlScopes = installParams
+        List<String> defaultAuthUrlScopes = installParams
                 .map(obj -> obj.getArray("scopes").stream(DataArray::getString)
                         .collect(Collectors.toList()))
                 .orElse(Collections.emptyList());
 
-        final Optional<DataObject> integrationTypesConfigDict =
+        Optional<DataObject> integrationTypesConfigDict =
                 object.optObject("integration_types_config");
-        final Map<IntegrationType, ApplicationInfo.IntegrationTypeConfiguration>
-                integrationTypesConfig = integrationTypesConfigDict
+        Map<IntegrationType, ApplicationInfo.IntegrationTypeConfiguration> integrationTypesConfig =
+                integrationTypesConfigDict
                         .map(d -> {
-                            final Map<IntegrationType, ApplicationInfo.IntegrationTypeConfiguration>
-                                    map = new EnumMap<>(IntegrationType.class);
+                            Map<IntegrationType, ApplicationInfo.IntegrationTypeConfiguration> map =
+                                    new EnumMap<>(IntegrationType.class);
                             for (String key : d.keys()) {
-                                final DataObject value = d.getObject(key);
+                                DataObject value = d.getObject(key);
 
-                                final ApplicationInfo.InstallParameters installParameters =
+                                ApplicationInfo.InstallParameters installParameters =
                                         value.optObject("oauth2_install_params")
                                                 .map(oauth2InstallParams ->
                                                         new ApplicationInfoImpl
@@ -2767,7 +2759,7 @@ public class EntityBuilder extends AbstractEntityBuilder {
                         })
                         .orElse(Collections.emptyMap());
 
-        final long approxUserInstallCount = object.getLong("approximate_user_install_count", -1);
+        long approxUserInstallCount = object.getLong("approximate_user_install_count", -1);
 
         return new ApplicationInfoImpl(
                 getJDA(),
@@ -2812,25 +2804,23 @@ public class EntityBuilder extends AbstractEntityBuilder {
 
     public AuditLogEntry createAuditLogEntry(
             GuildImpl guild, DataObject entryJson, DataObject userJson, DataObject webhookJson) {
-        final long targetId = entryJson.getLong("target_id", 0);
-        final long userId = entryJson.getLong("user_id", 0);
-        final long id = entryJson.getLong("id");
-        final int typeKey = entryJson.getInt("action_type");
-        final DataArray changes =
-                entryJson.isNull("changes") ? null : entryJson.getArray("changes");
-        final DataObject options =
-                entryJson.isNull("options") ? null : entryJson.getObject("options");
-        final String reason = entryJson.getString("reason", null);
+        long targetId = entryJson.getLong("target_id", 0);
+        long userId = entryJson.getLong("user_id", 0);
+        long id = entryJson.getLong("id");
+        int typeKey = entryJson.getInt("action_type");
+        DataArray changes = entryJson.isNull("changes") ? null : entryJson.getArray("changes");
+        DataObject options = entryJson.isNull("options") ? null : entryJson.getObject("options");
+        String reason = entryJson.getString("reason", null);
 
-        final UserImpl user = userJson == null ? null : createUser(userJson);
-        final WebhookImpl webhook = webhookJson == null ? null : createWebhook(webhookJson);
-        final Set<AuditLogChange> changesList;
-        final ActionType type = ActionType.from(typeKey);
+        UserImpl user = userJson == null ? null : createUser(userJson);
+        WebhookImpl webhook = webhookJson == null ? null : createWebhook(webhookJson);
+        Set<AuditLogChange> changesList;
+        ActionType type = ActionType.from(typeKey);
 
         if (changes != null) {
             changesList = new HashSet<>(changes.length());
             for (int i = 0; i < changes.length(); i++) {
-                final DataObject object = changes.getObject(i);
+                DataObject object = changes.getObject(i);
                 AuditLogChange change = createAuditLogChange(object);
                 changesList.add(change);
             }
@@ -2849,7 +2839,7 @@ public class EntityBuilder extends AbstractEntityBuilder {
     }
 
     public AuditLogChange createAuditLogChange(DataObject change) {
-        final String key = change.getString("key");
+        String key = change.getString("key");
         Object oldValue = change.isNull("old_value") ? null : change.get("old_value");
         Object newValue = change.isNull("new_value") ? null : change.get("new_value");
         return new AuditLogChange(oldValue, newValue, key);
@@ -2880,8 +2870,8 @@ public class EntityBuilder extends AbstractEntityBuilder {
             return Collections.emptyList();
         }
 
-        final DataArray arr = jsonObject.getArray(key);
-        final List<T> mappedObjects = new ArrayList<>(arr.length());
+        DataArray arr = jsonObject.getArray(key);
+        List<T> mappedObjects = new ArrayList<>(arr.length());
         for (int i = 0; i < arr.length(); i++) {
             DataObject obj = arr.getObject(i);
             try {

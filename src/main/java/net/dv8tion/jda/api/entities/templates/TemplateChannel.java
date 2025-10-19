@@ -54,18 +54,18 @@ public class TemplateChannel implements ISnowflake {
     private final int userLimit;
 
     public TemplateChannel(
-            final long id,
-            final ChannelType channelType,
-            final String name,
-            final String topic,
-            final int rawPosition,
-            final long parentId,
-            final boolean news,
-            final List<TemplateChannel.PermissionOverride> permissionOverrides,
-            final boolean nsfw,
-            final int slowmode,
-            final int bitrate,
-            final int userLimit) {
+            long id,
+            ChannelType channelType,
+            String name,
+            String topic,
+            int rawPosition,
+            long parentId,
+            boolean news,
+            List<TemplateChannel.PermissionOverride> permissionOverrides,
+            boolean nsfw,
+            int slowmode,
+            int bitrate,
+            int userLimit) {
         this.id = id;
         this.channelType = channelType;
         this.name = name;
@@ -246,7 +246,7 @@ public class TemplateChannel implements ISnowflake {
         private final long allow;
         private final long deny;
 
-        public PermissionOverride(final long id, final long allow, final long deny) {
+        public PermissionOverride(long id, long allow, long deny) {
             this.id = id;
             this.allow = allow;
             this.deny = deny;

@@ -54,7 +54,7 @@ public class LocalizationMap implements SerializableData {
     @Nonnull
     @Override
     public DataObject toData() {
-        final DataObject data = DataObject.empty();
+        DataObject data = DataObject.empty();
         map.forEach((locale, localizedString) -> data.put(locale.getLocale(), localizedString));
         return data;
     }

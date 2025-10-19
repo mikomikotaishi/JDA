@@ -107,11 +107,11 @@ public final class Helpers {
 
     // ## StringUtils ##
 
-    public static boolean isEmpty(final CharSequence seq) {
+    public static boolean isEmpty(CharSequence seq) {
         return seq == null || seq.length() == 0;
     }
 
-    public static boolean containsWhitespace(final CharSequence seq) {
+    public static boolean containsWhitespace(CharSequence seq) {
         if (isEmpty(seq)) {
             return false;
         }
@@ -123,7 +123,7 @@ public final class Helpers {
         return false;
     }
 
-    public static boolean isBlank(final CharSequence seq) {
+    public static boolean isBlank(CharSequence seq) {
         if (isEmpty(seq)) {
             return true;
         }
@@ -135,7 +135,7 @@ public final class Helpers {
         return true;
     }
 
-    public static int countMatches(final CharSequence seq, final char c) {
+    public static int countMatches(CharSequence seq, char c) {
         if (isEmpty(seq)) {
             return 0;
         }
@@ -148,7 +148,7 @@ public final class Helpers {
         return count;
     }
 
-    public static String truncate(final String input, final int maxWidth) {
+    public static String truncate(String input, int maxWidth) {
         if (input == null) {
             return null;
         }
@@ -162,7 +162,7 @@ public final class Helpers {
         return input.substring(0, maxWidth);
     }
 
-    public static String rightPad(final String input, final int size) {
+    public static String rightPad(String input, int size) {
         int pads = size - input.length();
         if (pads <= 0) {
             return input;
@@ -174,7 +174,7 @@ public final class Helpers {
         return out.toString();
     }
 
-    public static String leftPad(final String input, final int size) {
+    public static String leftPad(String input, int size) {
         int pads = size - input.length();
         if (pads <= 0) {
             return input;
@@ -186,7 +186,7 @@ public final class Helpers {
         return out.append(input).toString();
     }
 
-    public static boolean isNumeric(final String input) {
+    public static boolean isNumeric(String input) {
         if (isEmpty(input)) {
             return false;
         }
@@ -198,7 +198,7 @@ public final class Helpers {
         return true;
     }
 
-    public static int codePointLength(final CharSequence string) {
+    public static int codePointLength(CharSequence string) {
         return (int) string.codePoints().count();
     }
 
@@ -388,10 +388,10 @@ public final class Helpers {
 
     @Nonnull
     public static String getLastPathSegment(@Nonnull String url) {
-        final HttpUrl parsedUrl = HttpUrl.parse(url);
+        HttpUrl parsedUrl = HttpUrl.parse(url);
         Checks.check(parsedUrl != null, "URL '%s' is invalid", url);
 
-        final List<String> segments = parsedUrl.pathSegments();
+        List<String> segments = parsedUrl.pathSegments();
         return segments.get(segments.size() - 1);
     }
 }

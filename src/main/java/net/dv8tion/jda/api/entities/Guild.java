@@ -766,7 +766,7 @@ public interface Guild extends IGuildChannelContainer<GuildChannel>, ISnowflake,
      */
     @Nullable
     default ImageProxy getIcon() {
-        final String iconUrl = getIconUrl();
+        String iconUrl = getIconUrl();
         return iconUrl == null ? null : new ImageProxy(iconUrl);
     }
 
@@ -840,7 +840,7 @@ public interface Guild extends IGuildChannelContainer<GuildChannel>, ISnowflake,
      */
     @Nullable
     default ImageProxy getSplash() {
-        final String splashUrl = getSplashUrl();
+        String splashUrl = getSplashUrl();
         return splashUrl == null ? null : new ImageProxy(splashUrl);
     }
 
@@ -988,7 +988,7 @@ public interface Guild extends IGuildChannelContainer<GuildChannel>, ISnowflake,
      */
     @Nullable
     default ImageProxy getBanner() {
-        final String bannerUrl = getBannerUrl();
+        String bannerUrl = getBannerUrl();
         return bannerUrl == null ? null : new ImageProxy(bannerUrl);
     }
 

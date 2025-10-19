@@ -36,7 +36,7 @@ public abstract class SocketHandler {
         if (getJDA().isEventPassthrough()) {
             CURRENT_EVENT.set(o);
         }
-        final Long guildId = handleInternally(o.getObject("d"));
+        Long guildId = handleInternally(o.getObject("d"));
         if (guildId != null) {
             getJDA().getGuildSetupController().cacheEvent(guildId, o);
         }

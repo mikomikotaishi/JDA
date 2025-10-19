@@ -65,7 +65,7 @@ public class ActionRowTest extends AbstractSnapshotTest {
 
     @Test
     void testCombiningDifferentElementsThrows() {
-        final List<ActionRowChildComponentUnion> list = Arrays.asList(EXAMPLE_BUTTON, EXAMPLE_MENU);
+        List<ActionRowChildComponentUnion> list = Arrays.asList(EXAMPLE_BUTTON, EXAMPLE_MENU);
 
         assertThatIllegalArgumentException().isThrownBy(() -> ActionRow.of(list));
     }
@@ -75,7 +75,7 @@ public class ActionRowTest extends AbstractSnapshotTest {
         assertThatIllegalArgumentException()
                 .isThrownBy(() -> ActionRow.partitionOf(Collections.emptyList()));
 
-        final List<ActionRow> rowsOfSixButtons = ActionRow.partitionOf(
+        List<ActionRow> rowsOfSixButtons = ActionRow.partitionOf(
                 EXAMPLE_BUTTON,
                 EXAMPLE_BUTTON,
                 EXAMPLE_BUTTON,
@@ -92,7 +92,7 @@ public class ActionRowTest extends AbstractSnapshotTest {
                                 EXAMPLE_BUTTON),
                         ActionRow.of(EXAMPLE_BUTTON)));
 
-        final List<ActionRow> rowsOfFiveButtons = ActionRow.partitionOf(
+        List<ActionRow> rowsOfFiveButtons = ActionRow.partitionOf(
                 EXAMPLE_BUTTON, EXAMPLE_BUTTON, EXAMPLE_BUTTON, EXAMPLE_BUTTON, EXAMPLE_BUTTON);
         assertThat(rowsOfFiveButtons)
                 .isEqualTo(Collections.singletonList(ActionRow.of(

@@ -46,10 +46,10 @@ public class MessagePinDeadlineTest {
             Instant timeOfCheck,
             Set<Permission> grantedPermissions,
             Set<Permission> expectedCheckedPermissions) {
-        final GuildMessageChannelMixin<?> channel = mock(GuildMessageChannelMixin.class);
+        GuildMessageChannelMixin<?> channel = mock(GuildMessageChannelMixin.class);
         doCallRealMethod().when(channel).checkCanControlMessagePins();
         doAnswer(invocation -> {
-                    final Permission permission = invocation.getArgument(0);
+                    Permission permission = invocation.getArgument(0);
                     return grantedPermissions.contains(permission);
                 })
                 .when(channel)
@@ -59,7 +59,7 @@ public class MessagePinDeadlineTest {
         ClockProvider.withFixedTime(timeOfCheck, channel::checkCanControlMessagePins);
 
         // Make sure the permissions are checked in the given order (to check short-circuiting)
-        final InOrder channelInOrder = inOrder(channel);
+        InOrder channelInOrder = inOrder(channel);
         for (Permission expectedCheckedPermission : expectedCheckedPermissions) {
             channelInOrder.verify(channel).hasPermission(expectedCheckedPermission);
         }
@@ -90,7 +90,7 @@ public class MessagePinDeadlineTest {
     @ParameterizedTest
     void testPermissionsAreInvalid(
             Instant timeOfCheck, Set<Permission> expectedCheckedPermissions) {
-        final GuildMessageChannelMixin<?> channel = mock(GuildMessageChannelMixin.class);
+        GuildMessageChannelMixin<?> channel = mock(GuildMessageChannelMixin.class);
         doCallRealMethod().when(channel).checkCanControlMessagePins();
         doReturn(false).when(channel).hasPermission(any());
         doReturn(mock(Guild.class)).when(channel).getGuild();
@@ -102,7 +102,7 @@ public class MessagePinDeadlineTest {
                 .isInstanceOf(InsufficientPermissionException.class);
 
         // Make sure the permissions are checked in the given order
-        final InOrder channelInOrder = inOrder(channel);
+        InOrder channelInOrder = inOrder(channel);
         for (Permission expectedCheckedPermission : expectedCheckedPermissions) {
             channelInOrder.verify(channel).hasPermission(expectedCheckedPermission);
         }

@@ -77,7 +77,7 @@ public interface ShardManager extends IGuildChannelContainer<Channel> {
      * @throws java.lang.IllegalArgumentException
      *         If either listeners or one of it's objects is {@code null}.
      */
-    default void addEventListener(@Nonnull final Object... listeners) {
+    default void addEventListener(@Nonnull Object... listeners) {
         Checks.noneNull(listeners, "listeners");
         this.getShardCache().forEach(jda -> jda.addEventListener(listeners));
     }
@@ -91,7 +91,7 @@ public interface ShardManager extends IGuildChannelContainer<Channel> {
      * @throws java.lang.IllegalArgumentException
      *         If either listeners or one of it's objects is {@code null}.
      */
-    default void removeEventListener(@Nonnull final Object... listeners) {
+    default void removeEventListener(@Nonnull Object... listeners) {
         Checks.noneNull(listeners, "listeners");
         this.getShardCache().forEach(jda -> jda.removeEventListener(listeners));
     }
@@ -109,7 +109,7 @@ public interface ShardManager extends IGuildChannelContainer<Channel> {
      * @throws java.lang.IllegalArgumentException
      *         If the provided listener provider or any of the listeners or provides are {@code null}.
      */
-    default void addEventListeners(@Nonnull final IntFunction<Object> eventListenerProvider) {
+    default void addEventListeners(@Nonnull IntFunction<Object> eventListenerProvider) {
         Checks.notNull(eventListenerProvider, "event listener provider");
         this.getShardCache().forEach(jda -> {
             Object listener = eventListenerProvider.apply(jda.getShardInfo().getShardId());
@@ -132,7 +132,7 @@ public interface ShardManager extends IGuildChannelContainer<Channel> {
      *         If the provided event listeners provider is {@code null}.
      */
     default void removeEventListeners(
-            @Nonnull final IntFunction<Collection<Object>> eventListenerProvider) {
+            @Nonnull IntFunction<Collection<Object>> eventListenerProvider) {
         Checks.notNull(eventListenerProvider, "event listener provider");
         this.getShardCache()
                 .forEach(jda -> jda.removeEventListener(
@@ -252,7 +252,7 @@ public interface ShardManager extends IGuildChannelContainer<Channel> {
      *         our cache.
      */
     @Nullable
-    default RichCustomEmoji getEmojiById(final long id) {
+    default RichCustomEmoji getEmojiById(long id) {
         return this.getEmojiCache().getElementById(id);
     }
 
@@ -271,7 +271,7 @@ public interface ShardManager extends IGuildChannelContainer<Channel> {
      *         our cache.
      */
     @Nullable
-    default RichCustomEmoji getEmojiById(@Nonnull final String id) {
+    default RichCustomEmoji getEmojiById(@Nonnull String id) {
         return this.getEmojiCache().getElementById(id);
     }
 
@@ -326,8 +326,7 @@ public interface ShardManager extends IGuildChannelContainer<Channel> {
      */
     @Nonnull
     @Unmodifiable
-    default List<RichCustomEmoji> getEmojisByName(
-            @Nonnull final String name, final boolean ignoreCase) {
+    default List<RichCustomEmoji> getEmojisByName(@Nonnull String name, boolean ignoreCase) {
         return this.getEmojiCache().getElementsByName(name, ignoreCase);
     }
 
@@ -341,7 +340,7 @@ public interface ShardManager extends IGuildChannelContainer<Channel> {
      * @return Possibly-null {@link net.dv8tion.jda.api.entities.Guild Guild} with matching id.
      */
     @Nullable
-    default Guild getGuildById(final long id) {
+    default Guild getGuildById(long id) {
         return getGuildCache().getElementById(id);
     }
 
@@ -355,7 +354,7 @@ public interface ShardManager extends IGuildChannelContainer<Channel> {
      * @return Possibly-null {@link net.dv8tion.jda.api.entities.Guild Guild} with matching id.
      */
     @Nullable
-    default Guild getGuildById(@Nonnull final String id) {
+    default Guild getGuildById(@Nonnull String id) {
         return getGuildById(MiscUtil.parseSnowflake(id));
     }
 
@@ -372,7 +371,7 @@ public interface ShardManager extends IGuildChannelContainer<Channel> {
      */
     @Nonnull
     @Unmodifiable
-    default List<Guild> getGuildsByName(@Nonnull final String name, final boolean ignoreCase) {
+    default List<Guild> getGuildsByName(@Nonnull String name, boolean ignoreCase) {
         return this.getGuildCache().getElementsByName(name, ignoreCase);
     }
 
@@ -415,7 +414,7 @@ public interface ShardManager extends IGuildChannelContainer<Channel> {
      */
     @Nonnull
     @Unmodifiable
-    default List<Guild> getMutualGuilds(@Nonnull final Collection<? extends UserSnowflake> users) {
+    default List<Guild> getMutualGuilds(@Nonnull Collection<? extends UserSnowflake> users) {
         Checks.noneNull(users, "users");
         return this.getGuildCache().stream()
                 .filter(guild -> users.stream().allMatch(guild::isMember))
@@ -432,7 +431,7 @@ public interface ShardManager extends IGuildChannelContainer<Channel> {
      */
     @Nonnull
     @Unmodifiable
-    default List<Guild> getMutualGuilds(@Nonnull final UserSnowflake... users) {
+    default List<Guild> getMutualGuilds(@Nonnull UserSnowflake... users) {
         Checks.notNull(users, "users");
         return this.getMutualGuilds(Arrays.asList(users));
     }
@@ -598,7 +597,7 @@ public interface ShardManager extends IGuildChannelContainer<Channel> {
      * @return Possibly-null {@link net.dv8tion.jda.api.entities.Role Role} for the specified ID
      */
     @Nullable
-    default Role getRoleById(final long id) {
+    default Role getRoleById(long id) {
         return this.getRoleCache().getElementById(id);
     }
 
@@ -616,7 +615,7 @@ public interface ShardManager extends IGuildChannelContainer<Channel> {
      * @return Possibly-null {@link net.dv8tion.jda.api.entities.Role Role} for the specified ID
      */
     @Nullable
-    default Role getRoleById(@Nonnull final String id) {
+    default Role getRoleById(@Nonnull String id) {
         return this.getRoleCache().getElementById(id);
     }
 
@@ -663,7 +662,7 @@ public interface ShardManager extends IGuildChannelContainer<Channel> {
      */
     @Nonnull
     @Unmodifiable
-    default List<Role> getRolesByName(@Nonnull final String name, final boolean ignoreCase) {
+    default List<Role> getRolesByName(@Nonnull String name, boolean ignoreCase) {
         return this.getRoleCache().getElementsByName(name, ignoreCase);
     }
 
@@ -678,7 +677,7 @@ public interface ShardManager extends IGuildChannelContainer<Channel> {
      * @return Possibly-null {@link net.dv8tion.jda.api.entities.channel.concrete.PrivateChannel PrivateChannel} with matching id.
      */
     @Nullable
-    default PrivateChannel getPrivateChannelById(final long id) {
+    default PrivateChannel getPrivateChannelById(long id) {
         return this.getPrivateChannelCache().getElementById(id);
     }
 
@@ -696,7 +695,7 @@ public interface ShardManager extends IGuildChannelContainer<Channel> {
      * @return Possibly-null {@link net.dv8tion.jda.api.entities.channel.concrete.PrivateChannel PrivateChannel} with matching id.
      */
     @Nullable
-    default PrivateChannel getPrivateChannelById(@Nonnull final String id) {
+    default PrivateChannel getPrivateChannelById(@Nonnull String id) {
         return this.getPrivateChannelCache().getElementById(id);
     }
 
@@ -804,7 +803,7 @@ public interface ShardManager extends IGuildChannelContainer<Channel> {
      *         {@code null} if no shard has the given id
      */
     @Nullable
-    default JDA getShardById(final int id) {
+    default JDA getShardById(int id) {
         return this.getShardCache().getElementById(id);
     }
 
@@ -819,7 +818,7 @@ public interface ShardManager extends IGuildChannelContainer<Channel> {
      *         {@code null} if no shard has the given id
      */
     @Nullable
-    default JDA getShardById(@Nonnull final String id) {
+    default JDA getShardById(@Nonnull String id) {
         return this.getShardCache().getElementById(id);
     }
 
@@ -859,8 +858,8 @@ public interface ShardManager extends IGuildChannelContainer<Channel> {
      *         {@code null} if no shard has the given id
      */
     @Nullable
-    default JDA.Status getStatus(final int shardId) {
-        final JDA jda = this.getShardCache().getElementById(shardId);
+    default JDA.Status getStatus(int shardId) {
+        JDA jda = this.getShardCache().getElementById(shardId);
         return jda == null ? null : jda.getStatus();
     }
 
@@ -886,7 +885,7 @@ public interface ShardManager extends IGuildChannelContainer<Channel> {
      * @return Possibly-null {@link net.dv8tion.jda.api.entities.User User} with matching id.
      */
     @Nullable
-    default User getUserById(final long id) {
+    default User getUserById(long id) {
         return this.getUserCache().getElementById(id);
     }
 
@@ -900,7 +899,7 @@ public interface ShardManager extends IGuildChannelContainer<Channel> {
      * @return Possibly-null {@link net.dv8tion.jda.api.entities.User User} with matching id.
      */
     @Nullable
-    default User getUserById(@Nonnull final String id) {
+    default User getUserById(@Nonnull String id) {
         return this.getUserCache().getElementById(id);
     }
 
@@ -975,7 +974,7 @@ public interface ShardManager extends IGuildChannelContainer<Channel> {
      * @see    net.dv8tion.jda.api.entities.Activity#playing(String)
      * @see    net.dv8tion.jda.api.entities.Activity#streaming(String, String)
      */
-    default void setActivity(@Nullable final Activity activity) {
+    default void setActivity(@Nullable Activity activity) {
         this.setActivityProvider(id -> activity);
     }
 
@@ -992,8 +991,7 @@ public interface ShardManager extends IGuildChannelContainer<Channel> {
      * @see    net.dv8tion.jda.api.entities.Activity#playing(String)
      * @see    net.dv8tion.jda.api.entities.Activity#streaming(String, String)
      */
-    default void setActivityProvider(
-            @Nullable final IntFunction<? extends Activity> activityProvider) {
+    default void setActivityProvider(@Nullable IntFunction<? extends Activity> activityProvider) {
         this.getShardCache().forEach(jda -> jda.getPresence()
                 .setActivity(
                         activityProvider == null
@@ -1012,7 +1010,7 @@ public interface ShardManager extends IGuildChannelContainer<Channel> {
      * @param idle
      *        boolean
      */
-    default void setIdle(final boolean idle) {
+    default void setIdle(boolean idle) {
         this.setIdleProvider(id -> idle);
     }
 
@@ -1024,7 +1022,7 @@ public interface ShardManager extends IGuildChannelContainer<Channel> {
      * @param idleProvider
      *        Provider for a boolean
      */
-    default void setIdleProvider(@Nonnull final IntFunction<Boolean> idleProvider) {
+    default void setIdleProvider(@Nonnull IntFunction<Boolean> idleProvider) {
         this.getShardCache().forEach(jda -> jda.getPresence()
                 .setIdle(idleProvider.apply(jda.getShardInfo().getShardId())));
     }
@@ -1046,8 +1044,7 @@ public interface ShardManager extends IGuildChannelContainer<Channel> {
      * @see    net.dv8tion.jda.api.entities.Activity#playing(String)
      * @see    net.dv8tion.jda.api.entities.Activity#streaming(String, String)
      */
-    default void setPresence(
-            @Nullable final OnlineStatus status, @Nullable final Activity activity) {
+    default void setPresence(@Nullable OnlineStatus status, @Nullable Activity activity) {
         this.setPresenceProvider(id -> status, id -> activity);
     }
 
@@ -1070,8 +1067,8 @@ public interface ShardManager extends IGuildChannelContainer<Channel> {
      * @see    net.dv8tion.jda.api.entities.Activity#streaming(String, String)
      */
     default void setPresenceProvider(
-            @Nullable final IntFunction<OnlineStatus> statusProvider,
-            @Nullable final IntFunction<? extends Activity> activityProvider) {
+            @Nullable IntFunction<OnlineStatus> statusProvider,
+            @Nullable IntFunction<? extends Activity> activityProvider) {
         this.getShardCache().forEach(jda -> jda.getPresence()
                 .setPresence(
                         statusProvider == null
@@ -1094,7 +1091,7 @@ public interface ShardManager extends IGuildChannelContainer<Channel> {
      * @throws java.lang.IllegalArgumentException
      *         If the provided OnlineStatus is {@link net.dv8tion.jda.api.OnlineStatus#UNKNOWN UNKNOWN}
      */
-    default void setStatus(@Nullable final OnlineStatus status) {
+    default void setStatus(@Nullable OnlineStatus status) {
         this.setStatusProvider(id -> status);
     }
 
@@ -1110,7 +1107,7 @@ public interface ShardManager extends IGuildChannelContainer<Channel> {
      * @throws java.lang.IllegalArgumentException
      *         If the provided OnlineStatus is {@link net.dv8tion.jda.api.OnlineStatus#UNKNOWN UNKNOWN}
      */
-    default void setStatusProvider(@Nullable final IntFunction<OnlineStatus> statusProvider) {
+    default void setStatusProvider(@Nullable IntFunction<OnlineStatus> statusProvider) {
         this.getShardCache().forEach(jda -> jda.getPresence()
                 .setStatus(
                         statusProvider == null

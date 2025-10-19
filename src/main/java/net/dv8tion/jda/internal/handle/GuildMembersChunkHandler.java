@@ -35,7 +35,7 @@ public class GuildMembersChunkHandler extends SocketHandler {
 
     @Override
     protected Long handleInternally(DataObject content) {
-        final long guildId = content.getLong("guild_id");
+        long guildId = content.getLong("guild_id");
         DataArray members = content.getArray("members");
         GuildImpl guild = (GuildImpl) getJDA().getGuildById(guildId);
         if (guild != null) {

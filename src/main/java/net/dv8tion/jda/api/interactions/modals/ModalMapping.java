@@ -202,8 +202,8 @@ public class ModalMapping {
             typeError("List<Message.Attachment>");
         }
 
-        final DataObject attachments = resolved.getObject("attachments");
-        final EntityBuilder entityBuilder = interaction.getJDA().getEntityBuilder();
+        DataObject attachments = resolved.getObject("attachments");
+        EntityBuilder entityBuilder = interaction.getJDA().getEntityBuilder();
         return value.getArray("values").stream(DataArray::getString)
                 .map(id -> entityBuilder.createMessageAttachment(attachments.getObject(id)))
                 .collect(Helpers.toUnmodifiableList());

@@ -185,8 +185,8 @@ public class GuildImpl implements Guild {
 
         // Clear audio connection
         getJDA().getClient().removeAudioConnection(id);
-        final AbstractCacheView<AudioManager> audioManagerView = getJDA().getAudioManagersView();
-        final AudioManagerImpl manager =
+        AbstractCacheView<AudioManager> audioManagerView = getJDA().getAudioManagersView();
+        AudioManagerImpl manager =
                 (AudioManagerImpl) audioManagerView.get(id); // read-lock access/release
         if (manager != null) {
             manager.closeAudioConnection(
@@ -1025,7 +1025,7 @@ public class GuildImpl implements Guild {
     @Nullable
     @Override
     public DefaultGuildChannelUnion getDefaultChannel() {
-        final Role role = getPublicRole();
+        Role role = getPublicRole();
         return (DefaultGuildChannelUnion)
                 Stream.concat(getTextChannelCache().stream(), getNewsChannelCache().stream())
                         .filter(c -> role.hasPermission(c, Permission.VIEW_CHANNEL))
@@ -1064,7 +1064,7 @@ public class GuildImpl implements Guild {
             throw new IllegalStateException(
                     "Cannot use audio features with disabled GUILD_VOICE_STATES intent!");
         }
-        final AbstractCacheView<AudioManager> managerMap = getJDA().getAudioManagersView();
+        AbstractCacheView<AudioManager> managerMap = getJDA().getAudioManagersView();
         AudioManager mng = managerMap.get(id);
         if (mng == null) {
             // No previous manager found -> create one
@@ -1347,7 +1347,7 @@ public class GuildImpl implements Guild {
             throw new InsufficientPermissionException(this, Permission.MANAGE_SERVER);
         }
 
-        final Route.CompiledRoute route = Route.Invites.GET_GUILD_INVITES.compile(getId());
+        Route.CompiledRoute route = Route.Invites.GET_GUILD_INVITES.compile(getId());
         return new RestActionImpl<>(getJDA(), route, (response, request) -> {
             EntityBuilder entityBuilder = api.getEntityBuilder();
             DataArray array = response.getArray();
@@ -1366,7 +1366,7 @@ public class GuildImpl implements Guild {
             throw new InsufficientPermissionException(this, Permission.MANAGE_SERVER);
         }
 
-        final Route.CompiledRoute route = Route.Templates.GET_GUILD_TEMPLATES.compile(getId());
+        Route.CompiledRoute route = Route.Templates.GET_GUILD_TEMPLATES.compile(getId());
         return new RestActionImpl<>(getJDA(), route, (response, request) -> {
             EntityBuilder entityBuilder = api.getEntityBuilder();
             DataArray array = response.getArray();
@@ -1394,7 +1394,7 @@ public class GuildImpl implements Guild {
             Checks.notLonger(description, 120, "Description");
         }
 
-        final Route.CompiledRoute route = Route.Templates.CREATE_TEMPLATE.compile(getId());
+        Route.CompiledRoute route = Route.Templates.CREATE_TEMPLATE.compile(getId());
 
         DataObject object = DataObject.empty();
         object.put("name", name);
@@ -1409,7 +1409,7 @@ public class GuildImpl implements Guild {
     @Nonnull
     @Override
     public RestAction<GuildWelcomeScreen> retrieveWelcomeScreen() {
-        final Route.CompiledRoute route = Route.Guilds.GET_WELCOME_SCREEN.compile(getId());
+        Route.CompiledRoute route = Route.Guilds.GET_WELCOME_SCREEN.compile(getId());
         return new RestActionImpl<>(getJDA(), route, (response, request) -> {
             EntityBuilder entityBuilder = api.getEntityBuilder();
             return entityBuilder.createWelcomeScreen(this, response.getObject());
@@ -1793,7 +1793,7 @@ public class GuildImpl implements Guild {
                 "Cannot add the PublicRole of a Guild to a Member. All members have this role by default!");
 
         // Return an empty rest action if there were no changes
-        final List<Role> memberRoles = member.getRoles();
+        List<Role> memberRoles = member.getRoles();
         if (Helpers.deepEqualsUnordered(roles, memberRoles)) {
             return new CompletedRestAction<>(getJDA(), null);
         }

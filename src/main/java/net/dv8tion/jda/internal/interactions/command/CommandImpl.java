@@ -108,7 +108,7 @@ public class CommandImpl implements Command {
         else if (guildId != 0L) {
             this.contexts = Helpers.unmodifiableEnumSet(InteractionContextType.GUILD);
         } else {
-            final boolean dmPermission = json.getBoolean("dm_permission", true);
+            boolean dmPermission = json.getBoolean("dm_permission", true);
             this.contexts = dmPermission
                     ? Helpers.unmodifiableEnumSet(
                             InteractionContextType.GUILD, InteractionContextType.BOT_DM)

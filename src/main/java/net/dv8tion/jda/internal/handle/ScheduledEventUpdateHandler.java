@@ -66,13 +66,12 @@ public class ScheduledEventUpdateHandler extends SocketHandler {
             return null;
         }
 
-        final String name = content.getString("name");
-        final String description = content.getString("description", null);
-        final OffsetDateTime startTime = content.getOffsetDateTime("scheduled_start_time");
-        final OffsetDateTime endTime = content.getOffsetDateTime("scheduled_end_time", null);
-        final ScheduledEvent.Status status =
-                ScheduledEvent.Status.fromKey(content.getInt("status", -1));
-        final String imageUrl = content.getString("image", null);
+        String name = content.getString("name");
+        String description = content.getString("description", null);
+        OffsetDateTime startTime = content.getOffsetDateTime("scheduled_start_time");
+        OffsetDateTime endTime = content.getOffsetDateTime("scheduled_end_time", null);
+        ScheduledEvent.Status status = ScheduledEvent.Status.fromKey(content.getInt("status", -1));
+        String imageUrl = content.getString("image", null);
         String location = content.getString("channel_id", null);
         GuildChannel channel = null;
         String oldLocation = event.getLocation();

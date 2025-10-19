@@ -77,7 +77,7 @@ public class AudioManagerImpl implements AudioManager {
                     "The provided AudioChannel is not a part of the Guild that this AudioManager"
                             + " handles.Please provide a AudioChannel from the proper Guild");
         }
-        final Member self = getGuild().getSelfMember();
+        Member self = getGuild().getSelfMember();
         // if (!self.hasPermission(channel, Permission.VOICE_CONNECT))
         //    throw new InsufficientPermissionException(Permission.VOICE_CONNECT);
 
@@ -102,7 +102,7 @@ public class AudioManagerImpl implements AudioManager {
         }
 
         // if userLimit is 0 if no limit is set!
-        final int userLimit =
+        int userLimit =
                 channel instanceof VoiceChannel ? ((VoiceChannel) channel).getUserLimit() : 0;
         if (userLimit > 0 && !perms.contains(Permission.ADMINISTRATOR)) {
             // Check if we can actually join this channel

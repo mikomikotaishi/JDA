@@ -138,7 +138,7 @@ public class AttachmentUpdate implements AttachedFile, ISnowflake {
 
     @Override
     public String toString() {
-        final EntityString entityString = new EntityString("AttachedFile").setType("Attachment");
+        EntityString entityString = new EntityString("AttachedFile").setType("Attachment");
         if (name != null) {
             entityString.setName(name);
         }

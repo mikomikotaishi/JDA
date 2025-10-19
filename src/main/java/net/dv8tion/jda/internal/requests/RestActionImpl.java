@@ -87,11 +87,11 @@ public class RestActionImpl<T> implements RestAction<T> {
         return passContext;
     }
 
-    public static void setDefaultFailure(final Consumer<? super Throwable> callback) {
+    public static void setDefaultFailure(Consumer<? super Throwable> callback) {
         DEFAULT_FAILURE = callback == null ? t -> {} : callback;
     }
 
-    public static void setDefaultSuccess(final Consumer<Object> callback) {
+    public static void setDefaultSuccess(Consumer<Object> callback) {
         DEFAULT_SUCCESS = callback == null ? t -> {} : callback;
     }
 
@@ -325,8 +325,8 @@ public class RestActionImpl<T> implements RestAction<T> {
         } else if (response.isRateLimit()) {
             request.onRateLimited(response);
         } else {
-            final ErrorResponseException exception = request.createErrorResponseException(response);
-            final Throwable mappedThrowable = this.errorMapper != null
+            ErrorResponseException exception = request.createErrorResponseException(response);
+            Throwable mappedThrowable = this.errorMapper != null
                     ? this.errorMapper.apply(response, request, exception)
                     : null;
 

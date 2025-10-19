@@ -81,7 +81,7 @@ public class MessageCreateHandler extends SocketHandler {
         } catch (IllegalArgumentException e) {
             switch (e.getMessage()) {
                 case EntityBuilder.MISSING_CHANNEL: {
-                    final long channelId = content.getLong("channel_id");
+                    long channelId = content.getLong("channel_id");
 
                     // If discord adds message support for unexpected types in the future, drop
                     // the event instead of caching it
@@ -108,7 +108,7 @@ public class MessageCreateHandler extends SocketHandler {
                     return null;
                 }
                 case EntityBuilder.MISSING_USER: {
-                    final long authorId = content.getObject("author").getLong("id");
+                    long authorId = content.getObject("author").getLong("id");
                     jda.getEventCache()
                             .cache(
                                     EventCache.Type.USER,

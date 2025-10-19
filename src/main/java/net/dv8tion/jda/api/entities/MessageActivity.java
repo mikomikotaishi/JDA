@@ -137,7 +137,7 @@ public class MessageActivity {
          */
         @Nullable
         public ImageProxy getIcon() {
-            final String iconUrl = getIconUrl();
+            String iconUrl = getIconUrl();
             return iconUrl == null ? null : new ImageProxy(iconUrl);
         }
 
@@ -172,7 +172,7 @@ public class MessageActivity {
          */
         @Nullable
         public ImageProxy getCover() {
-            final String coverUrl = getCoverUrl();
+            String coverUrl = getCoverUrl();
             return coverUrl == null ? null : new ImageProxy(coverUrl);
         }
 

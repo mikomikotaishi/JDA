@@ -163,7 +163,7 @@ public abstract class AbstractEntityBuilder {
     }
 
     public ForumTagImpl createForumTag(IPostContainerMixin<?> channel, DataObject json, int index) {
-        final long id = json.getUnsignedLong("id");
+        long id = json.getUnsignedLong("id");
         SortedSnowflakeCacheViewImpl<ForumTag> cache = channel.getAvailableTagCache();
         ForumTagImpl tag = (ForumTagImpl) cache.get(id);
 
@@ -219,7 +219,7 @@ public abstract class AbstractEntityBuilder {
     }
 
     protected void configureRole(DataObject roleJson, RoleMixin<?> role, long id) {
-        final int color = roleJson.getInt("color");
+        int color = roleJson.getInt("color");
         role.setName(roleJson.getString("name"))
                 .setRawPosition(roleJson.getInt("position"))
                 .setRawPermissions(roleJson.getLong("permissions"))
@@ -229,8 +229,8 @@ public abstract class AbstractEntityBuilder {
                 .setMentionable(roleJson.getBoolean("mentionable"))
                 .setTags(roleJson.optObject("tags").orElseGet(DataObject::empty));
 
-        final String iconId = roleJson.getString("icon", null);
-        final String emoji = roleJson.getString("unicode_emoji", null);
+        String iconId = roleJson.getString("icon", null);
+        String emoji = roleJson.getString("unicode_emoji", null);
         if (iconId == null && emoji == null) {
             role.setIcon(null);
         } else {

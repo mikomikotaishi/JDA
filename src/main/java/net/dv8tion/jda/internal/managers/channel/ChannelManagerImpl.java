@@ -248,8 +248,8 @@ public class ChannelManagerImpl<T extends GuildChannel, M extends ChannelManager
         Checks.check(
                 permHolder.getGuild().equals(getGuild()),
                 "PermissionHolder is not from the same Guild!");
-        final long id = permHolder.getIdLong();
-        final int type = permHolder instanceof Role
+        long id = permHolder.getIdLong();
+        int type = permHolder instanceof Role
                 ? PermOverrideData.ROLE_TYPE
                 : PermOverrideData.MEMBER_TYPE;
         putPermissionOverride(new PermOverrideData(type, id, allow, deny));
@@ -308,7 +308,7 @@ public class ChannelManagerImpl<T extends GuildChannel, M extends ChannelManager
         }
     }
 
-    private void putPermissionOverride(@Nonnull final PermOverrideData overrideData) {
+    private void putPermissionOverride(@Nonnull PermOverrideData overrideData) {
         checkCanPutPermissions(overrideData.allow, overrideData.deny);
         withLock(lock, (lock) -> {
             this.overridesRem.remove(overrideData.id);
@@ -334,7 +334,7 @@ public class ChannelManagerImpl<T extends GuildChannel, M extends ChannelManager
 
     @Nonnull
     @CheckReturnValue
-    public M removePermissionOverride(final long id) {
+    public M removePermissionOverride(long id) {
         if (isPermissionChecksEnabled()
                 && !getGuild()
                         .getSelfMember()
@@ -581,7 +581,7 @@ public class ChannelManagerImpl<T extends GuildChannel, M extends ChannelManager
         if (!type.isAudio()) {
             throw new IllegalStateException("Can only set bitrate on voice channels");
         }
-        final int maxBitrate = getGuild().getMaxBitrate();
+        int maxBitrate = getGuild().getMaxBitrate();
         Checks.check(bitrate >= 8000, "Bitrate must be greater or equal to 8000");
         Checks.check(bitrate <= maxBitrate, "Bitrate must be less or equal to %s", maxBitrate);
         this.bitrate = bitrate;
@@ -865,7 +865,7 @@ public class ChannelManagerImpl<T extends GuildChannel, M extends ChannelManager
 
     @Override
     protected boolean checkPermissions() {
-        final Member selfMember = getGuild().getSelfMember();
+        Member selfMember = getGuild().getSelfMember();
 
         Checks.checkAccess(selfMember, channel);
         ((GuildChannelMixin<?>) channel).checkCanManage();

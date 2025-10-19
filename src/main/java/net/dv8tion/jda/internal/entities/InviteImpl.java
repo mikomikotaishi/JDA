@@ -61,20 +61,20 @@ public class InviteImpl implements Invite {
     private final Invite.InviteType type;
 
     public InviteImpl(
-            final JDAImpl api,
-            final String code,
-            final boolean expanded,
-            final User inviter,
-            final int maxAge,
-            final int maxUses,
-            final boolean temporary,
-            final OffsetDateTime timeCreated,
-            final int uses,
-            final Channel channel,
-            final Guild guild,
-            final Group group,
-            final InviteTarget target,
-            final Invite.InviteType type) {
+            JDAImpl api,
+            String code,
+            boolean expanded,
+            User inviter,
+            int maxAge,
+            int maxUses,
+            boolean temporary,
+            OffsetDateTime timeCreated,
+            int uses,
+            Channel channel,
+            Guild guild,
+            Group group,
+            InviteTarget target,
+            Invite.InviteType type) {
         this.api = api;
         this.code = code;
         this.expanded = expanded;
@@ -91,8 +91,7 @@ public class InviteImpl implements Invite {
         this.type = type;
     }
 
-    public static RestAction<Invite> resolve(
-            final JDA api, final String code, final boolean withCounts) {
+    public static RestAction<Invite> resolve(JDA api, String code, boolean withCounts) {
         Checks.notNull(code, "code");
         Checks.notNull(api, "api");
 
@@ -110,7 +109,7 @@ public class InviteImpl implements Invite {
     @Nonnull
     @Override
     public AuditableRestAction<Void> delete() {
-        final Route.CompiledRoute route = Route.Invites.DELETE_INVITE.compile(this.code);
+        Route.CompiledRoute route = Route.Invites.DELETE_INVITE.compile(this.code);
 
         return new AuditableRestActionImpl<>(this.api, route);
     }
@@ -126,20 +125,18 @@ public class InviteImpl implements Invite {
             throw new IllegalStateException("Only guild invites can be expanded");
         }
 
-        final net.dv8tion.jda.api.entities.Guild guild =
-                this.api.getGuildById(this.guild.getIdLong());
+        net.dv8tion.jda.api.entities.Guild guild = this.api.getGuildById(this.guild.getIdLong());
 
         if (guild == null) {
             throw new UnsupportedOperationException(
                     "You're not in the guild this invite points to");
         }
 
-        final Member member = guild.getSelfMember();
+        Member member = guild.getSelfMember();
 
         Route.CompiledRoute route;
 
-        final GuildChannel channel =
-                guild.getChannelById(GuildChannel.class, this.channel.getIdLong());
+        GuildChannel channel = guild.getChannelById(GuildChannel.class, this.channel.getIdLong());
         if (channel == null) {
             throw new UnsupportedOperationException(
                     "Cannot expand invite without known channel. Channel ID: "
@@ -158,10 +155,10 @@ public class InviteImpl implements Invite {
         }
 
         return new RestActionImpl<>(this.api, route, (response, request) -> {
-            final EntityBuilder entityBuilder = this.api.getEntityBuilder();
-            final DataArray array = response.getArray();
+            EntityBuilder entityBuilder = this.api.getEntityBuilder();
+            DataArray array = response.getArray();
             for (int i = 0; i < array.length(); i++) {
-                final DataObject object = array.getObject(i);
+                DataObject object = array.getObject(i);
                 if (InviteImpl.this.code.equals(object.getString("code"))) {
                     return entityBuilder.createInvite(object);
                 }
@@ -293,13 +290,13 @@ public class InviteImpl implements Invite {
         private final String name;
         private final ChannelType type;
 
-        public ChannelImpl(final long id, final String name, final ChannelType type) {
+        public ChannelImpl(long id, String name, ChannelType type) {
             this.id = id;
             this.name = name;
             this.type = type;
         }
 
-        public ChannelImpl(final GuildChannel channel) {
+        public ChannelImpl(GuildChannel channel) {
             this(channel.getIdLong(), channel.getName(), channel.getType());
         }
 
@@ -336,19 +333,19 @@ public class InviteImpl implements Invite {
         private final GuildWelcomeScreen welcomeScreen;
 
         public GuildImpl(
-                final long id,
-                final String vanityCode,
-                final String bannerId,
-                final String iconId,
-                final String name,
-                final String splashId,
-                final String description,
-                final VerificationLevel verificationLevel,
-                final NSFWLevel nsfwLevel,
-                final int presenceCount,
-                final int memberCount,
-                final Set<String> features,
-                final GuildWelcomeScreen welcomeScreen) {
+                long id,
+                String vanityCode,
+                String bannerId,
+                String iconId,
+                String name,
+                String splashId,
+                String description,
+                VerificationLevel verificationLevel,
+                NSFWLevel nsfwLevel,
+                int presenceCount,
+                int memberCount,
+                Set<String> features,
+                GuildWelcomeScreen welcomeScreen) {
             this.id = id;
             this.vanityCode = vanityCode;
             this.bannerId = bannerId;
@@ -364,7 +361,7 @@ public class InviteImpl implements Invite {
             this.welcomeScreen = welcomeScreen;
         }
 
-        public GuildImpl(final net.dv8tion.jda.api.entities.Guild guild) {
+        public GuildImpl(net.dv8tion.jda.api.entities.Guild guild) {
             this(
                     guild.getIdLong(),
                     guild.getVanityCode(),
@@ -480,8 +477,7 @@ public class InviteImpl implements Invite {
         private final long id;
         private final List<String> users;
 
-        public GroupImpl(
-                final String iconId, final String name, final long id, final List<String> users) {
+        public GroupImpl(String iconId, String name, long id, List<String> users) {
             this.iconId = iconId;
             this.name = name;
             this.id = id;
@@ -589,12 +585,12 @@ public class InviteImpl implements Invite {
         private final int maxParticipants;
 
         public EmbeddedApplicationImpl(
-                final String iconId,
-                final String name,
-                final String description,
-                final String summary,
-                final long id,
-                final int maxParticipants) {
+                String iconId,
+                String name,
+                String description,
+                String summary,
+                long id,
+                int maxParticipants) {
             this.iconId = iconId;
             this.name = name;
             this.description = description;

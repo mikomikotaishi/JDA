@@ -86,7 +86,7 @@ public class UserUpdateAvatarEvent extends GenericUserUpdateEvent<String> {
      */
     @Nullable
     public ImageProxy getOldAvatar() {
-        final String oldAvatarUrl = getOldAvatarUrl();
+        String oldAvatarUrl = getOldAvatarUrl();
         return oldAvatarUrl == null ? null : new ImageProxy(oldAvatarUrl);
     }
 
@@ -125,7 +125,7 @@ public class UserUpdateAvatarEvent extends GenericUserUpdateEvent<String> {
      */
     @Nullable
     public ImageProxy getNewAvatar() {
-        final String newAvatarUrl = getNewAvatarUrl();
+        String newAvatarUrl = getNewAvatarUrl();
         return newAvatarUrl == null ? null : new ImageProxy(newAvatarUrl);
     }
 }

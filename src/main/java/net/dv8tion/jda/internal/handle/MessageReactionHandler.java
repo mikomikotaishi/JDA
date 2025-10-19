@@ -60,11 +60,11 @@ public class MessageReactionHandler extends SocketHandler {
 
         DataObject emoji = content.getObject("emoji");
 
-        final long userId = content.getLong("user_id");
-        final long messageId = content.getLong("message_id");
-        final long channelId = content.getLong("channel_id");
+        long userId = content.getLong("user_id");
+        long messageId = content.getLong("message_id");
+        long channelId = content.getLong("channel_id");
 
-        final Long emojiId = emoji.isNull("id") ? null : emoji.getLong("id");
+        Long emojiId = emoji.isNull("id") ? null : emoji.getLong("id");
         String emojiName = emoji.getString("name", null);
 
         if (emojiId == null && emojiName == null) {
@@ -74,7 +74,7 @@ public class MessageReactionHandler extends SocketHandler {
                     content);
             return null;
         }
-        final long guildId = content.getUnsignedLong("guild_id", 0);
+        long guildId = content.getUnsignedLong("guild_id", 0);
         Guild guild = api.getGuildById(guildId);
         MemberImpl member = null;
         if (guild != null) {

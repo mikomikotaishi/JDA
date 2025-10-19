@@ -332,7 +332,7 @@ public class MessageCreateBuilder
                     + " top-level components, provided "
                     + components.size());
         }
-        final List<? extends Component> illegalV1Components =
+        List<? extends Component> illegalV1Components =
                 ComponentsUtil.getIllegalV1Components(components);
         if (!illegalV1Components.isEmpty()) {
             throw new IllegalStateException(
@@ -363,15 +363,14 @@ public class MessageCreateBuilder
                     "Cannot build message with no V2 components, or did you forget to disable"
                             + " them?");
         }
-        final long componentTreeSize = ComponentsUtil.getComponentTreeSize(components);
+        long componentTreeSize = ComponentsUtil.getComponentTreeSize(components);
         if (componentTreeSize > Message.MAX_COMPONENT_COUNT_IN_COMPONENT_TREE) {
             throw new IllegalStateException("Cannot build message with over "
                     + Message.MAX_COMPONENT_COUNT_IN_COMPONENT_TREE
                     + " total components, provided "
                     + componentTreeSize);
         }
-        final long componentTreeLength =
-                ComponentsUtil.getComponentTreeTextContentLength(components);
+        long componentTreeLength = ComponentsUtil.getComponentTreeTextContentLength(components);
         if (componentTreeLength > Message.MAX_CONTENT_LENGTH_COMPONENT_V2) {
             throw new IllegalStateException("Cannot build message with over "
                     + Message.MAX_CONTENT_LENGTH_COMPONENT_V2

@@ -145,7 +145,7 @@ public class SessionControllerAdapter implements SessionController {
         public void run() {
             try {
                 if (this.delay > 0) {
-                    final long interval = System.currentTimeMillis() - lastConnect;
+                    long interval = System.currentTimeMillis() - lastConnect;
                     if (interval < this.delay) {
                         Thread.sleep(this.delay - interval);
                     }

@@ -156,7 +156,7 @@ class AudioWebSocket extends WebSocketAdapter {
         }
     }
 
-    protected void close(final ConnectionStatus closeStatus) {
+    protected void close(ConnectionStatus closeStatus) {
         // Makes sure we don't run this method again after the socket.close(1000) call fires
         // onDisconnect
         if (shutdown) {
@@ -313,8 +313,8 @@ class AudioWebSocket extends WebSocketAdapter {
                     "Reason: {}\nClose code: {}",
                     serverCloseFrame.getCloseReason(),
                     serverCloseFrame.getCloseCode());
-            final int code = serverCloseFrame.getCloseCode();
-            final VoiceCode.Close closeCode = VoiceCode.Close.from(code);
+            int code = serverCloseFrame.getCloseCode();
+            VoiceCode.Close closeCode = VoiceCode.Close.from(code);
             switch (closeCode) {
                 case RATE_LIMIT_EXCEEDED:
                 case SERVER_NOT_FOUND:
@@ -362,8 +362,8 @@ class AudioWebSocket extends WebSocketAdapter {
 
     @Override
     public void onThreadCreated(WebSocket websocket, ThreadType threadType, Thread thread) {
-        final String identifier = getJDA().getIdentifierString();
-        final String guildId = guild.getId();
+        String identifier = getJDA().getIdentifierString();
+        String guildId = guild.getId();
         switch (threadType) {
             case CONNECT_THREAD:
                 thread.setName(identifier + " AudioWS-ConnectThread (guildId: " + guildId + ')');
@@ -403,8 +403,8 @@ class AudioWebSocket extends WebSocketAdapter {
         switch (opCode) {
             case VoiceCode.HELLO: {
                 LOG.trace("-> HELLO {}", contentAll);
-                final DataObject payload = contentAll.getObject("d");
-                final int interval = payload.getInt("heartbeat_interval");
+                DataObject payload = contentAll.getObject("d");
+                int interval = payload.getInt("heartbeat_interval");
                 stopKeepAlive();
                 setupKeepAlive(interval);
                 break;
@@ -439,7 +439,7 @@ class AudioWebSocket extends WebSocketAdapter {
                     }
                 } while (externalIpAndPort == null);
 
-                final DataObject object = DataObject.empty()
+                DataObject object = DataObject.empty()
                         .put("protocol", "udp")
                         .put(
                                 "data",
@@ -488,20 +488,19 @@ class AudioWebSocket extends WebSocketAdapter {
             }
             case VoiceCode.HEARTBEAT_ACK: {
                 LOG.trace("-> HEARTBEAT_ACK {}", contentAll);
-                final long ping =
+                long ping =
                         System.currentTimeMillis() - contentAll.getObject("d").getLong("t");
                 listener.onPing(ping);
                 break;
             }
             case VoiceCode.USER_SPEAKING_UPDATE: {
                 LOG.trace("-> USER_SPEAKING_UPDATE {}", contentAll);
-                final DataObject content = contentAll.getObject("d");
-                final EnumSet<SpeakingMode> speaking =
-                        SpeakingMode.getModes(content.getInt("speaking"));
-                final int ssrc = content.getInt("ssrc");
-                final long userId = content.getLong("user_id");
+                DataObject content = contentAll.getObject("d");
+                EnumSet<SpeakingMode> speaking = SpeakingMode.getModes(content.getInt("speaking"));
+                int ssrc = content.getInt("ssrc");
+                long userId = content.getLong("user_id");
 
-                final User user = getUser(userId);
+                User user = getUser(userId);
 
                 if (user == null) {
                     // more relevant for audio connection
@@ -520,8 +519,8 @@ class AudioWebSocket extends WebSocketAdapter {
             }
             case VoiceCode.USER_DISCONNECT: {
                 LOG.trace("-> USER_DISCONNECT {}", contentAll);
-                final DataObject payload = contentAll.getObject("d");
-                final long userId = payload.getLong("user_id");
+                DataObject payload = contentAll.getObject("d");
+                long userId = payload.getLong("user_id");
                 audioConnection.removeUserSSRC(userId);
                 break;
             }
@@ -657,7 +656,7 @@ class AudioWebSocket extends WebSocketAdapter {
         keepAliveHandle = null;
     }
 
-    private void setupKeepAlive(final int keepAliveInterval) {
+    private void setupKeepAlive(int keepAliveInterval) {
         if (keepAliveHandle != null) {
             LOG.error("Setting up a KeepAlive runnable while the previous one seems to still be"
                     + " active!!");
@@ -713,7 +712,7 @@ class AudioWebSocket extends WebSocketAdapter {
         // related to the threadpool shutdown.
     }
 
-    private User getUser(final long userId) {
+    private User getUser(long userId) {
         return getJDA().getUserById(userId);
     }
 

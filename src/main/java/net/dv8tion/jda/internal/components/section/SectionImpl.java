@@ -141,13 +141,13 @@ public class SectionImpl extends AbstractComponentImpl
     public Section replace(@Nonnull ComponentReplacer replacer) {
         Checks.notNull(replacer, "ComponentReplacer");
 
-        final List<SectionContentComponentUnion> newContent = ComponentsUtil.doReplace(
+        List<SectionContentComponentUnion> newContent = ComponentsUtil.doReplace(
                 SectionContentComponent.class,
                 getContentComponents(),
                 replacer,
                 Function.identity());
 
-        final SectionAccessoryComponentUnion newAccessory = ComponentsUtil.doReplace(
+        SectionAccessoryComponentUnion newAccessory = ComponentsUtil.doReplace(
                 SectionAccessoryComponent.class,
                 Collections.singletonList(accessory),
                 replacer,
@@ -177,7 +177,7 @@ public class SectionImpl extends AbstractComponentImpl
     @Nonnull
     @Override
     public DataObject toData() {
-        final DataObject json = DataObject.empty();
+        DataObject json = DataObject.empty();
         json.put("type", getType().getKey());
         json.put("accessory", accessory);
         json.put("components", DataArray.fromCollection(getContentComponents()));

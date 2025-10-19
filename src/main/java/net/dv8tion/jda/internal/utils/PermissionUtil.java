@@ -199,7 +199,7 @@ public class PermissionUtil {
         // external means it is available outside of its own guild - works for bots or if its
         // managed
         // currently we cannot check whether other users have nitro, we assume no here
-        final boolean external = emoji.isManaged() || (issuer.isBot() && botOverride);
+        boolean external = emoji.isManaged() || (issuer.isBot() && botOverride);
         switch (channel.getType()) {
             case TEXT:
                 TextChannel text = (TextChannel) channel;
@@ -390,7 +390,7 @@ public class PermissionUtil {
         }
 
         long permission = getEffectivePermission(member);
-        final long admin = Permission.ADMINISTRATOR.getRawValue();
+        long admin = Permission.ADMINISTRATOR.getRawValue();
         if (isApplied(permission, admin)) {
             return ALL_PERMISSIONS;
         }
@@ -412,16 +412,15 @@ public class PermissionUtil {
         AtomicLong deny = new AtomicLong(0);
         getExplicitOverrides(channel, member, allow, deny);
         permission = apply(permission, allow.get(), deny.get());
-        final long viewChannel = Permission.VIEW_CHANNEL.getRawValue();
-        final long connectChannel = Permission.VOICE_CONNECT.getRawValue();
+        long viewChannel = Permission.VIEW_CHANNEL.getRawValue();
+        long connectChannel = Permission.VOICE_CONNECT.getRawValue();
 
         // When the permission to view the channel or to connect to the channel is not applied it is
         // not granted
         // This means that we have no access to this channel at all
         // See https://github.com/discord/discord-api-docs/issues/1522
-        final boolean hasConnect =
-                !channel.getType().isAudio() || isApplied(permission, connectChannel);
-        final boolean hasAccess = isApplied(permission, viewChannel) && hasConnect;
+        boolean hasConnect = !channel.getType().isAudio() || isApplied(permission, connectChannel);
+        boolean hasAccess = isApplied(permission, viewChannel) && hasConnect;
 
         // See
         // https://discord.com/developers/docs/topics/permissions#permissions-for-timed-out-members
@@ -498,7 +497,7 @@ public class PermissionUtil {
                             + " Instead, please use the Member methods while supplying a GuildChannel");
         }
 
-        final Guild guild = member.getGuild();
+        Guild guild = member.getGuild();
         long permission = guild.getPublicRole().getPermissionsRaw();
 
         for (Role role : member.getUnsortedRoles()) {
@@ -658,7 +657,7 @@ public class PermissionUtil {
 
         IPermissionContainer permsChannel = channel.getPermissionContainer();
 
-        final Guild guild = role.getGuild();
+        Guild guild = role.getGuild();
         checkGuild(channel.getGuild(), guild, "Role");
 
         long permission = includeRoles
@@ -709,8 +708,8 @@ public class PermissionUtil {
         override = permsChannel.getPermissionOverride(member);
         if (override != null) {
             // finally override the role cascade with member overrides
-            final long oDeny = override.getDeniedRaw();
-            final long oAllow = override.getAllowedRaw();
+            long oDeny = override.getDeniedRaw();
+            long oAllow = override.getAllowedRaw();
             allowRaw = (allowRaw & ~oDeny) | oAllow;
             denyRaw = (denyRaw & ~oAllow) | oDeny;
             // this time we need to exclude new allowed bits from old denied ones and OR the new

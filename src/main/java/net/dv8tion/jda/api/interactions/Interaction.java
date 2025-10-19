@@ -104,7 +104,7 @@ public interface Interaction extends ISnowflake {
      * @see Guild#isDetached()
      */
     default boolean isFromAttachedGuild() {
-        final Guild guild = getGuild();
+        Guild guild = getGuild();
         if (guild == null) {
             return false;
         }

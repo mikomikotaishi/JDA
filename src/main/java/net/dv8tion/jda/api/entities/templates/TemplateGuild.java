@@ -52,19 +52,19 @@ public class TemplateGuild implements ISnowflake {
     private final List<TemplateChannel> channels;
 
     public TemplateGuild(
-            final long id,
-            final String name,
-            final String description,
-            final String iconId,
-            final VerificationLevel verificationLevel,
-            final NotificationLevel notificationLevel,
-            final ExplicitContentLevel explicitContentLevel,
-            final DiscordLocale locale,
-            final Timeout afkTimeout,
-            final TemplateChannel afkChannel,
-            final TemplateChannel systemChannel,
-            final List<TemplateRole> roles,
-            final List<TemplateChannel> channels) {
+            long id,
+            String name,
+            String description,
+            String iconId,
+            VerificationLevel verificationLevel,
+            NotificationLevel notificationLevel,
+            ExplicitContentLevel explicitContentLevel,
+            DiscordLocale locale,
+            Timeout afkTimeout,
+            TemplateChannel afkChannel,
+            TemplateChannel systemChannel,
+            List<TemplateRole> roles,
+            List<TemplateChannel> channels) {
         this.id = id;
         this.name = name;
         this.description = description;
@@ -145,7 +145,7 @@ public class TemplateGuild implements ISnowflake {
      */
     @Nullable
     public ImageProxy getIcon() {
-        final String iconUrl = getIconUrl();
+        String iconUrl = getIconUrl();
         return iconUrl == null ? null : new ImageProxy(iconUrl);
     }
 

@@ -53,7 +53,7 @@ public interface IInviteContainerMixin<T extends IInviteContainerMixin<T>>
         checkAttached();
         checkPermission(Permission.MANAGE_CHANNEL);
 
-        final Route.CompiledRoute route = Route.Invites.GET_CHANNEL_INVITES.compile(getId());
+        Route.CompiledRoute route = Route.Invites.GET_CHANNEL_INVITES.compile(getId());
 
         JDAImpl jda = (JDAImpl) getJDA();
         return new RestActionImpl<>(jda, route, (response, request) -> {

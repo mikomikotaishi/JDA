@@ -177,8 +177,7 @@ public class EmbedBuilder {
                     "Cannot build an embed with more than %d embed fields set!",
                     MessageEmbed.MAX_FIELD_AMOUNT));
         }
-        final String description =
-                this.description.length() < 1 ? null : this.description.toString();
+        String description = this.description.length() < 1 ? null : this.description.toString();
 
         return EntityBuilder.createMessageEmbed(
                 url,
@@ -312,7 +311,7 @@ public class EmbedBuilder {
      * @see    MessageEmbed#EMBED_MAX_LENGTH_BOT
      */
     public boolean isValidLength() {
-        final int length = length();
+        int length = length();
         return length <= MessageEmbed.EMBED_MAX_LENGTH_BOT;
     }
 

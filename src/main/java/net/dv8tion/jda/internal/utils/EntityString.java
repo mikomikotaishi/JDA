@@ -63,7 +63,7 @@ public class EntityString {
     @Nonnull
     @Override
     public String toString() {
-        final String entityName;
+        String entityName;
         if (this.entity instanceof String) {
             entityName = (String) this.entity;
         } else if (this.entity instanceof Class<?>) {
@@ -72,7 +72,7 @@ public class EntityString {
             entityName = getCleanedClassName(this.entity.getClass());
         }
 
-        final StringBuilder sb = new StringBuilder(entityName);
+        StringBuilder sb = new StringBuilder(entityName);
         if (this.type != null) {
             sb.append('[').append(this.type).append(']');
         }
@@ -80,9 +80,9 @@ public class EntityString {
             sb.append(':').append(this.name);
         }
 
-        final boolean isSnowflake = entity instanceof ISnowflake;
+        boolean isSnowflake = entity instanceof ISnowflake;
         if (isSnowflake || this.metadata != null) {
-            final StringJoiner metadataJoiner = new StringJoiner(", ", "(", ")");
+            StringJoiner metadataJoiner = new StringJoiner(", ", "(", ")");
             if (isSnowflake) {
                 metadataJoiner.add("id=" + ((ISnowflake) entity).getId());
             }

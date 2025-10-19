@@ -284,7 +284,7 @@ public class Result<T> {
 
     @Override
     public String toString() {
-        final EntityString entityString = new EntityString(this);
+        EntityString entityString = new EntityString(this);
         if (isSuccess()) {
             entityString.addMetadata("success", value);
         } else {

@@ -56,8 +56,8 @@ public class MessageDeleteHandler extends SocketHandler {
             }
         }
 
-        final long messageId = content.getLong("id");
-        final long channelId = content.getLong("channel_id");
+        long messageId = content.getLong("id");
+        long channelId = content.getLong("channel_id");
 
         MessageChannel channel = getJDA().getChannelById(MessageChannel.class, channelId);
         if (channel == null) {

@@ -53,8 +53,7 @@ public class ComponentConsistencyComplianceTest {
                 "Overrides supertype methods which returns their declaring class") {
             @Override
             public void check(JavaClass item, ConditionEvents events) {
-                final List<JavaMethod> supertypeMethodsReturningDeclClass = getComponentSupertypes(
-                                item)
+                List<JavaMethod> supertypeMethodsReturningDeclClass = getComponentSupertypes(item)
                         // Methods declared by the supertypes
                         .flatMap(c -> c.getMethods().stream())
                         // Only keep root declarations
@@ -68,7 +67,7 @@ public class ComponentConsistencyComplianceTest {
                 // The method may exist but have a diff return type, or it may not be overridden
                 for (JavaMethod supertypeMethodReturningDeclClass :
                         supertypeMethodsReturningDeclClass) {
-                    final Optional<JavaMethod> optDeclaredMethod = item.tryGetMethod(
+                    Optional<JavaMethod> optDeclaredMethod = item.tryGetMethod(
                             supertypeMethodReturningDeclClass.getName(),
                             getParameterTypeNames(supertypeMethodReturningDeclClass));
                     if (!optDeclaredMethod.isPresent()) {
@@ -80,7 +79,7 @@ public class ComponentConsistencyComplianceTest {
                         continue;
                     }
 
-                    final JavaMethod declaredMethod = optDeclaredMethod.get();
+                    JavaMethod declaredMethod = optDeclaredMethod.get();
                     if (!declaredMethod
                             .getRawReturnType()
                             .getFullName()

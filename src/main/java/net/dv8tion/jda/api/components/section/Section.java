@@ -233,7 +233,7 @@ public interface Section
 
     @Override
     default boolean isDisabled() {
-        final SectionAccessoryComponentUnion accessory = getAccessory();
+        SectionAccessoryComponentUnion accessory = getAccessory();
         if (accessory instanceof IDisableable && ((IDisableable) accessory).isEnabled()) {
             return false;
         }
@@ -246,7 +246,7 @@ public interface Section
 
     @Override
     default boolean isEnabled() {
-        final SectionAccessoryComponentUnion accessory = getAccessory();
+        SectionAccessoryComponentUnion accessory = getAccessory();
         if (accessory instanceof IDisableable && ((IDisableable) accessory).isDisabled()) {
             return false;
         }

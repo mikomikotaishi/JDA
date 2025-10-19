@@ -73,12 +73,12 @@ public class ComponentsUtilTest {
 
     @Test
     void testRemoveComponentFromRow() {
-        final Button button2 = Button.secondary("button2", "test").withUniqueId(2);
+        Button button2 = Button.secondary("button2", "test").withUniqueId(2);
         MessageComponentTree tree = MessageComponentTree.of(
                 ActionRow.of(Button.primary("button1", "test").withUniqueId(1), button2));
 
         MessageComponentTree newTree = tree.replace(ComponentReplacer.byUniqueId(1, (Button) null));
-        final ActionRow row = newTree.getComponents().get(0).asActionRow();
+        ActionRow row = newTree.getComponents().get(0).asActionRow();
         assertThat(row.getComponents()).hasSize(1);
         assertThat(row.getComponents()).contains((ActionRowChildComponentUnion) button2);
     }

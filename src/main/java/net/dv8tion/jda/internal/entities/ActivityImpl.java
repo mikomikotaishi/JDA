@@ -149,7 +149,7 @@ public class ActivityImpl implements Activity {
 
     @Override
     public String toString() {
-        final EntityString entityString = new EntityString(this).setType(type).setName(name);
+        EntityString entityString = new EntityString(this).setType(type).setName(name);
         if (url != null) {
             entityString.addMetadata("url", url);
         }

@@ -331,8 +331,8 @@ public interface ChannelAction<T extends GuildChannel>
             @Nonnull IPermissionHolder target,
             @Nullable Collection<Permission> allow,
             @Nullable Collection<Permission> deny) {
-        final long allowRaw = allow != null ? Permission.getRaw(allow) : 0;
-        final long denyRaw = deny != null ? Permission.getRaw(deny) : 0;
+        long allowRaw = allow != null ? Permission.getRaw(allow) : 0;
+        long denyRaw = deny != null ? Permission.getRaw(deny) : 0;
 
         return addPermissionOverride(target, allowRaw, denyRaw);
     }
@@ -425,8 +425,8 @@ public interface ChannelAction<T extends GuildChannel>
             long memberId,
             @Nullable Collection<Permission> allow,
             @Nullable Collection<Permission> deny) {
-        final long allowRaw = allow != null ? Permission.getRaw(allow) : 0;
-        final long denyRaw = deny != null ? Permission.getRaw(deny) : 0;
+        long allowRaw = allow != null ? Permission.getRaw(allow) : 0;
+        long denyRaw = deny != null ? Permission.getRaw(deny) : 0;
 
         return addMemberPermissionOverride(memberId, allowRaw, denyRaw);
     }
@@ -466,8 +466,8 @@ public interface ChannelAction<T extends GuildChannel>
             long roleId,
             @Nullable Collection<Permission> allow,
             @Nullable Collection<Permission> deny) {
-        final long allowRaw = allow != null ? Permission.getRaw(allow) : 0;
-        final long denyRaw = deny != null ? Permission.getRaw(deny) : 0;
+        long allowRaw = allow != null ? Permission.getRaw(allow) : 0;
+        long denyRaw = deny != null ? Permission.getRaw(deny) : 0;
 
         return addRolePermissionOverride(roleId, allowRaw, denyRaw);
     }

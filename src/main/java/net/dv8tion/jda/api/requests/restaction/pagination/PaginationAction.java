@@ -293,7 +293,7 @@ public interface PaginationAction<T, M extends PaginationAction<T, M>>
      */
     @Nonnull
     @CheckReturnValue
-    M limit(final int limit);
+    M limit(int limit);
 
     /**
      * Whether already retrieved entities should be stored
@@ -311,7 +311,7 @@ public interface PaginationAction<T, M extends PaginationAction<T, M>>
      */
     @Nonnull
     @CheckReturnValue
-    M cache(final boolean enableCache);
+    M cache(boolean enableCache);
 
     /**
      * Whether retrieved entities are stored within an
@@ -375,7 +375,7 @@ public interface PaginationAction<T, M extends PaginationAction<T, M>>
      */
     @Nonnull
     @CheckReturnValue
-    default CompletableFuture<List<T>> takeWhileAsync(@Nonnull final Predicate<? super T> rule) {
+    default CompletableFuture<List<T>> takeWhileAsync(@Nonnull Predicate<? super T> rule) {
         Checks.notNull(rule, "Rule");
         return takeUntilAsync(rule.negate());
     }
@@ -401,7 +401,7 @@ public interface PaginationAction<T, M extends PaginationAction<T, M>>
     @Nonnull
     @CheckReturnValue
     default CompletableFuture<List<T>> takeWhileAsync(
-            int limit, @Nonnull final Predicate<? super T> rule) {
+            int limit, @Nonnull Predicate<? super T> rule) {
         Checks.notNull(rule, "Rule");
         return takeUntilAsync(limit, rule.negate());
     }
@@ -424,7 +424,7 @@ public interface PaginationAction<T, M extends PaginationAction<T, M>>
      */
     @Nonnull
     @CheckReturnValue
-    default CompletableFuture<List<T>> takeUntilAsync(@Nonnull final Predicate<? super T> rule) {
+    default CompletableFuture<List<T>> takeUntilAsync(@Nonnull Predicate<? super T> rule) {
         return takeUntilAsync(0, rule);
     }
 
@@ -449,7 +449,7 @@ public interface PaginationAction<T, M extends PaginationAction<T, M>>
     @Nonnull
     @CheckReturnValue
     default CompletableFuture<List<T>> takeUntilAsync(
-            int limit, @Nonnull final Predicate<? super T> rule) {
+            int limit, @Nonnull Predicate<? super T> rule) {
         Checks.notNull(rule, "Rule");
         Checks.notNegative(limit, "Limit");
         List<T> result = new ArrayList<>();
@@ -537,7 +537,7 @@ public interface PaginationAction<T, M extends PaginationAction<T, M>>
      */
     @Nonnull
     @CheckReturnValue
-    default CompletableFuture<?> forEachAsync(@Nonnull final Procedure<? super T> action) {
+    default CompletableFuture<?> forEachAsync(@Nonnull Procedure<? super T> action) {
         return forEachAsync(action, RestActionImpl.getDefaultFailure());
     }
 
@@ -581,8 +581,7 @@ public interface PaginationAction<T, M extends PaginationAction<T, M>>
     @Nonnull
     @CheckReturnValue
     CompletableFuture<?> forEachAsync(
-            @Nonnull final Procedure<? super T> action,
-            @Nonnull final Consumer<? super Throwable> failure);
+            @Nonnull Procedure<? super T> action, @Nonnull Consumer<? super Throwable> failure);
 
     /**
      * Iterates over all remaining entities until the provided action returns {@code false}!
@@ -621,7 +620,7 @@ public interface PaginationAction<T, M extends PaginationAction<T, M>>
      */
     @Nonnull
     @CheckReturnValue
-    default CompletableFuture<?> forEachRemainingAsync(@Nonnull final Procedure<? super T> action) {
+    default CompletableFuture<?> forEachRemainingAsync(@Nonnull Procedure<? super T> action) {
         return forEachRemainingAsync(action, RestActionImpl.getDefaultFailure());
     }
 
@@ -665,8 +664,7 @@ public interface PaginationAction<T, M extends PaginationAction<T, M>>
     @Nonnull
     @CheckReturnValue
     CompletableFuture<?> forEachRemainingAsync(
-            @Nonnull final Procedure<? super T> action,
-            @Nonnull final Consumer<? super Throwable> failure);
+            @Nonnull Procedure<? super T> action, @Nonnull Consumer<? super Throwable> failure);
 
     /**
      * Iterates over all remaining entities until the provided action returns {@code false}!
@@ -679,7 +677,7 @@ public interface PaginationAction<T, M extends PaginationAction<T, M>>
      *         which should return {@code true} to continue iterating
      */
     @Blocking
-    void forEachRemaining(@Nonnull final Procedure<? super T> action);
+    void forEachRemaining(@Nonnull Procedure<? super T> action);
 
     @Nonnull
     @Override

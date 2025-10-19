@@ -193,7 +193,7 @@ public class WidgetImpl implements Widget {
 
     @Override
     public String toString() {
-        final EntityString entityString = new EntityString(this);
+        EntityString entityString = new EntityString(this);
         if (isAvailable()) {
             entityString.setName(getName());
         }
@@ -286,7 +286,7 @@ public class WidgetImpl implements Widget {
         @Override
         @Nullable
         public ImageProxy getAvatar() {
-            final String avatarUrl = getAvatarUrl();
+            String avatarUrl = getAvatarUrl();
             return avatarUrl == null ? null : new ImageProxy(avatarUrl);
         }
 

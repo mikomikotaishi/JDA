@@ -158,7 +158,7 @@ public class ActionRowImpl extends AbstractComponentImpl
     @Nonnull
     @Override
     public DataObject toData() {
-        final DataObject json = DataObject.empty()
+        DataObject json = DataObject.empty()
                 .put("type", 1)
                 .put("components", DataArray.fromCollection(components));
         if (uniqueId >= 0) {
@@ -181,7 +181,7 @@ public class ActionRowImpl extends AbstractComponentImpl
         for (Map.Entry<Component.Type, List<ActionRowChildComponent>> entry : groups.entrySet()) {
             Component.Type type = entry.getKey();
             List<ActionRowChildComponent> list = entry.getValue();
-            final int maxAllowed = ActionRow.getMaxAllowed(type);
+            int maxAllowed = ActionRow.getMaxAllowed(type);
             Checks.check(
                     list.size() <= maxAllowed,
                     "Cannot create an action row with more than %d %s! Provided: %d",

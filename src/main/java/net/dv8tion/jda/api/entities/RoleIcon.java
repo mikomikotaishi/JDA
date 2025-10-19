@@ -80,7 +80,7 @@ public class RoleIcon {
      */
     @Nullable
     public ImageProxy getIcon() {
-        final String iconUrl = getIconUrl();
+        String iconUrl = getIconUrl();
         return iconUrl == null ? null : new ImageProxy(iconUrl);
     }
 

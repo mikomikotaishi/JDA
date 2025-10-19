@@ -102,7 +102,7 @@ public class AudioConnection {
             AudioChannel channel) {
         this.api = (JDAImpl) channel.getJDA();
         this.channel = channel;
-        final JDAImpl api = (JDAImpl) channel.getJDA();
+        JDAImpl api = (JDAImpl) channel.getJDA();
         this.threadIdentifier = api.getIdentifierString() + " AudioConnection Guild: "
                 + channel.getGuild().getId();
         this.webSocket = new AudioWebSocket(
@@ -212,7 +212,7 @@ public class AudioConnection {
             getJDA().setContext();
 
             boolean ready = MiscUtil.locked(readyLock, () -> {
-                final long timeout = getGuild().getAudioManager().getConnectTimeout();
+                long timeout = getGuild().getAudioManager().getConnectTimeout();
                 while (!webSocket.isReady()) {
                     try {
                         boolean activated = readyCondvar.await(timeout, TimeUnit.MILLISECONDS);
@@ -250,9 +250,9 @@ public class AudioConnection {
     }
 
     protected void removeUserSSRC(long userId) {
-        final AtomicInteger ssrcRef = new AtomicInteger(0);
-        final boolean modified = ssrcMap.retainEntries((ssrc, id) -> {
-            final boolean isEntry = id == userId;
+        AtomicInteger ssrcRef = new AtomicInteger(0);
+        boolean modified = ssrcMap.retainEntries((ssrc, id) -> {
+            boolean isEntry = id == userId;
             if (isEntry) {
                 ssrcRef.set(ssrc);
             }
@@ -262,7 +262,7 @@ public class AudioConnection {
         if (!modified) {
             return;
         }
-        final Decoder decoder = opusDecoders.remove(ssrcRef.get());
+        Decoder decoder = opusDecoders.remove(ssrcRef.get());
         if (decoder != null) { // cleanup decoder
             decoder.close();
         }
@@ -372,7 +372,7 @@ public class AudioConnection {
                             }
 
                             int ssrc = decryptedPacket.getSSRC();
-                            final long userId = ssrcMap.get(ssrc);
+                            long userId = ssrcMap.get(ssrc);
                             Decoder decoder = opusDecoders.get(ssrc);
                             if (userId == ssrcMap.getNoEntryValue()) {
                                 ByteBuffer audio = decryptedPacket.getEncodedAudio();
@@ -472,7 +472,7 @@ public class AudioConnection {
     private synchronized void setupCombinedExecutor() {
         if (combinedAudioExecutor == null) {
             combinedAudioExecutor = Executors.newSingleThreadScheduledExecutor((task) -> {
-                final Thread t = new Thread(task, threadIdentifier + " Combined Thread");
+                Thread t = new Thread(task, threadIdentifier + " Combined Thread");
                 t.setDaemon(true);
                 t.setUncaughtExceptionHandler((thread, throwable) -> {
                     LOG.error(

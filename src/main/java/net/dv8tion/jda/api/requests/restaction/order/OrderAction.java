@@ -326,5 +326,5 @@ public interface OrderAction<T, M extends OrderAction<T, M>> extends RestAction<
      */
     @Nonnull
     @CheckReturnValue
-    M sortOrder(@Nonnull final Comparator<T> comparator);
+    M sortOrder(@Nonnull Comparator<T> comparator);
 }

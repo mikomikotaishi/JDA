@@ -202,8 +202,9 @@ versionCatalogUpdate {
 rewrite {
     failOnDryRunResults = true
     activeRecipe("org.openrewrite.staticanalysis.NeedBraces")
+    activeRecipe("org.openrewrite.staticanalysis.NoFinalizedLocalVariables")
 
-    exclusion("**/examples/**")
+    exclusion("**/examples/**", "*.kts", "**/*.kts")
 }
 
 spotless {

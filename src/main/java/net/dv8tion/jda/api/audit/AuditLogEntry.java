@@ -208,7 +208,7 @@ public class AuditLogEntry implements ISnowflake {
      * @return Possibly-null value corresponding to the specified key
      */
     @Nullable
-    public AuditLogChange getChangeByKey(@Nullable final AuditLogKey key) {
+    public AuditLogChange getChangeByKey(@Nullable AuditLogKey key) {
         return key == null ? null : getChangeByKey(key.getKey());
     }
 
@@ -222,7 +222,7 @@ public class AuditLogEntry implements ISnowflake {
      * @return Possibly-null value corresponding to the specified key
      */
     @Nullable
-    public AuditLogChange getChangeByKey(@Nullable final String key) {
+    public AuditLogChange getChangeByKey(@Nullable String key) {
         return changes.get(key);
     }
 

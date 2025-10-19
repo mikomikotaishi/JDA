@@ -214,7 +214,7 @@ public interface User extends UserSnowflake {
      */
     @Nullable
     default ImageProxy getAvatar() {
-        final String avatarUrl = getAvatarUrl();
+        String avatarUrl = getAvatarUrl();
         return avatarUrl == null ? null : new ImageProxy(avatarUrl);
     }
 
@@ -240,7 +240,7 @@ public interface User extends UserSnowflake {
      */
     @Nonnull
     default ImageProxy getEffectiveAvatar() {
-        final ImageProxy avatar = getAvatar();
+        ImageProxy avatar = getAvatar();
         return avatar == null ? getDefaultAvatar() : avatar;
     }
 
@@ -423,7 +423,7 @@ public interface User extends UserSnowflake {
          */
         @Nullable
         public ImageProxy getBanner() {
-            final String bannerUrl = getBannerUrl();
+            String bannerUrl = getBannerUrl();
             return bannerUrl == null ? null : new ImageProxy(bannerUrl);
         }
 
@@ -569,7 +569,7 @@ public interface User extends UserSnowflake {
          */
         @Nonnull
         public static EnumSet<UserFlag> getFlags(int flags) {
-            final EnumSet<UserFlag> foundFlags = EnumSet.noneOf(UserFlag.class);
+            EnumSet<UserFlag> foundFlags = EnumSet.noneOf(UserFlag.class);
 
             if (flags == 0) {
                 return foundFlags; // empty
@@ -701,7 +701,7 @@ public interface User extends UserSnowflake {
          */
         @Nullable
         public ImageProxy getBadge() {
-            final String badgeUrl = getBadgeUrl();
+            String badgeUrl = getBadgeUrl();
             return badgeUrl == null ? null : new ImageProxy(badgeUrl);
         }
 

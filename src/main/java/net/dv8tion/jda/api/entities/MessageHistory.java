@@ -588,15 +588,15 @@ public class MessageHistory {
 
         @Override
         protected Route.CompiledRoute finalizeRoute() {
-            final Route.CompiledRoute route = super.finalizeRoute();
+            Route.CompiledRoute route = super.finalizeRoute();
             return limit == null ? route : route.withQueryParams("limit", String.valueOf(limit));
         }
 
         @Override
         protected void handleSuccess(Response response, Request<MessageHistory> request) {
-            final MessageHistory result = new MessageHistory(channel);
-            final DataArray array = response.getArray();
-            final EntityBuilder builder = api.getEntityBuilder();
+            MessageHistory result = new MessageHistory(channel);
+            DataArray array = response.getArray();
+            EntityBuilder builder = api.getEntityBuilder();
             for (int i = 0; i < array.length(); i++) {
                 try {
                     DataObject obj = array.getObject(i);

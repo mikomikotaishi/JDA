@@ -43,7 +43,7 @@ public class HttpRequestEvent extends Event {
     private final Request<?> request;
     private final Response response;
 
-    public HttpRequestEvent(@Nonnull final Request<?> request, @Nonnull final Response response) {
+    public HttpRequestEvent(@Nonnull Request<?> request, @Nonnull Response response) {
         super(request.getJDA());
 
         this.request = request;

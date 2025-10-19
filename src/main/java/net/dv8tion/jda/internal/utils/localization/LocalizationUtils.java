@@ -38,10 +38,10 @@ public class LocalizationUtils {
     public static Map<DiscordLocale, String> mapFromData(@Nonnull DataObject data) {
         Checks.notNull(data, "Data");
 
-        final Map<DiscordLocale, String> map = new HashMap<>();
+        Map<DiscordLocale, String> map = new HashMap<>();
 
         for (String key : data.keys()) {
-            final DiscordLocale locale = DiscordLocale.from(key);
+            DiscordLocale locale = DiscordLocale.from(key);
             if (locale == DiscordLocale.UNKNOWN) {
                 LOG.debug("Discord provided an unknown locale, locale tag: {}", key);
                 continue;

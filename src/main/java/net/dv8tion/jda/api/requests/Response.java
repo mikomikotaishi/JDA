@@ -54,17 +54,17 @@ public class Response implements Closeable {
     private boolean attemptedParsing = false;
     private Exception exception;
 
-    public Response(@Nonnull final Exception exception, @Nonnull final Set<String> cfRays) {
+    public Response(@Nonnull Exception exception, @Nonnull Set<String> cfRays) {
         this(null, ERROR_CODE, ERROR_MESSAGE, -1, cfRays);
         this.exception = exception;
     }
 
     public Response(
-            @Nullable final okhttp3.Response response,
-            final int code,
-            @Nonnull final String message,
-            final long retryAfter,
-            @Nonnull final Set<String> cfRays) {
+            @Nullable okhttp3.Response response,
+            int code,
+            @Nonnull String message,
+            long retryAfter,
+            @Nonnull Set<String> cfRays) {
         this.rawResponse = response;
         this.code = code;
         this.message = message;
@@ -78,21 +78,19 @@ public class Response implements Closeable {
             // pre-maturely
             try {
                 this.body = IOUtil.getBody(response);
-            } catch (final Exception e) {
+            } catch (Exception e) {
                 throw new IllegalStateException(
                         "An error occurred while parsing the response for a RestAction", e);
             }
         }
     }
 
-    public Response(final long retryAfter, @Nonnull final Set<String> cfRays) {
+    public Response(long retryAfter, @Nonnull Set<String> cfRays) {
         this(null, 429, "TOO MANY REQUESTS", retryAfter, cfRays);
     }
 
     public Response(
-            @Nonnull final okhttp3.Response response,
-            final long retryAfter,
-            @Nonnull final Set<String> cfRays) {
+            @Nonnull okhttp3.Response response, long retryAfter, @Nonnull Set<String> cfRays) {
         this(response, response.code(), response.message(), retryAfter, cfRays);
     }
 
@@ -156,7 +154,7 @@ public class Response implements Closeable {
 
     @Override
     public String toString() {
-        final EntityString entityString =
+        EntityString entityString =
                 new EntityString(exception == null ? "HTTPResponse" : "HTTPException");
         if (exception == null) {
             entityString.addMetadata("code", code);
@@ -211,7 +209,7 @@ public class Response implements Closeable {
                     rawResponse.request().url(),
                     this.object);
             return Optional.ofNullable(t);
-        } catch (final Exception e) {
+        } catch (Exception e) {
             try {
                 reader.reset();
                 this.fallbackString = readString(reader);

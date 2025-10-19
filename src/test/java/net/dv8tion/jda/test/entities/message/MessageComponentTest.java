@@ -69,15 +69,14 @@ public class MessageComponentTest {
         // The builder function may return null when a test case is impossible using the provided
         // builder type
         // (e.g., voice messages are only on MessageCreateBuilder)
-        final AbstractMessageBuilder<?, ?> createBuilder =
+        AbstractMessageBuilder<?, ?> createBuilder =
                 builderFunction.apply(new MessageCreateBuilder());
         if (createBuilder != null) {
             assertThat(createBuilder.isValid()).isFalse();
             assertThatIllegalStateException().isThrownBy(createBuilder::build);
         }
 
-        final AbstractMessageBuilder<?, ?> editBuilder =
-                builderFunction.apply(new MessageEditBuilder());
+        AbstractMessageBuilder<?, ?> editBuilder = builderFunction.apply(new MessageEditBuilder());
         if (editBuilder != null) {
             assertThat(editBuilder.isValid()).isFalse();
             assertThatIllegalStateException().isThrownBy(editBuilder::build);
@@ -128,15 +127,14 @@ public class MessageComponentTest {
         // The builder function may return null when a test case is impossible using the provided
         // builder type
         // (e.g., voice messages are only on MessageCreateBuilder)
-        final AbstractMessageBuilder<?, ?> createBuilder =
+        AbstractMessageBuilder<?, ?> createBuilder =
                 builderFunction.apply(new MessageCreateBuilder());
         if (createBuilder != null) {
             assertThat(createBuilder.isValid()).isTrue();
             assertThatNoException().isThrownBy(createBuilder::build);
         }
 
-        final AbstractMessageBuilder<?, ?> editBuilder =
-                builderFunction.apply(new MessageEditBuilder());
+        AbstractMessageBuilder<?, ?> editBuilder = builderFunction.apply(new MessageEditBuilder());
         if (editBuilder != null) {
             assertThat(editBuilder.isValid()).isTrue();
             assertThatNoException().isThrownBy(editBuilder::build);
@@ -180,7 +178,7 @@ public class MessageComponentTest {
     }
 
     private static String getMaxContentString() {
-        final StringBuilder builder = new StringBuilder();
+        StringBuilder builder = new StringBuilder();
         for (int i = 0; i < Message.MAX_CONTENT_LENGTH_COMPONENT_V2; i++) {
             builder.append('0');
         }
@@ -188,7 +186,7 @@ public class MessageComponentTest {
     }
 
     private static Collection<MessageTopLevelComponent> getMaxTopLevelV1() {
-        final List<MessageTopLevelComponent> list = new ArrayList<>(Message.MAX_COMPONENT_COUNT);
+        List<MessageTopLevelComponent> list = new ArrayList<>(Message.MAX_COMPONENT_COUNT);
         for (int i = 0; i < Message.MAX_COMPONENT_COUNT; i++) {
             list.add(EXAMPLE_ROW);
         }
@@ -196,8 +194,8 @@ public class MessageComponentTest {
     }
 
     private static Collection<MessageTopLevelComponent> getAbsurdTopLevelV2() {
-        final int limit = Message.MAX_COMPONENT_COUNT_IN_COMPONENT_TREE - 1;
-        final List<MessageTopLevelComponent> list = new ArrayList<>(limit);
+        int limit = Message.MAX_COMPONENT_COUNT_IN_COMPONENT_TREE - 1;
+        List<MessageTopLevelComponent> list = new ArrayList<>(limit);
         for (int i = 0; i < limit; i++) {
             list.add(EXAMPLE_SEPARATOR);
         }
@@ -207,10 +205,10 @@ public class MessageComponentTest {
     private static Collection<MessageTopLevelComponent> getMaxTotal() {
         // Artificial limit just to increase the test coverage, as it will have to count nested
         // components
-        final int limit = 10;
+        int limit = 10;
 
-        final List<MessageTopLevelComponent> containers = new ArrayList<>();
-        final List<Separator> current = new ArrayList<>();
+        List<MessageTopLevelComponent> containers = new ArrayList<>();
+        List<Separator> current = new ArrayList<>();
         // Containers + container items + to-be-inserted + 1 (new container with remaining items)
         while (containers.size() + (containers.size() * limit) + current.size() + 1
                 < Message.MAX_COMPONENT_COUNT_IN_COMPONENT_TREE) {
@@ -229,7 +227,7 @@ public class MessageComponentTest {
 
     @SafeVarargs
     private static <E> List<E> mergeItems(Collection<E> list, E... other) {
-        final List<E> merged = new ArrayList<>(list);
+        List<E> merged = new ArrayList<>(list);
         Collections.addAll(merged, other);
         return merged;
     }

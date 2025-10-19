@@ -366,7 +366,7 @@ public class ErrorResponseException extends RuntimeException {
         Checks.notNull(orElse, "Callback");
         Checks.notEmpty(set, "Ignored collection");
         // Make an enum set copy (for performance, memory efficiency, and thread-safety)
-        final EnumSet<ErrorResponse> ignored = EnumSet.copyOf(set);
+        EnumSet<ErrorResponse> ignored = EnumSet.copyOf(set);
         return new ErrorHandler(orElse).ignore(ignored);
     }
 

@@ -35,13 +35,13 @@ public class GuildMemberUpdateHandler extends SocketHandler {
 
     @Override
     protected Long handleInternally(DataObject content) {
-        final long id = content.getLong("guild_id");
+        long id = content.getLong("guild_id");
         if (getJDA().getGuildSetupController().isLocked(id)) {
             return id;
         }
 
         DataObject userJson = content.getObject("user");
-        final long userId = userJson.getLong("id");
+        long userId = userJson.getLong("id");
         GuildImpl guild = (GuildImpl) getJDA().getGuildById(id);
         if (guild == null) {
             // Do not cache this here, it will be outdated once we receive the GUILD_CREATE and
@@ -71,7 +71,7 @@ public class GuildMemberUpdateHandler extends SocketHandler {
     private List<Role> toRolesList(GuildImpl guild, DataArray array) {
         LinkedList<Role> roles = new LinkedList<>();
         for (int i = 0; i < array.length(); i++) {
-            final long id = array.getLong(i);
+            long id = array.getLong(i);
             Role r = guild.getRolesView().get(id);
             if (r != null) {
                 roles.add(r);

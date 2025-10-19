@@ -40,7 +40,7 @@ public class MessageComponentTreeImpl extends AbstractComponentTree<MessageTopLe
         Checks.noneNull(components, "Components");
 
         // Allow unknown components so [[Message#getComponentTree]] works
-        final Collection<MessageTopLevelComponentUnion> componentUnions =
+        Collection<MessageTopLevelComponentUnion> componentUnions =
                 ComponentsUtil.membersToUnionWithUnknownType(
                         components, MessageTopLevelComponentUnion.class);
         return new MessageComponentTreeImpl(componentUnions);

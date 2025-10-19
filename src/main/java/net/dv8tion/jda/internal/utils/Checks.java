@@ -48,12 +48,12 @@ public class Checks {
     public static final Pattern LOWERCASE_ASCII_ALPHANUMERIC = Pattern.compile("[a-z0-9_]+");
 
     @Contract("null -> fail")
-    public static void isSnowflake(final String snowflake) {
+    public static void isSnowflake(String snowflake) {
         isSnowflake(snowflake, snowflake);
     }
 
     @Contract("null, _ -> fail")
-    public static void isSnowflake(final String snowflake, final String message) {
+    public static void isSnowflake(String snowflake, String message) {
         notNull(snowflake, message);
         if (snowflake.length() > 20 || !Helpers.isNumeric(snowflake)) {
             throw new IllegalArgumentException(
@@ -62,37 +62,35 @@ public class Checks {
     }
 
     @Contract("false, _ -> fail")
-    public static void check(final boolean expression, final String message) {
+    public static void check(boolean expression, String message) {
         if (!expression) {
             throw new IllegalArgumentException(message);
         }
     }
 
     @Contract("false, _, _ -> fail")
-    public static void check(
-            final boolean expression, @PrintFormat final String message, final Object... args) {
+    public static void check(boolean expression, @PrintFormat String message, Object... args) {
         if (!expression) {
             throw new IllegalArgumentException(String.format(message, args));
         }
     }
 
     @Contract("false, _, _ -> fail")
-    public static void check(
-            final boolean expression, @PrintFormat final String message, final Object arg) {
+    public static void check(boolean expression, @PrintFormat String message, Object arg) {
         if (!expression) {
             throw new IllegalArgumentException(String.format(message, arg));
         }
     }
 
     @Contract("null, _ -> fail")
-    public static void notNull(final Object argument, final String name) {
+    public static void notNull(Object argument, String name) {
         if (argument == null) {
             throw new IllegalArgumentException(name + " may not be null");
         }
     }
 
     @Contract("null, _ -> fail")
-    public static void notEmpty(final CharSequence argument, final String name) {
+    public static void notEmpty(CharSequence argument, String name) {
         notNull(argument, name);
         if (Helpers.isEmpty(argument)) {
             throw new IllegalArgumentException(name + " may not be empty");
@@ -100,7 +98,7 @@ public class Checks {
     }
 
     @Contract("null, _ -> fail")
-    public static void notBlank(final CharSequence argument, final String name) {
+    public static void notBlank(CharSequence argument, String name) {
         notNull(argument, name);
         if (Helpers.isBlank(argument)) {
             throw new IllegalArgumentException(name + " may not be blank");
@@ -108,7 +106,7 @@ public class Checks {
     }
 
     @Contract("null, _ -> fail")
-    public static void noWhitespace(final CharSequence argument, final String name) {
+    public static void noWhitespace(CharSequence argument, String name) {
         notNull(argument, name);
         if (Helpers.containsWhitespace(argument)) {
             throw new IllegalArgumentException(
@@ -117,7 +115,7 @@ public class Checks {
     }
 
     @Contract("null, _ -> fail")
-    public static void notEmpty(final Collection<?> argument, final String name) {
+    public static void notEmpty(Collection<?> argument, String name) {
         notNull(argument, name);
         if (argument.isEmpty()) {
             throw new IllegalArgumentException(name + " may not be empty");
@@ -125,7 +123,7 @@ public class Checks {
     }
 
     @Contract("null, _ -> fail")
-    public static void notEmpty(final Object[] argument, final String name) {
+    public static void notEmpty(Object[] argument, String name) {
         notNull(argument, name);
         if (argument.length == 0) {
             throw new IllegalArgumentException(name + " may not be empty");
@@ -133,13 +131,13 @@ public class Checks {
     }
 
     @Contract("null, _ -> fail")
-    public static void noneNull(final Collection<?> argument, final String name) {
+    public static void noneNull(Collection<?> argument, String name) {
         notNull(argument, name);
         argument.forEach(it -> notNull(it, name));
     }
 
     @Contract("null, _ -> fail")
-    public static void noneNull(final Object[] argument, final String name) {
+    public static void noneNull(Object[] argument, String name) {
         notNull(argument, name);
         for (Object it : argument) {
             notNull(it, name);
@@ -147,28 +145,25 @@ public class Checks {
     }
 
     @Contract("null, _ -> fail")
-    public static <T extends CharSequence> void noneEmpty(
-            final Collection<T> argument, final String name) {
+    public static <T extends CharSequence> void noneEmpty(Collection<T> argument, String name) {
         notNull(argument, name);
         argument.forEach(it -> notEmpty(it, name));
     }
 
     @Contract("null, _ -> fail")
-    public static <T extends CharSequence> void noneBlank(
-            final Collection<T> argument, final String name) {
+    public static <T extends CharSequence> void noneBlank(Collection<T> argument, String name) {
         notNull(argument, name);
         argument.forEach(it -> notBlank(it, name));
     }
 
     @Contract("null, _ -> fail")
     public static <T extends CharSequence> void noneContainBlanks(
-            final Collection<T> argument, final String name) {
+            Collection<T> argument, String name) {
         notNull(argument, name);
         argument.forEach(it -> noWhitespace(it, name));
     }
 
-    public static void inRange(
-            final String input, final int min, final int max, final String name) {
+    public static void inRange(String input, int min, int max, String name) {
         notNull(input, name);
         int length = Helpers.codePointLength(input);
         check(
@@ -180,7 +175,7 @@ public class Checks {
                 input);
     }
 
-    public static void notLonger(final String input, final int length, final String name) {
+    public static void notLonger(String input, int length, String name) {
         notNull(input, name);
         check(
                 Helpers.codePointLength(input) <= length,
@@ -190,7 +185,7 @@ public class Checks {
                 input);
     }
 
-    public static void matches(final String input, final Pattern pattern, final String name) {
+    public static void matches(String input, Pattern pattern, String name) {
         notNull(input, name);
         check(
                 pattern.matcher(input).matches(),
@@ -200,7 +195,7 @@ public class Checks {
                 input);
     }
 
-    public static void isLowercase(final String input, final String name) {
+    public static void isLowercase(String input, String name) {
         notNull(input, name);
         check(
                 input.toLowerCase(Locale.ROOT).equals(input),
@@ -209,35 +204,32 @@ public class Checks {
                 input);
     }
 
-    public static void positive(final int n, final String name) {
+    public static void positive(int n, String name) {
         if (n <= 0) {
             throw new IllegalArgumentException(name + " may not be negative or zero");
         }
     }
 
-    public static void positive(final long n, final String name) {
+    public static void positive(long n, String name) {
         if (n <= 0) {
             throw new IllegalArgumentException(name + " may not be negative or zero");
         }
     }
 
-    public static void notNegative(final int n, final String name) {
+    public static void notNegative(int n, String name) {
         if (n < 0) {
             throw new IllegalArgumentException(name + " may not be negative");
         }
     }
 
-    public static void notNegative(final long n, final String name) {
+    public static void notNegative(long n, String name) {
         if (n < 0) {
             throw new IllegalArgumentException(name + " may not be negative");
         }
     }
 
     public static void notLonger(
-            final Duration duration,
-            final Duration maxDuration,
-            final TimeUnit resolutionUnit,
-            final String name) {
+            Duration duration, Duration maxDuration, TimeUnit resolutionUnit, String name) {
         notNull(duration, name);
         check(
                 duration.compareTo(maxDuration) <= 0,

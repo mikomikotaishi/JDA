@@ -55,7 +55,7 @@ public final class VoiceCode {
         private final int code;
         private final String meaning;
 
-        Close(final int code, final String meaning) {
+        Close(int code, String meaning) {
             this.code = code;
             this.meaning = meaning;
         }

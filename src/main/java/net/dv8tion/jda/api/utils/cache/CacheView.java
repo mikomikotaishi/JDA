@@ -113,7 +113,7 @@ public interface CacheView<T> extends Iterable<T> {
      *
      * @since  4.0.0
      */
-    default void forEachUnordered(@Nonnull final Consumer<? super T> action) {
+    default void forEachUnordered(@Nonnull Consumer<? super T> action) {
         forEach(action);
     }
 

@@ -91,7 +91,7 @@ public interface GuildMessageChannelMixin<T extends GuildMessageChannelMixin<T>>
             targetUser = user.getId();
         }
 
-        final Route.CompiledRoute route = Route.Messages.REMOVE_REACTION.compile(
+        Route.CompiledRoute route = Route.Messages.REMOVE_REACTION.compile(
                 getId(), messageId, emoji.getAsReactionCode(), targetUser);
         return new RestActionImpl<>(getJDA(), route);
     }
@@ -104,8 +104,7 @@ public interface GuildMessageChannelMixin<T extends GuildMessageChannelMixin<T>>
         checkCanAccess();
         checkPermission(Permission.MESSAGE_MANAGE);
 
-        final Route.CompiledRoute route =
-                Route.Messages.REMOVE_ALL_REACTIONS.compile(getId(), messageId);
+        Route.CompiledRoute route = Route.Messages.REMOVE_ALL_REACTIONS.compile(getId(), messageId);
         return new RestActionImpl<>(getJDA(), route);
     }
 

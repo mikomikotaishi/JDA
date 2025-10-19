@@ -685,11 +685,11 @@ public class JDAImpl implements JDA {
         body.put("name", name);
         body.put("image", icon.getEncoding());
 
-        final Route.CompiledRoute route = Route.Applications.CREATE_APPLICATION_EMOJI.compile(
+        Route.CompiledRoute route = Route.Applications.CREATE_APPLICATION_EMOJI.compile(
                 getSelfUser().getApplicationId());
         return new RestActionImpl<>(this, route, body, (response, request) -> {
-            final DataObject obj = response.getObject();
-            final User selfUser = getSelfUser();
+            DataObject obj = response.getObject();
+            User selfUser = getSelfUser();
             return entityBuilder.createApplicationEmoji(this, obj, selfUser);
         });
     }
@@ -704,8 +704,8 @@ public class JDAImpl implements JDA {
             List<ApplicationEmoji> list = new ArrayList<>(emojis.length());
             for (int i = 0; i < emojis.length(); i++) {
                 try {
-                    final DataObject emoji = emojis.getObject(i);
-                    final User owner = emoji.optObject("user")
+                    DataObject emoji = emojis.getObject(i);
+                    User owner = emoji.optObject("user")
                             .map(entityBuilder::createUser)
                             .orElse(null);
 
@@ -729,9 +729,8 @@ public class JDAImpl implements JDA {
         Route.CompiledRoute route = Route.Applications.GET_APPLICATION_EMOJI.compile(
                 getSelfUser().getApplicationId(), emojiId);
         return new RestActionImpl<>(this, route, (response, request) -> {
-            final DataObject emoji = response.getObject();
-            final User owner =
-                    emoji.optObject("user").map(entityBuilder::createUser).orElse(null);
+            DataObject emoji = response.getObject();
+            User owner = emoji.optObject("user").map(entityBuilder::createUser).orElse(null);
 
             return entityBuilder.createApplicationEmoji(this, emoji, owner);
         });

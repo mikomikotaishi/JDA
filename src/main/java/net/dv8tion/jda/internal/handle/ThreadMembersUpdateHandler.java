@@ -47,7 +47,7 @@ public class ThreadMembersUpdateHandler extends SocketHandler {
             return guildId;
         }
 
-        final long threadId = content.getLong("id");
+        long threadId = content.getLong("id");
         ThreadChannelImpl thread = (ThreadChannelImpl) getJDA().getThreadChannelById(threadId);
         if (thread == null) {
             getJDA().getEventCache()

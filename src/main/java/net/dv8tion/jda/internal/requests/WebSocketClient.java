@@ -807,15 +807,15 @@ public class WebSocketClient extends WebSocketAdapter implements WebSocketListen
     protected void updateAudioManagerReferences() {
         AbstractCacheView<AudioManager> managerView = api.getAudioManagersView();
         try (UnlockHook hook = managerView.writeLock()) {
-            final TLongObjectMap<AudioManager> managerMap = managerView.getMap();
+            TLongObjectMap<AudioManager> managerMap = managerView.getMap();
             if (managerMap.size() > 0) {
                 LOG.trace("Updating AudioManager references");
             }
 
             for (TLongObjectIterator<AudioManager> it = managerMap.iterator(); it.hasNext(); ) {
                 it.advance();
-                final long guildId = it.key();
-                final AudioManagerImpl mng = (AudioManagerImpl) it.value();
+                long guildId = it.key();
+                AudioManagerImpl mng = (AudioManagerImpl) it.value();
 
                 GuildImpl guild = (GuildImpl) api.getGuildById(guildId);
                 if (guild == null) {
@@ -840,7 +840,7 @@ public class WebSocketClient extends WebSocketAdapter implements WebSocketListen
         List<DataObject> output = new LinkedList<>();
         for (int i = 0; i < array.length(); i++) {
             DataObject presence = array.getObject(i);
-            final DataObject obj = DataObject.empty();
+            DataObject obj = DataObject.empty();
             obj.put("comment", "This was constructed from a PRESENCES_REPLACE payload")
                     .put("op", WebSocketCode.DISPATCH)
                     .put("s", responseTotal)
@@ -886,7 +886,7 @@ public class WebSocketClient extends WebSocketAdapter implements WebSocketListen
                         && System.currentTimeMillis() - identifyTime < IDENTIFY_BACKOFF;
 
                 sentAuthInfo = false;
-                final boolean isResume = content.getBoolean("d");
+                boolean isResume = content.getBoolean("d");
                 // When d: true we can wait a bit and then try to resume again
                 // sending 4000 to not drop session
                 int closeCode = isResume ? 4900 : 1000;
@@ -900,7 +900,7 @@ public class WebSocketClient extends WebSocketAdapter implements WebSocketListen
                 break;
             case WebSocketCode.HELLO:
                 LOG.debug("Got HELLO packet (OP 10). Initializing keep-alive.");
-                final DataObject data = content.getObject("d");
+                DataObject data = content.getObject("d");
                 setupKeepAlive(data.getInt("heartbeat_interval"));
                 break;
             case WebSocketCode.HEARTBEAT_ACK:
@@ -920,9 +920,9 @@ public class WebSocketClient extends WebSocketAdapter implements WebSocketListen
         if (!raw.isType("d", DataType.OBJECT)) {
             // Needs special handling due to content of "d" being an array
             if (type.equals("PRESENCES_REPLACE")) {
-                final DataArray payload = raw.getArray("d");
-                final List<DataObject> converted = convertPresencesReplace(responseTotal, payload);
-                final SocketHandler handler = getHandler("PRESENCE_UPDATE");
+                DataArray payload = raw.getArray("d");
+                List<DataObject> converted = convertPresencesReplace(responseTotal, payload);
+                SocketHandler handler = getHandler("PRESENCE_UPDATE");
                 LOG.trace("{} -> {}", type, payload);
                 for (DataObject o : converted) {
                     handler.handle(responseTotal, o);
@@ -1145,7 +1145,7 @@ public class WebSocketClient extends WebSocketAdapter implements WebSocketListen
 
     public void queueAudioReconnect(AudioChannel channel) {
         locked("There was an error queueing the audio reconnect", () -> {
-            final long guildId = channel.getGuild().getIdLong();
+            long guildId = channel.getGuild().getIdLong();
             ConnectionRequest request = queuedAudioConnections.get(guildId);
 
             if (request == null) {
@@ -1163,7 +1163,7 @@ public class WebSocketClient extends WebSocketAdapter implements WebSocketListen
 
     public void queueAudioConnect(AudioChannel channel) {
         locked("There was an error queueing the audio connect", () -> {
-            final long guildId = channel.getGuild().getIdLong();
+            long guildId = channel.getGuild().getIdLong();
             ConnectionRequest request = queuedAudioConnections.get(guildId);
 
             if (request == null) {
@@ -1182,7 +1182,7 @@ public class WebSocketClient extends WebSocketAdapter implements WebSocketListen
 
     public void queueAudioDisconnect(Guild guild) {
         locked("There was an error queueing the audio disconnect", () -> {
-            final long guildId = guild.getIdLong();
+            long guildId = guild.getIdLong();
             ConnectionRequest request = queuedAudioConnections.get(guildId);
 
             if (request == null) {
@@ -1323,7 +1323,7 @@ public class WebSocketClient extends WebSocketAdapter implements WebSocketListen
     }
 
     protected void setupHandlers() {
-        final SocketHandler.NOPHandler nopHandler = new SocketHandler.NOPHandler(api);
+        SocketHandler.NOPHandler nopHandler = new SocketHandler.NOPHandler(api);
         handlers.put(
                 "APPLICATION_COMMAND_PERMISSIONS_UPDATE",
                 new ApplicationCommandPermissionsUpdateHandler(api));

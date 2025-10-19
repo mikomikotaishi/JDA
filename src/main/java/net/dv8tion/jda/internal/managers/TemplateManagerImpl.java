@@ -129,7 +129,7 @@ public class TemplateManagerImpl extends ManagerBase<TemplateManager> implements
 
     @Override
     protected boolean checkPermissions() {
-        final Guild guild = api.getGuildById(template.getGuild().getIdLong());
+        Guild guild = api.getGuildById(template.getGuild().getIdLong());
 
         if (guild == null) {
             return true;

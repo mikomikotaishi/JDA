@@ -224,7 +224,7 @@ class WebSocketSendingThread implements Runnable {
             // If we are already in the correct state according to voice state
             // we will not receive a VOICE_STATE_UPDATE that would remove it
             // thus we update it here
-            final GuildVoiceState voiceState = guild.getSelfMember().getVoiceState();
+            GuildVoiceState voiceState = guild.getSelfMember().getVoiceState();
             client.updateAudioConnection0(guild.getIdLong(), voiceState.getChannel());
         }
     }

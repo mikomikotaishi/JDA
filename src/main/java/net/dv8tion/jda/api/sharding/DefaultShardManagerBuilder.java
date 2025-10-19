@@ -864,7 +864,7 @@ public class DefaultShardManagerBuilder {
      * @see    DefaultShardManager#addEventListener(Object...) JDA.addEventListeners(Object...)
      */
     @Nonnull
-    public DefaultShardManagerBuilder addEventListeners(@Nonnull final Object... listeners) {
+    public DefaultShardManagerBuilder addEventListeners(@Nonnull Object... listeners) {
         return this.addEventListeners(Arrays.asList(listeners));
     }
 
@@ -885,8 +885,7 @@ public class DefaultShardManagerBuilder {
      * @see    DefaultShardManager#addEventListener(Object...) JDA.addEventListeners(Object...)
      */
     @Nonnull
-    public DefaultShardManagerBuilder addEventListeners(
-            @Nonnull final Collection<Object> listeners) {
+    public DefaultShardManagerBuilder addEventListeners(@Nonnull Collection<Object> listeners) {
         Checks.noneNull(listeners, "listeners");
 
         this.listeners.addAll(listeners);
@@ -904,7 +903,7 @@ public class DefaultShardManagerBuilder {
      * @see    net.dv8tion.jda.api.JDA#removeEventListener(Object...) JDA.removeEventListeners(Object...)
      */
     @Nonnull
-    public DefaultShardManagerBuilder removeEventListeners(@Nonnull final Object... listeners) {
+    public DefaultShardManagerBuilder removeEventListeners(@Nonnull Object... listeners) {
         return this.removeEventListeners(Arrays.asList(listeners));
     }
 
@@ -919,8 +918,7 @@ public class DefaultShardManagerBuilder {
      * @see    net.dv8tion.jda.api.JDA#removeEventListener(Object...) JDA.removeEventListeners(Object...)
      */
     @Nonnull
-    public DefaultShardManagerBuilder removeEventListeners(
-            @Nonnull final Collection<Object> listeners) {
+    public DefaultShardManagerBuilder removeEventListeners(@Nonnull Collection<Object> listeners) {
         Checks.noneNull(listeners, "listeners");
 
         this.listeners.removeAll(listeners);
@@ -946,7 +944,7 @@ public class DefaultShardManagerBuilder {
      */
     @Nonnull
     public DefaultShardManagerBuilder addEventListenerProvider(
-            @Nonnull final IntFunction<Object> listenerProvider) {
+            @Nonnull IntFunction<Object> listenerProvider) {
         return this.addEventListenerProviders(Collections.singleton(listenerProvider));
     }
 
@@ -969,7 +967,7 @@ public class DefaultShardManagerBuilder {
      */
     @Nonnull
     public DefaultShardManagerBuilder addEventListenerProviders(
-            @Nonnull final Collection<IntFunction<Object>> listenerProviders) {
+            @Nonnull Collection<IntFunction<Object>> listenerProviders) {
         Checks.noneNull(listenerProviders, "listener providers");
 
         this.listenerProviders.addAll(listenerProviders);
@@ -986,7 +984,7 @@ public class DefaultShardManagerBuilder {
      */
     @Nonnull
     public DefaultShardManagerBuilder removeEventListenerProvider(
-            @Nonnull final IntFunction<Object> listenerProvider) {
+            @Nonnull IntFunction<Object> listenerProvider) {
         return this.removeEventListenerProviders(Collections.singleton(listenerProvider));
     }
 
@@ -1000,7 +998,7 @@ public class DefaultShardManagerBuilder {
      */
     @Nonnull
     public DefaultShardManagerBuilder removeEventListenerProviders(
-            @Nonnull final Collection<IntFunction<Object>> listenerProviders) {
+            @Nonnull Collection<IntFunction<Object>> listenerProviders) {
         Checks.noneNull(listenerProviders, "listener providers");
 
         this.listenerProviders.removeAll(listenerProviders);
@@ -1019,8 +1017,7 @@ public class DefaultShardManagerBuilder {
      * @return The DefaultShardManagerBuilder instance. Useful for chaining.
      */
     @Nonnull
-    public DefaultShardManagerBuilder setAudioSendFactory(
-            @Nullable final IAudioSendFactory factory) {
+    public DefaultShardManagerBuilder setAudioSendFactory(@Nullable IAudioSendFactory factory) {
         this.audioSendFactory = factory;
         return this;
     }
@@ -1037,7 +1034,7 @@ public class DefaultShardManagerBuilder {
      * @return The DefaultShardManagerBuilder instance. Useful for chaining.
      */
     @Nonnull
-    public DefaultShardManagerBuilder setAutoReconnect(final boolean autoReconnect) {
+    public DefaultShardManagerBuilder setAutoReconnect(boolean autoReconnect) {
         return setFlag(ConfigFlag.AUTO_RECONNECT, autoReconnect);
     }
 
@@ -1054,7 +1051,7 @@ public class DefaultShardManagerBuilder {
      * @return The DefaultShardManagerBuilder instance. Useful for chaining.
      */
     @Nonnull
-    public DefaultShardManagerBuilder setBulkDeleteSplittingEnabled(final boolean enabled) {
+    public DefaultShardManagerBuilder setBulkDeleteSplittingEnabled(boolean enabled) {
         return setFlag(ConfigFlag.BULK_DELETE_SPLIT, enabled);
     }
 
@@ -1071,7 +1068,7 @@ public class DefaultShardManagerBuilder {
      * @return The DefaultShardManagerBuilder instance. Useful for chaining.
      */
     @Nonnull
-    public DefaultShardManagerBuilder setEnableShutdownHook(final boolean enable) {
+    public DefaultShardManagerBuilder setEnableShutdownHook(boolean enable) {
         return setFlag(ConfigFlag.SHUTDOWN_HOOK, enable);
     }
 
@@ -1095,7 +1092,7 @@ public class DefaultShardManagerBuilder {
      */
     @Nonnull
     public DefaultShardManagerBuilder setEventManagerProvider(
-            @Nonnull final IntFunction<? extends IEventManager> eventManagerProvider) {
+            @Nonnull IntFunction<? extends IEventManager> eventManagerProvider) {
         Checks.notNull(eventManagerProvider, "eventManagerProvider");
         this.eventManagerProvider = eventManagerProvider;
         return this;
@@ -1117,7 +1114,7 @@ public class DefaultShardManagerBuilder {
      * @see    net.dv8tion.jda.api.managers.Presence#setActivity(net.dv8tion.jda.api.entities.Activity)
      */
     @Nonnull
-    public DefaultShardManagerBuilder setActivity(@Nullable final Activity activity) {
+    public DefaultShardManagerBuilder setActivity(@Nullable Activity activity) {
         return this.setActivityProvider(id -> activity);
     }
 
@@ -1138,7 +1135,7 @@ public class DefaultShardManagerBuilder {
      */
     @Nonnull
     public DefaultShardManagerBuilder setActivityProvider(
-            @Nullable final IntFunction<? extends Activity> activityProvider) {
+            @Nullable IntFunction<? extends Activity> activityProvider) {
         this.activityProvider = activityProvider;
         return this;
     }
@@ -1156,7 +1153,7 @@ public class DefaultShardManagerBuilder {
      * @see    net.dv8tion.jda.api.managers.Presence#setIdle(boolean)
      */
     @Nonnull
-    public DefaultShardManagerBuilder setIdle(final boolean idle) {
+    public DefaultShardManagerBuilder setIdle(boolean idle) {
         return this.setIdleProvider(id -> idle);
     }
 
@@ -1173,8 +1170,7 @@ public class DefaultShardManagerBuilder {
      * @see    net.dv8tion.jda.api.managers.Presence#setIdle(boolean)
      */
     @Nonnull
-    public DefaultShardManagerBuilder setIdleProvider(
-            @Nullable final IntFunction<Boolean> idleProvider) {
+    public DefaultShardManagerBuilder setIdleProvider(@Nullable IntFunction<Boolean> idleProvider) {
         this.idleProvider = idleProvider;
         return this;
     }
@@ -1194,7 +1190,7 @@ public class DefaultShardManagerBuilder {
      * @see    net.dv8tion.jda.api.managers.Presence#setStatus(OnlineStatus) Presence.setStatusProvider(OnlineStatus)
      */
     @Nonnull
-    public DefaultShardManagerBuilder setStatus(@Nullable final OnlineStatus status) {
+    public DefaultShardManagerBuilder setStatus(@Nullable OnlineStatus status) {
         Checks.notNull(status, "status");
         Checks.check(status != OnlineStatus.UNKNOWN, "OnlineStatus cannot be unknown!");
 
@@ -1217,7 +1213,7 @@ public class DefaultShardManagerBuilder {
      */
     @Nonnull
     public DefaultShardManagerBuilder setStatusProvider(
-            @Nullable final IntFunction<OnlineStatus> statusProvider) {
+            @Nullable IntFunction<OnlineStatus> statusProvider) {
         this.statusProvider = statusProvider;
         return this;
     }
@@ -1233,8 +1229,7 @@ public class DefaultShardManagerBuilder {
      * @return The DefaultShardManagerBuilder instance. Useful for chaining.
      */
     @Nonnull
-    public DefaultShardManagerBuilder setThreadFactory(
-            @Nullable final ThreadFactory threadFactory) {
+    public DefaultShardManagerBuilder setThreadFactory(@Nullable ThreadFactory threadFactory) {
         this.threadFactory = threadFactory;
         return this;
     }
@@ -1727,7 +1722,7 @@ public class DefaultShardManagerBuilder {
      * @return The DefaultShardManagerBuilder instance. Useful for chaining.
      */
     @Nonnull
-    public DefaultShardManagerBuilder setMaxReconnectDelay(final int maxReconnectDelay) {
+    public DefaultShardManagerBuilder setMaxReconnectDelay(int maxReconnectDelay) {
         Checks.check(
                 maxReconnectDelay >= 32,
                 "Max reconnect delay must be 32 seconds or greater. You provided %d.",
@@ -1796,7 +1791,7 @@ public class DefaultShardManagerBuilder {
      * @return The DefaultShardManagerBuilder instance. Useful for chaining.
      */
     @Nonnull
-    public DefaultShardManagerBuilder setShards(final int minShardId, final int maxShardId) {
+    public DefaultShardManagerBuilder setShards(int minShardId, int maxShardId) {
         Checks.notNegative(minShardId, "minShardId");
         Checks.check(maxShardId < this.shardsTotal, "maxShardId must be lower than shardsTotal");
         Checks.check(
@@ -1852,7 +1847,7 @@ public class DefaultShardManagerBuilder {
      * @see    #setShards(int, int)
      */
     @Nonnull
-    public DefaultShardManagerBuilder setShardsTotal(final int shardsTotal) {
+    public DefaultShardManagerBuilder setShardsTotal(int shardsTotal) {
         Checks.check(
                 shardsTotal == -1 || shardsTotal > 0,
                 "shardsTotal must either be -1 or greater than 0");
@@ -1882,7 +1877,7 @@ public class DefaultShardManagerBuilder {
      * @return The DefaultShardManagerBuilder instance. Useful for chaining.
      */
     @Nonnull
-    public DefaultShardManagerBuilder setToken(@Nonnull final String token) {
+    public DefaultShardManagerBuilder setToken(@Nonnull String token) {
         Checks.notBlank(token, "token");
 
         this.token = token;
@@ -1904,7 +1899,7 @@ public class DefaultShardManagerBuilder {
      * @see net.dv8tion.jda.api.JDA#shutdownNow()
      */
     @Nonnull
-    public DefaultShardManagerBuilder setUseShutdownNow(final boolean useShutdownNow) {
+    public DefaultShardManagerBuilder setUseShutdownNow(boolean useShutdownNow) {
         return setFlag(ShardingConfigFlag.SHUTDOWN_NOW, useShutdownNow);
     }
 
@@ -2270,16 +2265,16 @@ public class DefaultShardManagerBuilder {
     public ShardManager build(boolean login) throws IllegalArgumentException {
         checkIntents();
         boolean useShutdownNow = shardingFlags.contains(ShardingConfigFlag.SHUTDOWN_NOW);
-        final ShardingConfig shardingConfig =
+        ShardingConfig shardingConfig =
                 new ShardingConfig(shardsTotal, useShutdownNow, intents, memberCachePolicy);
-        final EventConfig eventConfig = new EventConfig(eventManagerProvider);
+        EventConfig eventConfig = new EventConfig(eventManagerProvider);
         listeners.forEach(eventConfig::addEventListener);
         listenerProviders.forEach(eventConfig::addEventListenerProvider);
-        final PresenceProviderConfig presenceConfig = new PresenceProviderConfig();
+        PresenceProviderConfig presenceConfig = new PresenceProviderConfig();
         presenceConfig.setActivityProvider(activityProvider);
         presenceConfig.setStatusProvider(statusProvider);
         presenceConfig.setIdleProvider(idleProvider);
-        final ThreadingProviderConfig threadingConfig = new ThreadingProviderConfig(
+        ThreadingProviderConfig threadingConfig = new ThreadingProviderConfig(
                 rateLimitSchedulerProvider,
                 rateLimitElasticProvider,
                 gatewayPoolProvider,
@@ -2287,7 +2282,7 @@ public class DefaultShardManagerBuilder {
                 eventPoolProvider,
                 audioPoolProvider,
                 threadFactory);
-        final ShardingSessionConfig sessionConfig = new ShardingSessionConfig(
+        ShardingSessionConfig sessionConfig = new ShardingSessionConfig(
                 sessionController,
                 voiceDispatchInterceptor,
                 httpClient,
@@ -2298,9 +2293,9 @@ public class DefaultShardManagerBuilder {
                 shardingFlags,
                 maxReconnectDelay,
                 largeThreshold);
-        final ShardingMetaConfig metaConfig = new ShardingMetaConfig(
+        ShardingMetaConfig metaConfig = new ShardingMetaConfig(
                 maxBufferSize, contextProvider, cacheFlags, flags, compression, encoding);
-        final DefaultShardManager manager = new DefaultShardManager(
+        DefaultShardManager manager = new DefaultShardManager(
                 this.token,
                 this.shards,
                 shardingConfig,

@@ -140,7 +140,7 @@ public class AnnotatedEventManager implements IEventManager {
                 continue;
             }
 
-            final Class<?>[] parameterTypes = m.getParameterTypes();
+            Class<?>[] parameterTypes = m.getParameterTypes();
             if (parameterTypes.length != 1
                     || !GenericEvent.class.isAssignableFrom(parameterTypes[0])) {
                 LOGGER.warn(

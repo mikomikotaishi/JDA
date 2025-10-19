@@ -301,10 +301,10 @@ public class ChannelUpdateHandler extends SocketHandler {
             DataObject override,
             long overrideId,
             IPermissionContainerMixin<?> channel) {
-        final long allow = override.getLong("allow");
-        final long deny = override.getLong("deny");
-        final int type = override.getInt("type");
-        final boolean isRole = type == 0;
+        long allow = override.getLong("allow");
+        long deny = override.getLong("deny");
+        int type = override.getInt("type");
+        boolean isRole = type == 0;
         if (!isRole) {
             if (type != 1) {
                 EntityBuilder.LOG.debug(

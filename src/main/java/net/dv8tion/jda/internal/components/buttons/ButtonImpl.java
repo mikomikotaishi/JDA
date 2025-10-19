@@ -241,7 +241,7 @@ public class ButtonImpl extends AbstractComponentImpl
 
     @Override
     public String toString() {
-        final EntityString entityString =
+        EntityString entityString =
                 new EntityString(this).setName(label).addMetadata("id", uniqueId);
         if (customId != null) {
             entityString.addMetadata("custom id", customId);

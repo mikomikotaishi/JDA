@@ -42,7 +42,7 @@ public class InviteActionImpl extends AuditableRestActionImpl<Invite> implements
     private Long targetUser = null;
     private Invite.TargetType targetType = null;
 
-    public InviteActionImpl(final JDA api, final String channelId) {
+    public InviteActionImpl(JDA api, String channelId) {
         super(api, Route.Invites.CREATE_INVITE.compile(channelId));
     }
 
@@ -67,7 +67,7 @@ public class InviteActionImpl extends AuditableRestActionImpl<Invite> implements
     @Nonnull
     @Override
     @CheckReturnValue
-    public InviteActionImpl setMaxAge(final Integer maxAge) {
+    public InviteActionImpl setMaxAge(Integer maxAge) {
         if (maxAge != null) {
             Checks.notNegative(maxAge, "maxAge");
         }
@@ -79,7 +79,7 @@ public class InviteActionImpl extends AuditableRestActionImpl<Invite> implements
     @Nonnull
     @Override
     @CheckReturnValue
-    public InviteActionImpl setMaxAge(final Long maxAge, @Nonnull final TimeUnit timeUnit) {
+    public InviteActionImpl setMaxAge(Long maxAge, @Nonnull TimeUnit timeUnit) {
         if (maxAge == null) {
             return this.setMaxAge(null);
         }
@@ -93,7 +93,7 @@ public class InviteActionImpl extends AuditableRestActionImpl<Invite> implements
     @Nonnull
     @Override
     @CheckReturnValue
-    public InviteActionImpl setMaxUses(final Integer maxUses) {
+    public InviteActionImpl setMaxUses(Integer maxUses) {
         if (maxUses != null) {
             Checks.notNegative(maxUses, "maxUses");
         }
@@ -105,7 +105,7 @@ public class InviteActionImpl extends AuditableRestActionImpl<Invite> implements
     @Nonnull
     @Override
     @CheckReturnValue
-    public InviteActionImpl setTemporary(final Boolean temporary) {
+    public InviteActionImpl setTemporary(Boolean temporary) {
         this.temporary = temporary;
         return this;
     }
@@ -113,14 +113,14 @@ public class InviteActionImpl extends AuditableRestActionImpl<Invite> implements
     @Nonnull
     @Override
     @CheckReturnValue
-    public InviteActionImpl setUnique(final Boolean unique) {
+    public InviteActionImpl setUnique(Boolean unique) {
         this.unique = unique;
         return this;
     }
 
     @Nonnull
     @Override
-    public InviteAction setTargetApplication(final long applicationId) {
+    public InviteAction setTargetApplication(long applicationId) {
         if (applicationId == 0) {
             this.targetType = null;
             this.targetApplication = null;
@@ -134,7 +134,7 @@ public class InviteActionImpl extends AuditableRestActionImpl<Invite> implements
 
     @Nonnull
     @Override
-    public InviteAction setTargetStream(final long userId) {
+    public InviteAction setTargetStream(long userId) {
         if (userId == 0) {
             this.targetType = null;
             this.targetUser = null;
@@ -176,7 +176,7 @@ public class InviteActionImpl extends AuditableRestActionImpl<Invite> implements
     }
 
     @Override
-    protected void handleSuccess(final Response response, final Request<Invite> request) {
+    protected void handleSuccess(Response response, Request<Invite> request) {
         request.onSuccess(this.api.getEntityBuilder().createInvite(response.getObject()));
     }
 }

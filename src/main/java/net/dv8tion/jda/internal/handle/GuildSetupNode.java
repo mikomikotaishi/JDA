@@ -407,7 +407,7 @@ public class GuildSetupNode {
                 return;
             }
             ConnectionListener listener = mng.getConnectionListener();
-            final AudioManagerImpl newMng = new AudioManagerImpl(guild);
+            AudioManagerImpl newMng = new AudioManagerImpl(guild);
             newMng.setSelfMuted(mng.isSelfMuted());
             newMng.setSelfDeafened(mng.isSelfDeafened());
             newMng.setQueueTimeout(mng.getConnectTimeout());
@@ -417,9 +417,9 @@ public class GuildSetupNode {
             newMng.setAutoReconnect(mng.isAutoReconnect());
 
             if (mng.isConnected()) {
-                final long channelId = mng.getConnectedChannel().getIdLong();
+                long channelId = mng.getConnectedChannel().getIdLong();
 
-                final VoiceChannel channel = api.getVoiceChannelById(channelId);
+                VoiceChannel channel = api.getVoiceChannelById(channelId);
                 if (channel != null) {
                     if (mng.isConnected()) {
                         mng.closeAudioConnection(ConnectionStatus.ERROR_CANNOT_RESUME);

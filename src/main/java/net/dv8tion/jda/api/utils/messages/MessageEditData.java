@@ -324,7 +324,7 @@ public class MessageEditData implements MessageData, AutoCloseable, Serializable
             json.put("flags", messageFlags);
         }
 
-        final List<FileUpload> additionalFiles = MessageUtil.getIndirectFiles(components);
+        List<FileUpload> additionalFiles = MessageUtil.getIndirectFiles(components);
         if (isSet(ATTACHMENTS) || !additionalFiles.isEmpty()) {
             json.put("attachments", MessageUtil.getAttachmentsData(allDistinctFiles));
         }

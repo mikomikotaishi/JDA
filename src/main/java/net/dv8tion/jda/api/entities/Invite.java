@@ -69,7 +69,7 @@ public interface Invite {
      */
     @Nonnull
     @CheckReturnValue
-    static RestAction<Invite> resolve(@Nonnull final JDA api, @Nonnull final String code) {
+    static RestAction<Invite> resolve(@Nonnull JDA api, @Nonnull String code) {
         return resolve(api, code, false);
     }
 
@@ -95,8 +95,7 @@ public interface Invite {
      */
     @Nonnull
     @CheckReturnValue
-    static RestAction<Invite> resolve(
-            @Nonnull final JDA api, @Nonnull final String code, final boolean withCounts) {
+    static RestAction<Invite> resolve(@Nonnull JDA api, @Nonnull String code, boolean withCounts) {
         return InviteImpl.resolve(api, code, withCounts);
     }
 
@@ -417,7 +416,7 @@ public interface Invite {
          */
         @Nullable
         default ImageProxy getBanner() {
-            final String bannerUrl = getBannerUrl();
+            String bannerUrl = getBannerUrl();
             return bannerUrl == null ? null : new ImageProxy(bannerUrl);
         }
 
@@ -460,7 +459,7 @@ public interface Invite {
          */
         @Nullable
         default ImageProxy getIcon() {
-            final String iconUrl = getIconUrl();
+            String iconUrl = getIconUrl();
             return iconUrl == null ? null : new ImageProxy(iconUrl);
         }
 
@@ -501,7 +500,7 @@ public interface Invite {
          */
         @Nullable
         default ImageProxy getSplash() {
-            final String splashUrl = getSplashUrl();
+            String splashUrl = getSplashUrl();
             return splashUrl == null ? null : new ImageProxy(splashUrl);
         }
 
@@ -604,7 +603,7 @@ public interface Invite {
          */
         @Nullable
         default ImageProxy getIcon() {
-            final String iconUrl = getIconUrl();
+            String iconUrl = getIconUrl();
             return iconUrl == null ? null : new ImageProxy(iconUrl);
         }
 
@@ -744,7 +743,7 @@ public interface Invite {
          */
         @Nullable
         default ImageProxy getIcon() {
-            final String iconUrl = getIconUrl();
+            String iconUrl = getIconUrl();
             return iconUrl == null ? null : new ImageProxy(iconUrl);
         }
 

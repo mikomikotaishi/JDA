@@ -185,8 +185,8 @@ public class LocalizationTest {
 
     @Test
     void reconstructData() {
-        final DataObject data = slashCommandData.toData();
-        final DataObject reconstitutedData = CommandData.fromData(data).toData();
+        DataObject data = slashCommandData.toData();
+        DataObject reconstitutedData = CommandData.fromData(data).toData();
         assertThat(reconstitutedData.toMap()).isEqualTo(data.toMap());
     }
 

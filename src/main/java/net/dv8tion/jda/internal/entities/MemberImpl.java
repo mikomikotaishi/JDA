@@ -206,14 +206,14 @@ public class MemberImpl implements Member, MemberMixin<MemberImpl> {
 
     @Override
     public Color getColor() {
-        final int raw = getColorRaw();
+        int raw = getColorRaw();
         return raw != Role.DEFAULT_COLOR_RAW ? new Color(raw) : null;
     }
 
     @Override
     public int getColorRaw() {
         for (Role r : getRoles()) {
-            final int colorRaw = r.getColorRaw();
+            int colorRaw = r.getColorRaw();
             if (colorRaw != Role.DEFAULT_COLOR_RAW) {
                 return colorRaw;
             }

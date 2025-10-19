@@ -33,7 +33,7 @@ public class ScheduledEventDeleteHandler extends SocketHandler {
         if (!getJDA().isCacheFlagSet(CacheFlag.SCHEDULED_EVENTS)) {
             return null;
         }
-        final long guildId = content.getLong("guild_id");
+        long guildId = content.getLong("guild_id");
         if (getJDA().getGuildSetupController().isLocked(guildId)) {
             return guildId;
         }
@@ -46,7 +46,7 @@ public class ScheduledEventDeleteHandler extends SocketHandler {
             return null;
         }
 
-        final long eventId = content.getLong("id");
+        long eventId = content.getLong("id");
         ScheduledEvent removedEvent = guild.getScheduledEventsView().remove(eventId);
         if (removedEvent != null) {
             getJDA().handleEvent(

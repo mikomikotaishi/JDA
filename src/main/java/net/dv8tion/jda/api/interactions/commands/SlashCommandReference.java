@@ -78,7 +78,7 @@ public class SlashCommandReference implements ICommandReference {
     @Nonnull
     @Override
     public String getFullCommandName() {
-        final StringJoiner joiner = new StringJoiner(" ");
+        StringJoiner joiner = new StringJoiner(" ");
         joiner.add(name);
         if (subcommandGroup != null) {
             joiner.add(subcommandGroup);

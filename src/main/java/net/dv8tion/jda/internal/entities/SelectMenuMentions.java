@@ -113,7 +113,7 @@ public class SelectMenuMentions implements Mentions {
                 .map(id -> channelMap.optObject(id).orElse(null))
                 .filter(Objects::nonNull)
                 .map(json -> {
-                    final ChannelType channelType = ChannelType.fromId(json.getInt("type", -1));
+                    ChannelType channelType = ChannelType.fromId(json.getInt("type", -1));
                     if (!guild.isDetached()) {
                         return guild.getGuildChannelById(channelType, json.getUnsignedLong("id"));
                     }

@@ -33,7 +33,7 @@ public class GuildBanHandler extends SocketHandler {
 
     @Override
     protected Long handleInternally(DataObject content) {
-        final long id = content.getLong("guild_id");
+        long id = content.getLong("guild_id");
         if (getJDA().getGuildSetupController().isLocked(id)) {
             return id;
         }

@@ -33,7 +33,7 @@ public class GuildRoleDeleteHandler extends SocketHandler {
 
     @Override
     protected Long handleInternally(DataObject content) {
-        final long guildId = content.getLong("guild_id");
+        long guildId = content.getLong("guild_id");
         if (getJDA().getGuildSetupController().isLocked(guildId)) {
             return guildId;
         }
@@ -53,7 +53,7 @@ public class GuildRoleDeleteHandler extends SocketHandler {
             return null;
         }
 
-        final long roleId = content.getLong("role_id");
+        long roleId = content.getLong("role_id");
         RoleImpl removedRole = (RoleImpl) guild.getRolesView().get(roleId);
         if (removedRole == null) {
             // getJDA().getEventCache().cache(EventCache.Type.ROLE, roleId, () ->

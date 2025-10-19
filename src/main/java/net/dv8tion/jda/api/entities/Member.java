@@ -313,7 +313,7 @@ public interface Member extends IMentionable, IPermissionHolder, IDetachableEnti
      */
     @Nullable
     default ImageProxy getAvatar() {
-        final String avatarUrl = getAvatarUrl();
+        String avatarUrl = getAvatarUrl();
         return avatarUrl == null ? null : new ImageProxy(avatarUrl);
     }
 
@@ -339,7 +339,7 @@ public interface Member extends IMentionable, IPermissionHolder, IDetachableEnti
      */
     @Nonnull
     default ImageProxy getEffectiveAvatar() {
-        final ImageProxy avatar = getAvatar();
+        ImageProxy avatar = getAvatar();
         return avatar == null ? getUser().getEffectiveAvatar() : avatar;
     }
 

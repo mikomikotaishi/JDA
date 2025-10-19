@@ -177,7 +177,7 @@ public abstract class AbstractMessageBuilder<T, R extends AbstractMessageBuilder
     @Nonnull
     @Override
     public R useComponentsV2(boolean use) {
-        final int flag = Message.MessageFlag.IS_COMPONENTS_V2.getValue();
+        int flag = Message.MessageFlag.IS_COMPONENTS_V2.getValue();
         if (use) {
             this.messageFlags |= flag;
         } else {

@@ -74,7 +74,7 @@ public class Once<E extends GenericEvent> implements EventListener {
 
     @Nonnull
     private GatewayTask<E> createTask() {
-        final GatewayTask<E> task = new GatewayTask<>(future, () -> {
+        GatewayTask<E> task = new GatewayTask<>(future, () -> {
             // On cancellation, throw cancellation exception and cancel timeout
             jda.removeEventListener(this);
             future.completeExceptionally(new CancellationException());
@@ -127,7 +127,7 @@ public class Once<E extends GenericEvent> implements EventListener {
         if (!eventType.isInstance(event)) {
             return;
         }
-        final E casted = eventType.cast(event);
+        E casted = eventType.cast(event);
         try {
             if (filters.stream().allMatch(p -> p.test(casted))) {
                 if (timeoutFuture != null) {
@@ -278,7 +278,7 @@ public class Once<E extends GenericEvent> implements EventListener {
          */
         @Nonnull
         public Task<E> subscribe(@Nonnull Consumer<E> callback) {
-            final Once<E> once =
+            Once<E> once =
                     new Once<>(jda, eventType, filters, timeoutCallback, timeout, timeoutPool);
             jda.addEventListener(once);
             return once.task.onSuccess(callback);

@@ -577,7 +577,7 @@ public interface Command extends ISnowflake, ICommandReference {
 
         @Nonnull
         public DataObject toData(@Nonnull OptionType optionType) {
-            final Object value;
+            Object value;
             if (optionType == OptionType.INTEGER) {
                 value = getAsLong();
             } else if (optionType == OptionType.STRING) {

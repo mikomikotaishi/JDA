@@ -183,14 +183,14 @@ public class DetachedMemberImpl implements Member, MemberMixin<DetachedMemberImp
 
     @Override
     public Color getColor() {
-        final int raw = getColorRaw();
+        int raw = getColorRaw();
         return raw != Role.DEFAULT_COLOR_RAW ? new Color(raw) : null;
     }
 
     @Override
     public int getColorRaw() {
         for (Role r : getRoles()) {
-            final int colorRaw = r.getColorRaw();
+            int colorRaw = r.getColorRaw();
             if (colorRaw != Role.DEFAULT_COLOR_RAW) {
                 return colorRaw;
             }
@@ -235,7 +235,7 @@ public class DetachedMemberImpl implements Member, MemberMixin<DetachedMemberImp
     @Override
     public boolean hasPermission(
             @Nonnull GuildChannel channel, @Nonnull Permission... permissions) {
-        final long rawPermissions = Permission.getRaw(permissions);
+        long rawPermissions = Permission.getRaw(permissions);
         return (getRawInteractionPermissions(channel) & rawPermissions) == rawPermissions;
     }
 
@@ -245,7 +245,7 @@ public class DetachedMemberImpl implements Member, MemberMixin<DetachedMemberImp
         }
 
         if (channel instanceof IInteractionPermissionMixin<?>) {
-            final ChannelInteractionPermissions channelInteractionPermissions =
+            ChannelInteractionPermissions channelInteractionPermissions =
                     ((IInteractionPermissionMixin<?>) channel).getInteractionPermissions();
             if (channelInteractionPermissions.getMemberId() == this.getIdLong()) {
                 return channelInteractionPermissions.getPermissions();

@@ -171,7 +171,7 @@ public class AttachmentProxy extends FileProxy {
     public CompletableFuture<File> downloadToFile(@Nonnull File file, int width, int height) {
         Checks.notNull(file, "File");
 
-        final CompletableFuture<Path> downloadToPathFuture =
+        CompletableFuture<Path> downloadToPathFuture =
                 downloadToPath(getUrl(width, height), file.toPath());
         return FutureUtil.thenApplyCancellable(downloadToPathFuture, Path::toFile);
     }
@@ -276,8 +276,7 @@ public class AttachmentProxy extends FileProxy {
      */
     @Nonnull
     public FileUpload downloadAsFileUpload(@Nonnull String name, int width, int height) {
-        final String url =
-                getUrl(width, height); // So the checks are also done outside the FileUpload
+        String url = getUrl(width, height); // So the checks are also done outside the FileUpload
         return FileUpload.fromStreamSupplier(name, () -> {
             // Blocking is fine on the elastic rate limit thread pool
             // [[JDABuilder#setRateLimitElastic]]

@@ -199,8 +199,7 @@ public class IOUtil {
      *
      * @return RequestBody capable of transmitting the provided InputStream of data
      */
-    public static BufferedRequestBody createRequestBody(
-            final MediaType contentType, final InputStream stream) {
+    public static BufferedRequestBody createRequestBody(MediaType contentType, InputStream stream) {
         return new BufferedRequestBody(Okio.source(stream), contentType);
     }
 

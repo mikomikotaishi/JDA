@@ -401,7 +401,7 @@ public abstract class AbstractMentions implements Mentions {
 
     protected boolean isSlashCommandMentioned(IMentionable mentionable) {
         if (mentionable instanceof ICommandReference) {
-            final ICommandReference reference = (ICommandReference) mentionable;
+            ICommandReference reference = (ICommandReference) mentionable;
             for (SlashCommandReference r : getSlashCommands()) {
                 if (r.getFullCommandName().equals(reference.getFullCommandName())
                         && r.getIdLong() == reference.getIdLong()) {

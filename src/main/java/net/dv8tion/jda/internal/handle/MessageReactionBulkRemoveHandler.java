@@ -31,8 +31,8 @@ public class MessageReactionBulkRemoveHandler extends SocketHandler {
 
     @Override
     protected Long handleInternally(DataObject content) {
-        final long messageId = content.getLong("message_id");
-        final long channelId = content.getLong("channel_id");
+        long messageId = content.getLong("message_id");
+        long channelId = content.getLong("channel_id");
         JDAImpl jda = getJDA();
 
         Guild guild = null;

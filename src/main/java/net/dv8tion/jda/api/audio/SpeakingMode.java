@@ -55,11 +55,11 @@ public enum SpeakingMode {
      */
     @Nonnull
     public static EnumSet<SpeakingMode> getModes(int mask) {
-        final EnumSet<SpeakingMode> modes = EnumSet.noneOf(SpeakingMode.class);
+        EnumSet<SpeakingMode> modes = EnumSet.noneOf(SpeakingMode.class);
         if (mask == 0) {
             return modes;
         }
-        final SpeakingMode[] values = SpeakingMode.values();
+        SpeakingMode[] values = SpeakingMode.values();
         for (SpeakingMode mode : values) {
             if ((mode.raw & mask) == mode.raw) {
                 modes.add(mode);

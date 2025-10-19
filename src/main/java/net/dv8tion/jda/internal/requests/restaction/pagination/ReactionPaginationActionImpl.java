@@ -125,12 +125,12 @@ public class ReactionPaginationActionImpl
 
     @Override
     protected void handleSuccess(Response response, Request<List<User>> request) {
-        final EntityBuilder builder = api.getEntityBuilder();
-        final DataArray array = response.getArray();
-        final List<User> users = new LinkedList<>();
+        EntityBuilder builder = api.getEntityBuilder();
+        DataArray array = response.getArray();
+        List<User> users = new LinkedList<>();
         for (int i = 0; i < array.length(); i++) {
             try {
-                final User user = builder.createUser(array.getObject(i));
+                User user = builder.createUser(array.getObject(i));
                 users.add(user);
                 if (useCache) {
                     cached.add(user);

@@ -309,7 +309,7 @@ public interface CommandData extends SerializableData {
     static CommandData fromCommand(@Nonnull Command command) {
         Checks.notNull(command, "Command");
         if (command.getType() != Command.Type.SLASH) {
-            final CommandDataImpl data = new CommandDataImpl(command.getType(), command.getName());
+            CommandDataImpl data = new CommandDataImpl(command.getType(), command.getName());
             return data.setDefaultPermissions(command.getDefaultPermissions())
                     .setContexts(command.getContexts())
                     .setIntegrationTypes(command.getIntegrationTypes())

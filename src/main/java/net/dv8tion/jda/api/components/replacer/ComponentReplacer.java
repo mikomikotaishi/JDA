@@ -81,7 +81,7 @@ public interface ComponentReplacer {
         Checks.notEmpty(replacers, "ComponentReplacers");
         Checks.noneNull(replacers, "ComponentReplacers");
         return oldComponent -> {
-            final Iterator<? extends ComponentReplacer> iterator = replacers.iterator();
+            Iterator<? extends ComponentReplacer> iterator = replacers.iterator();
             Component newComponent = oldComponent;
             do {
                 newComponent = iterator.next().apply(newComponent);

@@ -87,9 +87,8 @@ public class InviteCreateHandler extends SocketHandler {
         InviteImpl.ChannelImpl channel = new InviteImpl.ChannelImpl(realChannel);
         InviteImpl.GuildImpl guild = new InviteImpl.GuildImpl(realGuild);
 
-        final Invite.TargetType targetType =
-                Invite.TargetType.fromId(content.getInt("target_type", 0));
-        final Invite.InviteTarget target;
+        Invite.TargetType targetType = Invite.TargetType.fromId(content.getInt("target_type", 0));
+        Invite.InviteTarget target;
 
         switch (targetType) {
             case STREAM:

@@ -173,7 +173,7 @@ public abstract class PaginationActionImpl<T, M extends PaginationAction<T, M>>
     @Nonnull
     @Override
     public T getLast() {
-        final T last = this.last;
+        T last = this.last;
         if (last == null) {
             throw new NoSuchElementException("No entities have been retrieved yet.");
         }
@@ -192,7 +192,7 @@ public abstract class PaginationActionImpl<T, M extends PaginationAction<T, M>>
     @Nonnull
     @Override
     @SuppressWarnings("unchecked")
-    public M limit(final int limit) {
+    public M limit(int limit) {
         Checks.check(maxLimit == 0 || limit <= maxLimit, "Limit must not exceed %d!", maxLimit);
         Checks.check(
                 minLimit == 0 || limit >= minLimit,
@@ -205,7 +205,7 @@ public abstract class PaginationActionImpl<T, M extends PaginationAction<T, M>>
     @Nonnull
     @Override
     @SuppressWarnings("unchecked")
-    public M cache(final boolean enableCache) {
+    public M cache(boolean enableCache) {
         this.useCache = enableCache;
         return (M) this;
     }
@@ -274,13 +274,12 @@ public abstract class PaginationActionImpl<T, M extends PaginationAction<T, M>>
     @Nonnull
     @Override
     public CompletableFuture<?> forEachAsync(
-            @Nonnull final Procedure<? super T> action,
-            @Nonnull final Consumer<? super Throwable> failure) {
+            @Nonnull Procedure<? super T> action, @Nonnull Consumer<? super Throwable> failure) {
         Checks.notNull(action, "Procedure");
         Checks.notNull(failure, "Failure Consumer");
 
-        final CompletableFuture<?> task = new CompletableFuture<>();
-        final Consumer<List<T>> acceptor = new ChainedConsumer(task, action, (throwable) -> {
+        CompletableFuture<?> task = new CompletableFuture<>();
+        Consumer<List<T>> acceptor = new ChainedConsumer(task, action, (throwable) -> {
             task.completeExceptionally(throwable);
             failure.accept(throwable);
         });
@@ -296,13 +295,12 @@ public abstract class PaginationActionImpl<T, M extends PaginationAction<T, M>>
     @Nonnull
     @Override
     public CompletableFuture<?> forEachRemainingAsync(
-            @Nonnull final Procedure<? super T> action,
-            @Nonnull final Consumer<? super Throwable> failure) {
+            @Nonnull Procedure<? super T> action, @Nonnull Consumer<? super Throwable> failure) {
         Checks.notNull(action, "Procedure");
         Checks.notNull(failure, "Failure Consumer");
 
-        final CompletableFuture<?> task = new CompletableFuture<>();
-        final Consumer<List<T>> acceptor = new ChainedConsumer(task, action, (throwable) -> {
+        CompletableFuture<?> task = new CompletableFuture<>();
+        Consumer<List<T>> acceptor = new ChainedConsumer(task, action, (throwable) -> {
             task.completeExceptionally(throwable);
             failure.accept(throwable);
         });
@@ -316,7 +314,7 @@ public abstract class PaginationActionImpl<T, M extends PaginationAction<T, M>>
     }
 
     @Override
-    public void forEachRemaining(@Nonnull final Procedure<? super T> action) {
+    public void forEachRemaining(@Nonnull Procedure<? super T> action) {
         Checks.notNull(action, "Procedure");
         Queue<T> queue = new LinkedList<>();
         while (queue.addAll(getNextChunk())) {
@@ -358,8 +356,8 @@ public abstract class PaginationActionImpl<T, M extends PaginationAction<T, M>>
     protected Route.CompiledRoute finalizeRoute() {
         Route.CompiledRoute route = super.finalizeRoute();
 
-        final String limit = String.valueOf(this.getLimit());
-        final long localLastKey = this.lastKey;
+        String limit = String.valueOf(this.getLimit());
+        long localLastKey = this.lastKey;
 
         route = route.withQueryParams("limit", limit);
 
@@ -387,7 +385,7 @@ public abstract class PaginationActionImpl<T, M extends PaginationAction<T, M>>
             return list;
         }
 
-        final int current = limit.getAndSet(getMaxLimit());
+        int current = limit.getAndSet(getMaxLimit());
         list = complete();
         limit.set(current);
         return list;
@@ -420,16 +418,16 @@ public abstract class PaginationActionImpl<T, M extends PaginationAction<T, M>>
         protected boolean initial = true;
 
         protected ChainedConsumer(
-                final CompletableFuture<?> task,
-                final Procedure<? super T> action,
-                final Consumer<Throwable> throwableConsumer) {
+                CompletableFuture<?> task,
+                Procedure<? super T> action,
+                Consumer<Throwable> throwableConsumer) {
             this.task = task;
             this.action = action;
             this.throwableConsumer = throwableConsumer;
         }
 
         @Override
-        public void accept(final List<T> list) {
+        public void accept(List<T> list) {
             if (list.isEmpty() && !initial) {
                 task.complete(null);
                 return;
@@ -454,7 +452,7 @@ public abstract class PaginationActionImpl<T, M extends PaginationAction<T, M>>
                 return;
             }
 
-            final int currentLimit = limit.getAndSet(maxLimit);
+            int currentLimit = limit.getAndSet(maxLimit);
             queue(this, throwableConsumer);
             limit.set(currentLimit);
         }

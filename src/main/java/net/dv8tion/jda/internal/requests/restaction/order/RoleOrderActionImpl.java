@@ -83,8 +83,8 @@ public class RoleOrderActionImpl extends OrderActionImpl<Role, RoleOrderAction>
 
     @Override
     protected RequestBody finalizeData() {
-        final Member self = guild.getSelfMember();
-        final boolean isOwner = self.isOwner();
+        Member self = guild.getSelfMember();
+        boolean isOwner = self.isOwner();
 
         if (!isOwner) {
             if (self.getRoles().isEmpty()) {
@@ -107,7 +107,7 @@ public class RoleOrderActionImpl extends OrderActionImpl<Role, RoleOrderAction>
 
         for (int i = 0; i < ordering.size(); i++) {
             Role role = ordering.get(i);
-            final int initialPos = role.getPosition();
+            int initialPos = role.getPosition();
             if (initialPos != i && !isOwner && !self.canInteract(role)) {
                 // If the current role was moved, we are not owner and we can't interact with the
                 // role then throw a PermissionException

@@ -33,7 +33,7 @@ public class GuildRoleUpdateHandler extends SocketHandler {
 
     @Override
     protected Long handleInternally(DataObject content) {
-        final long guildId = content.getLong("guild_id");
+        long guildId = content.getLong("guild_id");
         if (getJDA().getGuildSetupController().isLocked(guildId)) {
             return guildId;
         }
@@ -53,7 +53,7 @@ public class GuildRoleUpdateHandler extends SocketHandler {
             return null;
         }
 
-        final long roleId = rolejson.getLong("id");
+        long roleId = rolejson.getLong("id");
         RoleImpl role = (RoleImpl) guild.getRolesView().get(roleId);
         if (role == null) {
             getJDA().getEventCache()

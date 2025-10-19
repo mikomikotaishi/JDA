@@ -65,7 +65,7 @@ public class PresenceUpdateHandler extends SocketHandler {
 
         // Do a pre-check to see if this is for a Guild, and if it is, if the guild is currently
         // locked or not cached.
-        final long guildId = content.getUnsignedLong("guild_id");
+        long guildId = content.getUnsignedLong("guild_id");
         if (getJDA().getGuildSetupController().isLocked(guildId)) {
             return guildId;
         }
@@ -91,7 +91,7 @@ public class PresenceUpdateHandler extends SocketHandler {
             return null; // technically this should be impossible
         }
         DataObject jsonUser = content.getObject("user");
-        final long userId = jsonUser.getUnsignedLong("id");
+        long userId = jsonUser.getUnsignedLong("id");
         MemberImpl member = (MemberImpl) guild.getMemberById(userId);
         MemberPresenceImpl presence = presences.get(userId);
         OnlineStatus status = OnlineStatus.fromKey(content.getString("status"));
@@ -111,7 +111,7 @@ public class PresenceUpdateHandler extends SocketHandler {
         // information.
         // This is stored in the Member objects.
         // We set the activities to null to prevent parsing if the cache was disabled
-        final DataArray activityArray =
+        DataArray activityArray =
                 !getJDA().isCacheFlagSet(CacheFlag.ACTIVITY) || content.isNull("activities")
                         ? null
                         : content.getArray("activities");

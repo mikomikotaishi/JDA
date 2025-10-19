@@ -43,7 +43,7 @@ public class ChannelDeleteHandler extends SocketHandler {
         }
 
         GuildImpl guild = (GuildImpl) getJDA().getGuildById(guildId);
-        final long channelId = content.getLong("id");
+        long channelId = content.getLong("id");
 
         if (guild == null) {
             PrivateChannel channel =

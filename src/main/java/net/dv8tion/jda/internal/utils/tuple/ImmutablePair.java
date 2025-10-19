@@ -51,7 +51,7 @@ public final class ImmutablePair<L, R> extends Pair<L, R> {
      * @param right  the right element, may be null
      * @return a pair formed from the two parameters, not null
      */
-    public static <L, R> ImmutablePair<L, R> of(final L left, final R right) {
+    public static <L, R> ImmutablePair<L, R> of(L left, R right) {
         return new ImmutablePair<>(left, right);
     }
 
@@ -61,7 +61,7 @@ public final class ImmutablePair<L, R> extends Pair<L, R> {
      * @param left  the left value, may be null
      * @param right  the right value, may be null
      */
-    public ImmutablePair(final L left, final R right) {
+    public ImmutablePair(L left, R right) {
         super();
         this.left = left;
         this.right = right;

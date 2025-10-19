@@ -312,7 +312,7 @@ public abstract class OrderActionImpl<T, M extends OrderAction<T, M>> extends Re
     @Nonnull
     @Override
     @SuppressWarnings("unchecked")
-    public M sortOrder(@Nonnull final Comparator<T> comparator) {
+    public M sortOrder(@Nonnull Comparator<T> comparator) {
         Checks.notNull(comparator, "Provided comparator");
 
         this.orderList.sort(comparator);

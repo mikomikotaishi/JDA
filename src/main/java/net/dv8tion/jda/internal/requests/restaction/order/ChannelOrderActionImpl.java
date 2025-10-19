@@ -136,7 +136,7 @@ public class ChannelOrderActionImpl extends OrderActionImpl<GuildChannel, Channe
 
     @Override
     protected RequestBody finalizeData() {
-        final Member self = guild.getSelfMember();
+        Member self = guild.getSelfMember();
         if (!self.hasPermission(Permission.MANAGE_CHANNEL)) {
             throw new InsufficientPermissionException(guild, Permission.MANAGE_CHANNEL);
         }

@@ -193,7 +193,7 @@ public interface RestAction<T> {
      * @param callback
      *        The fallback to use, or null to ignore failures (not recommended)
      */
-    static void setDefaultFailure(@Nullable final Consumer<? super Throwable> callback) {
+    static void setDefaultFailure(@Nullable Consumer<? super Throwable> callback) {
         RestActionImpl.setDefaultFailure(callback);
     }
 
@@ -203,7 +203,7 @@ public interface RestAction<T> {
      * @param callback
      *        The fallback to use, or null to ignore success
      */
-    static void setDefaultSuccess(@Nullable final Consumer<Object> callback) {
+    static void setDefaultSuccess(@Nullable Consumer<Object> callback) {
         RestActionImpl.setDefaultSuccess(callback);
     }
 
@@ -1316,7 +1316,7 @@ public interface RestAction<T> {
             executor = getJDA().getRateLimitPool();
         }
         return DelayedCompletableFuture.make(executor, delay, unit, (task) -> {
-            final Consumer<? super Throwable> onFailure;
+            Consumer<? super Throwable> onFailure;
             if (isPassContext()) {
                 onFailure = ContextException.here(task::completeExceptionally);
             } else {
@@ -1563,7 +1563,7 @@ public interface RestAction<T> {
             executor = getJDA().getRateLimitPool();
         }
 
-        final Consumer<? super Throwable> onFailure;
+        Consumer<? super Throwable> onFailure;
         if (isPassContext()) {
             onFailure = ContextException.here(failure == null ? getDefaultFailure() : failure);
         } else {

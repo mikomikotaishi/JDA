@@ -47,7 +47,7 @@ public class GuildEmojisUpdateHandler extends SocketHandler {
         if (!getJDA().isCacheFlagSet(CacheFlag.EMOJI)) {
             return null;
         }
-        final long guildId = content.getLong("guild_id");
+        long guildId = content.getLong("guild_id");
         if (getJDA().getGuildSetupController().isLocked(guildId)) {
             return guildId;
         }
@@ -73,7 +73,7 @@ public class GuildEmojisUpdateHandler extends SocketHandler {
             newEmojis = new ArrayList<>();
             for (int i = 0; i < array.length(); i++) {
                 DataObject current = array.getObject(i);
-                final long emojiId = current.getLong("id");
+                long emojiId = current.getLong("id");
                 RichCustomEmojiImpl emoji = (RichCustomEmojiImpl) emojiMap.get(emojiId);
                 RichCustomEmojiImpl oldEmoji = null;
 

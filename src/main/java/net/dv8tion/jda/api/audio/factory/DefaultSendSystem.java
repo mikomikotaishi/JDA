@@ -52,7 +52,7 @@ public class DefaultSendSystem implements IAudioSendSystem {
 
     @Override
     public void start() {
-        final DatagramSocket udpSocket = packetProvider.getUdpSocket();
+        DatagramSocket udpSocket = packetProvider.getUdpSocket();
 
         sendThread = new Thread(() -> {
             if (contextMap != null) {

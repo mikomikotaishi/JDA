@@ -40,7 +40,7 @@ public class ModalComponentTreeImpl extends AbstractComponentTree<ModalTopLevelC
         Checks.noneNull(components, "Components");
 
         // Allow unknown components so [[Modal#getComponentTree]] works
-        final Collection<ModalTopLevelComponentUnion> componentUnions =
+        Collection<ModalTopLevelComponentUnion> componentUnions =
                 ComponentsUtil.membersToUnionWithUnknownType(
                         components, ModalTopLevelComponentUnion.class);
         return new ModalComponentTreeImpl(componentUnions);

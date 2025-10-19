@@ -30,7 +30,7 @@ public class GuildDeleteHandler extends SocketHandler {
 
     @Override
     protected Long handleInternally(DataObject content) {
-        final long id = content.getLong("id");
+        long id = content.getLong("id");
         GuildSetupController setupController = getJDA().getGuildSetupController();
         boolean wasInit = setupController.onDelete(id, content);
         if (wasInit || setupController.isUnavailable(id)) {

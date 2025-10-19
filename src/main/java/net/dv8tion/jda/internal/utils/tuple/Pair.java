@@ -50,7 +50,7 @@ public abstract class Pair<L, R>
      * @param right  the right element, may be null
      * @return a pair formed from the two parameters, not null
      */
-    public static <L, R> Pair<L, R> of(final L left, final R right) {
+    public static <L, R> Pair<L, R> of(L left, R right) {
         return new ImmutablePair<>(left, right);
     }
 
@@ -80,12 +80,12 @@ public abstract class Pair<L, R>
      * @return true if the elements of the pair are equal
      */
     @Override
-    public boolean equals(final Object obj) {
+    public boolean equals(Object obj) {
         if (obj == this) {
             return true;
         }
         if (obj instanceof Pair<?, ?>) {
-            final Pair<?, ?> other = (Pair<?, ?>) obj;
+            Pair<?, ?> other = (Pair<?, ?>) obj;
             return Objects.equals(getLeft(), other.getLeft())
                     && Objects.equals(getRight(), other.getRight());
         }

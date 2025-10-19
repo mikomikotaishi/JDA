@@ -41,9 +41,9 @@ public class ResourceBundleLocalizationFunction implements LocalizationFunction 
     @Nonnull
     @Override
     public Map<DiscordLocale, String> apply(@Nonnull String localizationKey) {
-        final Map<DiscordLocale, String> map = new HashMap<>();
+        Map<DiscordLocale, String> map = new HashMap<>();
         for (Bundle bundle : bundles) {
-            final ResourceBundle resourceBundle = bundle.resourceBundle;
+            ResourceBundle resourceBundle = bundle.resourceBundle;
             if (resourceBundle.containsKey(localizationKey)) {
                 map.put(bundle.targetLocale, resourceBundle.getString(localizationKey));
             }
@@ -205,7 +205,7 @@ public class ResourceBundleLocalizationFunction implements LocalizationFunction 
             for (DiscordLocale locale : locales) {
                 Checks.check(locale != DiscordLocale.UNKNOWN, "Cannot use UNKNOWN DiscordLocale");
 
-                final ResourceBundle resourceBundle = ResourceBundle.getBundle(
+                ResourceBundle resourceBundle = ResourceBundle.getBundle(
                         baseName, Locale.forLanguageTag(locale.getLocale()));
                 bundles.add(new Bundle(locale, resourceBundle));
             }

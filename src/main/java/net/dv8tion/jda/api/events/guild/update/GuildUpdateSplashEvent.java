@@ -72,7 +72,7 @@ public class GuildUpdateSplashEvent extends GenericGuildUpdateEvent<String> {
      */
     @Nullable
     public ImageProxy getOldSplash() {
-        final String oldSplashUrl = getOldSplashUrl();
+        String oldSplashUrl = getOldSplashUrl();
         return oldSplashUrl == null ? null : new ImageProxy(oldSplashUrl);
     }
 
@@ -105,7 +105,7 @@ public class GuildUpdateSplashEvent extends GenericGuildUpdateEvent<String> {
      */
     @Nullable
     public ImageProxy getNewSplash() {
-        final String newSplashUrl = getNewSplashUrl();
+        String newSplashUrl = getNewSplashUrl();
         return newSplashUrl == null ? null : new ImageProxy(newSplashUrl);
     }
 }

@@ -57,16 +57,16 @@ public class Template {
     private final boolean synced;
 
     public Template(
-            final JDAImpl api,
-            final String code,
-            final String name,
-            final String description,
-            final int uses,
-            final User creator,
-            final OffsetDateTime createdAt,
-            final OffsetDateTime updatedAt,
-            final TemplateGuild guild,
-            final boolean synced) {
+            JDAImpl api,
+            String code,
+            String name,
+            String description,
+            int uses,
+            User creator,
+            OffsetDateTime createdAt,
+            OffsetDateTime updatedAt,
+            TemplateGuild guild,
+            boolean synced) {
         this.api = api;
         this.code = code;
         this.name = name;
@@ -105,7 +105,7 @@ public class Template {
      */
     @Nonnull
     @CheckReturnValue
-    public static RestAction<Template> resolve(@Nonnull final JDA api, @Nonnull final String code) {
+    public static RestAction<Template> resolve(@Nonnull JDA api, @Nonnull String code) {
         Checks.notEmpty(code, "code");
         Checks.noWhitespace(code, "code");
         Checks.notNull(api, "api");
@@ -134,8 +134,7 @@ public class Template {
     @CheckReturnValue
     public RestAction<Template> sync() {
         checkInteraction();
-        final Route.CompiledRoute route =
-                Route.Templates.SYNC_TEMPLATE.compile(guild.getId(), this.code);
+        Route.CompiledRoute route = Route.Templates.SYNC_TEMPLATE.compile(guild.getId(), this.code);
         return new RestActionImpl<>(api, route, (response, request) -> api.getEntityBuilder()
                 .createTemplate(response.getObject()));
     }
@@ -156,7 +155,7 @@ public class Template {
     @CheckReturnValue
     public RestAction<Void> delete() {
         checkInteraction();
-        final Route.CompiledRoute route =
+        Route.CompiledRoute route =
                 Route.Templates.DELETE_TEMPLATE.compile(guild.getId(), this.code);
         return new RestActionImpl<>(api, route);
     }
@@ -275,8 +274,7 @@ public class Template {
     }
 
     private void checkInteraction() {
-        final net.dv8tion.jda.api.entities.Guild guild =
-                this.api.getGuildById(this.guild.getIdLong());
+        net.dv8tion.jda.api.entities.Guild guild = this.api.getGuildById(this.guild.getIdLong());
 
         if (guild == null) {
             throw new IllegalStateException("Cannot interact with a template without shared guild");

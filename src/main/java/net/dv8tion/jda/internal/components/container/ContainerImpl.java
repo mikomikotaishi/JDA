@@ -163,7 +163,7 @@ public class ContainerImpl extends AbstractComponentImpl
     @Nonnull
     @Override
     public DataObject toData() {
-        final DataObject json = DataObject.empty()
+        DataObject json = DataObject.empty()
                 .put("type", getType().getKey())
                 .put("components", DataArray.fromCollection(getComponents()))
                 .put("spoiler", spoiler);

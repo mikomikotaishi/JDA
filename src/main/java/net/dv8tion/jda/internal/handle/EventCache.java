@@ -42,7 +42,7 @@ public class EventCache {
 
     public EventCache() {}
 
-    public synchronized void timeout(final long responseTotal) {
+    public synchronized void timeout(long responseTotal) {
         if (eventCache.isEmpty()) {
             return;
         }

@@ -40,8 +40,7 @@ public class CountingThreadFactory implements ThreadFactory {
     @Nonnull
     @Override
     public Thread newThread(@Nonnull Runnable r) {
-        final Thread thread =
-                new Thread(r, identifier.get() + "-Worker " + count.getAndIncrement());
+        Thread thread = new Thread(r, identifier.get() + "-Worker " + count.getAndIncrement());
         thread.setDaemon(daemon);
         return thread;
     }

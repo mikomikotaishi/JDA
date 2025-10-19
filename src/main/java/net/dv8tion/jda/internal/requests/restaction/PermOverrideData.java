@@ -47,7 +47,7 @@ public class PermOverrideData implements SerializableData {
     @Nonnull
     @Override
     public DataObject toData() {
-        final DataObject o = DataObject.empty();
+        DataObject o = DataObject.empty();
         o.put("type", type);
         o.put("id", id);
         o.put("allow", allow);

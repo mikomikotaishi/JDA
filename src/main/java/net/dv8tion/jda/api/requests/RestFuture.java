@@ -35,15 +35,15 @@ public class RestFuture<T> extends CompletableFuture<T> {
     final Request<T> request;
 
     public RestFuture(
-            final RestActionImpl<T> restAction,
-            final boolean shouldQueue,
-            final BooleanSupplier checks,
-            final RequestBody data,
-            final Object rawData,
-            final long deadline,
-            final boolean priority,
-            final Route.CompiledRoute route,
-            final CaseInsensitiveMap<String, String> headers) {
+            RestActionImpl<T> restAction,
+            boolean shouldQueue,
+            BooleanSupplier checks,
+            RequestBody data,
+            Object rawData,
+            long deadline,
+            boolean priority,
+            Route.CompiledRoute route,
+            CaseInsensitiveMap<String, String> headers) {
         this.request = new Request<>(
                 restAction,
                 this::complete,
@@ -59,18 +59,18 @@ public class RestFuture<T> extends CompletableFuture<T> {
         ((JDAImpl) restAction.getJDA()).getRequester().request(this.request);
     }
 
-    public RestFuture(final T t) {
+    public RestFuture(T t) {
         complete(t);
         this.request = null;
     }
 
-    public RestFuture(final Throwable t) {
+    public RestFuture(Throwable t) {
         completeExceptionally(t);
         this.request = null;
     }
 
     @Override
-    public boolean cancel(final boolean mayInterrupt) {
+    public boolean cancel(boolean mayInterrupt) {
         if (this.request != null) {
             this.request.cancel();
         }

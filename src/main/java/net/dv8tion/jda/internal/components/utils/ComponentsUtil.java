@@ -47,7 +47,7 @@ public class ComponentsUtil {
     public static <T extends IComponentUnion> T safeUnionCast(
             String componentCategory, Component component, Class<T> toUnionClass) {
         if (toUnionClass.isInstance(component)) {
-            final T union = toUnionClass.cast(component);
+            T union = toUnionClass.cast(component);
             Checks.check(!union.isUnknownComponent(), "Cannot provide UnknownComponent");
             return union;
         }
@@ -160,7 +160,7 @@ public class ComponentsUtil {
     public static Stream<FileUpload> getFilesFromMedia(@Nullable ResolvedMedia media) {
         if (media != null) // Retain or reupload the entire file
         {
-            final String fileName = Helpers.getLastPathSegment(media.getUrl());
+            String fileName = Helpers.getLastPathSegment(media.getUrl());
             return Stream.of(media.getProxy().downloadAsFileUpload(fileName));
         } else { // External URL or user-managed attachment
             return Stream.empty();

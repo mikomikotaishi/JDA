@@ -48,7 +48,7 @@ public class ThreadUpdateHandler extends SocketHandler {
             return guildId;
         }
 
-        final long threadId = content.getLong("id");
+        long threadId = content.getLong("id");
         ThreadChannelImpl thread = (ThreadChannelImpl) getJDA().getThreadChannelById(threadId);
 
         // If the thread is missing then that means that the bot started up while the thread was
@@ -98,28 +98,26 @@ public class ThreadUpdateHandler extends SocketHandler {
             return null;
         }
 
-        final DataObject threadMetadata = content.getObject("thread_metadata");
-        final String name = content.getString("name");
-        final int flags = content.getInt("flags", 0);
-        final ThreadChannel.AutoArchiveDuration autoArchiveDuration =
+        DataObject threadMetadata = content.getObject("thread_metadata");
+        String name = content.getString("name");
+        int flags = content.getInt("flags", 0);
+        ThreadChannel.AutoArchiveDuration autoArchiveDuration =
                 ThreadChannel.AutoArchiveDuration.fromKey(
                         threadMetadata.getInt("auto_archive_duration"));
-        final boolean locked = threadMetadata.getBoolean("locked");
-        final boolean archived = threadMetadata.getBoolean("archived");
-        final boolean invitable = threadMetadata.getBoolean("invitable");
-        final long archiveTimestamp =
-                Helpers.toTimestamp(threadMetadata.getString("archive_timestamp"));
-        final int slowmode = content.getInt("rate_limit_per_user", 0);
+        boolean locked = threadMetadata.getBoolean("locked");
+        boolean archived = threadMetadata.getBoolean("archived");
+        boolean invitable = threadMetadata.getBoolean("invitable");
+        long archiveTimestamp = Helpers.toTimestamp(threadMetadata.getString("archive_timestamp"));
+        int slowmode = content.getInt("rate_limit_per_user", 0);
 
-        final String oldName = thread.getName();
-        final ThreadChannel.AutoArchiveDuration oldAutoArchiveDuration =
-                thread.getAutoArchiveDuration();
-        final boolean oldLocked = thread.isLocked();
-        final boolean oldArchived = thread.isArchived();
-        final boolean oldInvitable = !thread.isPublic() && thread.isInvitable();
-        final long oldArchiveTimestamp = thread.getArchiveTimestamp();
-        final int oldSlowmode = thread.getSlowmode();
-        final int oldFlags = thread.getRawFlags();
+        String oldName = thread.getName();
+        ThreadChannel.AutoArchiveDuration oldAutoArchiveDuration = thread.getAutoArchiveDuration();
+        boolean oldLocked = thread.isLocked();
+        boolean oldArchived = thread.isArchived();
+        boolean oldInvitable = !thread.isPublic() && thread.isInvitable();
+        long oldArchiveTimestamp = thread.getArchiveTimestamp();
+        int oldSlowmode = thread.getSlowmode();
+        int oldFlags = thread.getRawFlags();
 
         if (!Objects.equals(oldName, name)) {
             thread.setName(name);
@@ -167,11 +165,11 @@ public class ThreadUpdateHandler extends SocketHandler {
         }
 
         if (api.isCacheFlagSet(CacheFlag.FORUM_TAGS) && !content.isNull("applied_tags")) {
-            final TLongSet oldTags = thread.getAppliedTagsSet();
+            TLongSet oldTags = thread.getAppliedTagsSet();
             thread.setAppliedTags(
                     content.getArray("applied_tags").stream(DataArray::getUnsignedLong)
                             .mapToLong(Long::longValue));
-            final TLongSet tags = thread.getAppliedTagsSet();
+            TLongSet tags = thread.getAppliedTagsSet();
 
             if (!oldTags.equals(tags)) {
                 List<Long> oldTagList = LongStream.of(oldTags.toArray())

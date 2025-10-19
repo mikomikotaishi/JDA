@@ -38,7 +38,7 @@ public class ThreadDeleteHandler extends SocketHandler {
         }
 
         GuildImpl guild = (GuildImpl) getJDA().getGuildById(guildId);
-        final long threadId = content.getLong("id");
+        long threadId = content.getLong("id");
 
         ChannelCacheViewImpl<Channel> channelsView = getJDA().getChannelsView();
         ThreadChannel thread = channelsView.ofType(ThreadChannel.class).getElementById(threadId);

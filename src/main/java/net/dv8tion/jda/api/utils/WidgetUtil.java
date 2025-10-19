@@ -210,7 +210,7 @@ public class WidgetUtil {
                 .build();
 
         try (Response response = client.newCall(request).execute()) {
-            final int code = response.code();
+            int code = response.code();
             InputStream data = IOUtil.getBody(response);
 
             switch (code) {

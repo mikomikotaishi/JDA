@@ -147,7 +147,7 @@ public class DetachedRoleImpl implements Role, RoleMixin<DetachedRoleImpl> {
     public boolean hasPermission(@Nonnull Permission... permissions) {
         long effectivePerms = rawPermissions;
         for (Permission perm : permissions) {
-            final long rawValue = perm.getRawValue();
+            long rawValue = perm.getRawValue();
             if ((effectivePerms & rawValue) != rawValue) {
                 return false;
             }

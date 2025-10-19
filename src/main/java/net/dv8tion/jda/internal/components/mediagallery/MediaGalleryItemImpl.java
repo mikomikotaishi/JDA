@@ -110,7 +110,7 @@ public class MediaGalleryItemImpl
     @Nonnull
     @Override
     public DataObject toData() {
-        final String outputUrl;
+        String outputUrl;
         if (media != null) { // Retain or reupload the entire file, both cases uses attachment://
             outputUrl = "attachment://" + Helpers.getLastPathSegment(media.getUrl());
         } else { // External URL or user-managed attachment

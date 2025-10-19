@@ -40,12 +40,12 @@ public class TemplateRole implements ISnowflake {
     private final long rawPermissions;
 
     public TemplateRole(
-            final long id,
-            final String name,
-            final int color,
-            final boolean hoisted,
-            final boolean mentionable,
-            final long rawPermissions) {
+            long id,
+            String name,
+            int color,
+            boolean hoisted,
+            boolean mentionable,
+            long rawPermissions) {
         this.id = id;
         this.name = name;
         this.color = color;

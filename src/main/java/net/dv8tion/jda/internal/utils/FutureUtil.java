@@ -28,7 +28,7 @@ public class FutureUtil {
             @Nonnull CompletableFuture<T> future,
             @Nonnull Function<T, U> applyFunction,
             @Nullable Runnable onCancel) {
-        final CompletableFuture<U> cf = new CompletableFuture<>();
+        CompletableFuture<U> cf = new CompletableFuture<>();
 
         future.thenAccept(t -> cf.complete(applyFunction.apply(t))).exceptionally(throwable -> {
             cf.completeExceptionally(throwable);

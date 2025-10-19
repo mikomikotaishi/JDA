@@ -37,7 +37,7 @@ public class VoiceStateUpdateHandler extends SocketHandler {
 
     @Override
     protected Long handleInternally(DataObject content) {
-        final Long guildId = content.isNull("guild_id") ? null : content.getLong("guild_id");
+        Long guildId = content.isNull("guild_id") ? null : content.getLong("guild_id");
         if (guildId == null) {
             return null; // unhandled for calls
         }
@@ -56,11 +56,10 @@ public class VoiceStateUpdateHandler extends SocketHandler {
     }
 
     private void handleGuildVoiceState(DataObject content) {
-        final long userId = content.getLong("user_id");
-        final long guildId = content.getLong("guild_id");
-        final Long channelId = !content.isNull("channel_id") ? content.getLong("channel_id") : null;
-        final String sessionId =
-                !content.isNull("session_id") ? content.getString("session_id") : null;
+        long userId = content.getLong("user_id");
+        long guildId = content.getLong("guild_id");
+        Long channelId = !content.isNull("channel_id") ? content.getLong("channel_id") : null;
+        String sessionId = !content.isNull("session_id") ? content.getString("session_id") : null;
         boolean selfMuted = content.getBoolean("self_mute");
         boolean selfDeafened = content.getBoolean("self_deaf");
         boolean guildMuted = content.getBoolean("mute");

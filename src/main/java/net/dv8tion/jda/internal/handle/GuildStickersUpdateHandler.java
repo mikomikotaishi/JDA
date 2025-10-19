@@ -53,7 +53,7 @@ public class GuildStickersUpdateHandler extends SocketHandler {
         if (!getJDA().isCacheFlagSet(CacheFlag.STICKER)) {
             return null;
         }
-        final long guildId = content.getLong("guild_id");
+        long guildId = content.getLong("guild_id");
         if (getJDA().getGuildSetupController().isLocked(guildId)) {
             return guildId;
         }
@@ -81,7 +81,7 @@ public class GuildStickersUpdateHandler extends SocketHandler {
             newStickers = new ArrayList<>();
             for (int i = 0; i < array.length(); i++) {
                 DataObject current = array.getObject(i);
-                final long stickerId = current.getLong("id");
+                long stickerId = current.getLong("id");
                 GuildStickerImpl sticker = (GuildStickerImpl) stickersMap.get(stickerId);
                 GuildStickerImpl oldSticker = null;
 

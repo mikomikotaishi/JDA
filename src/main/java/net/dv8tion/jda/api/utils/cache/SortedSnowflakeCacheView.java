@@ -48,7 +48,7 @@ public interface SortedSnowflakeCacheView<T extends Comparable<? super T> & ISno
      *
      * @since  4.0.0
      */
-    void forEachUnordered(@Nonnull final Consumer<? super T> action);
+    void forEachUnordered(@Nonnull Consumer<? super T> action);
 
     @Nonnull
     @Override

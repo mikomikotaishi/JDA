@@ -98,7 +98,7 @@ public interface ScheduledEvent extends ISnowflake, Comparable<ScheduledEvent> {
      */
     @Nullable
     default ImageProxy getImage() {
-        final String imageUrl = getImageUrl();
+        String imageUrl = getImageUrl();
         return imageUrl == null ? null : new ImageProxy(imageUrl);
     }
 

@@ -128,7 +128,7 @@ public class GuildWelcomeScreenImpl implements GuildWelcomeScreen {
         @Nonnull
         @Override
         public DataObject toData() {
-            final DataObject data = DataObject.empty();
+            DataObject data = DataObject.empty();
             data.put("channel_id", id);
             data.put("description", description);
             if (emoji != null) {

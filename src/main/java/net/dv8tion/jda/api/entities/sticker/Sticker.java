@@ -151,7 +151,7 @@ public interface Sticker extends StickerSnowflake {
         private final int id;
         private final String extension;
 
-        StickerFormat(final int id, final String extension) {
+        StickerFormat(int id, String extension) {
             this.id = id;
             this.extension = extension;
         }

@@ -58,7 +58,7 @@ public class MessageBulkDeleteHandler extends SocketHandler {
                 return null;
             }
         }
-        final long channelId = content.getLong("channel_id");
+        long channelId = content.getLong("channel_id");
 
         if (getJDA().isBulkDeleteSplittingEnabled()) {
             SocketHandler handler = getJDA().getClient().getHandlers().get("MESSAGE_DELETE");

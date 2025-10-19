@@ -392,7 +392,7 @@ public class MessageEmbed implements SerializableData {
             return false;
         }
 
-        final int length = getLength();
+        int length = getLength();
         return length <= EMBED_MAX_LENGTH_BOT;
     }
 
@@ -555,7 +555,7 @@ public class MessageEmbed implements SerializableData {
          */
         @Nullable
         public AttachmentProxy getProxy() {
-            final String proxyUrl = getProxyUrl();
+            String proxyUrl = getProxyUrl();
             return proxyUrl == null ? null : new AttachmentProxy(proxyUrl);
         }
 
@@ -685,7 +685,7 @@ public class MessageEmbed implements SerializableData {
          */
         @Nullable
         public FileProxy getProxy() {
-            final String proxyUrl = getProxyUrl();
+            String proxyUrl = getProxyUrl();
             return proxyUrl == null ? null : new FileProxy(proxyUrl);
         }
 
@@ -773,7 +773,7 @@ public class MessageEmbed implements SerializableData {
          */
         @Nullable
         public AttachmentProxy getProxy() {
-            final String proxyUrl = getProxyUrl();
+            String proxyUrl = getProxyUrl();
             return proxyUrl == null ? null : new AttachmentProxy(proxyUrl);
         }
 
@@ -1046,7 +1046,7 @@ public class MessageEmbed implements SerializableData {
             if (!(obj instanceof Field)) {
                 return false;
             }
-            final Field field = (Field) obj;
+            Field field = (Field) obj;
             return field == this
                     || (field.inline == inline
                             && Objects.equals(field.name, name)

@@ -71,11 +71,11 @@ public class LocalizationMapper {
     }
 
     public void localizeCommand(CommandData commandData, DataArray optionArray) {
-        final TranslationContext ctx = new TranslationContext();
+        TranslationContext ctx = new TranslationContext();
         ctx.withKey(commandData.getName(), () -> {
             ctx.trySetTranslation(commandData.getNameLocalizations(), "name");
             if (commandData.getType() == Command.Type.SLASH) {
-                final SlashCommandData slashCommandData = (SlashCommandData) commandData;
+                SlashCommandData slashCommandData = (SlashCommandData) commandData;
                 ctx.trySetTranslation(
                         slashCommandData.getDescriptionLocalizations(), "description");
                 localizeOptionArray(optionArray, ctx);
@@ -110,9 +110,9 @@ public class LocalizationMapper {
                 Function<DataObject, String> keyExtractor,
                 Consumer<DataObject> consumer) {
             for (int i = 0; i < source.length(); i++) {
-                final DataObject item = source.getObject(i);
-                final Runnable runnable = () -> {
-                    final String key = keyExtractor.apply(item);
+                DataObject item = source.getObject(i);
+                Runnable runnable = () -> {
+                    String key = keyExtractor.apply(item);
                     keyComponents.push(key);
                     consumer.accept(item);
                     keyComponents.pop();
@@ -120,9 +120,9 @@ public class LocalizationMapper {
 
                 // We need to differentiate subcommands/groups from options before inserting the
                 // "options" separator
-                final OptionType type = OptionType.fromKey(
+                OptionType type = OptionType.fromKey(
                         item.getInt("type", -1)); // -1 when the object isn't an option
-                final boolean isOption = type != OptionType.SUB_COMMAND
+                boolean isOption = type != OptionType.SUB_COMMAND
                         && type != OptionType.SUB_COMMAND_GROUP
                         && type != OptionType.UNKNOWN;
                 if (isOption) {
@@ -145,7 +145,7 @@ public class LocalizationMapper {
         }
 
         private String getKey(String finalComponent) {
-            final StringJoiner joiner = new StringJoiner(".");
+            StringJoiner joiner = new StringJoiner(".");
             for (String keyComponent : keyComponents) {
                 joiner.add(keyComponent.replace(
                         " ", "_")); // Context commands can have spaces, we need to replace them
@@ -155,9 +155,9 @@ public class LocalizationMapper {
         }
 
         private void trySetTranslation(LocalizationMap localizationMap, String finalComponent) {
-            final String key = getKey(finalComponent);
+            String key = getKey(finalComponent);
             try {
-                final Map<DiscordLocale, String> data = localizationFunction.apply(key);
+                Map<DiscordLocale, String> data = localizationFunction.apply(key);
                 localizationMap.setTranslations(data);
             } catch (Exception e) {
                 throw new RuntimeException(
@@ -170,9 +170,9 @@ public class LocalizationMapper {
         }
 
         private void trySetTranslation(DataObject localizationMap, String finalComponent) {
-            final String key = getKey(finalComponent);
+            String key = getKey(finalComponent);
             try {
-                final Map<DiscordLocale, String> data = localizationFunction.apply(key);
+                Map<DiscordLocale, String> data = localizationFunction.apply(key);
                 data.forEach((locale, localizedValue) -> {
                     Checks.check(
                             locale != DiscordLocale.UNKNOWN,

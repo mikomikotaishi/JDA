@@ -106,7 +106,7 @@ public class ApplicationInfoImpl implements ApplicationInfo {
     }
 
     @Override
-    public boolean equals(final Object obj) {
+    public boolean equals(Object obj) {
         return obj instanceof ApplicationInfoImpl && this.id == ((ApplicationInfoImpl) obj).id;
     }
 
@@ -166,7 +166,7 @@ public class ApplicationInfoImpl implements ApplicationInfo {
 
     @Nonnull
     @Override
-    public String getInviteUrl(final String guildId, final Collection<Permission> permissions) {
+    public String getInviteUrl(String guildId, Collection<Permission> permissions) {
         StringBuilder builder =
                 new StringBuilder("https://discord.com/oauth2/authorize?client_id=");
         builder.append(this.getId());

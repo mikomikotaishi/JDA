@@ -101,7 +101,7 @@ public class FileDisplayFileUpload extends AbstractComponentImpl
     @Nonnull
     @Override
     public DataObject toData() {
-        final DataObject json = DataObject.empty()
+        DataObject json = DataObject.empty()
                 .put("type", getType().getKey())
                 .put("file", DataObject.empty().put("url", getUrl()))
                 .put("spoiler", spoiler);
