@@ -59,9 +59,7 @@ public class ErrorResponseException extends RuntimeException {
             int code,
             String meaning,
             List<SchemaError> schemaErrors) {
-        super(code
-                + ": "
-                + meaning
+        super(code + ": " + meaning
                 + (schemaErrors.isEmpty()
                         ? ""
                         : "\n"
@@ -447,8 +445,7 @@ public class ErrorResponseException extends RuntimeException {
 
         @Override
         public String toString() {
-            return (location.isEmpty() ? "" : location + "\n")
-                    + "\t- "
+            return (location.isEmpty() ? "" : location + "\n") + "\t- "
                     + errors.stream().map(Object::toString).collect(Collectors.joining("\n\t- "));
         }
     }

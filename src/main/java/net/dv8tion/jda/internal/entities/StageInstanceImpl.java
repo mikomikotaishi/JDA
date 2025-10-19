@@ -118,8 +118,8 @@ public class StageInstanceImpl implements StageInstance {
                 throw new InsufficientPermissionException(
                         getChannel(),
                         perm,
-                        "You must be a stage moderator to manage a stage instance! Missing"
-                                + " Permission: " + perm);
+                        "You must be a stage moderator to manage a stage instance! Missing Permission: "
+                                + perm);
             }
         }
     }

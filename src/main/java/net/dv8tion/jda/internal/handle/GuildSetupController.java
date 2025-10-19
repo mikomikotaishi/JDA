@@ -231,8 +231,7 @@ public class GuildSetupController {
             return false;
         }
         log.debug(
-                "Received GUILD_MEMBER_REMOVE during setup, removing member from guild. GuildID:"
-                        + " {}",
+                "Received GUILD_MEMBER_REMOVE during setup, removing member from guild. GuildID: {}",
                 id);
         node.handleRemoveMember(member);
         return true;

@@ -89,10 +89,8 @@ public final class Helpers {
                     return OffsetDateTime.ofInstant(instant, offset);
                 } catch (DateTimeException ex) {
                     throw new DateTimeException(
-                            "Unable to obtain OffsetDateTime from TemporalAccessor: "
-                                    + temporal
-                                    + " of type "
-                                    + temporal.getClass().getName(),
+                            "Unable to obtain OffsetDateTime from TemporalAccessor: " + temporal
+                                    + " of type " + temporal.getClass().getName(),
                             ex);
                 }
             }

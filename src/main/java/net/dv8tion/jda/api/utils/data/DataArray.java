@@ -512,7 +512,6 @@ public class DataArray implements Iterable<Object>, SerializableArray {
         }
         return value;
     }
-
     /**
      * Resolves the value at the specified index to an {@link OffsetDateTime}.
      * <br><b>Note:</b> This method should only be used on ISO8601 timestamps
@@ -534,8 +533,7 @@ public class DataArray implements Iterable<Object>, SerializableArray {
             value = get(OffsetDateTime.class, index, OffsetDateTime::parse, null);
         } catch (DateTimeParseException e) {
             String reason =
-                    "Cannot parse value for index %d into an OffsetDateTime object. Try double"
-                            + " checking that %s is a valid ISO8601 timestamp";
+                    "Cannot parse value for index %d into an OffsetDateTime object. Try double checking that %s is a valid ISO8601 timestamp";
             throw new ParsingException(String.format(reason, index, e.getParsedString()));
         }
         return value == null ? defaultValue : value;

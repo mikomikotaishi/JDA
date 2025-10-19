@@ -273,9 +273,8 @@ public class GuildSetupNode {
         if (cacheSize >= 2000 && cacheSize % 1000 == 0) {
             GuildSetupController controller = getController();
             GuildSetupController.log.warn(
-                    "Accumulating suspicious amounts of cached events during guild setup, something"
-                            + " might be wrong. Cached: {} Members: {}/{} Status: {} GuildId: {}"
-                            + " Incomplete: {}/{}",
+                    "Accumulating suspicious amounts of cached events during guild setup, "
+                            + "something might be wrong. Cached: {} Members: {}/{} Status: {} GuildId: {} Incomplete: {}/{}",
                     cacheSize,
                     getCurrentMemberCount(),
                     getExpectedMemberCount(),

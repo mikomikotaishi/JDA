@@ -48,8 +48,7 @@ public interface IPostContainerMixin<T extends IPostContainerMixin<T>>
     @Override
     default ThreadChannelAction createThreadChannel(@Nonnull String name) {
         throw new UnsupportedOperationException(
-                "You cannot create threads without a message payload in forum/media channels! Use"
-                        + " createForumPost(...) instead.");
+                "You cannot create threads without a message payload in forum/media channels! Use createForumPost(...) instead.");
     }
 
     @Nonnull
@@ -57,8 +56,7 @@ public interface IPostContainerMixin<T extends IPostContainerMixin<T>>
     default ThreadChannelAction createThreadChannel(
             @Nonnull String name, @Nonnull String messageId) {
         throw new UnsupportedOperationException(
-                "You cannot create threads without a message payload in forum/media channels! Use"
-                        + " createForumPost(...) instead.");
+                "You cannot create threads without a message payload in forum/media channels! Use createForumPost(...) instead.");
     }
 
     T setDefaultReaction(DataObject emoji);

@@ -40,21 +40,18 @@ public enum CloseCode {
     ALREADY_AUTHENTICATED(4005, "You sent more than one identify payload. Don't do that!"),
     INVALID_SEQ(
             4007,
-            "The seq sent when resuming the session was invalid. Reconnect and start a new"
-                    + " session."),
+            "The seq sent when resuming the session was invalid. Reconnect and start a new session."),
     RATE_LIMITED(4008, "Woah nelly! You're sending payloads to us too quickly. Slow it down!"),
     SESSION_TIMEOUT(4009, "Your session timed out. Reconnect and start a new one."),
     INVALID_SHARD(4010, "You sent an invalid shard when identifying.", false),
     SHARDING_REQUIRED(
             4011,
-            "The session would have handled too many guilds - you are required to shard your"
-                    + " connection in order to connect.",
+            "The session would have handled too many guilds - you are required to shard your connection in order to connect.",
             false),
     INVALID_INTENTS(4013, "Invalid intents.", false),
     DISALLOWED_INTENTS(
             4014,
-            "Disallowed intents. Your bot might not be eligible to request a privileged intent such"
-                    + " as GUILD_PRESENCES, MESSAGE_CONTENT, or GUILD_MEMBERS.",
+            "Disallowed intents. Your bot might not be eligible to request a privileged intent such as GUILD_PRESENCES, MESSAGE_CONTENT, or GUILD_MEMBERS.",
             false);
 
     private final int code;

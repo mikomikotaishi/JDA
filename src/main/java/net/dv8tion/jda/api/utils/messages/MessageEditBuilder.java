@@ -343,9 +343,7 @@ public class MessageEditBuilder extends AbstractMessageBuilder<MessageEditData, 
         int length = isSet(CONTENT) ? Helpers.codePointLength(content) : 0;
         if (length > Message.MAX_CONTENT_LENGTH) {
             throw new IllegalStateException("Message content is too long! Max length is "
-                    + Message.MAX_CONTENT_LENGTH
-                    + " characters, provided "
-                    + length);
+                    + Message.MAX_CONTENT_LENGTH + " characters, provided " + length);
         }
 
         if (isSet(EMBEDS) && embeds.size() > Message.MAX_EMBED_COUNT) {
@@ -355,17 +353,15 @@ public class MessageEditBuilder extends AbstractMessageBuilder<MessageEditData, 
 
         if (isSet(COMPONENTS)) {
             if (components.size() > Message.MAX_COMPONENT_COUNT) {
-                throw new IllegalStateException("Cannot build message with over "
-                        + Message.MAX_COMPONENT_COUNT
-                        + " top-level components, provided "
-                        + components.size());
+                throw new IllegalStateException(
+                        "Cannot build message with over " + Message.MAX_COMPONENT_COUNT
+                                + " top-level components, provided " + components.size());
             }
             List<? extends Component> illegalComponents =
                     ComponentsUtil.getIllegalV1Components(components);
             if (!illegalComponents.isEmpty()) {
                 throw new IllegalStateException(
-                        "Cannot build message with components other than ActionRow while using"
-                                + " components V1, see #useComponentsV2, provided: "
+                        "Cannot build message with components other than ActionRow while using components V1, see #useComponentsV2, provided: "
                                 + illegalComponents);
             }
         }
@@ -390,29 +386,25 @@ public class MessageEditBuilder extends AbstractMessageBuilder<MessageEditData, 
 
         if ((isSet(CONTENT) && content.length() > 0) || (isSet(EMBEDS) && !embeds.isEmpty())) {
             throw new IllegalStateException(
-                    "Cannot build a message with components V2 enabled while having content or"
-                            + " embeds");
+                    "Cannot build a message with components V2 enabled while having content or embeds");
         }
 
         if (isSet(COMPONENTS)) {
             if (components.isEmpty()) {
                 throw new IllegalStateException(
-                        "Cannot build message with no V2 components, or did you forget to disable"
-                                + " them?");
+                        "Cannot build message with no V2 components, or did you forget to disable them?");
             }
             long componentTreeSize = ComponentsUtil.getComponentTreeSize(components);
             if (componentTreeSize > Message.MAX_COMPONENT_COUNT_IN_COMPONENT_TREE) {
                 throw new IllegalStateException("Cannot build message with over "
                         + Message.MAX_COMPONENT_COUNT_IN_COMPONENT_TREE
-                        + " total components, provided "
-                        + componentTreeSize);
+                        + " total components, provided " + componentTreeSize);
             }
             long componentTreeLength = ComponentsUtil.getComponentTreeTextContentLength(components);
             if (componentTreeLength > Message.MAX_CONTENT_LENGTH_COMPONENT_V2) {
-                throw new IllegalStateException("Cannot build message with over "
-                        + Message.MAX_CONTENT_LENGTH_COMPONENT_V2
-                        + " total characters, provided "
-                        + componentTreeLength);
+                throw new IllegalStateException(
+                        "Cannot build message with over " + Message.MAX_CONTENT_LENGTH_COMPONENT_V2
+                                + " total characters, provided " + componentTreeLength);
             }
         }
 

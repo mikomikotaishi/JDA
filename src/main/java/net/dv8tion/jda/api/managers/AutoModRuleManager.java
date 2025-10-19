@@ -51,19 +51,14 @@ import javax.annotation.Nonnull;
 public interface AutoModRuleManager extends Manager<AutoModRuleManager> {
     /** Used to reset the name field. */
     long NAME = 1;
-
     /** Used to reset the enabled field. */
     long ENABLED = 1 << 1;
-
     /** Used to reset the response field. */
     long RESPONSE = 1 << 2;
-
     /** Used to reset the exempt roles field. */
     long EXEMPT_ROLES = 1 << 3;
-
     /** Used to reset the exempt channels field. */
     long EXEMPT_CHANNELS = 1 << 4;
-
     /** Used to reset the trigger metadata field. */
     long TRIGGER_METADATA = 1 << 5;
 

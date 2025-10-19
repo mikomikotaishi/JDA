@@ -75,8 +75,7 @@ public class BanPaginationActionImpl extends PaginationActionImpl<Guild.Ban, Ban
                 bans.add(ban);
             } catch (Exception t) {
                 LOG.error(
-                        "Got an unexpected error while decoding ban index {} for guild {}:\n"
-                                + "Data: {}",
+                        "Got an unexpected error while decoding ban index {} for guild {}:\nData: {}",
                         i,
                         guild.getId(),
                         object,

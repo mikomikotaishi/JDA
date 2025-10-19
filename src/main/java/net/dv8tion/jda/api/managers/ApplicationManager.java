@@ -38,25 +38,18 @@ import javax.annotation.Nullable;
 public interface ApplicationManager extends Manager<ApplicationManager> {
     /** Used to set description field */
     long DESCRIPTION = 1;
-
     /** Used to set icon field */
     long ICON = 1 << 1;
-
     /** Used to set cover image field */
     long COVER_IMAGE = 1 << 2;
-
     /** Used to set interaction endpoint url field */
     long INTERACTIONS_ENDPOINT_URL = 1 << 3;
-
     /** Used to set tags field */
     long TAGS = 1 << 4;
-
     /** Used to set custom install url field */
     long CUSTOM_INSTALL_URL = 1 << 5;
-
     /** Used to set install params field */
     long INSTALL_PARAMS = 1 << 6;
-
     /** Used to set integration types config field */
     long INTEGRATION_TYPES_CONFIG = 1 << 7;
 

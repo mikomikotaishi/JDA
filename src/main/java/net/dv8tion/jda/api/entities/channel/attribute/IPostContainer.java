@@ -56,7 +56,6 @@ public interface IPostContainer extends IThreadContainer {
      * The maximum length of a forum / media channel topic ({@value})
      */
     int MAX_POST_CONTAINER_TOPIC_LENGTH = 4096;
-
     /**
      * The maximum number of {@link ForumPostAction#setTags(Collection) tags} that can be applied to a forum post. ({@value})
      */

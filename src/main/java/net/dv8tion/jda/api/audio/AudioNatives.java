@@ -95,8 +95,7 @@ public final class AudioNatives {
             LOG.error("There was an IO Exception when setting up the temp files for audio.", e);
         } else if (e instanceof UnsatisfiedLinkError) {
             LOG.error(
-                    "JDA encountered a problem when attempting to load the Native libraries."
-                            + " Contact a DEV.",
+                    "JDA encountered a problem when attempting to load the Native libraries. Contact a DEV.",
                     e);
         } else if (e instanceof Error) {
             throw (Error) e;

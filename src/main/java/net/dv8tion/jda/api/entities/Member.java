@@ -69,7 +69,6 @@ import javax.annotation.Nullable;
 public interface Member extends IMentionable, IPermissionHolder, IDetachableEntity, UserSnowflake {
     /** Template for {@link #getAvatarUrl()}. */
     String AVATAR_URL = "https://cdn.discordapp.com/guilds/%s/users/%s/avatars/%s.%s";
-
     /** Maximum number of days a Member can be timed out for */
     int MAX_TIME_OUT_LENGTH = 28;
     /** Max length of a member nickname */

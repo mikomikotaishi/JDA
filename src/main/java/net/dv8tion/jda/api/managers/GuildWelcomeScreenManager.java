@@ -53,10 +53,8 @@ import javax.annotation.Nullable;
 public interface GuildWelcomeScreenManager extends Manager<GuildWelcomeScreenManager> {
     /** Used to reset the enabled field */
     long ENABLED = 1;
-
     /** Used to reset the description field */
     long DESCRIPTION = 1 << 1;
-
     /** Used to reset the channels field */
     long CHANNELS = 1 << 2;
 

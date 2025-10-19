@@ -74,8 +74,8 @@ public class AudioManagerImpl implements AudioManager {
 
         if (!getGuild().equals(channel.getGuild())) {
             throw new IllegalArgumentException(
-                    "The provided AudioChannel is not a part of the Guild that this AudioManager"
-                            + " handles.Please provide a AudioChannel from the proper Guild");
+                    "The provided AudioChannel is not a part of the Guild that this AudioManager handles."
+                            + "Please provide a AudioChannel from the proper Guild");
         }
         Member self = getGuild().getSelfMember();
         // if (!self.hasPermission(channel, Permission.VOICE_CONNECT))
@@ -116,8 +116,7 @@ public class AudioManagerImpl implements AudioManager {
                 throw new InsufficientPermissionException(
                         channel,
                         Permission.VOICE_MOVE_OTHERS,
-                        "Unable to connect to AudioChannel due to userlimit! Requires permission"
-                                + " VOICE_MOVE_OTHERS to bypass");
+                        "Unable to connect to AudioChannel due to userlimit! Requires permission VOICE_MOVE_OTHERS to bypass");
             }
         }
     }

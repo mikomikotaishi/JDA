@@ -60,8 +60,7 @@ public class VoiceServerUpdateHandler extends SocketHandler {
         String sessionId = guild.getSelfMember().getVoiceState().getSessionId();
         if (sessionId == null) {
             throw new IllegalArgumentException(
-                    "Attempted to create audio connection without having a session ID. Did"
-                            + " VOICE_STATE_UPDATED fail?");
+                    "Attempted to create audio connection without having a session ID. Did VOICE_STATE_UPDATED fail?");
         }
 
         VoiceDispatchInterceptor voiceInterceptor = getJDA().getVoiceInterceptor();
@@ -75,9 +74,9 @@ public class VoiceServerUpdateHandler extends SocketHandler {
                 (AudioManagerImpl) getJDA().getAudioManagersView().get(guildId);
         if (audioManager == null) {
             WebSocketClient.LOG.debug(
-                    "Received a VOICE_SERVER_UPDATE but JDA is not currently connected nor"
-                            + " attempted to connect to a VoiceChannel. Assuming that this is caused by"
-                            + " another client running on this account. Ignoring the event.");
+                    "Received a VOICE_SERVER_UPDATE but JDA is not currently connected nor attempted to connect "
+                            + "to a VoiceChannel. Assuming that this is caused by another client running on this account. "
+                            + "Ignoring the event.");
             return null;
         }
 

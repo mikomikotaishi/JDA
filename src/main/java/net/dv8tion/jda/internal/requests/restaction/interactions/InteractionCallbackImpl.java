@@ -50,13 +50,10 @@ public abstract class InteractionCallbackImpl<T> extends RestActionImpl<T>
         // That's why we also have a similar exception at the end of this method.
         if (exception.getErrorResponse() == ErrorResponse.INTERACTION_ALREADY_ACKNOWLEDGED) {
             return ErrorResponseException.create(
-                    "This interaction was acknowledged by another process running for the same"
-                            + " bot.\n"
-                            + "To resolve this, try stopping all current processes for the bot that"
-                            + " could be responsible, or resetting your bot token.\n"
+                    "This interaction was acknowledged by another process running for the same bot.\n"
+                            + "To resolve this, try stopping all current processes for the bot that could be responsible, or resetting your bot token.\n"
                             + "You can reset your token at https://discord.com/developers/applications/"
-                            + getJDA().getSelfUser().getApplicationId()
-                            + "/bot",
+                            + getJDA().getSelfUser().getApplicationId() + "/bot",
                     exception);
         }
 
@@ -67,18 +64,12 @@ public abstract class InteractionCallbackImpl<T> extends RestActionImpl<T>
         if (exception.getErrorResponse() == ErrorResponse.UNKNOWN_INTERACTION) {
             return ErrorResponseException.create(
                     "Failed to acknowledge this interaction, this can be due to 2 reasons:\n"
-                            + "1. This interaction took longer than 3 seconds to be acknowledged, see"
-                            + " https://jda.wiki/using-jda/troubleshooting/#the-interaction-took-longer-than-3-seconds-to-be-acknowledged\n"
-                            + "2. This interaction could have been acknowledged by another process"
-                            + " running for the same bot\n"
-                            + "You can confirm this by checking if your bot replied, or the three dots"
-                            + " in a button disappeared without saying 'This interaction failed', or"
-                            + " you see '[Bot] is thinking...' for more than 3 seconds.\n"
-                            + "To resolve this, try stopping all current processes for the bot that"
-                            + " could be responsible, or resetting your bot token.\n"
+                            + "1. This interaction took longer than 3 seconds to be acknowledged, see https://jda.wiki/using-jda/troubleshooting/#the-interaction-took-longer-than-3-seconds-to-be-acknowledged\n"
+                            + "2. This interaction could have been acknowledged by another process running for the same bot\n"
+                            + "You can confirm this by checking if your bot replied, or the three dots in a button disappeared without saying 'This interaction failed', or you see '[Bot] is thinking...' for more than 3 seconds.\n"
+                            + "To resolve this, try stopping all current processes for the bot that could be responsible, or resetting your bot token.\n"
                             + "You can reset your token at https://discord.com/developers/applications/"
-                            + getJDA().getSelfUser().getApplicationId()
-                            + "/bot",
+                            + getJDA().getSelfUser().getApplicationId() + "/bot",
                     exception);
         }
 
@@ -105,8 +96,7 @@ public abstract class InteractionCallbackImpl<T> extends RestActionImpl<T>
         // true => we already called this before => this will never succeed!
         return interaction.ack()
                 ? new IllegalStateException(
-                        "This interaction has already been acknowledged or replied to. You can only"
-                                + " reply or acknowledge an interaction once!")
+                        "This interaction has already been acknowledged or replied to. You can only reply or acknowledge an interaction once!")
                 : null; // null indicates we were successful, no exception means we can't fail :)
     }
 
@@ -116,8 +106,7 @@ public abstract class InteractionCallbackImpl<T> extends RestActionImpl<T>
         if (exception != null) {
             if (failure != null) {
                 failure.accept(exception);
-                // if the failure callback throws that will just bubble up,
-                // which is acceptable
+                // if the failure callback throws that will just bubble up, which is acceptable
             } else {
                 RestAction.getDefaultFailure().accept(exception);
             }

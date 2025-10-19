@@ -67,7 +67,6 @@ public interface MemberCachePolicy {
      * Disable all member caching
      */
     MemberCachePolicy NONE = (member) -> false;
-
     /**
      * Enable all member caching.
      *
@@ -75,12 +74,10 @@ public interface MemberCachePolicy {
      * The api will only send the guild member leave events when this intent is enabled. Without those events the members will stay in cache indefinitely.
      */
     MemberCachePolicy ALL = (member) -> true;
-
     /**
      * Cache owner of the guild. This simply checks {@link Member#isOwner()}.
      */
     MemberCachePolicy OWNER = Member::isOwner;
-
     /**
      * Cache online/idle/dnd users.
      * <br>Requires {@link net.dv8tion.jda.api.requests.GatewayIntent#GUILD_PRESENCES GatewayIntent.GUILD_PRESENCES} and {@link net.dv8tion.jda.api.utils.cache.CacheFlag#ONLINE_STATUS CacheFlag.ONLINE_STATUS} to be enabled.
@@ -93,7 +90,6 @@ public interface MemberCachePolicy {
      */
     MemberCachePolicy ONLINE = (member) -> member.getOnlineStatus() != OnlineStatus.OFFLINE
             && member.getOnlineStatus() != OnlineStatus.UNKNOWN;
-
     /**
      * Cache members who are connected to a voice channel.
      * <br>Requires {@link net.dv8tion.jda.api.requests.GatewayIntent#GUILD_VOICE_STATES GatewayIntent.GUILD_VOICE_STATES} and {@link net.dv8tion.jda.api.utils.cache.CacheFlag#VOICE_STATE CacheFlag.VOICE_STATE} to be enabled.
@@ -102,13 +98,11 @@ public interface MemberCachePolicy {
         GuildVoiceState voiceState = member.getVoiceState();
         return voiceState != null && voiceState.getChannel() != null;
     };
-
     /**
      * Cache members who are boosting the guild. This checks {@link Member#isBoosting()}
      * <br>Requires {@link net.dv8tion.jda.api.requests.GatewayIntent#GUILD_MEMBERS GUILD_MEMBERS} to be enabled.
      * */
     MemberCachePolicy BOOSTER = Member::isBoosting;
-
     /**
      * Caches members who haven't passed Membership Screening.
      *
@@ -119,7 +113,6 @@ public interface MemberCachePolicy {
      */
     @Incubating
     MemberCachePolicy PENDING = Member::isPending;
-
     /**
      * The default policy to use with {@link net.dv8tion.jda.api.JDABuilder#createDefault(String)}.
      * <br>This is identical to {@code VOICE.or(OWNER)}.

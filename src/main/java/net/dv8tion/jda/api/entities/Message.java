@@ -224,8 +224,7 @@ public interface Message extends ISnowflake, Formattable {
      * @see #getInvites()
      */
     Pattern INVITE_PATTERN = Pattern.compile(
-            "(?:https?://)?"
-                    + // Scheme
+            "(?:https?://)?" + // Scheme
                     "(?:\\w+\\.)?"
                     + // Subdomain
                     "discord(?:(?:app)?\\.com"
@@ -273,8 +272,7 @@ public interface Message extends ISnowflake, Formattable {
      * @see #getJumpUrl()
      */
     Pattern JUMP_URL_PATTERN = Pattern.compile(
-            "(?:https?://)?"
-                    + // Scheme
+            "(?:https?://)?" + // Scheme
                     "(?:\\w+\\.)?"
                     + // Subdomain
                     "discord(?:app)?\\.com"

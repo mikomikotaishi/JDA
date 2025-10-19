@@ -301,8 +301,7 @@ public class ChannelManagerImpl<T extends GuildChannel, M extends ChannelManager
                     throw new InsufficientPermissionException(
                             channel,
                             Permission.MANAGE_PERMISSIONS,
-                            "You must have Permission.MANAGE_PERMISSIONS on the channel explicitly"
-                                    + " in order to set permissions you don't already have!");
+                            "You must have Permission.MANAGE_PERMISSIONS on the channel explicitly in order to set permissions you don't already have!");
                 }
             }
         }
@@ -378,11 +377,9 @@ public class ChannelManagerImpl<T extends GuildChannel, M extends ChannelManager
                 throw new InsufficientPermissionException(
                         getChannel(),
                         Permission.MANAGE_PERMISSIONS,
-                        "Cannot sync channel with parent due to permission escalation issues. One"
-                                + " of the overrides would set MANAGE_PERMISSIONS or a permission that"
-                                + " the bot does not have. This is not possible without explicitly"
-                                + " having MANAGE_PERMISSIONS on this channel or ADMINISTRATOR on a"
-                                + " role.");
+                        "Cannot sync channel with parent due to permission escalation issues. "
+                                + "One of the overrides would set MANAGE_PERMISSIONS or a permission that the bot does not have. "
+                                + "This is not possible without explicitly having MANAGE_PERMISSIONS on this channel or ADMINISTRATOR on a role.");
             }
         }
 
@@ -652,8 +649,7 @@ public class ChannelManagerImpl<T extends GuildChannel, M extends ChannelManager
             if (!thread.isOwner()) {
                 checkPermission(
                         Permission.MANAGE_THREADS,
-                        "Cannot modify a thread's invitable status without MANAGE_THREADS if not"
-                                + " the thread owner");
+                        "Cannot modify a thread's invitable status without MANAGE_THREADS if not the thread owner");
             }
         }
 
@@ -731,8 +727,7 @@ public class ChannelManagerImpl<T extends GuildChannel, M extends ChannelManager
         }
         if (tags.isEmpty() && parentChannel.asForumChannel().isTagRequired()) {
             throw new IllegalArgumentException(
-                    "Cannot remove all tags from a forum post which requires at least one tag! See"
-                            + " IPostContainer#isRequireTag()");
+                    "Cannot remove all tags from a forum post which requires at least one tag! See IPostContainer#isRequireTag()");
         }
         this.appliedTags = tags.stream().map(ISnowflake::getId).collect(Collectors.toList());
         set |= APPLIED_TAGS;
@@ -885,8 +880,7 @@ public class ChannelManagerImpl<T extends GuildChannel, M extends ChannelManager
 
         IPermissionContainerMixin<?> impl = (IPermissionContainerMixin<?>) getChannel();
         impl.getPermissionOverrideMap().forEachEntry((id, override) -> {
-            // removed by not adding them here, this data set overrides the existing
-            // one
+            // removed by not adding them here, this data set overrides the existing one
             // we can use remove because it will be reset afterwards either way
             if (!overridesRem.remove(id) && !data.containsKey(id)) {
                 data.put(id, new PermOverrideData(override));

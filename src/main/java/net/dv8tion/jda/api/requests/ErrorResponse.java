@@ -94,8 +94,7 @@ public enum ErrorResponse {
             "The write action you are performing on the server has hit the write rate limit"),
     GUILD_EXPLICIT_CONTENT_FILTER(
             20031,
-            "Your Stage topic, server name, server description, or channel names contain words that"
-                    + " are not allowed"),
+            "Your Stage topic, server name, server description, or channel names contain words that are not allowed"),
     GUILD_PREMIUM_LEVEL_TOO_LOW(20035, "Guild premium subscription level too low"),
     MAX_GUILDS(30001, "Maximum number of Guilds reached (100)"),
     MAX_FRIENDS(30002, "Maximum number of Friends reached (1000)"),
@@ -162,8 +161,7 @@ public enum ErrorResponse {
             40094, "This interaction has hit the maximum number of follow up messages"),
     CLOUDFLARE_BLOCKED_REQUEST(
             40333,
-            "Cloudflare is blocking your request. This can often be resolved by setting a proper"
-                    + " User Agent"),
+            "Cloudflare is blocking your request. This can often be resolved by setting a proper User Agent"),
     MISSING_ACCESS(50001, "Missing Access"),
     INVALID_ACCOUNT_TYPE(50002, "Invalid Account Type"),
     INVALID_DM_ACTION(50003, "Cannot execute action on a DM channel"),
@@ -181,8 +179,7 @@ public enum ErrorResponse {
     NOTE_TOO_LONG(50015, "Note is too long"),
     INVALID_BULK_DELETE(
             50016,
-            "Provided too few or too many messages to delete. Must provided at least 2 and fewer"
-                    + " than 100 messages to delete"),
+            "Provided too few or too many messages to delete. Must provided at least 2 and fewer than 100 messages to delete"),
     INVALID_MFA_LEVEL(50017, "Provided MFA level was invalid."),
     INVALID_PASSWORD(50018, "Provided password was invalid"),
     INVALID_PIN(50019, "A message can only be pinned to the channel it was sent in"),
@@ -212,16 +209,14 @@ public enum ErrorResponse {
     INVALID_STICKER_SENT(50081, "Invalid Sticker Sent"),
     ILLEGAL_OPERATION_ARCHIVED_THREAD(
             50083,
-            "Tried to perform an operation on an archived thread, such as editing a message or"
-                    + " adding a user to the thread"),
+            "Tried to perform an operation on an archived thread, such as editing a message or adding a user to the thread"),
     INVALID_THREAD_NOTIFICATION_SETTINGS(50084, "Invalid thread notification settings"),
     BEFORE_VALUE_EARLIER_THAN_THREAD_CREATION(
             50085, "\"before\" value is earlier than the thread creation date"),
     INVALID_COMMUNITY_SERVER_CHANNEL_TYPE(50086, "Community server channels must be text channels"),
     INCONSISTENT_EVENT_START_ENTITY(
             50091,
-            "The entity type of the event is different from the entity you are trying to start the"
-                    + " event for"),
+            "The entity type of the event is different from the entity you are trying to start the event for"),
     SERVER_NOT_AVAILABLE_IN_YOUR_LOCATION(50095, "This server is not available in your location"),
     SERVER_MONETIZATION_DISABLED(
             50097, "This server needs monetization enabled in order to perform this action"),

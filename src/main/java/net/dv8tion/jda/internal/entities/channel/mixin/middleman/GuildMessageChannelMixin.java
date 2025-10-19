@@ -52,8 +52,7 @@ public interface GuildMessageChannelMixin<T extends GuildMessageChannelMixin<T>>
         checkCanAccess();
         checkPermission(
                 Permission.MESSAGE_MANAGE,
-                "Must have MESSAGE_MANAGE in order to bulk delete messages in this channel"
-                        + " regardless of author.");
+                "Must have MESSAGE_MANAGE in order to bulk delete messages in this channel regardless of author.");
 
         if (messageIds.size() < 2 || messageIds.size() > 100) {
             throw new IllegalArgumentException(

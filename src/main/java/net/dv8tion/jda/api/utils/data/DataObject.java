@@ -627,7 +627,6 @@ public class DataObject implements SerializableData {
         }
         return value;
     }
-
     /**
      * Resolves an {@link OffsetDateTime} to a key.
      * <br><b>Note:</b> This method should only be used on ISO8601 timestamps
@@ -650,8 +649,7 @@ public class DataObject implements SerializableData {
             value = get(OffsetDateTime.class, key, OffsetDateTime::parse, null);
         } catch (DateTimeParseException e) {
             String reason =
-                    "Cannot parse value for %s into an OffsetDateTime object. Try double checking"
-                            + " that %s is a valid ISO8601 timestmap";
+                    "Cannot parse value for %s into an OffsetDateTime object. Try double checking that %s is a valid ISO8601 timestmap";
             throw new ParsingException(String.format(reason, key, e.getParsedString()));
         }
         return value == null ? defaultValue : value;

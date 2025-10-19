@@ -42,10 +42,8 @@ public interface AccountManager extends Manager<AccountManager> {
      * Used to reset the name field
      */
     long NAME = 1;
-
     /** Used to reset the avatar field */
     long AVATAR = 1 << 1;
-
     /** Used to reset the banner field */
     long BANNER = 1 << 2;
 

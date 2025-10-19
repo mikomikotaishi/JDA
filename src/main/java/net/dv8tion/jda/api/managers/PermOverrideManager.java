@@ -48,10 +48,8 @@ import javax.annotation.Nonnull;
 public interface PermOverrideManager extends Manager<PermOverrideManager> {
     /** Used to reset the denied field */
     long DENIED = 1;
-
     /** Used to reset the granted field */
     long ALLOWED = 1 << 1;
-
     /** Used to reset <b>all</b> permissions to their original value */
     long PERMISSIONS = ALLOWED | DENIED;
 

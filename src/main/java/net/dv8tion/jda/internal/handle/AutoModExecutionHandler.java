@@ -43,8 +43,7 @@ public class AutoModExecutionHandler extends SocketHandler {
                             allContent,
                             this::handle);
             EventCache.LOG.debug(
-                    "Received a AUTO_MODERATION_ACTION_EXECUTION for a guild that is not yet"
-                            + " cached. JSON: {}",
+                    "Received a AUTO_MODERATION_ACTION_EXECUTION for a guild that is not yet cached. JSON: {}",
                     content);
             return null;
         }

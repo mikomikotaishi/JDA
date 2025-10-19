@@ -182,8 +182,7 @@ public class MessageHistory {
     public RestAction<@Unmodifiable List<Message>> retrievePast(int amount) {
         if (amount > 100 || amount < 1) {
             throw new IllegalArgumentException(
-                    "Message retrieval limit is between 1 and 100 messages. No more, no less. Limit"
-                            + " provided: "
+                    "Message retrieval limit is between 1 and 100 messages. No more, no less. Limit provided: "
                             + amount);
         }
 
@@ -262,15 +261,13 @@ public class MessageHistory {
     public RestAction<@Unmodifiable List<Message>> retrieveFuture(int amount) {
         if (amount > 100 || amount < 1) {
             throw new IllegalArgumentException(
-                    "Message retrieval limit is between 1 and 100 messages. No more, no less. Limit"
-                            + " provided: "
+                    "Message retrieval limit is between 1 and 100 messages. No more, no less. Limit provided: "
                             + amount);
         }
 
         if (history.isEmpty()) {
             throw new IllegalStateException(
-                    "No messages have been retrieved yet, so there is no message to act as a marker"
-                            + " to retrieve more recent messages based on.");
+                    "No messages have been retrieved yet, so there is no message to act as a marker to retrieve more recent messages based on.");
         }
 
         Route.CompiledRoute route = Route.Messages.GET_MESSAGE_HISTORY

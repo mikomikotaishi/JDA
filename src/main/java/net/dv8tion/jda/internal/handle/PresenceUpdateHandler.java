@@ -79,8 +79,7 @@ public class PresenceUpdateHandler extends SocketHandler {
                             allContent,
                             this::handle);
             EventCache.LOG.debug(
-                    "Received a PRESENCE_UPDATE for a guild that is not yet cached! GuildId:{}"
-                            + " UserId: {}",
+                    "Received a PRESENCE_UPDATE for a guild that is not yet cached! GuildId:{} UserId: {}",
                     guildId,
                     content.getObject("user").get("id"));
             return null;
@@ -160,8 +159,7 @@ public class PresenceUpdateHandler extends SocketHandler {
                         ex);
             } else {
                 EntityBuilder.LOG.warn(
-                        "Encountered exception trying to parse a presence! UserID: {} Message: {}"
-                                + " Enable debug for details",
+                        "Encountered exception trying to parse a presence! UserID: {} Message: {} Enable debug for details",
                         userId,
                         ex.getMessage());
             }

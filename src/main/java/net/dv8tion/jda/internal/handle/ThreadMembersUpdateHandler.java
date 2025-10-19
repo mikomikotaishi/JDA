@@ -58,8 +58,7 @@ public class ThreadMembersUpdateHandler extends SocketHandler {
                             allContent,
                             this::handle);
             EventCache.LOG.debug(
-                    "THREAD_MEMBERS_UPDATE attempted to update a thread that does not exist. JSON:"
-                            + " {}",
+                    "THREAD_MEMBERS_UPDATE attempted to update a thread that does not exist. JSON: {}",
                     content);
             return null;
         }

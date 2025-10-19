@@ -36,13 +36,10 @@ import javax.annotation.Nullable;
 public final class OpusPacket implements Comparable<OpusPacket> {
     /** (Hz) We want to use the highest of qualities! All the bandwidth! */
     public static final int OPUS_SAMPLE_RATE = 48000;
-
     /** An opus frame size of 960 at 48000hz represents 20 milliseconds of audio. */
     public static final int OPUS_FRAME_SIZE = 960;
-
     /** This is 20 milliseconds. We are only dealing with 20ms opus packets. */
     public static final int OPUS_FRAME_TIME_AMOUNT = 20;
-
     /** We want to use stereo. If the audio given is mono, the encoder promotes it to Left and Right mono (stereo that is the same on both sides) */
     public static final int OPUS_CHANNEL_COUNT = 2;
 

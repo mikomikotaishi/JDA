@@ -153,36 +153,44 @@ public class CommandDataTest {
 
         assertThat(command.toData())
                 .withRepresentation(new PrettyRepresentation())
-                .isEqualTo(defaultCommand()
-                        .put("name", "mod")
-                        .put("description", "Moderation commands")
-                        .put(
-                                "options",
-                                DataArray.empty()
-                                        .add(defaultOption(
-                                                        OptionType.SUB_COMMAND,
-                                                        "ban",
-                                                        "Ban a user from this" + " server")
-                                                .remove("autocomplete")
-                                                .remove("required")
-                                                .put(
-                                                        "options",
-                                                        DataArray.empty()
-                                                                .add(defaultOption(
-                                                                                OptionType.USER,
-                                                                                "user",
-                                                                                "The user"
-                                                                                        + " to ban")
-                                                                        .put("required", true))
-                                                                .add(defaultOption(
-                                                                        OptionType.STRING,
-                                                                        "reason",
-                                                                        "The ban" + " reason"))
-                                                                .add(defaultOption(
-                                                                        OptionType.INTEGER,
-                                                                        "days",
-                                                                        "The duration" + " of the"
-                                                                                + " ban"))))));
+                .isEqualTo(
+                        defaultCommand()
+                                .put("name", "mod")
+                                .put("description", "Moderation commands")
+                                .put(
+                                        "options",
+                                        DataArray.empty()
+                                                .add(
+                                                        defaultOption(
+                                                                        OptionType.SUB_COMMAND,
+                                                                        "ban",
+                                                                        "Ban a user from this server")
+                                                                .remove("autocomplete")
+                                                                .remove("required")
+                                                                .put(
+                                                                        "options",
+                                                                        DataArray.empty()
+                                                                                .add(
+                                                                                        defaultOption(
+                                                                                                        OptionType
+                                                                                                                .USER,
+                                                                                                        "user",
+                                                                                                        "The user to ban")
+                                                                                                .put(
+                                                                                                        "required",
+                                                                                                        true))
+                                                                                .add(
+                                                                                        defaultOption(
+                                                                                                OptionType
+                                                                                                        .STRING,
+                                                                                                "reason",
+                                                                                                "The ban reason"))
+                                                                                .add(
+                                                                                        defaultOption(
+                                                                                                OptionType
+                                                                                                        .INTEGER,
+                                                                                                "days",
+                                                                                                "The duration of the ban"))))));
     }
 
     @Test
@@ -195,18 +203,16 @@ public class CommandDataTest {
                                         OptionType.USER,
                                         "user",
                                         "The user to ban",
-                                        true) // required before
-                                // non-required
+                                        true) // required before non-required
                                 .addOption(
-                                        OptionType.STRING, "reason", "The ban reason") // test that
-                                // default is
-                                // false
+                                        OptionType.STRING,
+                                        "reason",
+                                        "The ban reason") // test that default is false
                                 .addOption(
                                         OptionType.INTEGER,
                                         "days",
                                         "The duration of the ban",
-                                        false))); // test with explicit
-        // false
+                                        false))); // test with explicit false
 
         assertThat(command.toData())
                 .withRepresentation(new PrettyRepresentation())
@@ -222,8 +228,7 @@ public class CommandDataTest {
                                                                         OptionType
                                                                                 .SUB_COMMAND_GROUP,
                                                                         "ban",
-                                                                        "Ban or unban a user from"
-                                                                                + " this server")
+                                                                        "Ban or unban a user from this server")
                                                                 .remove("autocomplete")
                                                                 .remove("required")
                                                                 .put(
@@ -234,11 +239,7 @@ public class CommandDataTest {
                                                                                                         OptionType
                                                                                                                 .SUB_COMMAND,
                                                                                                         "add",
-                                                                                                        "Ban a"
-                                                                                                                + " user"
-                                                                                                                + " from"
-                                                                                                                + " this"
-                                                                                                                + " server")
+                                                                                                        "Ban a user from this server")
                                                                                                 .remove(
                                                                                                         "autocomplete")
                                                                                                 .remove(
@@ -252,8 +253,7 @@ public class CommandDataTest {
                                                                                                                                         OptionType
                                                                                                                                                 .USER,
                                                                                                                                         "user",
-                                                                                                                                        "The user"
-                                                                                                                                                + " to ban")
+                                                                                                                                        "The user to ban")
                                                                                                                                 .put(
                                                                                                                                         "required",
                                                                                                                                         true))
@@ -262,16 +262,13 @@ public class CommandDataTest {
                                                                                                                                 OptionType
                                                                                                                                         .STRING,
                                                                                                                                 "reason",
-                                                                                                                                "The ban"
-                                                                                                                                        + " reason"))
+                                                                                                                                "The ban reason"))
                                                                                                                 .add(
                                                                                                                         defaultOption(
                                                                                                                                 OptionType
                                                                                                                                         .INTEGER,
                                                                                                                                 "days",
-                                                                                                                                "The duration"
-                                                                                                                                        + " of the"
-                                                                                                                                        + " ban"))))))));
+                                                                                                                                "The duration of the ban"))))))));
     }
 
     @Test

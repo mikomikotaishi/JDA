@@ -1843,8 +1843,7 @@ public class JDABuilder {
         boolean membersIntent = (intents & GatewayIntent.GUILD_MEMBERS.getRawValue()) != 0;
         if (!membersIntent && memberCachePolicy == MemberCachePolicy.ALL) {
             throw new IllegalStateException(
-                    "Cannot use MemberCachePolicy.ALL without GatewayIntent.GUILD_MEMBERS"
-                            + " enabled!");
+                    "Cannot use MemberCachePolicy.ALL without GatewayIntent.GUILD_MEMBERS enabled!");
         } else if (!membersIntent && chunkingFilter != ChunkingFilter.NONE) {
             JDAImpl.LOG.warn("Member chunking is disabled due to missing GUILD_MEMBERS intent.");
         }
@@ -1859,8 +1858,7 @@ public class JDABuilder {
 
             // Tell user how to disable this warning
             JDAImpl.LOG.warn(
-                    "You can manually disable these flags to remove this warning by using"
-                            + " disableCache({}) on your JDABuilder",
+                    "You can manually disable these flags to remove this warning by using disableCache({}) on your JDABuilder",
                     automaticallyDisabled.stream()
                             .map(it -> "CacheFlag." + it)
                             .collect(Collectors.joining(", ")));

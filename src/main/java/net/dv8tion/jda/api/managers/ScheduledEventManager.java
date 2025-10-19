@@ -45,22 +45,16 @@ import javax.annotation.Nullable;
 public interface ScheduledEventManager extends Manager<ScheduledEventManager> {
     /** Used to reset the name field */
     long NAME = 1;
-
     /** Used to reset the description field */
     long DESCRIPTION = 1 << 1;
-
     /** Used to reset the location field */
     long LOCATION = 1 << 2;
-
     /** Used to reset the start time field */
     long START_TIME = 1 << 3;
-
     /** Used to reset the end time field */
     long END_TIME = 1 << 4;
-
     /** Used to reset the image field */
     long IMAGE = 1 << 5;
-
     /** Used to reset the status field */
     long STATUS = 1 << 6;
 

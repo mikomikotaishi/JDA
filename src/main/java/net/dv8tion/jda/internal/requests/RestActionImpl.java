@@ -242,8 +242,7 @@ public class RestActionImpl<T> implements RestAction<T> {
     public T complete(boolean shouldQueue) throws RateLimitedException {
         if (CallbackContext.isCallbackContext()) {
             throw new IllegalStateException(
-                    "Preventing use of complete() in callback threads! This operation can be a"
-                            + " deadlock cause");
+                    "Preventing use of complete() in callback threads! This operation can be a deadlock cause");
         }
         try {
             return submit(shouldQueue).join();

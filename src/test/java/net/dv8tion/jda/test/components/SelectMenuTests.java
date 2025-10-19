@@ -79,16 +79,14 @@ public class SelectMenuTests {
                     builder.setDefaultValues(DefaultValue.user("1234"));
                 })
                 .withMessage(
-                        "The select menu supports types SelectTarget.ROLE, but provided default"
-                                + " value has type SelectTarget.USER!");
+                        "The select menu supports types SelectTarget.ROLE, but provided default value has type SelectTarget.USER!");
         assertThatIllegalArgumentException()
                 .isThrownBy(() -> {
                     Builder builder = EntitySelectMenu.create("customid", SelectTarget.ROLE);
                     builder.setDefaultValues(DefaultValue.channel("1234"));
                 })
                 .withMessage(
-                        "The select menu supports types SelectTarget.ROLE, but provided default"
-                                + " value has type SelectTarget.CHANNEL!");
+                        "The select menu supports types SelectTarget.ROLE, but provided default value has type SelectTarget.CHANNEL!");
         assertThatIllegalArgumentException()
                 .isThrownBy(() -> {
                     Builder builder = EntitySelectMenu.create(
@@ -96,39 +94,34 @@ public class SelectMenuTests {
                     builder.setDefaultValues(DefaultValue.channel("1234"));
                 })
                 .withMessage(
-                        "The select menu supports types SelectTarget.ROLE and SelectTarget.USER,"
-                                + " but provided default value has type SelectTarget.CHANNEL!");
+                        "The select menu supports types SelectTarget.ROLE and SelectTarget.USER, but provided default value has type SelectTarget.CHANNEL!");
         assertThatIllegalArgumentException()
                 .isThrownBy(() -> {
                     Builder builder = EntitySelectMenu.create("customid", SelectTarget.USER);
                     builder.setDefaultValues(DefaultValue.channel("1234"));
                 })
                 .withMessage(
-                        "The select menu supports types SelectTarget.USER, but provided default"
-                                + " value has type SelectTarget.CHANNEL!");
+                        "The select menu supports types SelectTarget.USER, but provided default value has type SelectTarget.CHANNEL!");
         assertThatIllegalArgumentException()
                 .isThrownBy(() -> {
                     Builder builder = EntitySelectMenu.create("customid", SelectTarget.USER);
                     builder.setDefaultValues(DefaultValue.role("1234"));
                 })
                 .withMessage(
-                        "The select menu supports types SelectTarget.USER, but provided default"
-                                + " value has type SelectTarget.ROLE!");
+                        "The select menu supports types SelectTarget.USER, but provided default value has type SelectTarget.ROLE!");
         assertThatIllegalArgumentException()
                 .isThrownBy(() -> {
                     Builder builder = EntitySelectMenu.create("customid", SelectTarget.CHANNEL);
                     builder.setDefaultValues(DefaultValue.user("1234"));
                 })
                 .withMessage(
-                        "The select menu supports types SelectTarget.CHANNEL, but provided default"
-                                + " value has type SelectTarget.USER!");
+                        "The select menu supports types SelectTarget.CHANNEL, but provided default value has type SelectTarget.USER!");
         assertThatIllegalArgumentException()
                 .isThrownBy(() -> {
                     Builder builder = EntitySelectMenu.create("customid", SelectTarget.CHANNEL);
                     builder.setDefaultValues(DefaultValue.role("1234"));
                 })
                 .withMessage(
-                        "The select menu supports types SelectTarget.CHANNEL, but provided default"
-                                + " value has type SelectTarget.ROLE!");
+                        "The select menu supports types SelectTarget.CHANNEL, but provided default value has type SelectTarget.ROLE!");
     }
 }

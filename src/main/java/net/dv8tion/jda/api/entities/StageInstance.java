@@ -84,8 +84,8 @@ public interface StageInstance extends ISnowflake {
         return getChannel().getMembers().stream()
                 .filter(member -> !member.getVoiceState()
                         .isSuppressed()) // voice states should not be null since
-                // getMembers() checks only for connected
-                // members in the channel
+                // getMembers() checks only for connected members
+                // in the channel
                 .collect(Helpers.toUnmodifiableList());
     }
 
@@ -107,8 +107,8 @@ public interface StageInstance extends ISnowflake {
         return getChannel().getMembers().stream()
                 .filter(member -> member.getVoiceState()
                         .isSuppressed()) // voice states should not be null since
-                // getMembers() checks only for connected
-                // members in the channel
+                // getMembers() checks only for connected members
+                // in the channel
                 .collect(Helpers.toUnmodifiableList());
     }
 

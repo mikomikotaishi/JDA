@@ -73,8 +73,7 @@ public class ComponentConsistencyComplianceTest {
                     if (!optDeclaredMethod.isPresent()) {
                         events.add(SimpleConditionEvent.violated(
                                 item,
-                                item.getFullName()
-                                        + " does not override "
+                                item.getFullName() + " does not override "
                                         + supertypeMethodReturningDeclClass.getFullName()));
                         continue;
                     }
@@ -86,8 +85,7 @@ public class ComponentConsistencyComplianceTest {
                             .equals(declaredMethod.getOwner().getFullName())) {
                         events.add(SimpleConditionEvent.violated(
                                 declaredMethod,
-                                declaredMethod.getFullName()
-                                        + " must override return type with "
+                                declaredMethod.getFullName() + " must override return type with "
                                         + declaredMethod.getOwner().getFullName()));
                         continue;
                     }

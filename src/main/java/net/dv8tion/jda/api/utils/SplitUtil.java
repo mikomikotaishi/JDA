@@ -166,8 +166,7 @@ public class SplitUtil {
 
             if (chunk == null) {
                 throw new IllegalStateException(
-                        "None of the strategies successfully split the string. Try adding"
-                                + " Strategy.ANYWHERE to the end of your strategy list.");
+                        "None of the strategies successfully split the string. Try adding Strategy.ANYWHERE to the end of your strategy list.");
             }
             if (trim) {
                 chunk = chunk.trim();
@@ -214,12 +213,10 @@ public class SplitUtil {
          * <br>This is the default strategy if none is provided, and should ideally only be the final one in your list.
          */
         Strategy ANYWHERE = (string, offset, limit) -> offset + limit;
-
         /**
          * Splits on newline characters. Specifically on {@code '\n'}.
          */
         Strategy NEWLINE = onChar('\n');
-
         /**
          * Splits on every character which is considered {@link Character#isWhitespace(char) whitespace}.
          */

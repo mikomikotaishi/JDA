@@ -131,8 +131,8 @@ class WebSocketSendingThread implements Runnable {
                 handleNormalRequest();
             }
         } catch (InterruptedException ignored) {
-            LOG.debug("Main WS send thread interrupted. Most likely JDA is disconnecting the"
-                    + " websocket.");
+            LOG.debug(
+                    "Main WS send thread interrupted. Most likely JDA is disconnecting the websocket.");
             return;
         } catch (Throwable ex) {
             // Log error
@@ -175,8 +175,7 @@ class WebSocketSendingThread implements Runnable {
                 LOG.debug("Rejected task after shutdown", ex);
             } else {
                 LOG.error(
-                        "Was unable to schedule next packet due to rejected execution by"
-                                + " threadpool",
+                        "Was unable to schedule next packet due to rejected execution by threadpool",
                         ex);
             }
         }

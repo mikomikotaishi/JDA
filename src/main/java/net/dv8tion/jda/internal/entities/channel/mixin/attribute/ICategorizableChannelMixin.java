@@ -31,7 +31,6 @@ public interface ICategorizableChannelMixin<T extends ICategorizableChannelMixin
         if (parent == null) {
             return true; // Channels without a parent category are always considered synced. Also
             // the case for categories.
-
         }
         TLongObjectMap<PermissionOverride> parentOverrides = parent.getPermissionOverrideMap();
         TLongObjectMap<PermissionOverride> overrides = getPermissionOverrideMap();

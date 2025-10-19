@@ -50,8 +50,7 @@ public class WidgetUtil {
             RestConfig.DEFAULT_BASE_URL + "guilds/%s/widget.png?style=%s";
     public static final String WIDGET_URL = RestConfig.DEFAULT_BASE_URL + "guilds/%s/widget.json";
     public static final String WIDGET_HTML =
-            "<iframe src=\"https://discord.com/widget?id=%s&theme=%s\" width=\"%d\" height=\"%d\""
-                    + " allowtransparency=\"true\" frameborder=\"0\"></iframe>";
+            "<iframe src=\"https://discord.com/widget?id=%s&theme=%s\" width=\"%d\" height=\"%d\" allowtransparency=\"true\" frameborder=\"0\"></iframe>";
 
     /**
      * Gets the banner image for the specified guild of the specified type.

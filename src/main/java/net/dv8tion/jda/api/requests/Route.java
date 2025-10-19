@@ -340,10 +340,10 @@ public class Route {
     }
 
     public static class Messages {
-        public static final Route EDIT_MESSAGE =
-                new Route(PATCH, "channels/{channel_id}/messages/{message_id}"); // requires special
-        // handling, same bucket but
-        // different endpoints
+        public static final Route EDIT_MESSAGE = new Route(
+                PATCH,
+                "channels/{channel_id}/messages/{message_id}"); // requires special handling, same
+        // bucket but different endpoints
         public static final Route SEND_MESSAGE = new Route(POST, "channels/{channel_id}/messages");
         public static final Route GET_MESSAGE_PINS =
                 new Route(GET, "channels/{channel_id}/messages/pins");
@@ -729,8 +729,7 @@ public class Route {
         Checks.noneNull(params, "Arguments");
         Checks.check(
                 params.length == paramCount,
-                "Error Compiling Route: [%s], incorrect amount of parameters provided. Expected:"
-                        + " %d, Provided: %d",
+                "Error Compiling Route: [%s], incorrect amount of parameters provided. Expected: %d, Provided: %d",
                 this,
                 paramCount,
                 params.length);

@@ -112,8 +112,7 @@ public class RoleOrderActionImpl extends OrderActionImpl<Role, RoleOrderAction>
                 // If the current role was moved, we are not owner and we can't interact with the
                 // role then throw a PermissionException
                 throw new IllegalStateException(
-                        "Cannot change order: One of the roles could not be moved due to"
-                                + " hierarchical power!");
+                        "Cannot change order: One of the roles could not be moved due to hierarchical power!");
             }
 
             array.add(DataObject.empty()

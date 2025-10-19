@@ -39,13 +39,10 @@ import javax.annotation.Nullable;
 public interface MessagePoll {
     /** Maximum length of a {@link MessagePollBuilder#setTitle(String) poll question title} ({@value}) */
     int MAX_QUESTION_TEXT_LENGTH = 300;
-
     /** Maximum length of a {@link MessagePollBuilder#addAnswer(String)} poll answer title} ({@value}) */
     int MAX_ANSWER_TEXT_LENGTH = 55;
-
     /** Maximum amount of {@link MessagePollBuilder#addAnswer(String) poll answers} ({@value}) */
     int MAX_ANSWERS = 10;
-
     /** Maximum {@link MessagePollBuilder#setDuration(Duration) duration} of poll ({@value}) */
     long MAX_DURATION_HOURS = 7 * 24;
 

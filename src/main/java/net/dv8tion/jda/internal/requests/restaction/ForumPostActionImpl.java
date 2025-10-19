@@ -149,8 +149,7 @@ public class ForumPostActionImpl extends RestActionImpl<ForumPost>
             throw new InsufficientPermissionException(
                     channel,
                     Permission.MANAGE_THREADS,
-                    "You must have Permission.MANAGE_THREADS on the parent forum channel to set a"
-                            + " slowmode!");
+                    "You must have Permission.MANAGE_THREADS on the parent forum channel to set a slowmode!");
         }
         this.slowmode = slowmode;
         return this;

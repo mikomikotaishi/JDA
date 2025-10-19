@@ -452,16 +452,13 @@ public class AutoModRuleData implements SerializableData {
         for (AutoModResponse response : actions.values()) {
             if (!response.getType().isSupportedTrigger(triggerType)) {
                 throw new IllegalStateException("Cannot create a rule of trigger type "
-                        + triggerType
-                        + " with response type "
-                        + response.getType());
+                        + triggerType + " with response type " + response.getType());
             }
         }
 
         if (actions.isEmpty()) {
             throw new IllegalStateException(
-                    "Cannot create a rule with no responses. Add at least one response with"
-                            + " putResponses(...)");
+                    "Cannot create a rule with no responses. Add at least one response with putResponses(...)");
         }
 
         DataObject data = DataObject.empty()

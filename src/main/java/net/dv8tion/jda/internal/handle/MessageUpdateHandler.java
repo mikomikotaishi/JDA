@@ -68,8 +68,7 @@ public class MessageUpdateHandler extends SocketHandler {
                     return handleMessage(content, guild);
                 }
                 WebSocketClient.LOG.debug(
-                        "JDA received a message update for an unexpected message type. Type: {}"
-                                + " JSON: {}",
+                        "JDA received a message update for an unexpected message type. Type: {} JSON: {}",
                         type,
                         content);
                 return null;
@@ -90,8 +89,8 @@ public class MessageUpdateHandler extends SocketHandler {
                 case EntityBuilder.MISSING_CHANNEL: {
                     long channelId = content.getUnsignedLong("channel_id");
 
-                    // If discord adds message support for unexpected types in the future, drop
-                    // the event instead of caching it
+                    // If discord adds message support for unexpected types in the future, drop the
+                    // event instead of caching it
                     if (guild != null) {
                         GuildChannel actual = guild.getGuildChannelById(channelId);
                         if (actual != null) {
@@ -109,8 +108,8 @@ public class MessageUpdateHandler extends SocketHandler {
                                     responseNumber,
                                     allContent,
                                     this::handle);
-                    EventCache.LOG.debug("Received a message update for a channel that JDA does not"
-                            + " currently have cached");
+                    EventCache.LOG.debug(
+                            "Received a message update for a channel that JDA does not currently have cached");
                     return null;
                 }
                 case EntityBuilder.MISSING_USER: {
@@ -123,8 +122,7 @@ public class MessageUpdateHandler extends SocketHandler {
                                     allContent,
                                     this::handle);
                     EventCache.LOG.debug(
-                            "Received a message update for a user that JDA does not currently"
-                                    + " have cached");
+                            "Received a message update for a user that JDA does not currently have cached");
                     return null;
                 }
                 default:

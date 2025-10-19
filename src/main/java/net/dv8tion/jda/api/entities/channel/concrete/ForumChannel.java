@@ -53,7 +53,6 @@ public interface ForumChannel
      * The maximum length of a forum topic ({@value #MAX_FORUM_TOPIC_LENGTH})
      */
     int MAX_FORUM_TOPIC_LENGTH = IPostContainer.MAX_POST_CONTAINER_TOPIC_LENGTH;
-
     /**
      * The maximum number of {@link ForumPostAction#setTags(Collection) tags} that can be applied to a forum post. ({@value #MAX_POST_TAGS})
      */

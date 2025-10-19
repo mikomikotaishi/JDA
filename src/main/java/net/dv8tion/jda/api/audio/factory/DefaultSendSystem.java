@@ -74,8 +74,8 @@ public class DefaultSendSystem implements IAudioSendSystem {
                 } catch (NoRouteToHostException e) {
                     packetProvider.onConnectionLost();
                 } catch (SocketException e) {
-                    // Most likely the socket has been closed due to the audio
-                    // connection be closed. Next iteration will kill loop.
+                    // Most likely the socket has been closed due to the audio connection be closed.
+                    // Next iteration will kill loop.
                 } catch (Exception e) {
                     AudioConnection.LOG.error("Error while sending udp audio data", e);
                 } finally {
@@ -90,8 +90,7 @@ public class DefaultSendSystem implements IAudioSendSystem {
                         }
                     }
                     if (System.currentTimeMillis() < lastFrameSent + 60) {
-                        // If the sending didn't took longer than 60ms (3 times the
-                        // time frame)
+                        // If the sending didn't took longer than 60ms (3 times the time frame)
                         lastFrameSent += OPUS_FRAME_TIME_AMOUNT;
                     } else {
                         // else reset lastFrameSent to current time

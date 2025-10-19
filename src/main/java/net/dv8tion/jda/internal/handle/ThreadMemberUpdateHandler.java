@@ -46,8 +46,7 @@ public class ThreadMemberUpdateHandler extends SocketHandler {
                             allContent,
                             this::handle);
             EventCache.LOG.debug(
-                    "THREAD_MEMBER_UPDATE attempted to update a thread that does not exist. JSON:"
-                            + " {}",
+                    "THREAD_MEMBER_UPDATE attempted to update a thread that does not exist. JSON: {}",
                     content);
             return null;
         }
@@ -62,11 +61,10 @@ public class ThreadMemberUpdateHandler extends SocketHandler {
         long userId = content.getLong("user_id");
         if (userId != getJDA().getSelfUser().getIdLong()) {
             JDAImpl.LOG.warn(
-                    "Received a THREAD_MEMBER_UPDATE for a user that isn't the current bot user."
-                            + " This validates assumptions that THREAD_MEMBER_UPDATE would ONLY be for"
-                            + " the current bot user. Skipping this dispatch for now. This should be"
-                            + " reported as a bug.\n"
-                            + "Details: {}",
+                    "Received a THREAD_MEMBER_UPDATE for a user that isn't the current bot user. "
+                            + "This validates assumptions that THREAD_MEMBER_UPDATE would ONLY be for the current bot user. "
+                            + "Skipping this dispatch for now. This should be reported as a bug."
+                            + "\nDetails: {}",
                     content);
             return null;
         }

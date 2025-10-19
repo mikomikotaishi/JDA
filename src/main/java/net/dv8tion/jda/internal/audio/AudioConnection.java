@@ -224,9 +224,7 @@ public class AudioConnection {
                             return false;
                         }
                     } catch (InterruptedException e) {
-                        LOG.error(
-                                "AudioConnection ready thread got" + " interrupted while sleeping",
-                                e);
+                        LOG.error("AudioConnection ready thread got interrupted while sleeping", e);
                         return false;
                     }
                 }
@@ -276,9 +274,7 @@ public class AudioConnection {
                 // Probably should nuke the old opusDecoder.
                 // Log for now and see if any user report the error.
                 LOG.error(
-                        "Yeah.. So.. JDA received a UserSSRC update for an ssrc that already had a"
-                                + " User set. Inform devs.\n"
-                                + "ChannelId: {} SSRC: {} oldId: {} newId: {}",
+                        "Yeah.. So.. JDA received a UserSSRC update for an ssrc that already had a User set. Inform devs.\nChannelId: {} SSRC: {} oldId: {} newId: {}",
                         channel.getId(),
                         ssrc,
                         previousId,
@@ -377,13 +373,13 @@ public class AudioConnection {
                             if (userId == ssrcMap.getNoEntryValue()) {
                                 ByteBuffer audio = decryptedPacket.getEncodedAudio();
 
-                                // If the bytes are silence, then this was caused by
-                                // a User joining the voice channel,
-                                // and as such, we haven't yet received information
-                                // to pair the SSRC with the UserId.
+                                // If the bytes are silence, then this was caused by a User joining
+                                // the voice channel,
+                                // and as such, we haven't yet received information to pair the SSRC
+                                // with the UserId.
                                 if (!audio.equals(silenceBytes)) {
-                                    LOG.debug("Received audio data with an unknown"
-                                            + " SSRC id. Ignoring");
+                                    LOG.debug(
+                                            "Received audio data with an unknown SSRC id. Ignoring");
                                 }
 
                                 continue;
@@ -392,8 +388,8 @@ public class AudioConnection {
                                 if (AudioNatives.ensureOpus()) {
                                     opusDecoders.put(ssrc, decoder = new Decoder(ssrc));
                                 } else if (!receiveHandler.canReceiveEncoded()) {
-                                    LOG.error("Unable to decode audio due to missing"
-                                            + " opus binaries!");
+                                    LOG.error(
+                                            "Unable to decode audio due to missing opus binaries!");
                                     break;
                                 }
                             }
@@ -408,14 +404,13 @@ public class AudioConnection {
 
                             User user = getJDA().getUserById(userId);
                             if (user == null) {
-                                LOG.warn("Received audio data with a known SSRC, but"
-                                        + " the userId associate with the SSRC"
-                                        + " is unknown to JDA!");
+                                LOG.warn(
+                                        "Received audio data with a known SSRC, but the userId associate with the SSRC is unknown to JDA!");
                                 continue;
                             }
                             short[] decodedAudio = opusPacket.decode();
-                            // If decodedAudio is null, then the Opus decode failed,
-                            // so throw away the packet.
+                            // If decodedAudio is null, then the Opus decode failed, so throw away
+                            // the packet.
                             if (decodedAudio == null) {
                                 // decoder error logged in method
                                 continue;
@@ -436,20 +431,16 @@ public class AudioConnection {
                             couldReceive = false;
                         }
                     } catch (SocketTimeoutException e) {
-                        // Ignore. We set a low timeout so that we wont block
-                        // forever so we can properly shutdown the loop.
+                        // Ignore. We set a low timeout so that we wont block forever so we can
+                        // properly shutdown the loop.
                     } catch (SocketException e) {
-                        // The socket was closed while we were listening for the
-                        // next packet.
-                        // This is expected. Ignore the exception. The thread will
-                        // exit during the next while
-                        // iteration because the udpSocket.isClosed() will return
-                        // true.
+                        // The socket was closed while we were listening for the next packet.
+                        // This is expected. Ignore the exception. The thread will exit during the
+                        // next while
+                        // iteration because the udpSocket.isClosed() will return true.
                     } catch (Exception e) {
                         LOG.error(
-                                "There was some random exception while waiting for"
-                                        + " udp packets",
-                                e);
+                                "There was some random exception while waiting for udp packets", e);
                     }
                 }
             });
@@ -476,8 +467,7 @@ public class AudioConnection {
                 t.setDaemon(true);
                 t.setUncaughtExceptionHandler((thread, throwable) -> {
                     LOG.error(
-                            "I have no idea how, but there was an uncaught"
-                                    + " exception in the combinedAudioExecutor",
+                            "I have no idea how, but there was an uncaught exception in the combinedAudioExecutor",
                             throwable);
                     JDAImpl api = getJDA();
                     api.handleEvent(new ExceptionEvent(api, throwable, true));
@@ -555,8 +545,7 @@ public class AudioConnection {
                             }
                         } catch (Exception e) {
                             LOG.error(
-                                    "There was some unexpected exception in the"
-                                            + " combinedAudioExecutor!",
+                                    "There was some unexpected exception in the combinedAudioExecutor!",
                                     e);
                         }
                     },
@@ -571,8 +560,8 @@ public class AudioConnection {
         ByteBuffer encoded = ByteBuffer.allocate(4096);
         for (int i = rawAudio.position(); i < rawAudio.limit(); i += 2) {
             int firstByte = (0x000000FF
-                    & rawAudio.get(i)); // Promotes to int and handles the fact that it was
-            // unsigned.
+                    & rawAudio.get(
+                            i)); // Promotes to int and handles the fact that it was unsigned.
             int secondByte = (0x000000FF & rawAudio.get(i + 1));
 
             // Combines the 2 bytes into a short. Opus deals with unsigned shorts, not bytes.
@@ -659,8 +648,7 @@ public class AudioConnection {
                     if (rawAudio != null && !rawAudio.hasArray()) {
                         // we can't use the boxer without an array so encryption would not work
                         LOG.error(
-                                "AudioSendHandler provided ByteBuffer without a backing array! This"
-                                        + " is unsupported.");
+                                "AudioSendHandler provided ByteBuffer without a backing array! This is unsupported.");
                     }
 
                     if (rawAudio != null && rawAudio.hasRemaining() && rawAudio.hasArray()) {
@@ -748,9 +736,9 @@ public class AudioConnection {
         @Override
         public void onConnectionLost() {
             LOG.warn("Closing AudioConnection due to inability to send audio packets.");
-            LOG.warn("Cannot send audio packet because JDA cannot navigate the route to Discord.\n"
-                    + "Are you sure you have internet connection? It is likely that you've lost"
-                    + " connection.");
+            LOG.warn(
+                    "Cannot send audio packet because JDA cannot navigate the route to Discord.\n"
+                            + "Are you sure you have internet connection? It is likely that you've lost connection.");
             webSocket.close(ConnectionStatus.ERROR_LOST_CONNECTION);
         }
     }

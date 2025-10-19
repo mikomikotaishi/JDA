@@ -71,8 +71,7 @@ public class CommandDataImpl implements SlashCommandData {
         Checks.notNull(type, "Command Type");
         Checks.check(
                 type != Command.Type.SLASH,
-                "Cannot create slash command without description. Use `new CommandDataImpl(name,"
-                        + " description)` instead.");
+                "Cannot create slash command without description. Use `new CommandDataImpl(name, description)` instead.");
         setName(name);
     }
 
@@ -247,12 +246,10 @@ public class CommandDataImpl implements SlashCommandData {
         for (OptionData option : options) {
             Checks.check(
                     option.getType() != OptionType.SUB_COMMAND,
-                    "Cannot add a subcommand with addOptions(...). Use addSubcommands(...)"
-                            + " instead!");
+                    "Cannot add a subcommand with addOptions(...). Use addSubcommands(...) instead!");
             Checks.check(
                     option.getType() != OptionType.SUB_COMMAND_GROUP,
-                    "Cannot add a subcommand group with addOptions(...). Use"
-                            + " addSubcommandGroups(...) instead!");
+                    "Cannot add a subcommand group with addOptions(...). Use addSubcommandGroups(...) instead!");
             Checks.check(
                     allowRequired || !option.isRequired(),
                     "Cannot add required options after non-required options!");
@@ -291,8 +288,7 @@ public class CommandDataImpl implements SlashCommandData {
         Checks.checkUnique(
                 Stream.concat(getSubcommands().stream(), Arrays.stream(subcommands))
                         .map(SubcommandData::getName),
-                "Cannot have multiple subcommands with the same name. Name: \"%s\" appeared %d"
-                        + " times!",
+                "Cannot have multiple subcommands with the same name. Name: \"%s\" appeared %d times!",
                 (count, value) -> new Object[] {value, count});
 
         allowOption = false;
@@ -318,8 +314,7 @@ public class CommandDataImpl implements SlashCommandData {
         Checks.checkUnique(
                 Stream.concat(getSubcommandGroups().stream(), Arrays.stream(groups))
                         .map(SubcommandGroupData::getName),
-                "Cannot have multiple subcommand groups with the same name. Name: \"%s\" appeared"
-                        + " %d times!",
+                "Cannot have multiple subcommand groups with the same name. Name: \"%s\" appeared %d times!",
                 (count, value) -> new Object[] {value, count});
 
         allowOption = false;

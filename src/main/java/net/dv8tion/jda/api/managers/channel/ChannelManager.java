@@ -46,73 +46,50 @@ public interface ChannelManager<T extends GuildChannel, M extends ChannelManager
         extends Manager<M> {
     /** Used to reset the name field */
     long NAME = 1;
-
     /** Used to reset the parent field */
     long PARENT = 1 << 1;
-
     /** Used to reset the topic field */
     long TOPIC = 1 << 2;
-
     /** Used to reset the position field */
     long POSITION = 1 << 3;
-
     /** Used to reset the nsfw field */
     long NSFW = 1 << 4;
-
     /** Used to reset the userlimit field */
     long USERLIMIT = 1 << 5;
-
     /** Used to reset the bitrate field */
     long BITRATE = 1 << 6;
-
     /** Used to reset the permission field */
     long PERMISSION = 1 << 7;
-
     /** Used to reset the rate-limit per user field */
     long SLOWMODE = 1 << 8;
-
     /** Used to reset the channel type field */
     long TYPE = 1 << 9;
-
     /** Used to reset the region field */
     long REGION = 1 << 10;
-
     /** Used to reset the auto-archive-duration field */
     long AUTO_ARCHIVE_DURATION = 1 << 11;
-
     /** Used to reset the archived field */
     long ARCHIVED = 1 << 12;
-
     /** Used to reset the locked field */
     long LOCKED = 1 << 13;
-
     /** Used to reset the invitable field */
     long INVITEABLE = 1 << 14;
-
     /** Used to reset the available tags field */
     long AVAILABLE_TAGS = 1 << 15;
-
     /** Used to reset the applied tags field */
     long APPLIED_TAGS = 1 << 16;
-
     /** Used to reset the pinned state field */
     long PINNED = 1 << 17;
-
     /** Used to reset the require tag state field */
     long REQUIRE_TAG = 1 << 18;
-
     /** Used to reset the default reaction emoji field */
     long DEFAULT_REACTION = 1 << 19;
-
     /** Used to reset the default layout field */
     long DEFAULT_LAYOUT = 1 << 20;
-
     /** Used to reset the default sort order field */
     long DEFAULT_SORT_ORDER = 1 << 21;
-
     /** Used to reset the hide media download option flag */
     long HIDE_MEDIA_DOWNLOAD_OPTIONS = 1 << 22;
-
     /** Used to reset the default thread slowmode of a thread container */
     long DEFAULT_THREAD_SLOWMODE = 1 << 23;
 

@@ -185,8 +185,7 @@ public class OptionData implements SerializableData {
                 "Cannot make a subcommand group with OptionData. Use addSubcommands(...) instead!");
         Checks.check(
                 type != OptionType.SUB_COMMAND_GROUP,
-                "Cannot make a subcommand group with OptionData. Use addSubcommandGroups(...)"
-                        + " instead!");
+                "Cannot make a subcommand group with OptionData. Use addSubcommandGroups(...) instead!");
         this.type = type;
 
         setName(name);

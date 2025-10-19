@@ -281,8 +281,7 @@ public class Checks {
             Component newComponent) {
         Checks.check(
                 expectedChildrenType.isInstance(newComponent),
-                "%s was replaced by an incompatible component (%s), this layout only supports"
-                        + " components of type %s",
+                "%s was replaced by an incompatible component (%s), this layout only supports components of type %s",
                 originalComponent,
                 newComponent,
                 expectedChildrenType.getSimpleName());

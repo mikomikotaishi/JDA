@@ -57,8 +57,7 @@ public class LocalizationTest {
                                                 new OptionData(
                                                                 OptionType.INTEGER,
                                                                 "del_days",
-                                                                "The amount of days" + " to delete"
-                                                                        + " messages")
+                                                                "The amount of days to delete messages")
                                                         .addChoices(
                                                                 new Command.Choice("1 Day", "1"),
                                                                 new Command.Choice("7 Days", "7"),
@@ -73,8 +72,7 @@ public class LocalizationTest {
                                                 new OptionData(
                                                                 OptionType.INTEGER,
                                                                 "del_days",
-                                                                "The amount of days" + " to delete"
-                                                                        + " messages")
+                                                                "The amount of days to delete messages")
                                                         .addChoices(
                                                                 new Command.Choice("1 Day", "1"),
                                                                 new Command.Choice("7 Days", "7"),

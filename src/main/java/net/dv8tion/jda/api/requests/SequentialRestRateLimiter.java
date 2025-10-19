@@ -133,8 +133,8 @@ public final class SequentialRestRateLimiter implements RestRateLimiter {
     @Override
     public int cancelRequests() {
         return MiscUtil.locked(lock, () -> {
-            // Empty buckets will be removed by the cleanup worker, which also checks for
-            // rate limit parameters
+            // Empty buckets will be removed by the cleanup worker, which also checks for rate limit
+            // parameters
             int cancelled = (int) buckets.values().stream()
                     .map(Bucket::getRequests)
                     .flatMap(Collection::stream)
@@ -180,8 +180,8 @@ public final class SequentialRestRateLimiter implements RestRateLimiter {
                     // remove uninit if requests are empty
                     if (bucket.isUninit()) {
                         entries.remove();
-                        // If the requests of the bucket are drained and the reset is expired
-                        // the bucket has no valuable information
+                        // If the requests of the bucket are drained and the reset is expired the
+                        // bucket has no valuable information
                     } else if (bucket.reset <= getNow()) {
                         entries.remove();
                         // Remove empty buckets when the rate limiter is stopped
@@ -306,12 +306,12 @@ public final class SequentialRestRateLimiter implements RestRateLimiter {
                     if (global) {
                         config.getGlobalRateLimit().setClassic(now + retryAfter);
                         log.error(
-                                "Encountered global rate limit! Retry-After: {} ms Scope:" + " {}",
+                                "Encountered global rate limit! Retry-After: {} ms Scope: {}",
                                 retryAfter,
                                 scope);
                     }
-                    // Handle cloudflare rate limits, this applies to all routes and uses
-                    // seconds for retry-after
+                    // Handle cloudflare rate limits, this applies to all routes and uses seconds
+                    // for retry-after
                     else if (cloudflare) {
                         config.getGlobalRateLimit().setCloudflare(now + retryAfter);
                         log.error(
@@ -324,21 +324,19 @@ public final class SequentialRestRateLimiter implements RestRateLimiter {
                         // Update the bucket to the new information
                         bucket.remaining = 0;
                         bucket.reset = now + retryAfter;
-                        // don't log warning if we hit the rate limit for the first time,
-                        // likely due to initialization of the bucket
+                        // don't log warning if we hit the rate limit for the first time, likely due
+                        // to initialization of the bucket
                         // unless its a long retry-after delay (more than a minute)
                         if (firstHit) {
                             log.debug(
-                                    "Encountered 429 on route {} with bucket {}"
-                                            + " Retry-After: {} ms Scope: {}",
+                                    "Encountered 429 on route {} with bucket {} Retry-After: {} ms Scope: {}",
                                     baseRoute,
                                     bucket.bucketId,
                                     retryAfter,
                                     scope);
                         } else {
                             log.warn(
-                                    "Encountered 429 on route {} with bucket {}"
-                                            + " Retry-After: {} ms Scope: {}",
+                                    "Encountered 429 on route {} with bucket {} Retry-After: {} ms Scope: {}",
                                     baseRoute,
                                     bucket.bucketId,
                                     retryAfter,
@@ -353,8 +351,7 @@ public final class SequentialRestRateLimiter implements RestRateLimiter {
                     return bucket;
                 }
 
-                // If hash is null this means we didn't get enough information to update a
-                // bucket
+                // If hash is null this means we didn't get enough information to update a bucket
                 if (hash == null) {
                     return bucket;
                 }
@@ -382,9 +379,7 @@ public final class SequentialRestRateLimiter implements RestRateLimiter {
             } catch (Exception e) {
                 Bucket bucket = getBucket(route);
                 log.error(
-                        "Encountered Exception while updating a bucket. Route: {} Bucket:"
-                                + " {} Code: {} Headers:\n"
-                                + "{}",
+                        "Encountered Exception while updating a bucket. Route: {} Bucket: {} Code: {} Headers:\n{}",
                         route.getBaseRoute(),
                         bucket,
                         response.code(),

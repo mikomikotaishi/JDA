@@ -50,28 +50,28 @@ public class FlatMapErrorRestAction<T> extends RestActionOperator<T, T> {
         action.queue(success, contextWrap((error) -> {
             try {
                 if (check.test(error)) {
-                    // If check passed we can apply the fallback function and
-                    // flatten it
+                    // If check passed we can apply the fallback function and flatten it
                     RestAction<? extends T> then = map.apply(error);
                     if (then == null) {
                         doFailure(
                                 failure,
                                 new IllegalStateException("FlatMapError operand is null", error));
-                        // No contextFailure because error
-                        // already has context
+                        // No contextFailure because error already has context
                     } else {
-                        then.queue(success, contextFailure); // Use contextFailure here to apply
-                        // new context to new errors
+                        then.queue(
+                                success,
+                                contextFailure); // Use contextFailure here to apply new context to
+                        // new errors
                     }
                 } else {
-                    doFailure(failure, error); // No contextFailure because error already has
-                    // context
+                    doFailure(
+                            failure, error); // No contextFailure because error already has context
                 }
             } catch (Throwable e) {
                 doFailure(
                         failure,
-                        Helpers.appendCause(e, error)); // No contextFailure because error already
-                // has context
+                        Helpers.appendCause(
+                                e, error)); // No contextFailure because error already has context
             }
         }));
     }

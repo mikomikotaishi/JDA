@@ -48,49 +48,34 @@ import javax.annotation.Nullable;
 public interface GuildManager extends Manager<GuildManager> {
     /** Used to reset the name field */
     long NAME = 1;
-
     /** Used to reset the icon field */
     long ICON = 1 << 1;
-
     /** Used to reset the splash field */
     long SPLASH = 1 << 2;
-
     /** Used to reset the afk channel field */
     long AFK_CHANNEL = 1 << 3;
-
     /** Used to reset the afk timeout field */
     long AFK_TIMEOUT = 1 << 4;
-
     /** Used to reset the system channel field */
     long SYSTEM_CHANNEL = 1 << 5;
-
     /** Used to reset the default notification level field */
     long NOTIFICATION_LEVEL = 1 << 7;
-
     /** Used to reset the explicit content level field */
     long EXPLICIT_CONTENT_LEVEL = 1 << 8;
-
     /** Used to reset the verification level field */
     long VERIFICATION_LEVEL = 1 << 9;
-
     /** Used to reset the banner field */
     long BANNER = 1 << 10;
-
     /** Used to reset the description field */
     long DESCRIPTION = 1 << 11;
-
     /** Used to reset the rules channel field */
     long RULES_CHANNEL = 1 << 12;
-
     /** Used to reset the community updates channel field */
     long COMMUNITY_UPDATES_CHANNEL = 1 << 13;
-
     /** Used to reset the premium progress bar enabled field */
     long BOOST_PROGRESS_BAR_ENABLED = 1 << 14;
-
     /** Used to add or remove modifiable features (such as {@code "INVITES_DISABLED"}) */
     long FEATURES = 1 << 15;
-
     /** Used to rest the safety alerts channel field */
     long SAFETY_ALERTS_CHANNEL = 1 << 16;
 

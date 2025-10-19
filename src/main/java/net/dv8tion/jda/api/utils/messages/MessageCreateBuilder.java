@@ -309,16 +309,13 @@ public class MessageCreateBuilder
                 && components.isEmpty()
                 && poll == null) {
             throw new IllegalStateException(
-                    "Cannot build an empty message. You need at least one of content, embeds,"
-                            + " components, poll, or files");
+                    "Cannot build an empty message. You need at least one of content, embeds, components, poll, or files");
         }
 
         int length = Helpers.codePointLength(content);
         if (length > Message.MAX_CONTENT_LENGTH) {
             throw new IllegalStateException("Message content is too long! Max length is "
-                    + Message.MAX_CONTENT_LENGTH
-                    + " characters, provided "
-                    + length);
+                    + Message.MAX_CONTENT_LENGTH + " characters, provided " + length);
         }
 
         if (embeds.size() > Message.MAX_EMBED_COUNT) {
@@ -327,17 +324,15 @@ public class MessageCreateBuilder
         }
 
         if (components.size() > Message.MAX_COMPONENT_COUNT) {
-            throw new IllegalStateException("Cannot build message with over "
-                    + Message.MAX_COMPONENT_COUNT
-                    + " top-level components, provided "
-                    + components.size());
+            throw new IllegalStateException(
+                    "Cannot build message with over " + Message.MAX_COMPONENT_COUNT
+                            + " top-level components, provided " + components.size());
         }
         List<? extends Component> illegalV1Components =
                 ComponentsUtil.getIllegalV1Components(components);
         if (!illegalV1Components.isEmpty()) {
             throw new IllegalStateException(
-                    "Cannot build message with components other than ActionRow while using"
-                            + " components V1, see #useComponentsV2, provided: "
+                    "Cannot build message with components other than ActionRow while using components V1, see #useComponentsV2, provided: "
                             + illegalV1Components);
         }
 
@@ -354,28 +349,24 @@ public class MessageCreateBuilder
 
         if (content.length() > 0 || !embeds.isEmpty() || poll != null) {
             throw new IllegalStateException(
-                    "Cannot build a message with components V2 enabled while having content,"
-                            + " embeds, or poll");
+                    "Cannot build a message with components V2 enabled while having content, embeds, or poll");
         }
 
         if (components.isEmpty()) {
             throw new IllegalStateException(
-                    "Cannot build message with no V2 components, or did you forget to disable"
-                            + " them?");
+                    "Cannot build message with no V2 components, or did you forget to disable them?");
         }
         long componentTreeSize = ComponentsUtil.getComponentTreeSize(components);
         if (componentTreeSize > Message.MAX_COMPONENT_COUNT_IN_COMPONENT_TREE) {
             throw new IllegalStateException("Cannot build message with over "
-                    + Message.MAX_COMPONENT_COUNT_IN_COMPONENT_TREE
-                    + " total components, provided "
+                    + Message.MAX_COMPONENT_COUNT_IN_COMPONENT_TREE + " total components, provided "
                     + componentTreeSize);
         }
         long componentTreeLength = ComponentsUtil.getComponentTreeTextContentLength(components);
         if (componentTreeLength > Message.MAX_CONTENT_LENGTH_COMPONENT_V2) {
-            throw new IllegalStateException("Cannot build message with over "
-                    + Message.MAX_CONTENT_LENGTH_COMPONENT_V2
-                    + " total characters, provided "
-                    + componentTreeLength);
+            throw new IllegalStateException(
+                    "Cannot build message with over " + Message.MAX_CONTENT_LENGTH_COMPONENT_V2
+                            + " total characters, provided " + componentTreeLength);
         }
 
         return new MessageCreateData(

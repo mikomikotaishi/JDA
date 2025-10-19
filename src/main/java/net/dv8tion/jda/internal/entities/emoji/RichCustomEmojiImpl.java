@@ -140,8 +140,7 @@ public class RichCustomEmojiImpl implements RichCustomEmoji, EmojiUnion {
             Route.CompiledRoute route = Route.Emojis.GET_EMOJI.compile(guild.getId(), getId());
             return new RestActionImpl<>(api, route, (response, request) -> {
                 DataObject data = response.getObject();
-                if (data.isNull("user")) { // user is not provided when permissions are
-                    // missing
+                if (data.isNull("user")) { // user is not provided when permissions are missing
                     throw ErrorResponseException.create(
                             ErrorResponse.MISSING_PERMISSIONS, response);
                 }

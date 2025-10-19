@@ -31,14 +31,8 @@ public class ChecksHelper {
     }
 
     public static String notInRangeError(String name, int minLength, int maxLength, String value) {
-        return name
-                + " must be between "
-                + minLength
-                + " and "
-                + maxLength
-                + " characters long! Provided: \""
-                + value
-                + "\"";
+        return name + " must be between " + minLength + " and " + maxLength
+                + " characters long! Provided: \"" + value + "\"";
     }
 
     public static String isNullError(String name) {

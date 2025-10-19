@@ -43,8 +43,7 @@ public class GuildDeleteHandler extends SocketHandler {
             // getJDA().getEventCache().cache(EventCache.Type.GUILD, id, () ->
             // handle(responseNumber, allContent));
             WebSocketClient.LOG.debug(
-                    "Received GUILD_DELETE for a Guild that is not currently cached. ID: {}"
-                            + " unavailable: {}",
+                    "Received GUILD_DELETE for a Guild that is not currently cached. ID: {} unavailable: {}",
                     id,
                     unavailable);
             return null;

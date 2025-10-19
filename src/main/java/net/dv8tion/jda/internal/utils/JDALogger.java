@@ -149,8 +149,8 @@ public class JDALogger {
         logger.warn("Using fallback logger due to missing SLF4J implementation.");
         logger.warn("Please setup a logging framework to use JDA.");
         logger.warn("You can use our logging setup guide https://jda.wiki/setup/logging/");
-        logger.warn("To disable the fallback logger, add the slf4j-nop dependency or use"
-                + " JDALogger.setFallbackLoggerEnabled(false)");
+        logger.warn(
+                "To disable the fallback logger, add the slf4j-nop dependency or use JDALogger.setFallbackLoggerEnabled(false)");
     }
 
     private static Logger newFallbackLogger(String name) {

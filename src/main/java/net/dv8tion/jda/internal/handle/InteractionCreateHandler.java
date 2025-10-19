@@ -53,8 +53,7 @@ public class InteractionCreateHandler extends SocketHandler {
         int version = content.getInt("version", 1);
         if (version != 1) {
             WebSocketClient.LOG.debug(
-                    "Received interaction with version {}. This version is currently unsupported by"
-                            + " this version of JDA. Consider updating!",
+                    "Received interaction with version {}. This version is currently unsupported by this version of JDA. Consider updating!",
                     version);
             return null;
         }

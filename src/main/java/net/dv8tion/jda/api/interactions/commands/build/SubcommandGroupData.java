@@ -320,8 +320,7 @@ public class SubcommandGroupData implements SerializableData {
         Checks.checkUnique(
                 Stream.concat(getSubcommands().stream(), Arrays.stream(subcommands))
                         .map(SubcommandData::getName),
-                "Cannot have multiple subcommands with the same name. Name: \"%s\" appeared %d"
-                        + " times!",
+                "Cannot have multiple subcommands with the same name. Name: \"%s\" appeared %d times!",
                 (count, value) -> new Object[] {value, count});
         this.subcommands.addAll(Arrays.asList(subcommands));
         return this;

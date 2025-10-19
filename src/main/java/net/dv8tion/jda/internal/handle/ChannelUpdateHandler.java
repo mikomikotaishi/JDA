@@ -243,8 +243,7 @@ public class ChannelUpdateHandler extends SocketHandler {
             } else {
                 // Change introduced dangling thread channels (with no parent)
                 WebSocketClient.LOG.error(
-                        "ThreadContainer channel transitioned into type that is not"
-                                + " ThreadContainer? {} -> {}",
+                        "ThreadContainer channel transitioned into type that is not ThreadContainer? {} -> {}",
                         channel.getType(),
                         newChannel.getType());
             }

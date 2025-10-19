@@ -75,9 +75,8 @@ public class InteractionEntityBuilder extends AbstractEntityBuilder {
         detachedGuild.setLocale(DiscordLocale.from(locale));
         detachedGuild.setFeatures(featuresArray
                 .map(array -> array.stream(DataArray::getString)
-                        .map(String::intern) // Prevent allocating the
-                        // same feature string
-                        // over and over
+                        .map(String::intern) // Prevent allocating the same feature string over
+                        // and over
                         .collect(Collectors.toSet()))
                 .orElse(Collections.emptySet()));
 
@@ -278,9 +277,7 @@ public class InteractionEntityBuilder extends AbstractEntityBuilder {
             }
         } else {
             LOG.warn(
-                    "Private channel has no recipient and will fallback to a detached"
-                            + " PrivateChannel with no user, please report to the devs, channel JSON:"
-                            + " {}",
+                    "Private channel has no recipient and will fallback to a detached PrivateChannel with no user, please report to the devs, channel JSON: {}",
                     json.toPrettyString());
             channel = new DetachedPrivateChannelImpl(getJDA(), channelId, null);
         }

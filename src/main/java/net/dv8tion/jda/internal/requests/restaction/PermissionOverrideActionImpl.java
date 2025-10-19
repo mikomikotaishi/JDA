@@ -228,8 +228,7 @@ public class PermissionOverrideActionImpl extends AuditableRestActionImpl<Permis
                     throw new InsufficientPermissionException(
                             channel,
                             Permission.MANAGE_PERMISSIONS,
-                            "You must have Permission.MANAGE_PERMISSIONS on the channel explicitly"
-                                    + " in order to set permissions you don't already have!");
+                            "You must have Permission.MANAGE_PERMISSIONS on the channel explicitly in order to set permissions you don't already have!");
                 }
             }
         }

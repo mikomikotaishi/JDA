@@ -45,8 +45,7 @@ public class MessageBulkDeleteHandler extends SocketHandler {
             guild = api.getGuildById(guildId);
             if (guild == null) {
                 EventCache.LOG.debug(
-                        "Caching MESSAGE_DELETE event for guild that is not currently cached."
-                                + " GuildID: {}",
+                        "Caching MESSAGE_DELETE event for guild that is not currently cached. GuildID: {}",
                         guildId);
                 api.getEventCache()
                         .cache(
@@ -81,8 +80,7 @@ public class MessageBulkDeleteHandler extends SocketHandler {
                     GuildChannel guildChannel = guild.getGuildChannelById(channelId);
                     if (guildChannel != null) {
                         WebSocketClient.LOG.debug(
-                                "Discarding MESSAGE_DELETE event for unexpected channel type."
-                                        + " Channel: {}",
+                                "Discarding MESSAGE_DELETE event for unexpected channel type. Channel: {}",
                                 guildChannel);
                         return null;
                     }
@@ -96,8 +94,7 @@ public class MessageBulkDeleteHandler extends SocketHandler {
                                 allContent,
                                 this::handle);
                 EventCache.LOG.debug(
-                        "Received a Bulk Message Delete for a GuildMessageChannel that is not yet"
-                                + " cached.");
+                        "Received a Bulk Message Delete for a GuildMessageChannel that is not yet cached.");
                 return null;
             }
 

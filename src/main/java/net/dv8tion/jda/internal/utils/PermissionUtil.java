@@ -325,8 +325,8 @@ public class PermissionUtil {
 
         if (member.isDetached()) {
             throw new DetachedEntityException(
-                    "Cannot get the effective permissions of a detached member without a channel."
-                            + " Instead, please use the Member methods while supplying a GuildChannel");
+                    "Cannot get the effective permissions of a detached member without a channel. "
+                            + "Instead, please use the Member methods while supplying a GuildChannel");
         }
 
         if (member.isOwner()) {
@@ -380,8 +380,8 @@ public class PermissionUtil {
 
         if (member.isDetached()) {
             throw new DetachedEntityException(
-                    "Cannot get the effective permissions of a detached member. Instead, please use"
-                            + " the Member methods while supplying a GuildChannel");
+                    "Cannot get the effective permissions of a detached member. "
+                            + "Instead, please use the Member methods while supplying a GuildChannel");
         }
 
         if (member.isOwner()) {
@@ -493,8 +493,8 @@ public class PermissionUtil {
 
         if (member.isDetached()) {
             throw new DetachedEntityException(
-                    "Cannot get the explicit permissions of a detached member without a channel."
-                            + " Instead, please use the Member methods while supplying a GuildChannel");
+                    "Cannot get the explicit permissions of a detached member without a channel. "
+                            + "Instead, please use the Member methods while supplying a GuildChannel");
         }
 
         Guild guild = member.getGuild();
@@ -574,8 +574,8 @@ public class PermissionUtil {
 
         if (member.isDetached()) {
             throw new DetachedEntityException(
-                    "Cannot get the explicit permissions of a detached member. Instead, please use"
-                            + " the Member methods while supplying a GuildChannel");
+                    "Cannot get the explicit permissions of a detached member. "
+                            + "Instead, please use the Member methods while supplying a GuildChannel");
         }
 
         long permission = includeRoles ? getExplicitPermission(member) : 0L;

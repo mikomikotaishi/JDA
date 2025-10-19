@@ -56,8 +56,7 @@ public class MessagePollDataTest {
                 .checksPositive()
                 .throwsFor(
                         TimeUnit.DAYS.toSeconds(8),
-                        "Duration may not be longer than 168 hours (7 days). Provided: 192 hours (8"
-                                + " days)");
+                        "Duration may not be longer than 168 hours (7 days). Provided: 192 hours (8 days)");
 
         assertStringChecks("Answer title", builder::addAnswer)
                 .checksNotNull()

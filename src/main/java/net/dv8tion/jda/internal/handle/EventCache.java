@@ -33,7 +33,6 @@ import java.util.concurrent.atomic.AtomicInteger;
 
 public class EventCache {
     public static final Logger LOG = JDALogger.getLog(EventCache.class);
-
     /** Sequence difference after which events will be removed from cache */
     public static final long TIMEOUT_AMOUNT = 100;
 
@@ -62,7 +61,7 @@ public class EventCache {
                     if (remove) {
                         count.incrementAndGet();
                         LOG.trace(
-                                "Removing type {}/{} from event cache with payload" + " {}",
+                                "Removing type {}/{} from event cache with payload {}",
                                 type,
                                 triggerId,
                                 node.event);

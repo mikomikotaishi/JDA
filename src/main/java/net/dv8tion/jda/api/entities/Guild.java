@@ -98,10 +98,8 @@ import javax.annotation.Nullable;
 public interface Guild extends IGuildChannelContainer<GuildChannel>, ISnowflake, IDetachableEntity {
     /** Template for {@link #getIconUrl()}. */
     String ICON_URL = "https://cdn.discordapp.com/icons/%s/%s.%s";
-
     /** Template for {@link #getSplashUrl()}. */
     String SPLASH_URL = "https://cdn.discordapp.com/splashes/%s/%s.png";
-
     /** Template for {@link #getBannerUrl()}. */
     String BANNER_URL = "https://cdn.discordapp.com/banners/%s/%s.%s";
 

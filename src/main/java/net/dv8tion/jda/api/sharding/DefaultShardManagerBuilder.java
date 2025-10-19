@@ -2336,8 +2336,7 @@ public class DefaultShardManagerBuilder {
         boolean membersIntent = (intents & GatewayIntent.GUILD_MEMBERS.getRawValue()) != 0;
         if (!membersIntent && memberCachePolicy == MemberCachePolicy.ALL) {
             throw new IllegalStateException(
-                    "Cannot use MemberCachePolicy.ALL without GatewayIntent.GUILD_MEMBERS"
-                            + " enabled!");
+                    "Cannot use MemberCachePolicy.ALL without GatewayIntent.GUILD_MEMBERS enabled!");
         } else if (!membersIntent && chunkingFilter != ChunkingFilter.NONE) {
             DefaultShardManager.LOG.warn(
                     "Member chunking is disabled due to missing GUILD_MEMBERS intent.");
@@ -2353,8 +2352,7 @@ public class DefaultShardManagerBuilder {
 
             // Tell user how to disable this warning
             JDAImpl.LOG.warn(
-                    "You can manually disable these flags to remove this warning by using"
-                            + " disableCache({}) on your DefaultShardManagerBuilder",
+                    "You can manually disable these flags to remove this warning by using disableCache({}) on your DefaultShardManagerBuilder",
                     automaticallyDisabled.stream()
                             .map(it -> "CacheFlag." + it)
                             .collect(Collectors.joining(", ")));

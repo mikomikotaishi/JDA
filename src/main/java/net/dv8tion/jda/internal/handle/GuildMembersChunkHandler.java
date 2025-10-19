@@ -43,8 +43,7 @@ public class GuildMembersChunkHandler extends SocketHandler {
                 return null;
             }
             WebSocketClient.LOG.debug(
-                    "Received member chunk for guild that is already in cache. GuildId: {} Count:"
-                            + " {} Index: {}/{}",
+                    "Received member chunk for guild that is already in cache. GuildId: {} Count: {} Index: {}/{}",
                     guildId,
                     members.length(),
                     content.getInt("chunk_index"),

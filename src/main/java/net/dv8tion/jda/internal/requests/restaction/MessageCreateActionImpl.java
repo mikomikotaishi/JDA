@@ -91,8 +91,7 @@ public class MessageCreateActionImpl extends RestActionImpl<Message>
             }
 
             throw new IllegalStateException(
-                    "Cannot build empty messages! Must provide at least one of: content, embed,"
-                            + " file, poll, or stickers");
+                    "Cannot build empty messages! Must provide at least one of: content, embed, file, poll, or stickers");
         }
 
         try (MessageCreateData data = builder.build()) {
@@ -206,12 +205,10 @@ public class MessageCreateActionImpl extends RestActionImpl<Message>
                 GuildSticker guildSticker = (GuildSticker) sticker;
                 Checks.check(
                         guildSticker.isAvailable(),
-                        "Cannot use unavailable sticker. The guild may have lost the boost level"
-                                + " required to use this sticker!");
+                        "Cannot use unavailable sticker. The guild may have lost the boost level required to use this sticker!");
                 Checks.check(
                         guildSticker.getGuildIdLong() == guildChannel.getGuild().getIdLong(),
-                        "Sticker must be from the same guild. Cross-guild sticker posting is not"
-                                + " supported!");
+                        "Sticker must be from the same guild. Cross-guild sticker posting is not supported!");
             }
         }
 

@@ -97,8 +97,7 @@ public class RoleImpl implements Role, RoleMixin<RoleImpl> {
             i--;
         }
         throw new IllegalStateException(
-                "Somehow when determining position we never found the role in the Guild's roles?"
-                        + " wtf?");
+                "Somehow when determining position we never found the role in the Guild's roles? wtf?");
     }
 
     @Override

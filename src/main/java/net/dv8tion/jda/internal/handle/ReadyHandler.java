@@ -85,8 +85,7 @@ public class ReadyHandler extends SocketHandler {
                     break;
                 default:
                     WebSocketClient.LOG.warn(
-                            "Received a Channel in the private_channels array in READY of an"
-                                    + " unknown type! Type: {}",
+                            "Received a Channel in the private_channels array in READY of an unknown type! Type: {}",
                             type);
             }
         }

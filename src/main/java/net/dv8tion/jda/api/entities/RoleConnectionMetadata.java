@@ -40,13 +40,10 @@ import javax.annotation.Nonnull;
 public class RoleConnectionMetadata implements SerializableData {
     /** The maximum length a name can be ({@value}) */
     public static final int MAX_NAME_LENGTH = 100;
-
     /** The maximum length a description can be ({@value}) */
     public static final int MAX_DESCRIPTION_LENGTH = 200;
-
     /** The maximum length a key can be ({@value}) */
     public static final int MAX_KEY_LENGTH = 50;
-
     /** The maximum number of records that can be configured ({@value}) */
     public static final int MAX_RECORDS = 5;
 

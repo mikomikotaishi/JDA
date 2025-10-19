@@ -152,22 +152,14 @@ public abstract class OrderActionImpl<T, M extends OrderAction<T, M>> extends Re
             Checks.check(
                     selectedPosition - amount >= 0,
                     "Amount provided to move up is too large and would be out of bounds."
-                            + "Selected position: "
-                            + selectedPosition
-                            + " Amount: "
-                            + amount
-                            + " Largest Position: "
-                            + orderList.size());
+                            + "Selected position: " + selectedPosition + " Amount: " + amount
+                            + " Largest Position: " + orderList.size());
         } else {
             Checks.check(
                     selectedPosition + amount < orderList.size(),
                     "Amount provided to move up is too large and would be out of bounds."
-                            + "Selected position: "
-                            + selectedPosition
-                            + " Amount: "
-                            + amount
-                            + " Largest Position: "
-                            + orderList.size());
+                            + "Selected position: " + selectedPosition + " Amount: " + amount
+                            + " Largest Position: " + orderList.size());
         }
 
         if (ascendingOrder) {
@@ -190,22 +182,14 @@ public abstract class OrderActionImpl<T, M extends OrderAction<T, M>> extends Re
             Checks.check(
                     selectedPosition + amount < orderList.size(),
                     "Amount provided to move down is too large and would be out of bounds. "
-                            + "Selected position: "
-                            + selectedPosition
-                            + " Amount: "
-                            + amount
-                            + " Largest Position: "
-                            + orderList.size());
+                            + "Selected position: " + selectedPosition + " Amount: " + amount
+                            + " Largest Position: " + orderList.size());
         } else {
             Checks.check(
                     selectedPosition - amount >= 0,
                     "Amount provided to move down is too large and would be out of bounds. "
-                            + "Selected position: "
-                            + selectedPosition
-                            + " Amount: "
-                            + amount
-                            + " Largest Position: "
-                            + orderList.size());
+                            + "Selected position: " + selectedPosition + " Amount: " + amount
+                            + " Largest Position: " + orderList.size());
         }
 
         if (ascendingOrder) {

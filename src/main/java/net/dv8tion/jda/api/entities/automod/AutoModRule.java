@@ -43,47 +43,38 @@ public interface AutoModRule extends ISnowflake {
      * The maximum length of a rule name. ({@value})
      */
     int MAX_RULE_NAME_LENGTH = 100;
-
     /**
      * The maximum length of a keyword in {@link TriggerConfig#keywordFilter(String...)}. ({@value})
      */
     int MAX_KEYWORD_LENGTH = 60;
-
     /**
      * The maximum amount of keywords in {@link TriggerConfig#keywordFilter(String...)}. ({@value})
      */
     int MAX_KEYWORD_AMOUNT = 1000;
-
     /**
      * The maximum amount of whitelisted keywords in {@link TriggerConfig#keywordFilter(String...)}. ({@value})
      */
     int MAX_ALLOWLIST_CUSTOM_AMOUNT = 100;
-
     /**
      * The maximum amount of whitelisted keywords in {@link TriggerConfig#presetKeywordFilter(KeywordPreset...)}. ({@value})
      */
     int MAX_ALLOWLIST_PRESET_AMOUNT = 1000;
-
     /**
      * The maximum length of a regex pattern in {@link TriggerConfig#patternFilter(String...)}. ({@value})
      */
     int MAX_PATTERN_LENGTH = 260;
-
     /**
      * The maximum amount of regex patterns in {@link TriggerConfig#patternFilter(String...)}. ({@value})
      */
     int MAX_PATTERN_AMOUNT = 10;
-
     /**
      * The maximum limit of mentions in {@link TriggerConfig#mentionSpam(int)}. ({@value})
      */
     int MAX_MENTION_LIMIT = 50;
-
     /**
      * The maximum amount of roles that can be added to {@link AutoModRule#getExemptRoles()}. ({@value})
      */
     int MAX_EXEMPT_ROLES = 20;
-
     /**
      * The maximum amount of channels that can be added to {@link AutoModRule#getExemptChannels()}. ({@value})
      */

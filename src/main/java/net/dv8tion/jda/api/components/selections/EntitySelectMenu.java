@@ -479,8 +479,8 @@ public interface EntitySelectMenu extends SelectMenu {
                     this.componentType = Type.MENTIONABLE_SELECT;
                 } else {
                     throw new IllegalArgumentException(
-                            "The provided combination of select targets is not supported. Provided:"
-                                    + " " + set);
+                            "The provided combination of select targets is not supported. Provided: "
+                                    + set);
                 }
             } else {
                 throw new IllegalArgumentException(
@@ -592,8 +592,7 @@ public interface EntitySelectMenu extends SelectMenu {
             for (DefaultValue value : values) {
                 SelectTarget type = value.getType();
                 String error =
-                        "The select menu supports types %s, but provided default value has type"
-                                + " SelectTarget.%s!";
+                        "The select menu supports types %s, but provided default value has type SelectTarget.%s!";
 
                 switch (componentType) {
                     case ROLE_SELECT:

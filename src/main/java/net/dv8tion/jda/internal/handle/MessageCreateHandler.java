@@ -83,8 +83,8 @@ public class MessageCreateHandler extends SocketHandler {
                 case EntityBuilder.MISSING_CHANNEL: {
                     long channelId = content.getLong("channel_id");
 
-                    // If discord adds message support for unexpected types in the future, drop
-                    // the event instead of caching it
+                    // If discord adds message support for unexpected types in the future, drop the
+                    // event instead of caching it
                     if (guild != null) {
                         GuildChannel actual = guild.getGuildChannelById(channelId);
                         if (actual != null) {
@@ -103,8 +103,7 @@ public class MessageCreateHandler extends SocketHandler {
                                     allContent,
                                     this::handle);
                     EventCache.LOG.debug(
-                            "Received a message for a channel that JDA does not currently have"
-                                    + " cached");
+                            "Received a message for a channel that JDA does not currently have cached");
                     return null;
                 }
                 case EntityBuilder.MISSING_USER: {
@@ -117,8 +116,7 @@ public class MessageCreateHandler extends SocketHandler {
                                     allContent,
                                     this::handle);
                     EventCache.LOG.debug(
-                            "Received a message for a user that JDA does not currently have"
-                                    + " cached");
+                            "Received a message for a user that JDA does not currently have cached");
                     return null;
                 }
                 case EntityBuilder.UNKNOWN_MESSAGE_TYPE: {

@@ -155,8 +155,7 @@ public class MessageReactionHandler extends SocketHandler {
                                 allContent,
                                 this::handle);
                 EventCache.LOG.debug(
-                        "Received a reaction for a channel that JDA does not currently have"
-                                + " cached");
+                        "Received a reaction for a channel that JDA does not currently have cached");
                 return null;
             }
 

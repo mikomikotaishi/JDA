@@ -82,8 +82,8 @@ public abstract class Event implements GenericEvent {
     public DataObject getRawData() {
         if (api instanceof JDAImpl) {
             if (!((JDAImpl) api).isEventPassthrough()) {
-                throw new IllegalStateException("Event passthrough is not enabled, see"
-                        + " JDABuilder#setEventPassthrough(boolean)");
+                throw new IllegalStateException(
+                        "Event passthrough is not enabled, see JDABuilder#setEventPassthrough(boolean)");
             }
         }
 

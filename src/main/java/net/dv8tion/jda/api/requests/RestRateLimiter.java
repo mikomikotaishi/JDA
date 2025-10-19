@@ -37,25 +37,18 @@ import javax.annotation.Nullable;
 public interface RestRateLimiter {
     /** Total time (in seconds) of when the current rate limit bucket will reset. Can have decimals to match previous millisecond ratelimit precision */
     String RESET_AFTER_HEADER = "X-RateLimit-Reset-After";
-
     /** Epoch time (seconds since 00:00:00 UTC on January 1, 1970) at which the rate limit resets */
     String RESET_HEADER = "X-RateLimit-Reset";
-
     /** The number of requests that can be made */
     String LIMIT_HEADER = "X-RateLimit-Limit";
-
     /** The number of remaining requests that can be made */
     String REMAINING_HEADER = "X-RateLimit-Remaining";
-
     /** Returned only on HTTP 429 responses if the rate limit encountered is the global rate limit (not per-route) */
     String GLOBAL_HEADER = "X-RateLimit-Global";
-
     /** A unique string denoting the rate limit being encountered (non-inclusive of top-level resources in the path) */
     String HASH_HEADER = "X-RateLimit-Bucket";
-
     /** The number of seconds to wait before submitting another request */
     String RETRY_AFTER_HEADER = "Retry-After";
-
     /** Returned only on HTTP 429 responses. Value can be user (per bot or user limit), global (per bot or user global limit), or shared (per resource limit) */
     String SCOPE_HEADER = "X-RateLimit-Scope";
 

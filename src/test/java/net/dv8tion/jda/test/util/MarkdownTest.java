@@ -438,13 +438,10 @@ class EscapeMarkdownAllTest {
                 .isEqualTo("\\>\\>\\> Hello World");
         assertThat(MarkdownSanitizer.escape(">>>Hello World", true)).isEqualTo(">>>Hello World");
         assertThat(MarkdownSanitizer.escape(
-                        ">>> Hello > World\n" + "> Hello >>> World\n" + "<@12345> > Hello\n"
-                                + " > Hello world",
+                        ">>> Hello > World\n> Hello >>> World\n<@12345> > Hello\n > Hello world",
                         true))
-                .isEqualTo("\\>\\>\\> Hello > World\n"
-                        + "\\> Hello >>> World\n"
-                        + "<@12345> > Hello\n"
-                        + " \\> Hello world");
+                .isEqualTo(
+                        "\\>\\>\\> Hello > World\n\\> Hello >>> World\n<@12345> > Hello\n \\> Hello world");
 
         assertThat(MarkdownSanitizer.escape("\\> Hello World", true)).isEqualTo("\\> Hello World");
         assertThat(MarkdownSanitizer.escape("\\>\\>\\> Hello World", true))

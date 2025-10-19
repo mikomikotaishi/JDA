@@ -129,8 +129,7 @@ class AudioWebSocket extends WebSocketAdapter {
     protected void startConnection() {
         if (!reconnecting && socket != null) {
             throw new IllegalStateException(
-                    "Somehow, someway, this AudioWebSocket has already attempted to start a"
-                            + " connection!");
+                    "Somehow, someway, this AudioWebSocket has already attempted to start a connection!");
         }
 
         try {
@@ -148,8 +147,7 @@ class AudioWebSocket extends WebSocketAdapter {
             socket.connectAsynchronously();
         } catch (IOException e) {
             LOG.warn(
-                    "Encountered IOException while attempting to connect to {}: {}\n"
-                            + "Closing connection and attempting to reconnect.",
+                    "Encountered IOException while attempting to connect to {}: {}\nClosing connection and attempting to reconnect.",
                     wssEndpoint,
                     e.getMessage());
             this.close(ConnectionStatus.ERROR_WEBSOCKET_UNABLE_TO_CONNECT);
@@ -183,8 +181,8 @@ class AudioWebSocket extends WebSocketAdapter {
             AudioChannel disconnectedChannel = manager.getConnectedChannel();
             manager.setAudioConnection(null);
 
-            // Verify that it is actually a lost of connection and not due the connected
-            // channel being deleted.
+            // Verify that it is actually a lost of connection and not due the connected channel
+            // being deleted.
             JDAImpl api = getJDA();
             if (status == ConnectionStatus.DISCONNECTED_KICKED_FROM_CHANNEL
                     && (!api.getClient().isSession() || !api.getClient().isConnected())) {
@@ -192,8 +190,7 @@ class AudioWebSocket extends WebSocketAdapter {
                 status = ConnectionStatus.ERROR_CANNOT_RESUME;
             } else if (status == ConnectionStatus.ERROR_LOST_CONNECTION
                     || status == ConnectionStatus.DISCONNECTED_KICKED_FROM_CHANNEL) {
-                // Get guild from JDA, don't use [guild] field to make sure that we don't
-                // have
+                // Get guild from JDA, don't use [guild] field to make sure that we don't have
                 // a problem of an out of date guild stored in [guild] during a possible mWS
                 // invalidate.
                 Guild connGuild = api.getGuildById(guild.getIdLong());
@@ -210,8 +207,8 @@ class AudioWebSocket extends WebSocketAdapter {
 
             // decide if we reconnect.
             if (shouldReconnect
-                    && status.shouldReconnect() // indicated that the connection was
-                    // purposely closed. don't reconnect.
+                    && status.shouldReconnect() // indicated that the connection was purposely
+                    // closed. don't reconnect.
                     && status != ConnectionStatus.AUDIO_REGION_CHANGE) // Already handled.
             {
                 if (disconnectedChannel == null) {
@@ -386,8 +383,7 @@ class AudioWebSocket extends WebSocketAdapter {
     @Override
     public void onConnectError(WebSocket webSocket, WebSocketException e) {
         LOG.warn(
-                "Failed to establish websocket connection to {}: {} - {}\n"
-                        + "Closing connection and attempting to reconnect.",
+                "Failed to establish websocket connection to {}: {} - {}\nClosing connection and attempting to reconnect.",
                 wssEndpoint,
                 e.getError(),
                 e.getMessage());
@@ -446,8 +442,10 @@ class AudioWebSocket extends WebSocketAdapter {
                                 DataObject.empty()
                                         .put("address", externalIpAndPort.getHostString())
                                         .put("port", externalIpAndPort.getPort())
-                                        .put("mode", encryption.getKey())); // Discord requires
-                // encryption
+                                        .put(
+                                                "mode",
+                                                encryption
+                                                        .getKey())); // Discord requires encryption
                 send(VoiceCode.SELECT_PROTOCOL, object);
                 changeStatus(ConnectionStatus.CONNECTING_AWAITING_READY);
                 break;
@@ -505,8 +503,7 @@ class AudioWebSocket extends WebSocketAdapter {
                 if (user == null) {
                     // more relevant for audio connection
                     LOG.trace(
-                            "Got an Audio USER_SPEAKING_UPDATE for a non-existent User. JSON:"
-                                    + " {}",
+                            "Got an Audio USER_SPEAKING_UPDATE for a non-existent User. JSON: {}",
                             contentAll);
                     listener.onUserSpeakingModeUpdate(UserSnowflake.fromId(userId), speaking);
                 } else {
@@ -658,8 +655,8 @@ class AudioWebSocket extends WebSocketAdapter {
 
     private void setupKeepAlive(int keepAliveInterval) {
         if (keepAliveHandle != null) {
-            LOG.error("Setting up a KeepAlive runnable while the previous one seems to still be"
-                    + " active!!");
+            LOG.error(
+                    "Setting up a KeepAlive runnable while the previous one seems to still be active!!");
         }
 
         try {
@@ -691,12 +688,10 @@ class AudioWebSocket extends WebSocketAdapter {
                             new DatagramPacket(UDP_KEEP_ALIVE, UDP_KEEP_ALIVE.length, address);
                     audioConnection.udpSocket.send(keepAlivePacket);
                 } catch (NoRouteToHostException e) {
+                    LOG.warn("Closing AudioConnection due to inability to ping audio packets.");
                     LOG.warn(
-                            "Closing AudioConnection due to inability to ping audio" + " packets.");
-                    LOG.warn("Cannot send audio packet because JDA navigate the route to"
-                            + " Discord.\n"
-                            + "Are you sure you have internet connection? It is likely"
-                            + " that you've lost connection.");
+                            "Cannot send audio packet because JDA navigate the route to Discord.\n"
+                                    + "Are you sure you have internet connection? It is likely that you've lost connection.");
                     this.close(ConnectionStatus.ERROR_LOST_CONNECTION);
                 } catch (IOException e) {
                     LOG.error("There was some error sending an audio keepalive packet", e);
@@ -721,8 +716,8 @@ class AudioWebSocket extends WebSocketAdapter {
             "deprecation") /* If this was in JDK9 we would be using java.lang.ref.Cleaner instead! */
     protected void finalize() {
         if (!shutdown) {
-            LOG.error("Finalization hook of AudioWebSocket was triggered without properly shutting"
-                    + " down");
+            LOG.error(
+                    "Finalization hook of AudioWebSocket was triggered without properly shutting down");
             close(ConnectionStatus.NOT_CONNECTED);
         }
     }

@@ -75,8 +75,7 @@ public class BulkBanTest extends AbstractGuildTest {
                 .checksNotNegative()
                 .throwsFor(
                         Duration.ofDays(100),
-                        "Deletion timeframe must not be larger than 7 days. Provided: 8640000"
-                                + " seconds");
+                        "Deletion timeframe must not be larger than 7 days. Provided: 8640000 seconds");
 
         Set<UserSnowflake> users = Collections.singleton(null);
 

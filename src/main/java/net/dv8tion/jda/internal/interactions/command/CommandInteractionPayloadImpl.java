@@ -114,15 +114,15 @@ public class CommandInteractionPayloadImpl extends InteractionImpl
                 DataObject users = resolveJson.getObject("users");
                 members.keys().forEach(memberId -> {
                     DataObject memberJson = members.getObject(memberId);
-                    memberJson.put("user", users.getObject(memberId)); // Add user json as
-                    // well for parsing
+                    memberJson.put(
+                            "user", users.getObject(memberId)); // Add user json as well for parsing
                     Member optionMember = interactionEntityBuilder.createMember(guild, memberJson);
                     if (member instanceof MemberImpl) {
                         entityBuilder.updateMemberCache((MemberImpl) optionMember);
                     }
-                    resolved.put(optionMember.getIdLong(), optionMember); // This basically
-                    // upgrades user to
-                    // member
+                    resolved.put(
+                            optionMember.getIdLong(),
+                            optionMember); // This basically upgrades user to member
                 });
             });
             resolveJson.optObject("roles").ifPresent(roles -> {

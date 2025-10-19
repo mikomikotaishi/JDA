@@ -81,8 +81,7 @@ public class ScheduledEventActionImpl extends AuditableRestActionImpl<ScheduledE
         Checks.notNull(channel, "Channel");
         if (!channel.getGuild().equals(guild)) {
             throw new IllegalArgumentException(
-                    "Invalid parameter: Channel has to be from the same guild as the scheduled"
-                            + " event!");
+                    "Invalid parameter: Channel has to be from the same guild as the scheduled event!");
         } else if (channel instanceof StageChannel) {
             this.channelId = channel.getIdLong();
             this.entityType = ScheduledEvent.Type.STAGE_INSTANCE;

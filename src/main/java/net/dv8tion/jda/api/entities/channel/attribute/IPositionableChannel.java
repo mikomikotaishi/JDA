@@ -55,8 +55,7 @@ public interface IPositionableChannel extends GuildChannel {
             return position;
         }
         throw new IllegalStateException("Somehow when determining position we never found the "
-                + getType().name()
-                + " in the Guild's channels? wtf?");
+                + getType().name() + " in the Guild's channels? wtf?");
     }
 
     /**

@@ -45,10 +45,8 @@ import javax.annotation.Nullable;
 public interface WebhookManager extends Manager<WebhookManager> {
     /** Used to reset the name field */
     long NAME = 1;
-
     /** Used to reset the channel field */
     long CHANNEL = 1 << 1;
-
     /** Used to reset the avatar field */
     long AVATAR = 1 << 2;
 

@@ -48,10 +48,8 @@ import javax.annotation.Nullable;
 public interface GuildStickerManager extends Manager<GuildStickerManager> {
     /** Used to reset name field */
     long NAME = 1;
-
     /** Used to reset description field */
     long DESCRIPTION = 1 << 1;
-
     /** Used to reset tags field */
     long TAGS = 1 << 2;
 

@@ -266,8 +266,8 @@ public class JsonTest {
                             .map(obj -> obj.getInt("foo"))
                             .toArray())
                     .isInstanceOf(ParsingException.class)
-                    .hasMessage("Cannot parse value for index 2 into type Map: [] instance of"
-                            + " ArrayList");
+                    .hasMessage(
+                            "Cannot parse value for index 2 into type Map: [] instance of ArrayList");
         }
 
         @Test

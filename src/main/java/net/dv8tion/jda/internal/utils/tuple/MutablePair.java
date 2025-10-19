@@ -30,7 +30,6 @@ package net.dv8tion.jda.internal.utils.tuple;
 public class MutablePair<L, R> extends Pair<L, R> {
     /** Left object */
     public L left;
-
     /** Right object */
     public R right;
 

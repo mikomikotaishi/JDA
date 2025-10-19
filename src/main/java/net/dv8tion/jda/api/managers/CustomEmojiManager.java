@@ -45,7 +45,6 @@ import javax.annotation.Nullable;
 public interface CustomEmojiManager extends Manager<CustomEmojiManager> {
     /** Used to reset the name field */
     long NAME = 1;
-
     /** Used to reset the roles field */
     long ROLES = 1 << 1;
 

@@ -300,8 +300,7 @@ public class ChannelActionImpl<T extends GuildChannel> extends AuditableRestActi
     public ChannelAction<T> syncPermissionOverrides() {
         if (parent == null) {
             throw new IllegalStateException(
-                    "Cannot sync overrides without parent category! Use setParent(category)"
-                            + " first!");
+                    "Cannot sync overrides without parent category! Use setParent(category) first!");
         }
         clearPermissionOverrides();
         Member selfMember = getGuild().getSelfMember();
@@ -358,8 +357,7 @@ public class ChannelActionImpl<T extends GuildChannel> extends AuditableRestActi
                 throw new InsufficientPermissionException(
                         guild,
                         Permission.MANAGE_PERMISSIONS,
-                        "You must have Permission.MANAGE_PERMISSIONS on the channel explicitly in"
-                                + " order to set permissions you don't already have!");
+                        "You must have Permission.MANAGE_PERMISSIONS on the channel explicitly in order to set permissions you don't already have!");
             }
         }
 

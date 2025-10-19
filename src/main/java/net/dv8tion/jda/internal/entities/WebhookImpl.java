@@ -83,8 +83,7 @@ public class WebhookImpl extends AbstractWebhookClient<Message> implements Webho
     public Guild getGuild() {
         if (channel == null) {
             throw new IllegalStateException(
-                    "Cannot provide guild for this Webhook instance because it does not belong to"
-                            + " this shard");
+                    "Cannot provide guild for this Webhook instance because it does not belong to this shard");
         }
         return getChannel().getGuild();
     }
@@ -94,8 +93,7 @@ public class WebhookImpl extends AbstractWebhookClient<Message> implements Webho
     public IWebhookContainerUnion getChannel() {
         if (channel == null) {
             throw new IllegalStateException(
-                    "Cannot provide channel for this Webhook instance because it does not belong to"
-                            + " this shard");
+                    "Cannot provide channel for this Webhook instance because it does not belong to this shard");
         }
         return (IWebhookContainerUnion) channel;
     }

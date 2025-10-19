@@ -43,8 +43,7 @@ public class ApplicationCommandPermissionsUpdateHandler extends SocketHandler {
                 return guildId;
             } else if (guild == null) {
                 WebSocketClient.LOG.debug(
-                        "Received APPLICATION_COMMAND_PERMISSIONS_UPDATE for a guild that is not"
-                                + " cached: GuildID: {}",
+                        "Received APPLICATION_COMMAND_PERMISSIONS_UPDATE for a guild that is not cached: GuildID: {}",
                         guildId);
                 return null;
             }

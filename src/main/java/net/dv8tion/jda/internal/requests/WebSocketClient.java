@@ -276,9 +276,8 @@ public class WebSocketClient extends WebSocketAdapter implements WebSocketListen
         } else {
             if (!printedRateLimitMessage) {
                 LOG.warn(
-                        "Hit the WebSocket RateLimit! This can be caused by too many presence or"
-                                + " voice status updates (connect/disconnect/mute/deaf). Regular: {}"
-                                + " Voice: {} Chunking: {}",
+                        "Hit the WebSocket RateLimit! This can be caused by too many presence or voice status updates (connect/disconnect/mute/deaf). "
+                                + "Regular: {} Voice: {} Chunking: {}",
                         ratelimitQueue.size(),
                         queuedAudioConnections.size(),
                         chunkSyncQueue.size());
@@ -478,8 +477,7 @@ public class WebSocketClient extends WebSocketAdapter implements WebSocketListen
             closeCode = CloseCode.from(rawCloseCode);
             if (closeCode == CloseCode.RATE_LIMITED) {
                 LOG.error(
-                        "WebSocket connection closed due to ratelimit! Sent more than 120 websocket"
-                                + " messages in under 60 seconds!");
+                        "WebSocket connection closed due to ratelimit! Sent more than 120 websocket messages in under 60 seconds!");
             } else if (closeCode == CloseCode.UNKNOWN_ERROR) {
                 LOG.error(
                         "WebSocket connection closed due to server error! {}: {}",
@@ -526,9 +524,7 @@ public class WebSocketClient extends WebSocketAdapter implements WebSocketListen
                 // if that is the case we have to drop our connection and inform the user with a
                 // fatal error message
                 LOG.error(
-                        "WebSocket connection was closed and cannot be recovered due to"
-                                + " identification issues\n"
-                                + "{}",
+                        "WebSocket connection was closed and cannot be recovered due to identification issues\n{}",
                         closeCode);
 
                 // Forward the close reason to any hooks to awaitStatus / awaitReady
@@ -583,8 +579,7 @@ public class WebSocketClient extends WebSocketAdapter implements WebSocketListen
                 if (backoff > 0) {
                     // it seems that most of the time this is already sub-0 when we reach this point
                     LOG.error(
-                            "Encountered IDENTIFY Rate Limit! Waiting {} milliseconds before trying"
-                                    + " again!",
+                            "Encountered IDENTIFY Rate Limit! Waiting {} milliseconds before trying again!",
                             backoff);
                     Thread.sleep(backoff);
                 } else {
@@ -667,8 +662,7 @@ public class WebSocketClient extends WebSocketAdapter implements WebSocketListen
                         : Math.min(reconnectTimeoutS << 1, api.getMaxReconnectDelay());
 
                 try {
-                    // On shutdown, this condvar is notified and we stop
-                    // reconnecting
+                    // On shutdown, this condvar is notified and we stop reconnecting
                     reconnectCondvar.await(delay, TimeUnit.SECONDS);
                     if (!shouldReconnect) {
                         break;
@@ -998,11 +992,7 @@ public class WebSocketClient extends WebSocketAdapter implements WebSocketListen
             }
         } catch (ParsingException ex) {
             LOG.warn(
-                    "Got an unexpected Json-parse error. Please redirect the following message to"
-                            + " the devs:\n"
-                            + "\tJDA {}\n"
-                            + "\t{}\n"
-                            + "\t{} -> {}",
+                    "Got an unexpected Json-parse error. Please redirect the following message to the devs:\n\tJDA {}\n\t{}\n\t{} -> {}",
                     JDAInfo.VERSION,
                     ex.getMessage(),
                     type,
@@ -1010,9 +1000,7 @@ public class WebSocketClient extends WebSocketAdapter implements WebSocketListen
                     ex);
         } catch (Exception ex) {
             LOG.error(
-                    "Got an unexpected error. Please redirect the following message to the devs:\n"
-                            + "\tJDA {}\n"
-                            + "\t{} -> {}",
+                    "Got an unexpected error. Please redirect the following message to the devs:\n\tJDA {}\n\t{} -> {}",
                     JDAInfo.VERSION,
                     type,
                     content,
@@ -1269,8 +1257,7 @@ public class WebSocketClient extends WebSocketAdapter implements WebSocketListen
                                 // The guild is not tracked anymore -> we can't connect the audio
                                 // channel
                                 LOG.debug(
-                                        "Removing audio connection request because the guild has"
-                                                + " been removed. {}",
+                                        "Removing audio connection request because the guild has been removed. {}",
                                         audioRequest);
                                 return false;
                             }

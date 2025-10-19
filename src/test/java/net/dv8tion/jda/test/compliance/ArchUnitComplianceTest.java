@@ -182,8 +182,8 @@ public class ArchUnitComplianceTest {
                                 && !parameter.isAnnotatedWith(CheckForNull.class))
                         .forEach(parameter -> events.add(SimpleConditionEvent.violated(
                                 method,
-                                parameter.getDescription() + " is not annotated with @Nonnull"
-                                        + " or @Nullable")));
+                                parameter.getDescription()
+                                        + " is not annotated with @Nonnull or @Nullable")));
             }
         };
     }

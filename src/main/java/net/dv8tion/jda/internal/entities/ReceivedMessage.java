@@ -198,8 +198,7 @@ public class ReceivedMessage implements Message {
     private void checkUser() {
         if (!getJDA().getSelfUser().equals(getAuthor())) {
             throw new IllegalStateException(
-                    "Attempted to update message that was not sent by this account. You cannot"
-                            + " modify other User's messages!");
+                    "Attempted to update message that was not sent by this account. You cannot modify other User's messages!");
         }
     }
 
@@ -215,16 +214,14 @@ public class ReceivedMessage implements Message {
                     && isFromGuild()
                     && !isBotOwnedWebhookMessage) {
                 didContentIntentWarning = true;
-                JDAImpl.LOG.warn("Attempting to access message content without"
-                        + " GatewayIntent.MESSAGE_CONTENT.\n"
-                        + "Discord now requires to explicitly enable access to this using the"
-                        + " MESSAGE_CONTENT intent.\n"
-                        + "Useful resources to learn more:\n"
-                        + "\t- https://support-dev.discord.com/hc/en-us/articles/4404772028055-Message-Content-Privileged-Intent-FAQ\n"
-                        + "\t- https://jda.wiki/using-jda/gateway-intents-and-member-cache-policy/\n"
-                        + "\t- https://jda.wiki/using-jda/troubleshooting/#cannot-get-message-content-attempting-to-access-message-content-without-gatewayintent\n"
-                        + "Or suppress this warning if this is intentional with"
-                        + " Message.suppressContentIntentWarning()");
+                JDAImpl.LOG.warn(
+                        "Attempting to access message content without GatewayIntent.MESSAGE_CONTENT.\n"
+                                + "Discord now requires to explicitly enable access to this using the MESSAGE_CONTENT intent.\n"
+                                + "Useful resources to learn more:\n"
+                                + "\t- https://support-dev.discord.com/hc/en-us/articles/4404772028055-Message-Content-Privileged-Intent-FAQ\n"
+                                + "\t- https://jda.wiki/using-jda/gateway-intents-and-member-cache-policy/\n"
+                                + "\t- https://jda.wiki/using-jda/troubleshooting/#cannot-get-message-content-attempting-to-access-message-content-without-gatewayintent\n"
+                                + "Or suppress this warning if this is intentional with Message.suppressContentIntentWarning()");
             }
         }
     }
@@ -300,8 +297,7 @@ public class ReceivedMessage implements Message {
             if (missingReaction && emoji instanceof RichCustomEmoji) {
                 Checks.check(
                         ((RichCustomEmoji) emoji).canInteract(getJDA().getSelfUser(), getChannel()),
-                        "Cannot react with the provided emoji because it is not available in the"
-                                + " current getChannel().");
+                        "Cannot react with the provided emoji because it is not available in the current getChannel().");
             }
 
             return getChannel().addReactionById(getId(), emoji);
@@ -387,8 +383,7 @@ public class ReceivedMessage implements Message {
 
         if (!isFromGuild()) {
             throw new IllegalStateException(
-                    "Cannot remove reactions of others from a message in a Group or"
-                            + " PrivateChannel.");
+                    "Cannot remove reactions of others from a message in a Group or PrivateChannel.");
         }
 
         if (channel instanceof GuildMessageChannel) {
@@ -637,8 +632,7 @@ public class ReceivedMessage implements Message {
             ChannelType channelType = getChannelType();
             if (channelType == ChannelType.UNKNOWN || channelType.isGuild()) {
                 throw new IllegalStateException(
-                        "This message instance does not provide a guild instance! Use getGuildId()"
-                                + " instead.");
+                        "This message instance does not provide a guild instance! Use getGuildId() instead.");
             } else {
                 throw new IllegalStateException("This message was not sent in a guild");
             }
@@ -1112,8 +1106,7 @@ public class ReceivedMessage implements Message {
                     && !((InteractionHookImpl) webhook).isAck()
                     && exception.getErrorResponse() == ErrorResponse.UNKNOWN_WEBHOOK) {
                 return new IllegalStateException(
-                        "Sending a webhook request requires the interaction to be acknowledged"
-                                + " before expiration",
+                        "Sending a webhook request requires the interaction to be acknowledged before expiration",
                         exception);
             } else {
                 return null;

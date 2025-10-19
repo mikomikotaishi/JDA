@@ -103,8 +103,7 @@ public class ScheduledEventManagerImpl extends ManagerBase<ScheduledEventManager
         Checks.notNull(channel, "Channel");
         if (!channel.getGuild().equals(event.getGuild())) {
             throw new IllegalArgumentException(
-                    "Invalid parameter: Channel has to be from the same guild as the scheduled"
-                            + " event!");
+                    "Invalid parameter: Channel has to be from the same guild as the scheduled event!");
         } else if (channel instanceof StageChannel) {
             this.channelId = channel.getIdLong();
             this.entityType = ScheduledEvent.Type.STAGE_INSTANCE;
@@ -180,24 +179,21 @@ public class ScheduledEventManagerImpl extends ManagerBase<ScheduledEventManager
                 Checks.check(
                         newStatus == ScheduledEvent.Status.ACTIVE
                                 || newStatus == ScheduledEvent.Status.CANCELED,
-                        "Cannot perform status update! A scheduled event with status SCHEDULED can"
-                                + " only be set to ACTIVE or CANCELED status.");
+                        "Cannot perform status update! A scheduled event with status SCHEDULED can only be set to ACTIVE or CANCELED status.");
                 break;
 
             case ACTIVE:
                 // event is active -> new status can be only completed
                 Checks.check(
                         newStatus == ScheduledEvent.Status.COMPLETED,
-                        "Cannot perform status updated! A scheduled event with status ACTIVE can"
-                                + " only be set to COMPLETED status.");
+                        "Cannot perform status updated! A scheduled event with status ACTIVE can only be set to COMPLETED status.");
                 break;
 
             case COMPLETED:
             case CANCELED:
                 // event is completed or canceled -> can't update status
                 throw new IllegalArgumentException("Cannot perform status update! Event is "
-                        + currentStatus.name().toLowerCase()
-                        + ".");
+                        + currentStatus.name().toLowerCase() + ".");
         }
 
         this.status = newStatus;

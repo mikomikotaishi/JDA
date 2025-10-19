@@ -779,16 +779,14 @@ public class DefaultShardManager implements ShardManager {
                     } else if (response.code() != 429 && response.code() < 500
                             || ++failedAttempts > 4) {
                         future.completeExceptionally(new IllegalStateException(
-                                "Failed to fetch recommended shard total! Code: "
-                                        + response.code()
+                                "Failed to fetch recommended shard total! Code: " + response.code()
                                         + "\n"
                                         + new String(
                                                 IOUtil.readFully(body), StandardCharsets.UTF_8)));
                     } else if (response.code() >= 500) {
                         int backoff = 1 << failedAttempts;
                         LOG.warn(
-                                "Failed to retrieve recommended shard total. Code: {} ... retrying"
-                                        + " in {}s",
+                                "Failed to retrieve recommended shard total. Code: {} ... retrying in {}s",
                                 response.code(),
                                 backoff);
                         response = response.newBuilder()

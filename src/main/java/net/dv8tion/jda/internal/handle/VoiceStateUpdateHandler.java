@@ -104,8 +104,7 @@ public class VoiceStateUpdateHandler extends SocketHandler {
                             allContent,
                             this::handle);
             EventCache.LOG.debug(
-                    "Received VOICE_STATE_UPDATE for an AudioChannel that has yet to be cached."
-                            + " JSON: {}",
+                    "Received VOICE_STATE_UPDATE for an AudioChannel that has yet to be cached. JSON: {}",
                     content);
             return;
         }

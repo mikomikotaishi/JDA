@@ -115,8 +115,8 @@ public class StageChannelImpl extends AbstractStandardGuildChannelImpl<StageChan
                 throw new InsufficientPermissionException(
                         this,
                         perm,
-                        "You must be a stage moderator to create a stage instance! Missing"
-                                + " Permission: " + perm);
+                        "You must be a stage moderator to create a stage instance! Missing Permission: "
+                                + perm);
             }
         }
 

@@ -87,20 +87,16 @@ public interface User extends UserSnowflake {
 
     /** Template for {@link #getAvatarUrl()}. */
     String AVATAR_URL = "https://cdn.discordapp.com/avatars/%s/%s.%s";
-
     /** Template for {@link #getDefaultAvatarUrl()} */
     String DEFAULT_AVATAR_URL = "https://cdn.discordapp.com/embed/avatars/%s.png";
-
     /** Template for {@link Profile#getBannerUrl()} */
     String BANNER_URL = "https://cdn.discordapp.com/banners/%s/%s.%s";
-
     /** Template for {@link PrimaryGuild#getBadgeUrl()} */
     String TAG_BADGE_URL = "https://cdn.discordapp.com/guild-tag-badges/%s/%s.png";
 
     /** Used to keep consistency between color values used in the API */
     int DEFAULT_ACCENT_COLOR_RAW =
             0x1FFFFFFF; // java.awt.Color fills the MSB with FF, we just use 1F to provide better
-
     // consistency
 
     /**

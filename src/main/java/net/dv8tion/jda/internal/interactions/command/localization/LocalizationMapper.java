@@ -161,10 +161,8 @@ public class LocalizationMapper {
                 localizationMap.setTranslations(data);
             } catch (Exception e) {
                 throw new RuntimeException(
-                        "An uncaught exception occurred while using a LocalizationFunction,"
-                                + " localization key: '"
-                                + key
-                                + "'",
+                        "An uncaught exception occurred while using a LocalizationFunction, localization key: '"
+                                + key + "'",
                         e);
             }
         }
@@ -176,17 +174,14 @@ public class LocalizationMapper {
                 data.forEach((locale, localizedValue) -> {
                     Checks.check(
                             locale != DiscordLocale.UNKNOWN,
-                            "Localization function returned a map with an 'UNKNOWN'"
-                                    + " DiscordLocale");
+                            "Localization function returned a map with an 'UNKNOWN' DiscordLocale");
 
                     localizationMap.put(locale.getLocale(), localizedValue);
                 });
             } catch (Exception e) {
                 throw new RuntimeException(
-                        "An uncaught exception occurred while using a LocalizationFunction,"
-                                + " localization key: '"
-                                + key
-                                + "'",
+                        "An uncaught exception occurred while using a LocalizationFunction, localization key: '"
+                                + key + "'",
                         e);
             }
         }
